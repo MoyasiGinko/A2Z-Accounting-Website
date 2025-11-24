@@ -203,7 +203,7 @@ export default function Vision() {
               data-widget_type="text-editor.default"
             >
               <div className="elementor-widget-container">
-                <p className="" data-start="109" data-end="401">
+                <p data-start="109" data-end="401">
                   Years of hands-on consulting have helped organizations
                   navigate complexity, unlock growth, and achieve lasting
                   transformation.
