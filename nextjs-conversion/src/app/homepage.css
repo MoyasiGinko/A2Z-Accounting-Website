@@ -1,0 +1,392 @@
+/* Combined CSS extracted from wp-content/themes/execor/vamtam/assets/css */
+
+/* Source: .\wp-content\themes\execor\vamtam\assets\css\dist\elementor\responsive\elementor-below-max.css */
+body.responsive-layout #scroll-to-top {
+    bottom: 20px;
+}
+
+body.responsive-layout .page-wrapper {
+    flex-direction: column;
+}
+
+.woocommerce-demo-store .demo_store .woocommerce-store-notice__dismiss-link::before {
+    position: absolute;
+    right: 20px;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
+    backdrop-filter: saturate(180%) blur(40px);
+    top: calc(var(--vamtam-sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px));
+    z-index: 100;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--mobile:is(.vamtam-sticky-header--spacer, .elementor-sticky__spacer) {
+    position: static !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    will-change: auto !important;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header:not(.vamtam-sticky-header--mobile):is(.vamtam-sticky-header--spacer, .elementor-sticky__spacer) {
+    display: none;
+}
+
+#wpadminbar.vamtam-sticky-mobile-header {
+    position: fixed !important;
+}
+
+/* --- Widgets --- */
+
+.elementor-widget-button.vamtam-tablet-content-align-start .elementor-button-text {
+    text-align: start;
+}
+
+.elementor-widget-button.vamtam-tablet-content-align-end .elementor-button-text {
+    text-align: end;
+}
+
+.elementor-widget-button.vamtam-tablet-content-align-center .elementor-button-text {
+    text-align: center;
+}
+
+.elementor-widget-button.vamtam-tablet-content-align-space-between .elementor-button-text {
+    text-align: justify;
+}
+
+/*# sourceMappingURL=elementor-below-max.css.map */
+
+/* Source: .\wp-content\themes\execor\vamtam\assets\css\dist\elementor\responsive\elementor-max.css */
+body:not(.elementor-editor-active) .vamtam-sticky-header {
+    transition: opacity 0.15s, top 0.15s linear, transform 0.15s linear !important;
+    will-change: transform, opacity;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: calc(var(--vamtam-sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px));
+    z-index: 100;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header>.elementor-container {
+    opacity: 0;
+    -webkit-animation: vamtam-sticky-header-fadein 1s ease forwards;
+    animation: vamtam-sticky-header-fadein 1s ease forwards;
+}
+
+@-webkit-keyframes vamtam-sticky-header-fadein {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes vamtam-sticky-header-fadein {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--transparent-header {
+    transition: opacity 0.15s, top 0.15s linear, transform 0.15s linear, background-color 0.35s ease !important;
+    will-change: transform, opacity, background-color;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-shown:not(.vamtam-sticky-header--offset-on-sticky),
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-hidden:not(.vamtam-sticky-header--offset-on-sticky) {
+    top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-shown {
+    transform: translateY(0);
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
+    backdrop-filter: saturate(180%) blur(40px);
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-shown.vamtam-sticky-header--transparent-header {
+    background-color: var(--vamtam-sticky-header-bg-color) !important;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-hidden {
+    transform: translateY(-100%);
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header:is(.vamtam-sticky-header--spacer, .elementor-sticky__spacer) {
+    position: static !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    will-change: auto !important;
+}
+
+[data-elementor-type="header"] {
+    margin-left: var(--vamtam-sticky-mleft);
+    margin-right: var(--vamtam-sticky-mright);
+}
+
+.woocommerce-demo-store .demo_store {
+    padding-right: 50px;
+}
+
+.woocommerce-demo-store .demo_store .woocommerce-store-notice__dismiss-link::before {
+    position: absolute;
+    right: 25px;
+}
+
+/* --- Widgets --- */
+
+.elementor-widget-loop-carousel.vamtam-has-theme-widget-styles .vamtam-show-on-hover {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.elementor-widget-loop-carousel.vamtam-has-theme-widget-styles .e-loop-item:hover .vamtam-show-on-hover {
+    opacity: 1;
+}
+
+/*# sourceMappingURL=elementor-max.css.map */
+
+/* Source: .\wp-content\themes\execor\vamtam\assets\css\dist\elementor\responsive\elementor-small.css */
+/* --- Widgets --- */
+
+.elementor-widget-button.vamtam-mobile-content-align-start .elementor-button-text {
+    text-align: start;
+}
+
+.elementor-widget-button.vamtam-mobile-content-align-end .elementor-button-text {
+    text-align: end;
+}
+
+.elementor-widget-button.vamtam-mobile-content-align-center .elementor-button-text {
+    text-align: center;
+}
+
+.elementor-widget-button.vamtam-mobile-content-align-space-between .elementor-button-text {
+    text-align: justify;
+}
+
+.elementor-widget-post-comments.vamtam-has-theme-widget-styles #commentform .form-submit {
+    margin: 0 !important;
+}
+
+.elementor-widget-post-comments.vamtam-has-theme-widget-styles .comments .comment-author {
+    display: none;
+}
+
+.vamtam-is-wishlist .page-template-default .meta-header-inside {
+    padding: var(--vamtam-content-space-l) 0;
+}
+
+/*# sourceMappingURL=elementor-small.css.map */
+
+/* Source: .\wp-content\themes\execor\vamtam\assets\css\dist\elementor\responsive\input css 3.css */
+body.responsive-layout #scroll-to-top {
+    bottom: 20px;
+}
+
+body.responsive-layout .page-wrapper {
+    flex-direction: column;
+}
+
+.woocommerce-demo-store .demo_store .woocommerce-store-notice__dismiss-link::before {
+    position: absolute;
+    right: 20px;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    backdrop-filter: saturate(180%) blur(40px);
+    top: calc(var(--vamtam-sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px));
+    z-index: 100;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--mobile:is(.vamtam-sticky-header--spacer, .elementor-sticky__spacer) {
+    position: static !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    will-change: auto !important;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header:not(.vamtam-sticky-header--mobile):is(.vamtam-sticky-header--spacer, .elementor-sticky__spacer) {
+    display: none;
+}
+
+#wpadminbar.vamtam-sticky-mobile-header {
+    position: fixed !important;
+}
+
+/* --- Widgets --- */
+
+.elementor-widget-button.vamtam-tablet-content-align-start .elementor-button-text {
+    text-align: start;
+}
+
+.elementor-widget-button.vamtam-tablet-content-align-end .elementor-button-text {
+    text-align: end;
+}
+
+.elementor-widget-button.vamtam-tablet-content-align-center .elementor-button-text {
+    text-align: center;
+}
+
+.elementor-widget-button.vamtam-tablet-content-align-space-between .elementor-button-text {
+    text-align: justify;
+}
+
+/*# sourceMappingURL=elementor-below-max.css.map */
+
+/* Source: .\wp-content\themes\execor\vamtam\assets\css\dist\elementor\responsive\input css 4.css */
+body:not(.elementor-editor-active) .vamtam-sticky-header {
+    transition: opacity 0.15s, top 0.15s linear, transform 0.15s linear !important;
+    will-change: transform, opacity;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: calc(var(--vamtam-sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px));
+    z-index: 100;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header>.elementor-container {
+    opacity: 0;
+    animation: vamtam-sticky-header-fadein 1s ease forwards;
+}
+
+@keyframes vamtam-sticky-header-fadein {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--transparent-header {
+    transition: opacity 0.15s, top 0.15s linear, transform 0.15s linear, background-color 0.35s ease !important;
+    will-change: transform, opacity, background-color;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-shown:not(.vamtam-sticky-header--offset-on-sticky),
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-hidden:not(.vamtam-sticky-header--offset-on-sticky) {
+    top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-shown {
+    transform: translateY(0);
+    backdrop-filter: saturate(180%) blur(40px);
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-shown.vamtam-sticky-header--transparent-header {
+    background-color: var(--vamtam-sticky-header-bg-color) !important;
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header.vamtam-sticky-header--fixed-hidden {
+    transform: translateY(-100%);
+}
+
+body:not(.elementor-editor-active) .vamtam-sticky-header:is(.vamtam-sticky-header--spacer, .elementor-sticky__spacer) {
+    position: static !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    will-change: auto !important;
+}
+
+[data-elementor-type="header"] {
+    margin-left: var(--vamtam-sticky-mleft);
+    margin-right: var(--vamtam-sticky-mright);
+}
+
+.woocommerce-demo-store .demo_store {
+    padding-right: 50px;
+}
+
+.woocommerce-demo-store .demo_store .woocommerce-store-notice__dismiss-link::before {
+    position: absolute;
+    right: 25px;
+}
+
+/* --- Widgets --- */
+
+.elementor-widget-loop-carousel.vamtam-has-theme-widget-styles .vamtam-show-on-hover {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.elementor-widget-loop-carousel.vamtam-has-theme-widget-styles .e-loop-item:hover .vamtam-show-on-hover {
+    opacity: 1;
+}
+
+/*# sourceMappingURL=elementor-max.css.map */
+
+/* Source: .\wp-content\themes\execor\vamtam\assets\css\dist\elementor\responsive\input css 5.css */
+/* --- Widgets --- */
+
+.elementor-widget-button.vamtam-mobile-content-align-start .elementor-button-text {
+    text-align: start;
+}
+
+.elementor-widget-button.vamtam-mobile-content-align-end .elementor-button-text {
+    text-align: end;
+}
+
+.elementor-widget-button.vamtam-mobile-content-align-center .elementor-button-text {
+    text-align: center;
+}
+
+.elementor-widget-button.vamtam-mobile-content-align-space-between .elementor-button-text {
+    text-align: justify;
+}
+
+.elementor-widget-post-comments.vamtam-has-theme-widget-styles #commentform .form-submit {
+    margin: 0 !important;
+}
+
+.elementor-widget-post-comments.vamtam-has-theme-widget-styles .comments .comment-author {
+    display: none;
+}
+
+.vamtam-is-wishlist .page-template-default .meta-header-inside {
+    padding: var(--vamtam-content-space-l) 0;
+}
+
+/*# sourceMappingURL=elementor-small.css.map */
+
