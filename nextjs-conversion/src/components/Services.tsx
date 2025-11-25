@@ -15,7 +15,8 @@ const Services: React.FC = () => {
           </div>
           <div className="flex-1 text-right">
             <p className="font-['DM_Sans'] text-[18px] font-normal leading-[1.5em] text-[#000000] max-w-lg ml-auto">
-              Comprehensive business solutions tailored to drive growth and operational excellence
+              Comprehensive business solutions tailored to drive growth and
+              operational excellence
             </p>
           </div>
         </div>
@@ -23,13 +24,13 @@ const Services: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Business Consulting Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0s_both]">
-            <div className="flex min-h-[clamp(100px,35vh,280px)] justify-between pt-10 pb-5 pl-6 pr-10">
+            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
               <img
                 width="76"
                 height="76"
                 src="/wp-content/uploads/2025/03/consulting.svg"
                 alt=""
-                className="h-19 w-19"
+                className="h-19 w-19 mb-4"
               />
               <h3 className="font-['DM_Sans'] text-[30px] font-normal leading-[1.2em]">
                 <a
@@ -40,11 +41,11 @@ const Services: React.FC = () => {
                 </a>
               </h3>
             </div>
-            <div className="flex w-full flex-col justify-between pt-5 pb-5 pl-6 pr-6">
-              <ul className="space-y-2">
+            <div className="flex flex-col justify-between pt-5 pb-5 px-6">
+              <ul className="space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -56,7 +57,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -68,7 +69,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -81,7 +82,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/business-consulting/"
-                className="mt-4 inline-flex items-center gap-3 self-end rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
@@ -97,13 +98,13 @@ const Services: React.FC = () => {
 
           {/* Marketing, Sales, & Retention Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0.05s_both]">
-            <div className="flex min-h-[clamp(100px,35vh,280px)] justify-between pt-10 pb-5 pl-6 pr-10">
+            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
               <img
                 width="68"
                 height="76"
                 src="/wp-content/uploads/2025/03/marketing.svg"
                 alt=""
-                className="h-19 w-17"
+                className="h-19 w-17 mb-4"
               />
               <h3 className="font-['DM_Sans'] text-[30px] font-normal leading-[1.2em]">
                 <a
@@ -114,11 +115,11 @@ const Services: React.FC = () => {
                 </a>
               </h3>
             </div>
-            <div className="flex w-full flex-col justify-between pt-5 pb-5 pl-6 pr-6">
-              <ul className="space-y-2">
+            <div className="flex flex-col justify-between pt-5 pb-5 px-6">
+              <ul className="space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -130,7 +131,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -142,7 +143,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -155,7 +156,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/marketing-sales-retention/"
-                className="mt-4 inline-flex items-center gap-3 self-end rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
@@ -171,13 +172,13 @@ const Services: React.FC = () => {
 
           {/* Operations Management Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0.1s_both]">
-            <div className="flex min-h-[clamp(100px,35vh,280px)] justify-between pt-10 pb-5 pl-6 pr-10">
+            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
               <img
                 width="76"
                 height="76"
                 src="/wp-content/uploads/2025/03/operations.svg"
                 alt=""
-                className="h-19 w-19"
+                className="h-19 w-19 mb-4"
               />
               <h3 className="font-['DM_Sans'] text-[30px] font-normal leading-[1.2em]">
                 <a
@@ -188,11 +189,11 @@ const Services: React.FC = () => {
                 </a>
               </h3>
             </div>
-            <div className="flex w-full flex-col justify-between pt-5 pb-5 pl-6 pr-6">
-              <ul className="space-y-2">
+            <div className="flex flex-col justify-between pt-5 pb-5 px-6">
+              <ul className="space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -204,7 +205,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -216,7 +217,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -229,7 +230,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/operations-management/"
-                className="mt-4 inline-flex items-center gap-3 self-end rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
@@ -245,13 +246,13 @@ const Services: React.FC = () => {
 
           {/* Talent Acquisition Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0.15s_both]">
-            <div className="flex min-h-[clamp(100px,35vh,280px)] justify-between pt-10 pb-5 pl-6 pr-10">
+            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
               <img
                 width="68"
                 height="76"
                 src="/wp-content/uploads/2025/03/talent.svg"
                 alt=""
-                className="h-19 w-17"
+                className="h-19 w-17 mb-4"
               />
               <h3 className="font-['DM_Sans'] text-[30px] font-normal leading-[1.2em]">
                 <a
@@ -262,11 +263,11 @@ const Services: React.FC = () => {
                 </a>
               </h3>
             </div>
-            <div className="flex w-full flex-col justify-between pt-5 pb-5 pl-6 pr-6">
-              <ul className="space-y-2">
+            <div className="flex flex-col justify-between pt-5 pb-5 px-6">
+              <ul className="space-y-2 mb-6">
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -278,7 +279,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -290,7 +291,7 @@ const Services: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-[#0F3D3A]"
+                    className="h-4 w-4 text-[#0F3D3A] flex-shrink-0"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -303,7 +304,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/talent-acquisition/"
-                className="mt-4 inline-flex items-center gap-3 self-end rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
