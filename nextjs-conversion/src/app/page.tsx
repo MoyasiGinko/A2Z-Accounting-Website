@@ -5,10 +5,10 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import About from "../components/About";
 import Vision from "../components/Vision";
+import Tabs from "../components/Tabs";
 import Clients from "../components/Clients";
 import ClientStats from "../components/ClientStats";
 import ClientLogos from "../components/ClientLogos";
-import Tabs from "../components/Tabs";
 import Testimonials from "../components/Testimonials";
 import BlogCarousel from "../components/BlogCarousel";
 import NewsletterSignup from "../components/NewsletterSignup";
@@ -63,10 +63,10 @@ export default function Home() {
                     <PromoSection />
                     <About />
                     <Vision />
+                    <Tabs />
                     <Clients />
                     <ClientStats />
                     <ClientLogos />
-                    <Tabs />
                     <Testimonials />
                     <BlogCarousel />
                     <NewsletterSignup />
