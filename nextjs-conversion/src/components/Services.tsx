@@ -13,8 +13,8 @@ const Services: React.FC = () => {
               Our Services
             </h2>
           </div>
-          <div className="flex-1 text-right">
-            <p className="font-['DM_Sans'] text-[18px] font-normal leading-[1.5em] text-[#000000] max-w-lg ml-auto">
+          <div className="flex-1 justify-end text-left self-end">
+            <p className="font-['DM_Sans'] text-[18px] font-normal leading-[1.5em] text-[#000000] max-w-lg">
               Comprehensive business solutions tailored to drive growth and
               operational excellence
             </p>
