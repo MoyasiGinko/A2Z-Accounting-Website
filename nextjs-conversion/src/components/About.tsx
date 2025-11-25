@@ -15,6 +15,9 @@ const About = () => {
         "Expertise in both startups and large enterprises",
         "Strategic guidance for overcoming complex challenges",
       ],
+      contentContainerId: "221944d",
+      textWidgetId: "4d8bced",
+      listWidgetId: "7897082",
     },
     {
       id: "6831",
@@ -29,6 +32,9 @@ const About = () => {
         "We help execute solutions that work in the real world",
         "Every strategy is customized to your specific needs",
       ],
+      contentContainerId: "80875d6",
+      textWidgetId: "46152d7",
+      listWidgetId: "cb9ae01",
     },
     {
       id: "6832",
@@ -43,6 +49,9 @@ const About = () => {
         "Real-time visibility into performance and progress",
         "Strategies built on evidence—not assumptions",
       ],
+      contentContainerId: "80f0841",
+      textWidgetId: "106d08b",
+      listWidgetId: "fcd3dad",
     },
     {
       id: "6833",
@@ -57,6 +66,9 @@ const About = () => {
         "Transparent, responsive, and always aligned with your vision",
         "We track success through outcomes, not just deliverables",
       ],
+      contentContainerId: "16728bf",
+      textWidgetId: "8a5e9ac",
+      listWidgetId: "0af05d2",
     },
   ];
 
@@ -123,7 +135,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Content Section - Exact Elementor Structure */}
+      {/* Content + Accordion Section - Exact Elementor Structure */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div
@@ -291,106 +303,109 @@ const About = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Accordion Section - Exact Elementor Structure */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div
-            className="elementor-element elementor-element-4b2e43b e-con-full e-flex e-con e-child"
-            data-id="4b2e43b"
-            data-element_type="container"
-            data-settings='{"animation":"none"}'
-          >
-            <div
-              className="elementor-element elementor-element-068496a elementor-widget elementor-widget-n-accordion"
-              data-id="068496a"
-              data-element_type="widget"
-              data-settings='{"n_accordion_animation_duration":{"unit":"ms","size":200,"sizes":[]},"default_state":"expanded","max_items_expended":"one"}'
-              data-widget_type="nested-accordion.default"
-            >
-              <div className="elementor-widget-container">
+              <div
+                className="elementor-element elementor-element-4b2e43b e-con-full e-flex e-con e-child"
+                data-id="4b2e43b"
+                data-element_type="container"
+                data-settings='{"animation":"none"}'
+              >
                 <div
-                  className="e-n-accordion"
-                  aria-label="Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys"
+                  className="elementor-element elementor-element-068496a elementor-widget elementor-widget-n-accordion"
+                  data-id="068496a"
+                  data-element_type="widget"
+                  data-settings='{"n_accordion_animation_duration":{"unit":"ms","size":200,"sizes":[]},"default_state":"expanded","max_items_expended":"one"}'
+                  data-widget_type="nested-accordion.default"
                 >
-                  {accordionItems.map((item, index) => (
-                    <details
-                      key={item.id}
-                      id={`e-n-accordion-item-${item.id}`}
-                      className="e-n-accordion-item"
-                      open={item.isOpen}
+                  <div className="elementor-widget-container">
+                    <div
+                      className="e-n-accordion"
+                      aria-label="Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys"
                     >
-                      <summary
-                        className="e-n-accordion-item-title"
-                        data-accordion-index={index + 1}
-                        tabIndex={item.isOpen ? 0 : -1}
-                        aria-expanded={item.isOpen}
-                        aria-controls={`e-n-accordion-item-${item.id}`}
-                      >
-                        <span className="e-n-accordion-item-title-header">
-                          <div className="e-n-accordion-item-title-text">
-                            {item.title}
-                          </div>
-                        </span>
-                        <span className="e-n-accordion-item-title-icon">
-                          <span className="e-opened">
-                            <i
-                              aria-hidden="true"
-                              className="vamtamtheme- vamtam-theme-minus"
-                            ></i>
-                          </span>
-                          <span className="e-closed">
-                            <i
-                              aria-hidden="true"
-                              className="vamtamtheme- vamtam-theme-plus"
-                            ></i>
-                          </span>
-                        </span>
-                      </summary>
-                      <div
-                        role="region"
-                        aria-labelledby={`e-n-accordion-item-${item.id}`}
-                        className="elementor-element elementor-element-221944d e-con-full e-flex e-con e-child"
-                        data-id="221944d"
-                        data-element_type="container"
-                      >
-                        <div
-                          className="elementor-element elementor-element-4d8bced elementor-widget elementor-widget-text-editor"
-                          data-id="4d8bced"
-                          data-element_type="widget"
-                          data-widget_type="text-editor.default"
+                      {accordionItems.map((item, index) => (
+                        <details
+                          key={item.id}
+                          id={`e-n-accordion-item-${item.id}`}
+                          className="e-n-accordion-item"
+                          open={item.isOpen}
                         >
-                          <div className="elementor-widget-container">
-                            {item.content.map((paragraph, pIndex) => (
-                              <p key={pIndex}>{paragraph}</p>
-                            ))}
+                          <summary
+                            className="e-n-accordion-item-title"
+                            data-accordion-index={index + 1}
+                            tabIndex={item.isOpen ? 0 : -1}
+                            aria-expanded={item.isOpen}
+                            aria-controls={`e-n-accordion-item-${item.id}`}
+                          >
+                            <span className="e-n-accordion-item-title-header">
+                              <div className="e-n-accordion-item-title-text">
+                                {item.title}
+                              </div>
+                            </span>
+                            <span className="e-n-accordion-item-title-icon">
+                              <span className="e-opened">
+                                <i
+                                  aria-hidden="true"
+                                  className="vamtamtheme- vamtam-theme-minus"
+                                ></i>
+                              </span>
+                              <span className="e-closed">
+                                <i
+                                  aria-hidden="true"
+                                  className="vamtamtheme- vamtam-theme-plus"
+                                ></i>
+                              </span>
+                            </span>
+                          </summary>
+                          <div
+                            role="region"
+                            aria-labelledby={`e-n-accordion-item-${item.id}`}
+                            className="elementor-element e-con-full e-flex e-con e-child"
+                            data-id={item.contentContainerId}
+                            data-element_type="container"
+                          >
+                            <div
+                              className="elementor-element elementor-widget elementor-widget-text-editor"
+                              data-id={item.textWidgetId}
+                              data-element_type="widget"
+                              data-widget_type="text-editor.default"
+                            >
+                              <div className="elementor-widget-container">
+                                {item.content.map((paragraph, pIndex) => (
+                                  <p key={pIndex}>{paragraph}</p>
+                                ))}
+                              </div>
+                            </div>
+                            <div
+                              className="elementor-element elementor-align-left elementor-tablet-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                              data-id={item.listWidgetId}
+                              data-element_type="widget"
+                              data-widget_type="icon-list.default"
+                            >
+                              <div className="elementor-widget-container">
+                                <ul className="elementor-icon-list-items">
+                                  {item.features.map((feature, fIndex) => (
+                                    <li
+                                      key={fIndex}
+                                      className="elementor-icon-list-item"
+                                    >
+                                      <span className="elementor-icon-list-icon">
+                                        <i
+                                          aria-hidden="true"
+                                          className="vamtamtheme- vamtam-theme-chack-circle"
+                                        ></i>
+                                      </span>
+                                      <span className="elementor-icon-list-text">
+                                        {feature}
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <div className="space-y-3 mt-6">
-                          <ul className="space-y-3">
-                            {item.features.map((feature, fIndex) => (
-                              <li
-                                key={fIndex}
-                                className="flex items-start gap-3"
-                              >
-                                <span className="mt-1 flex-shrink-0">
-                                  <i
-                                    aria-hidden="true"
-                                    className="vamtamtheme- vamtam-theme-chack text-green-500"
-                                  ></i>
-                                </span>
-                                <span>{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </details>
-                  ))}
+                        </details>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
