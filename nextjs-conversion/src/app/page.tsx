@@ -21,6 +21,7 @@ import { useElementReveals } from "../hooks/useElementReveals";
 import { useNavMenus } from "../hooks/useNavMenus";
 import { useCarousels } from "../hooks/useCarousels";
 import { useClientMarquee } from "../hooks/useClientMarquee";
+import PromoSection from "@/components/PromoSection";
 
 export default function Home() {
   // Initialize all scroll and interaction effects
@@ -59,6 +60,7 @@ export default function Home() {
                   >
                     <Hero />
                     <Services />
+                    <PromoSection />
                     <About />
                     <Vision />
                     <Clients />
