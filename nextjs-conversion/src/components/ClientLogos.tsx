@@ -19,7 +19,7 @@ const ClientLogos = () => {
               decoding="async"
               width="196"
               height="90"
-              src="/assets/wp-content/uploads/2025/03/coins.svg"
+              src="/wp-content/uploads/2025/03/coins.svg"
               className="attachment-medium size-medium wp-image-1515"
               alt=""
             />
@@ -38,7 +38,7 @@ const ClientLogos = () => {
               decoding="async"
               width="196"
               height="90"
-              src="/assets/wp-content/uploads/2025/03/swift.svg"
+              src="/wp-content/uploads/2025/03/swift.svg"
               className="attachment-medium size-medium wp-image-1513"
               alt=""
             />
@@ -57,7 +57,7 @@ const ClientLogos = () => {
               decoding="async"
               width="196"
               height="90"
-              src="/assets/wp-content/uploads/2025/03/brand.svg"
+              src="/wp-content/uploads/2025/03/brand.svg"
               className="attachment-medium size-medium wp-image-1511"
               alt=""
             />
@@ -76,7 +76,7 @@ const ClientLogos = () => {
               decoding="async"
               width="196"
               height="90"
-              src="/assets/wp-content/uploads/2025/03/fabrik-2.svg"
+              src="/wp-content/uploads/2025/03/fabrik-2.svg"
               className="attachment-medium size-medium wp-image-1512"
               alt=""
             />
@@ -95,7 +95,7 @@ const ClientLogos = () => {
               decoding="async"
               width="196"
               height="90"
-              src="/assets/wp-content/uploads/2025/03/waves.svg"
+              src="/wp-content/uploads/2025/03/waves.svg"
               className="attachment-medium size-medium wp-image-1514"
               alt=""
             />
@@ -114,7 +114,7 @@ const ClientLogos = () => {
               decoding="async"
               width="196"
               height="90"
-              src="/assets/wp-content/uploads/2025/03/brand-1.svg"
+              src="/wp-content/uploads/2025/03/brand-1.svg"
               className="attachment-medium size-medium wp-image-1509"
               alt=""
             />

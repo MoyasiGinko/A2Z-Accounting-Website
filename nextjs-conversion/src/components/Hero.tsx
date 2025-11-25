@@ -1,81 +1,39 @@
 export default function Hero() {
   return (
-    <div
-      className="elementor-element elementor-element-926da5a e-flex e-con-boxed e-con e-parent"
-      data-id="926da5a"
-      data-element_type="container"
-      data-settings='{"background_background":"classic"}'
+    <section
+      className="relative flex min-h-[clamp(300px,100vh,720px)] items-stretch justify-between bg-[#0F3D3A] bg-cover bg-top bg-no-repeat"
+      style={{
+        backgroundImage: `url('/wp-content/uploads/2025/04/GettyImages-1364777011_edit.png')`,
+      }}
     >
-      <div className="e-con-inner">
-        <div
-          className="elementor-element elementor-element-7523951 e-con-full e-flex e-con e-child"
-          data-id="7523951"
-          data-element_type="container"
-        >
-          <div
-            className="elementor-element elementor-element-19a74d3 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-            data-id="19a74d3"
-            data-element_type="widget"
-            data-settings='{"_animation":"slideInUp"}'
-            data-widget_type="heading.default"
+      <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+      <div className="relative z-10 flex w-full flex-col justify-end pb-[9vh]">
+        <h1 className="font-['Forum'] text-[56px] font-normal leading-[1em] text-white">
+          Transforming Businesses for a{" "}
+          <span className="text-[#C8F8A9]">Stronger Future</span>.
+        </h1>
+        <h5 className="mb-2.5 font-['DM_Sans'] text-[20px] font-normal leading-[1.4em] text-[#F2F5F1]">
+          Guiding businesses at every stage toward strategic success.
+        </h5>
+        <div className="flex items-center gap-12">
+          <a
+            href="https://execor.vamtam.com/free-consultation/"
+            className="inline-flex items-center gap-12 rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
           >
-            <div className="elementor-widget-container">
-              <h1 className="elementor-heading-title elementor-size-default">
-                Transforming Businesses for a{" "}
-                <span className="color-accent-2">Stronger Future</span>.
-              </h1>
-            </div>
-          </div>
-          <div
-            className="elementor-element elementor-element-e754632 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-            data-id="e754632"
-            data-element_type="widget"
-            data-settings='{"_animation":"slideInUp","_animation_delay":100}'
-            data-widget_type="heading.default"
-          >
-            <div className="elementor-widget-container">
-              <h5 className="elementor-heading-title elementor-size-default">
-                Guiding businesses at every stage toward strategic success.
-              </h5>
-            </div>
-          </div>
-          <div
-            className="vamtam-has-theme-widget-styles elementor-element elementor-element-435bc8b elementor-invisible vamtam-icon-pos-row-reverse animated-fast elementor-widget elementor-widget-button"
-            data-id="435bc8b"
-            data-element_type="widget"
-            data-settings='{"_animation":"fadeInUp","_animation_delay":150}'
-            data-widget_type="button.default"
-          >
-            <div className="elementor-widget-container">
-              <div className="elementor-button-wrapper">
-                <a
-                  className="elementor-button elementor-button-link elementor-size-sm"
-                  href="https://execor.vamtam.com/free-consultation/"
-                >
-                  <span className="elementor-button-content-wrapper">
-                    <span className="elementor-button-icon">
-                      <i
-                        aria-hidden="true"
-                        className="vamtamtheme- vamtam-theme-arrow-right"
-                      />
-                    </span>
-                    <span className="elementor-button-text">
-                      Book A Free Strategy Call
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="elementor-element elementor-element-066bb72 e-con-full e-flex e-con e-child"
-          data-id="066bb72"
-          data-element_type="container"
-        >
-          {/* Next part */}
+            <span>Book A Free Strategy Call</span>
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+            </svg>
+          </a>
         </div>
       </div>
-    </div>
+      <div
+        className="relative z-10 w-full overflow-hidden rounded-t-lg bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/wp-content/uploads/2025/03/GettyImages-75546129.jpg')`,
+          marginTop: "110px",
+        }}
+      ></div>
+    </section>
   );
 }

@@ -34,26 +34,51 @@ export default function Home() {
   useClientMarquee();
 
   return (
-    <div>
+    <>
       <div id="top"></div>
       <Header />
-      <Hero />
-      <Services />
-      <About />
-      <Vision />
-      <Clients />
-      <ClientStats />
-      <ClientLogos />
-      <Tabs />
-      <Testimonials />
-      <BlogCarousel />
-      <NewsletterSignup />
+      <div id="page" className="main-container">
+        <div id="main-content">
+          <div id="sub-header" className="layout-full elementor-page-title">
+            <div className="meta-header">
+              {/* Elementor `page-title` location */}
+            </div>
+          </div>
+          <div id="main" role="main" className="vamtam-main layout-full">
+            <div className="page-wrapper">
+              <article
+                id="post-17"
+                className="full post-17 page type-page status-publish hentry"
+              >
+                <div className="page-content clearfix the-content-parent">
+                  <div
+                    data-elementor-type="wp-page"
+                    data-elementor-id="17"
+                    className="elementor elementor-17"
+                    data-elementor-post-type="page"
+                  >
+                    <Hero />
+                    <Services />
+                    <About />
+                    <Vision />
+                    <Clients />
+                    <ClientStats />
+                    <ClientLogos />
+                    <Tabs />
+                    <Testimonials />
+                    <BlogCarousel />
+                    <NewsletterSignup />
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer />
-      {/* Scroll to top button */}
       <div id="scroll-to-top" className="vamtam-scroll-to-top">
         <div id="scroll-to-top-text">top</div>
       </div>
-      {/* The rest of the body content follows the same conversion pattern. */}
-    </div>
+    </>
   );
 }

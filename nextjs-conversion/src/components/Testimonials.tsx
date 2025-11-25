@@ -2,21 +2,21 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1528,
-      image: "/assets/wp-content/uploads/2025/03/GettyImages-1198446248.jpg",
+      image: "/wp-content/uploads/2025/03/GettyImages-1198446248.jpg",
       name: "Daniel Foster",
       title: "CEO, TechStart Inc.",
       quote: "Faster Market Expansion with Our Growth Strategy",
     },
     {
       id: 1570,
-      image: "/assets/wp-content/uploads/2025/03/GettyImages-1198446248.jpg", // Using same image as placeholder
+      image: "/wp-content/uploads/2025/03/GettyImages-1198446248.jpg", // Using same image as placeholder
       name: "Sarah Chen",
       title: "Founder, RetailPro",
       quote: "Transforming Operations for Sustainable Growth",
     },
     {
       id: 1573,
-      image: "/assets/wp-content/uploads/2025/03/GettyImages-1198446248.jpg", // Using same image as placeholder
+      image: "/wp-content/uploads/2025/03/GettyImages-1198446248.jpg", // Using same image as placeholder
       name: "Michael Rodriguez",
       title: "Director, GlobalTech",
       quote: "Strategic Insights That Drive Real Results",

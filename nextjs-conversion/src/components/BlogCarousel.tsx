@@ -2,8 +2,7 @@ const BlogCarousel = () => {
   const blogPosts = [
     {
       id: 1959,
-      image:
-        "/assets/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg",
+      image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg",
       category: "Expert Advice",
       date: "March 29, 2025",
       title: "5 Key Market Trends Every Business Should Watch in 2024",
@@ -12,8 +11,7 @@ const BlogCarousel = () => {
     },
     {
       id: 1955,
-      image:
-        "/assets/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg", // Using same image as placeholder
+      image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg", // Using same image as placeholder
       category: "Success Story",
       date: "March 27, 2025",
       title:
@@ -23,8 +21,7 @@ const BlogCarousel = () => {
     },
     {
       id: 1953,
-      image:
-        "/assets/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg", // Using same image as placeholder
+      image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg", // Using same image as placeholder
       category: "Success Story",
       date: "March 25, 2025",
       title:
@@ -34,8 +31,7 @@ const BlogCarousel = () => {
     },
     {
       id: 1945,
-      image:
-        "/assets/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg", // Using same image as placeholder
+      image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg", // Using same image as placeholder
       category: "Expert Advice",
       date: "March 23, 2025",
       title: "Building Strong Business Foundations: A Strategic Guide",

@@ -1,9 +1,425 @@
-@import "./homepage.css";
-@import "./custom.css";
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Elementor Styles Transformed for Next.js */
+
+/* Root Variables */
+:root {
+  --standalone-animation-distance: 20px;
+  --standalone-animation-duration: 0.55s;
+  --standalone-marquee-duration: 26s;
+  --wp-admin--admin-bar--height: 0px;
+  --vamtam-sticky-offset: 0px;
+  --vamtam-sticky-header-bg-color: rgba(255, 255, 255, 0.97);
+}
+
+/* Base Styles */
+html:not(.standalone-js) .elementor-invisible {
+  @apply opacity-100 visible;
+}
+
+.standalone-js .elementor-invisible {
+  @apply opacity-0 invisible;
+  transform: translateY(var(--standalone-animation-distance));
+}
+
+.standalone-js .standalone-animated {
+  @apply opacity-100 visible;
+  transform: none;
+  animation: standalone-fade-up var(--standalone-animation-duration) ease both;
+}
+
+@keyframes standalone-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--standalone-animation-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive Layout */
+.responsive-layout #scroll-to-top {
+  @apply bottom-5;
+}
+
+.responsive-layout .page-wrapper {
+  @apply flex-col;
+}
+
+/* Sticky Header Styles */
+.vamtam-sticky-header {
+  @apply fixed left-0 right-0 z-[100];
+  top: calc(
+    var(--vamtam-sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px)
+  );
+  transition: opacity 0.15s, top 0.15s linear, transform 0.15s linear !important;
+  will-change: transform, opacity;
+}
+
+.vamtam-sticky-header > .elementor-container {
+  @apply opacity-0;
+  animation: vamtam-sticky-header-fadein 1s ease forwards;
+}
+
+@-webkit-keyframes vamtam-sticky-header-fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vamtam-sticky-header-fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.vamtam-sticky-header--transparent-header {
+  transition: opacity 0.15s, top 0.15s linear, transform 0.15s linear,
+    background-color 0.35s ease !important;
+  will-change: transform, opacity, background-color;
+}
+
+.vamtam-sticky-header--fixed-shown {
+  @apply translate-y-0;
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+}
+
+.vamtam-sticky-header--fixed-shown.vamtam-sticky-header--transparent-header {
+  background-color: var(--vamtam-sticky-header-bg-color) !important;
+}
+
+.vamtam-sticky-header--fixed-hidden {
+  @apply -translate-y-full;
+}
+
+.vamtam-sticky-header--spacer,
+.elementor-sticky__spacer {
+  @apply static !important;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  will-change: auto !important;
+}
+
+/* Mobile Sticky Header */
+.vamtam-sticky-header--mobile {
+  @apply fixed left-0 right-0;
+  backdrop-filter: saturate(180%) blur(40px);
+  top: calc(
+    var(--vamtam-sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px)
+  );
+  @apply z-[100];
+}
+
+.vamtam-sticky-header--mobile.vamtam-sticky-header--spacer,
+.vamtam-sticky-header--mobile.elementor-sticky__spacer {
+  @apply static !important;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  will-change: auto !important;
+}
+
+/* Navigation Menu Toggle */
+@media (max-width: 1024px) {
+  .elementor-nav-menu--toggle .elementor-nav-menu__container {
+    @apply hidden;
+  }
+
+  .elementor-nav-menu--toggle .elementor-nav-menu__container.is-open {
+    @apply block;
+  }
+
+  .elementor-menu-toggle--active .elementor-menu-toggle__icon--open {
+    @apply opacity-0;
+  }
+
+  .elementor-menu-toggle--active .elementor-menu-toggle__icon--close {
+    @apply opacity-100;
+  }
+
+  .elementor-menu-toggle__icon--close {
+    @apply opacity-0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+/* Button Alignments */
+.elementor-widget-button
+  .vamtam-tablet-content-align-start
+  .elementor-button-text {
+  @apply text-start;
+}
+
+.elementor-widget-button
+  .vamtam-tablet-content-align-end
+  .elementor-button-text {
+  @apply text-end;
+}
+
+.elementor-widget-button
+  .vamtam-tablet-content-align-center
+  .elementor-button-text {
+  @apply text-center;
+}
+
+.elementor-widget-button
+  .vamtam-tablet-content-align-space-between
+  .elementor-button-text {
+  @apply text-justify;
+}
+
+.elementor-widget-button
+  .vamtam-mobile-content-align-start
+  .elementor-button-text {
+  @apply text-start;
+}
+
+.elementor-widget-button
+  .vamtam-mobile-content-align-end
+  .elementor-button-text {
+  @apply text-end;
+}
+
+.elementor-widget-button
+  .vamtam-mobile-content-align-center
+  .elementor-button-text {
+  @apply text-center;
+}
+
+.elementor-widget-button
+  .vamtam-mobile-content-align-space-between
+  .elementor-button-text {
+  @apply text-justify;
+}
+
+/* Carousel Styles */
+.elementor-widget-loop-carousel
+  .vamtam-has-theme-widget-styles
+  .vamtam-show-on-hover {
+  @apply opacity-0;
+  transition: 0.3s ease-in-out;
+}
+
+.elementor-widget-loop-carousel
+  .vamtam-has-theme-widget-styles
+  .e-loop-item:hover
+  .vamtam-show-on-hover {
+  @apply opacity-100;
+}
+
+.elementor-widget-loop-carousel .swiper {
+  @apply invisible;
+}
+
+.elementor-widget-loop-carousel .swiper.is-ready {
+  @apply visible;
+}
+
+/* Marquee Animation */
+.standalone-marquee {
+  @apply overflow-hidden relative;
+}
+
+.standalone-marquee-track {
+  @apply flex flex-nowrap gap-8 items-center;
+  animation: standalone-marquee var(--standalone-marquee-duration, 26s) linear
+    infinite;
+}
+
+.standalone-marquee-track > * {
+  @apply flex-none;
+}
+
+.standalone-marquee-track:hover,
+.standalone-marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes standalone-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Standalone Header */
+.standalone-header-spacer {
+  @apply block !important;
+  height: var(--standalone-header-height);
+}
+
+.standalone-header {
+  @apply fixed top-0 left-0 right-0 w-full z-[1000];
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 45px rgba(15, 61, 58, 0.12);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  will-change: transform;
+}
+
+.standalone-header.is-hidden {
+  transform: translate3d(0, -110%, 0);
+  box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+  .standalone-header {
+    background-color: rgba(15, 61, 58, 0.98);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Sticky Stats Section */
+@media (min-width: 1025px) {
+  .elementor-element-9383430 {
+    @apply sticky;
+    top: 30px;
+  }
+  .elementor-element-15cd221 {
+    @apply sticky;
+    top: 30px;
+  }
+  .elementor-element-17db5fd {
+    @apply sticky;
+    top: 155px;
+  }
+  .elementor-element-1c92f80 {
+    @apply sticky;
+    top: 280px;
+  }
+  .elementor-element-258db91 {
+    @apply sticky;
+    top: 400px;
+  }
+  .elementor-element-e988fa2 {
+    @apply sticky;
+    top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .elementor-element-9383430 {
+    @apply sticky;
+    top: 30px;
+  }
+  .elementor-element-15cd221 {
+    @apply sticky;
+    top: 30px;
+  }
+  .elementor-element-17db5fd {
+    @apply sticky;
+    top: 125px;
+  }
+  .elementor-element-1c92f80 {
+    @apply sticky;
+    top: 220px;
+  }
+  .elementor-element-258db91 {
+    @apply sticky;
+    top: 310px;
+  }
+  .elementor-element-e988fa2 {
+    @apply sticky;
+    top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .elementor-element-15cd221 {
+    @apply sticky;
+    top: 60px;
+  }
+  .elementor-element-17db5fd {
+    @apply sticky;
+    top: 200px;
+  }
+  .elementor-element-1c92f80 {
+    @apply sticky;
+    top: 340px;
+  }
+  .elementor-element-258db91 {
+    @apply sticky;
+    top: 475px;
+  }
+  .elementor-element-9383430,
+  .elementor-element-e988fa2 {
+    @apply relative;
+  }
+}
+
+/* WooCommerce Demo Store */
+.woocommerce-demo-store .demo_store {
+  @apply pr-12;
+}
+
+.woocommerce-demo-store
+  .demo_store
+  .woocommerce-store-notice__dismiss-link::before {
+  @apply absolute right-5;
+}
+
+/* Comments */
+.elementor-widget-post-comments
+  .vamtam-has-theme-widget-styles
+  #commentform
+  .form-submit {
+  @apply m-0 !important;
+}
+
+.elementor-widget-post-comments
+  .vamtam-has-theme-widget-styles
+  .comments
+  .comment-author {
+  @apply hidden;
+}
+
+/* Wishlist */
+.vamtam-is-wishlist .page-template-default .meta-header-inside {
+  padding: var(--vamtam-content-space-l) 0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .standalone-js .standalone-animated {
+    animation: none;
+    @apply opacity-100;
+    transform: none;
+  }
+
+  .standalone-marquee-track {
+    animation: none;
+  }
+}

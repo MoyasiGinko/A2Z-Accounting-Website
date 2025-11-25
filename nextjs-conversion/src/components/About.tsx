@@ -84,7 +84,7 @@ const About = () => {
                     decoding="async"
                     width="143"
                     height="76"
-                    src="/assets/wp-content/uploads/2025/03/GettyImages-1958747481.svg"
+                    src="/wp-content/uploads/2025/03/GettyImages-1958747481.svg"
                     className="attachment-medium size-medium wp-image-591"
                     alt=""
                   />
