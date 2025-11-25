@@ -1,146 +1,263 @@
-"use client";
+import React from "react";
 
-import { useEffect, useState } from "react";
-
-export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Trigger animations on mount
-    setIsVisible(true);
-  }, []);
-
+const Hero = () => {
   return (
     <>
-      <section className="relative flex min-h-[clamp(300px,100vh,720px)] items-stretch overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-top bg-repeat-x"
-          style={{
-            backgroundImage: `url('/wp-content/uploads/2025/04/GettyImages-1364777011_edit.png')`,
-          }}
-        />
-
-        {/* Background Color Overlay */}
-        <div className="absolute inset-0 bg-[#0F3D3A] mix-blend-overlay opacity-90" />
-
-        {/* Content Container */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-end">
-          {/* Left Content - Centered */}
-          <div className="self-end flex mb-20 flex-col justify-end items-center text-center lg:items-start lg:text-left">
-            {/* Main Heading */}
-            <h1
-              className={`font-['Forum'] text-[clamp(2.5rem,5vw,3.5rem)] font-normal leading-[1em] text-white mb-4 transition-all duration-1000 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
-              }`}
-            >
-              Transforming Businesses for a{" "}
-              <span className="text-[#C8F8A9]">Stronger Future</span>.
-            </h1>
-
-            {/* Subtitle */}
-            <h5
-              className={`font-['DM_Sans'] text-[clamp(1.125rem,2.5vw,1.25rem)] font-normal leading-[1.4em] text-[#F2F5F1] mb-8 transition-all duration-1000 delay-100 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
-              }`}
-            >
-              Guiding businesses at every stage toward strategic success.
-            </h5>
-
-            {/* CTA Button */}
+      <div
+        className="elementor-element elementor-element-926da5a e-flex e-con-boxed e-con e-parent"
+        data-id="926da5a"
+        data-element_type="container"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div className="e-con-inner">
+          <div
+            className="elementor-element elementor-element-7523951 e-con-full e-flex e-con e-child"
+            data-id="7523951"
+            data-element_type="container"
+          >
             <div
-              className={`transition-all duration-1000 delay-200 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
-              }`}
+              className="elementor-element elementor-element-19a74d3 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
+              data-id="19a74d3"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp"}'
+              data-widget_type="heading.default"
             >
-              <a
-                href="/free-consultation"
-                className="group inline-flex items-center gap-3 rounded-lg bg-[#C8F8A9] px-6 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-all duration-300 hover:bg-[#0F3D3A] hover:text-[#F2F5F1] hover:shadow-lg"
-              >
-                <span>Book A Free Strategy Call</span>
-                <svg
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                </svg>
-              </a>
+              <div className="elementor-widget-container">
+                <h1 className="elementor-heading-title elementor-size-default">
+                  Тransforming Businesses for a
+                  <span className="color-accent-2">Stronger Future</span>.
+                </h1>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-e754632 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
+              data-id="e754632"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp","_animation_delay":100}'
+              data-widget_type="heading.default"
+            >
+              <div className="elementor-widget-container">
+                <h5 className="elementor-heading-title elementor-size-default">
+                  Guiding businesses at every stage toward strategic success.
+                </h5>
+              </div>
+            </div>
+            <div
+              className="vamtam-has-theme-widget-styles elementor-element elementor-element-435bc8b elementor-invisible vamtam-icon-pos-row-reverse animated-fast elementor-widget elementor-widget-button"
+              data-id="435bc8b"
+              data-element_type="widget"
+              data-settings='{"_animation":"fadeInUp","_animation_delay":150}'
+              data-widget_type="button.default"
+            >
+              <div className="elementor-widget-container">
+                <div className="elementor-button-wrapper">
+                  <a
+                    className="elementor-button elementor-button-link elementor-size-sm"
+                    href="https://execor.vamtam.com/free-consultation/"
+                  >
+                    <span className="elementor-button-content-wrapper">
+                      <span className="elementor-button-icon">
+                        <i
+                          aria-hidden="true"
+                          className="vamtamtheme- vamtam-theme-arrow-right"
+                        ></i>
+                      </span>
+                      <span className="elementor-button-text">
+                        Book A Free Strategy Call
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Right Side Image */}
           <div
-            className={`relative overflow-hidden rounded-t-lg bg-cover bg-center bg-no-repeat w-full max-w-[512px] h-[clamp(320px,70vh,610px)] justify-self-center transition-all duration-1000 delay-300 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-8 opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url('/wp-content/uploads/2025/03/GettyImages-75546129.jpg')`,
-              marginTop: "clamp(2rem, 10vh, 4rem)",
-            }}
-          />
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
-      </section>
-
-      {/* New Section: What Sets Us Apart */}
-      <section className="w-full bg-[#C8F8A9] py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="font-['DM_Sans'] text-lg text-[#0F3D3A] flex flex-wrap justify-between gap-6 items-center">
-            <span className=" text-lg ">What Sets Us Apart</span>
-            <span className="flex items-center gap-2">
-              <svg
-                className="h-5 w-5 text-[#0F3D3A]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+            className="elementor-element elementor-element-066bb72 e-con-full e-flex e-con e-child"
+            data-id="066bb72"
+            data-element_type="container"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div
+              className="elementor-element elementor-element-986acae e-con-full e-flex e-con e-child"
+              data-id="986acae"
+              data-element_type="container"
+              data-settings='{"position":"absolute"}'
+            >
+              <div
+                className="elementor-element elementor-element-574facb elementor-widget elementor-widget-template"
+                data-id="574facb"
+                data-element_type="widget"
+                data-widget_type="template.default"
               >
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
-              Data-Driven Strategies
-            </span>
-            <span className="flex items-center gap-2">
-              <svg
-                className="h-5 w-5 text-[#0F3D3A]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
-              Proven Results
-            </span>
-            <span className="flex items-center gap-2">
-              <svg
-                className="h-5 w-5 text-[#0F3D3A]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
-              Scalable Growth
-            </span>
-            <span className="flex items-center gap-2">
-              <svg
-                className="h-5 w-5 text-[#0F3D3A]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
-              Trusted Expertise
-            </span>
+                <div className="elementor-widget-container">
+                  <div className="elementor-template">
+                    <div
+                      data-elementor-type="container"
+                      data-elementor-id="7162"
+                      className="elementor elementor-7162"
+                      data-elementor-post-type="elementor_library"
+                    >
+                      <div
+                        className="elementor-element elementor-element-c895366 e-con-full e-flex e-con e-child"
+                        data-id="c895366"
+                        data-element_type="container"
+                      >
+                        <div
+                          className="elementor-element elementor-element-37bc217 e-con-full blur-background e-flex e-con e-child"
+                          data-id="37bc217"
+                          data-element_type="container"
+                        ></div>
+                        <div
+                          className="elementor-element elementor-element-7aa6fbd e-con-full blur-background e-flex e-con e-child"
+                          data-id="7aa6fbd"
+                          data-element_type="container"
+                        ></div>
+                        <div
+                          className="elementor-element elementor-element-5500eb5 e-con-full blur-background e-flex e-con e-child"
+                          data-id="5500eb5"
+                          data-element_type="container"
+                        ></div>
+                        <div
+                          className="elementor-element elementor-element-ba4229b e-con-full blur-background e-flex e-con e-child"
+                          data-id="ba4229b"
+                          data-element_type="container"
+                        ></div>
+                        <div
+                          className="elementor-element elementor-element-0df9fbc e-con-full blur-background e-flex e-con e-child"
+                          data-id="0df9fbc"
+                          data-element_type="container"
+                        ></div>
+                        <div
+                          className="elementor-element elementor-element-a5c7002 e-con-full blur-background elementor-hidden-mobile e-flex e-con e-child"
+                          data-id="a5c7002"
+                          data-element_type="container"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div
+        className="elementor-element elementor-element-06c1139 e-flex e-con-boxed e-con e-parent"
+        data-id="06c1139"
+        data-element_type="container"
+        data-settings='{"background_background":"gradient"}'
+      >
+        <div className="e-con-inner">
+          <div
+            className="elementor-element elementor-element-f842de0 elementor-widget elementor-widget-heading"
+            data-id="f842de0"
+            data-element_type="widget"
+            data-widget_type="heading.default"
+          >
+            <div className="elementor-widget-container">
+              <h6 className="elementor-heading-title elementor-size-default">
+                What Sets Us Apart
+              </h6>
+            </div>
+          </div>
+          <div
+            className="elementor-element elementor-element-03d8cb6 e-con-full e-flex e-con e-child"
+            data-id="03d8cb6"
+            data-element_type="container"
+          >
+            <div
+              className="elementor-element elementor-element-15e2a23 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
+              data-id="15e2a23"
+              data-element_type="widget"
+              data-widget_type="icon-list.default"
+            >
+              <div className="elementor-widget-container">
+                <ul className="elementor-icon-list-items elementor-inline-items">
+                  <li className="elementor-icon-list-item elementor-inline-item">
+                    <span className="elementor-icon-list-icon">
+                      <i
+                        aria-hidden="true"
+                        className="vamtamtheme- vamtam-theme-chack-circle"
+                      ></i>
+                    </span>
+                    <span className="elementor-icon-list-text">
+                      Data-Driven Strategies
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-86c68d2 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
+              data-id="86c68d2"
+              data-element_type="widget"
+              data-widget_type="icon-list.default"
+            >
+              <div className="elementor-widget-container">
+                <ul className="elementor-icon-list-items elementor-inline-items">
+                  <li className="elementor-icon-list-item elementor-inline-item">
+                    <span className="elementor-icon-list-icon">
+                      <i
+                        aria-hidden="true"
+                        className="vamtamtheme- vamtam-theme-chack-circle"
+                      ></i>
+                    </span>
+                    <span className="elementor-icon-list-text">
+                      Proven Results
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-6a31a18 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
+              data-id="6a31a18"
+              data-element_type="widget"
+              data-widget_type="icon-list.default"
+            >
+              <div className="elementor-widget-container">
+                <ul className="elementor-icon-list-items elementor-inline-items">
+                  <li className="elementor-icon-list-item elementor-inline-item">
+                    <span className="elementor-icon-list-icon">
+                      <i
+                        aria-hidden="true"
+                        className="vamtamtheme- vamtam-theme-chack-circle"
+                      ></i>
+                    </span>
+                    <span className="elementor-icon-list-text">
+                      Scalable Growth
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-e7cdd1d elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
+              data-id="e7cdd1d"
+              data-element_type="widget"
+              data-widget_type="icon-list.default"
+            >
+              <div className="elementor-widget-container">
+                <ul className="elementor-icon-list-items elementor-inline-items">
+                  <li className="elementor-icon-list-item elementor-inline-item">
+                    <span className="elementor-icon-list-icon">
+                      <i
+                        aria-hidden="true"
+                        className="vamtamtheme- vamtam-theme-chack-circle"
+                      ></i>
+                    </span>
+                    <span className="elementor-icon-list-text">
+                      Trusted Expertise
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
-}
+};
+
+export default Hero;

@@ -441,3 +441,342 @@ html:not(.standalone-js) .elementor-invisible {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Accordion Styles - Exact Elementor Replication */
+.accordion-container {
+  --accordion-animation-duration: 200ms;
+}
+
+.accordion-item {
+  transition: all var(--accordion-animation-duration) ease;
+}
+
+.accordion-item[open] {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.accordion-summary {
+  transition: background-color 0.15s ease;
+}
+
+.accordion-content {
+  animation: accordion-slide-down var(--accordion-animation-duration) ease;
+}
+
+@keyframes accordion-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elementor Nested Accordion Styles - Exact Replication */
+.e-n-accordion {
+  --n-accordion-border-radius: 0px;
+  --n-accordion-border-width: 1px;
+  --n-accordion-border-color: #e0e0e0;
+  --n-accordion-title-normal-background-color: #ffffff;
+  --n-accordion-title-hover-background-color: #f8f9fa;
+  --n-accordion-title-active-background-color: #f8f9fa;
+  --n-accordion-title-normal-color: #333333;
+  --n-accordion-title-hover-color: #333333;
+  --n-accordion-title-active-color: #333333;
+  --n-accordion-title-normal-icon-color: #333333;
+  --n-accordion-title-hover-icon-color: #333333;
+  --n-accordion-title-active-icon-color: #333333;
+  --n-accordion-content-background-color: #f8f9fa;
+  --n-accordion-content-color: #666666;
+  --n-accordion-icon-size: 16px;
+  --n-accordion-title-padding: 20px 24px;
+  --n-accordion-content-padding: 20px 24px;
+  --n-accordion-title-font-size: 16px;
+  --n-accordion-content-font-size: 14px;
+  --n-accordion-title-font-weight: 600;
+  --n-accordion-content-font-weight: 400;
+  --n-accordion-transition-duration: 200ms;
+}
+
+.e-n-accordion-item {
+  border: var(--n-accordion-border-width) solid var(--n-accordion-border-color);
+  border-radius: var(--n-accordion-border-radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+  background-color: var(--n-accordion-title-normal-background-color);
+  transition: all var(--n-accordion-transition-duration) ease;
+}
+
+.e-n-accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.e-n-accordion-item[open] {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.e-n-accordion-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--n-accordion-title-padding);
+  background-color: var(--n-accordion-title-normal-background-color);
+  color: var(--n-accordion-title-normal-color);
+  font-size: var(--n-accordion-title-font-size);
+  font-weight: var(--n-accordion-title-font-weight);
+  cursor: pointer;
+  transition: all var(--n-accordion-transition-duration) ease;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.e-n-accordion-item-title:hover {
+  background-color: var(--n-accordion-title-hover-background-color);
+  color: var(--n-accordion-title-hover-color);
+}
+
+.e-n-accordion-item-title:focus {
+  outline: 2px solid #007cba;
+  outline-offset: -2px;
+}
+
+.e-n-accordion-item-title-header {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.e-n-accordion-item-title-text {
+  flex: 1;
+  margin: 0;
+}
+
+.e-n-accordion-item-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  transition: transform var(--n-accordion-transition-duration) ease;
+}
+
+.e-n-accordion-item[open] .e-n-accordion-item-title-icon {
+  transform: rotate(180deg);
+}
+
+.e-opened,
+.e-closed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.e-n-accordion-item:not([open]) .e-opened {
+  display: none;
+}
+
+.e-n-accordion-item[open] .e-closed {
+  display: none;
+}
+
+.e-n-accordion-item > div[role="region"] {
+  background-color: var(--n-accordion-content-background-color);
+  color: var(--n-accordion-content-color);
+  font-size: var(--n-accordion-content-font-size);
+  font-weight: var(--n-accordion-content-font-weight);
+  padding: var(--n-accordion-content-padding);
+  border-top: var(--n-accordion-border-width) solid
+    var(--n-accordion-border-color);
+  animation: e-n-accordion-slide-down var(--n-accordion-transition-duration)
+    ease;
+}
+
+@keyframes e-n-accordion-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elementor Icon List Styles */
+.elementor-icon-list-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.elementor-icon-list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.elementor-icon-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.elementor-icon-list-icon {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.elementor-icon-list-text {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Elementor Button Styles */
+.elementor-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+}
+
+.elementor-button:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.elementor-button-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.elementor-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.elementor-button-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Elementor Heading Styles */
+.elementor-heading-title {
+  margin: 0;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.elementor-heading-title.elementor-size-default {
+  font-size: inherit;
+}
+
+/* Elementor Container Styles */
+.e-con {
+  --container-max-width: 1200px;
+  --container-widget-width: 100%;
+  --container-default-padding: 20px;
+  --container-default-padding-tablet: 15px;
+  --container-default-padding-mobile: 10px;
+}
+
+.e-con-inner {
+  width: var(--container-widget-width);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.e-con.e-parent {
+  padding: var(--container-default-padding);
+}
+
+.e-con-boxed .e-con-inner {
+  max-width: var(--container-max-width);
+}
+
+.e-flex {
+  display: flex;
+}
+
+.e-con-full {
+  width: 100%;
+}
+
+.e-con.e-child {
+  flex: 1;
+}
+
+/* Elementor Widget Styles */
+.elementor-widget-container {
+  position: relative;
+}
+
+.elementor-widget {
+  margin-bottom: 20px;
+}
+
+.elementor-widget:last-child {
+  margin-bottom: 0;
+}
+
+/* Elementor Spacer Styles */
+.elementor-spacer {
+  width: 100%;
+}
+
+.elementor-spacer-inner {
+  height: 40px;
+  clear: both;
+}
+
+/* Elementor Image Styles */
+.elementor-widget-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Gradient Background for Cards */
+[data-settings*="gradient"] {
+  background: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #7c3aed 50%,
+    #2563eb 100%
+  ) !important;
+}
+
+/* Vamtam Theme Icons */
+.vamtamtheme- {
+  font-family: "vamtam-theme-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Icon Colors */
+.text-green-500 {
+  color: #10b981;
+}
