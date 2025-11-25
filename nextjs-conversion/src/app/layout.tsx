@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 export const metadata: Metadata = {
-  title: "A2Z Accounting Dubai",
-  description: "Professional accounting services in Dubai",
+  title: "A2Z Accounting Dubai | Professional Accounting & Consulting Services",
+  description:
+    "Transforming businesses for a stronger future. Strategic insights, lasting impact. Professional accounting, tax, and consulting services in Dubai.",
+  keywords:
+    "accounting Dubai, tax services, business consulting, financial planning, audit services",
+  authors: [{ name: "A2Z Accounting" }],
+  creator: "A2Z Accounting",
+  publisher: "A2Z Accounting",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: [
       {
@@ -28,6 +40,30 @@ export const metadata: Metadata = {
         },
       ],
     },
+  },
+  openGraph: {
+    title: "A2Z Accounting Dubai | Professional Accounting Services",
+    description:
+      "Transforming businesses for a stronger future with expert accounting and consulting services in Dubai.",
+    url: "https://execor.vamtam.com",
+    siteName: "A2Z Accounting",
+    images: [
+      {
+        url: "/wp-content/uploads/2025/04/GettyImages-1364777011_edit.png",
+        width: 1200,
+        height: 630,
+        alt: "A2Z Accounting Dubai",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A2Z Accounting Dubai | Professional Accounting Services",
+    description:
+      "Transforming businesses for a stronger future with expert accounting and consulting services in Dubai.",
+    images: ["/wp-content/uploads/2025/04/GettyImages-1364777011_edit.png"],
   },
 };
 
@@ -59,7 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body className="home wp-singular page-template-default page page-id-17 wp-custom-logo wp-embed-responsive wp-theme-execor full header-layout-logo-menu has-page-header no-middle-header responsive-layout vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-slider-active vamtam-font-smoothing layout-full elementor-default elementor-kit-5 elementor-page elementor-page-17">
-        {children}
+        <ErrorBoundary>{children}</ErrorBoundary>
       </body>
     </html>
   );
