@@ -24,7 +24,7 @@ const Services: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Business Consulting Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0s_both]">
-            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
+            <div className="flex flex-col items-start text-left pt-10 pb-5 px-6">
               <img
                 width="76"
                 height="76"
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/business-consulting/"
-                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-between w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
@@ -98,7 +98,7 @@ const Services: React.FC = () => {
 
           {/* Marketing, Sales, & Retention Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0.05s_both]">
-            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
+            <div className="flex flex-col items-start text-left pt-10 pb-5 px-6">
               <img
                 width="68"
                 height="76"
@@ -156,7 +156,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/marketing-sales-retention/"
-                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-between w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
@@ -172,7 +172,7 @@ const Services: React.FC = () => {
 
           {/* Operations Management Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0.1s_both]">
-            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
+            <div className="flex flex-col items-start text-left pt-10 pb-5 px-6">
               <img
                 width="76"
                 height="76"
@@ -200,7 +200,7 @@ const Services: React.FC = () => {
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                   </svg>
                   <span className="font-['DM_Sans'] text-[16px] font-normal leading-[1.5em] text-[#000000]">
-                    Process optimization
+                    Process optimization & automation
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
@@ -212,7 +212,7 @@ const Services: React.FC = () => {
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                   </svg>
                   <span className="font-['DM_Sans'] text-[16px] font-normal leading-[1.5em] text-[#000000]">
-                    Cost reduction & efficiency
+                    Resource allocation & management
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
@@ -224,13 +224,13 @@ const Services: React.FC = () => {
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                   </svg>
                   <span className="font-['DM_Sans'] text-[16px] font-normal leading-[1.5em] text-[#000000]">
-                    KPI tracking & insights
+                    Performance monitoring & reporting
                   </span>
                 </li>
               </ul>
               <a
                 href="https://execor.vamtam.com/services/operations-management/"
-                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-between w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
@@ -246,7 +246,7 @@ const Services: React.FC = () => {
 
           {/* Talent Acquisition Card */}
           <div className="flex w-full flex-col justify-between gap-0 overflow-hidden border border-[#0000001A] bg-[#F2F5F1] transition-all duration-300 rounded-lg hover:bg-[#C8F8A9] hover:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.06)] animate-[slideInUp_0.6s_ease-out_0.15s_both]">
-            <div className="flex flex-col items-center text-center pt-10 pb-5 px-6">
+            <div className="flex flex-col items-start text-left pt-10 pb-5 px-6">
               <img
                 width="68"
                 height="76"
@@ -304,7 +304,7 @@ const Services: React.FC = () => {
               </ul>
               <a
                 href="https://execor.vamtam.com/services/talent-acquisition/"
-                className="inline-flex items-center justify-center gap-3 w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
+                className="inline-flex items-center justify-between w-full rounded-lg bg-[#C8F8A9] px-4 py-4 font-['DM_Sans'] text-[14px] font-medium leading-[1em] text-[#0F3D3A] transition-colors hover:bg-[#0F3D3A] hover:text-[#F2F5F1]"
               >
                 <span>Learn More</span>
                 <svg
