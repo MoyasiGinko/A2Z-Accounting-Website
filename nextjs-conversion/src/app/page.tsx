@@ -17,6 +17,8 @@ import { useScrollEffects } from "../hooks/useScrollEffects";
 import { useStickyHeader } from "../hooks/useStickyHeader";
 import { useScrollToTop } from "../hooks/useScrollToTop";
 import { useOverlayTriggers } from "../hooks/useOverlayTriggers";
+import { useElementReveals } from "../hooks/useElementReveals";
+import { useNavMenus } from "../hooks/useNavMenus";
 
 export default function Home() {
   // Initialize all scroll and interaction effects
@@ -24,6 +26,8 @@ export default function Home() {
   useStickyHeader();
   useScrollToTop();
   useOverlayTriggers();
+  useElementReveals();
+  useNavMenus();
 
   return (
     <div>
@@ -41,6 +45,10 @@ export default function Home() {
       <BlogCarousel />
       <NewsletterSignup />
       <Footer />
+      {/* Scroll to top button */}
+      <div id="scroll-to-top" className="vamtam-scroll-to-top">
+        <div id="scroll-to-top-text">top</div>
+      </div>
       {/* The rest of the body content follows the same conversion pattern. */}
     </div>
   );
