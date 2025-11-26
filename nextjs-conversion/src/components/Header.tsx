@@ -1,338 +1,425 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+type SubMenuItem = {
+  key: string;
+  liClass: string;
+  linkClass: string;
+  href: string;
+  label: string;
+  ariaCurrent?: "page";
+};
+
+type PrimaryMenuItem = {
+  key: string;
+  liClass: string;
+  linkClass: string;
+  href: string;
+  label: string;
+  ariaCurrent?: "page";
+  children?: SubMenuItem[];
+};
+
+const MENU_ITEMS: PrimaryMenuItem[] = [
+  {
+    key: "289",
+    liClass:
+      "menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-289",
+    linkClass: "elementor-item elementor-item-anchor",
+    href: "#",
+    label: "H",
+    children: [
+      {
+        key: "290",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-290",
+        linkClass: "elementor-sub-item elementor-item-active",
+        href: "https://execor.vamtam.com/",
+        label: "Consulting Company\u00A0",
+        ariaCurrent: "page",
+      },
+      {
+        key: "3944",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-3944",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/accounting-tax-audit-cpa/",
+        label: "Accounting Tax Audit CPA",
+      },
+    ],
+  },
+  {
+    key: "6511",
+    liClass:
+      "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6511",
+    linkClass: "elementor-item",
+    href: "https://execor.vamtam.com/services/",
+    label: "Services",
+    children: [
+      {
+        key: "287",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-287",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/services/business-consulting/",
+        label: "Business Consulting",
+      },
+      {
+        key: "286",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-286",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/services/marketing-sales-retention/",
+        label: "Marketing, Sales, & Retention",
+      },
+      {
+        key: "285",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-285",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/services/operations-management/",
+        label: "Operations Management",
+      },
+      {
+        key: "284",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-284",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/services/talent-acquisition/",
+        label: "Talent Acquisition",
+      },
+    ],
+  },
+  {
+    key: "278",
+    liClass:
+      "menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-278",
+    linkClass: "elementor-item",
+    href: "https://execor.vamtam.com/about/",
+    label: "About",
+    children: [
+      {
+        key: "288",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-288",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/about/",
+        label: "Who We Are",
+      },
+      {
+        key: "281",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-281",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/about/team/",
+        label: "Our Team",
+      },
+      {
+        key: "282",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-282",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/about/careers/",
+        label: "Careers",
+      },
+      {
+        key: "279",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-279",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/about/testimonials/",
+        label: "Testimonials",
+      },
+      {
+        key: "280",
+        liClass:
+          "menu-item menu-item-type-post_type menu-item-object-page menu-item-280",
+        linkClass: "elementor-sub-item",
+        href: "https://execor.vamtam.com/about/press-release/",
+        label: "Press Release",
+      },
+    ],
+  },
+  {
+    key: "277",
+    liClass:
+      "menu-item menu-item-type-post_type menu-item-object-page menu-item-277",
+    linkClass: "elementor-item",
+    href: "https://execor.vamtam.com/case-studies/",
+    label: "Case Studies",
+  },
+  {
+    key: "276",
+    liClass:
+      "menu-item menu-item-type-post_type menu-item-object-page menu-item-276",
+    linkClass: "elementor-item",
+    href: "https://execor.vamtam.com/blog/",
+    label: "Blog",
+  },
+  {
+    key: "275",
+    liClass:
+      "menu-item menu-item-type-post_type menu-item-object-page menu-item-275",
+    linkClass: "elementor-item",
+    href: "https://execor.vamtam.com/contact/",
+    label: "Contact",
+  },
+];
+
+type MenuListProps = {
+  menuId: string;
+  tabIndex?: number;
+  onLinkClick?: () => void;
+};
+
+const MenuList = ({ menuId, tabIndex, onLinkClick }: MenuListProps) => {
+  const computedTabIndex = typeof tabIndex === "number" ? tabIndex : undefined;
+
+  return (
+    <ul id={menuId} className="elementor-nav-menu">
+      {MENU_ITEMS.map((item) => (
+        <li key={`${menuId}-${item.key}`} className={item.liClass}>
+          <a
+            href={item.href}
+            className={item.linkClass}
+            aria-current={item.ariaCurrent}
+            tabIndex={computedTabIndex}
+            onClick={onLinkClick}
+          >
+            {item.label}
+          </a>
+          {item.children && (
+            <ul className="sub-menu elementor-nav-menu--dropdown">
+              {item.children.map((child) => (
+                <li key={`${menuId}-${child.key}`} className={child.liClass}>
+                  <a
+                    href={child.href}
+                    className={child.linkClass}
+                    aria-current={child.ariaCurrent}
+                    tabIndex={computedTabIndex}
+                    onClick={onLinkClick}
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+type NavWidgetProps = {
+  mainId: string;
+  dropdownId: string;
+  isMenuOpen: boolean;
+  onToggle: () => void;
+  onLinkClick: () => void;
+};
+
+const NavWidget = ({
+  mainId,
+  dropdownId,
+  isMenuOpen,
+  onToggle,
+  onLinkClick,
+}: NavWidgetProps) => (
+  <div
+    className="vamtam-has-theme-widget-styles elementor-element elementor-element-1243e1d elementor-nav-menu__align-center elementor-nav-menu--dropdown-mobile elementor-nav-menu--stretch elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu"
+    data-id="1243e1d"
+    data-element_type="widget"
+    data-settings='{"submenu_icon":{"value":"<i class=\"\"></i>","library":""},"full_width":"stretch","layout":"horizontal","toggle":"burger"}'
+    data-widget_type="nav-menu.default"
+  >
+    <div className="elementor-widget-container">
+      <nav
+        aria-label="Menu"
+        className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-grow"
+      >
+        <MenuList menuId={mainId} />
+      </nav>
+      <button
+        type="button"
+        className={`elementor-menu-toggle${
+          isMenuOpen ? " elementor-active" : ""
+        }`}
+        aria-label="Menu Toggle"
+        aria-expanded={isMenuOpen}
+        onClick={onToggle}
+      >
+        <i
+          aria-hidden="true"
+          role="presentation"
+          className="elementor-menu-toggle__icon--open vamtamtheme- vamtam-theme-menu"
+        ></i>
+        <i
+          aria-hidden="true"
+          role="presentation"
+          className="elementor-menu-toggle__icon--close vamtamtheme- vamtam-theme-close"
+        ></i>
+      </button>
+      <nav
+        className="elementor-nav-menu--dropdown elementor-nav-menu__container"
+        aria-hidden={!isMenuOpen}
+      >
+        <MenuList menuId={dropdownId} tabIndex={-1} onLinkClick={onLinkClick} />
+      </nav>
+    </div>
+  </div>
+);
+
+type HeaderSectionProps = {
+  variant: "primary" | "spacer";
+  isMenuOpen: boolean;
+  isScrolled: boolean;
+  onToggle: () => void;
+  onLinkClick: () => void;
+};
+
+const HeaderSection = ({
+  variant,
+  isMenuOpen,
+  isScrolled,
+  onToggle,
+  onLinkClick,
+}: HeaderSectionProps) => {
+  const sectionClassName = [
+    "elementor-element",
+    "elementor-element-0fdf1ae",
+    "vamtam-sticky-header",
+    "vamtam-sticky-header--mobile",
+    "vamtam-sticky-header--transparent-header",
+    "e-flex",
+    "e-con-boxed",
+    "e-con",
+    "e-parent",
+    variant === "spacer" ? "vamtam-sticky-header--spacer" : "",
+    isScrolled ? "header-section--scrolled" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const mainId = variant === "primary" ? "menu-1-1243e1d" : "menu-3-1243e1d";
+  const dropdownId =
+    variant === "primary" ? "menu-2-1243e1d" : "menu-4-1243e1d";
+
+  return (
+    <div
+      className={sectionClassName}
+      data-id="0fdf1ae"
+      data-element_type="container"
+    >
+      <div className="e-con-inner">
+        <div
+          className="elementor-element elementor-element-72e5739 elementor-widget elementor-widget-image"
+          data-id="72e5739"
+          data-element_type="widget"
+          data-widget_type="image.default"
+        >
+          <div className="elementor-widget-container">
+            <a href="https://execor.vamtam.com">
+              <img
+                width="92"
+                height="20"
+                src="assets/wp-content/uploads/2025/03/Logo-white.svg"
+                className="attachment-full size-full wp-image-46"
+                alt="Execor"
+              />
+            </a>
+          </div>
+        </div>
+
+        <NavWidget
+          mainId={mainId}
+          dropdownId={dropdownId}
+          isMenuOpen={isMenuOpen}
+          onToggle={onToggle}
+          onLinkClick={onLinkClick}
+        />
+
+        <div
+          className="vamtam-has-theme-widget-styles elementor-element elementor-element-6e27b2a vamtam-icon-pos-row-reverse elementor-hidden-mobile elementor-widget elementor-widget-button"
+          data-id="6e27b2a"
+          data-element_type="widget"
+          data-widget_type="button.default"
+        >
+          <div className="elementor-widget-container">
+            <div className="elementor-button-wrapper">
+              <a
+                className="elementor-button elementor-button-link elementor-size-sm"
+                href="https://execor.vamtam.com/contact/"
+              >
+                <span className="elementor-button-content-wrapper">
+                  <span className="elementor-button-icon">
+                    <i
+                      aria-hidden="true"
+                      className="vamtamtheme- vamtam-theme-arrow-right"
+                    ></i>
+                  </span>
+                  <span className="elementor-button-text">Contact Us</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => setIsMenuOpen(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const headerClassName = [
+    "elementor",
+    "elementor-139",
+    "elementor-location-header",
+    isScrolled ? "header--scrolled" : "",
+    isMenuOpen ? "header--menu-open" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <header
-      className={`fixed left-0 right-0 z-[100] transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-      }`}
+    <div
+      data-elementor-type="header"
+      data-elementor-id="139"
+      className={headerClassName}
+      data-elementor-post-type="elementor_library"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="/" className="block">
-              <img
-                src="/wp-content/uploads/2025/03/Logo-white.svg"
-                alt="A2Z Accounting"
-                className="h-5 w-auto"
-              />
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <div className="relative group">
-              <button className="text-white hover:text-[#C8F8A9] transition-colors duration-200 font-medium">
-                Home
-              </button>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-1">
-                  <a
-                    href="/"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Consulting Company
-                  </a>
-                  <a
-                    href="/accounting-tax-audit-cpa"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Accounting Tax Audit CPA
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <a
-                href="/services"
-                className="text-white hover:text-[#C8F8A9] transition-colors duration-200 font-medium"
-              >
-                Services
-              </a>
-              <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-1">
-                  <a
-                    href="/services/business-consulting"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Business Consulting
-                  </a>
-                  <a
-                    href="/services/marketing-sales-retention"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Marketing, Sales & Retention
-                  </a>
-                  <a
-                    href="/services/operations-management"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Operations Management
-                  </a>
-                  <a
-                    href="/services/talent-acquisition"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Talent Acquisition
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <a
-                href="/about"
-                className="text-white hover:text-[#C8F8A9] transition-colors duration-200 font-medium"
-              >
-                About
-              </a>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-1">
-                  <a
-                    href="/about"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Who We Are
-                  </a>
-                  <a
-                    href="/about/team"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Our Team
-                  </a>
-                  <a
-                    href="/about/careers"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Careers
-                  </a>
-                  <a
-                    href="/about/testimonials"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Testimonials
-                  </a>
-                  <a
-                    href="/about/press-release"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Press Release
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href="/case-studies"
-              className="text-white hover:text-[#C8F8A9] transition-colors duration-200 font-medium"
-            >
-              Case Studies
-            </a>
-            <a
-              href="/blog"
-              className="text-white hover:text-[#C8F8A9] transition-colors duration-200 font-medium"
-            >
-              Blog
-            </a>
-            <a
-              href="/contact"
-              className="text-white hover:text-[#C8F8A9] transition-colors duration-200 font-medium"
-            >
-              Contact
-            </a>
-          </nav>
-
-          {/* Contact Button - Hidden on mobile */}
-          <div className="hidden lg:block">
-            <a
-              href="/contact"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-[#0F3D3A] bg-[#C8F8A9] hover:bg-[#C8F8A9]/80 transition-colors duration-200"
-            >
-              <span className="mr-2">→</span>
-              Contact Us
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-[#C8F8A9] transition-colors duration-200 p-2"
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-md mt-2">
-              <div className="space-y-1">
-                <button className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium">
-                  Home
-                </button>
-                <div className="pl-4 space-y-1">
-                  <a
-                    href="/"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Consulting Company
-                  </a>
-                  <a
-                    href="/accounting-tax-audit-cpa"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Accounting Tax Audit CPA
-                  </a>
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <a
-                  href="/services"
-                  className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
-                >
-                  Services
-                </a>
-                <div className="pl-4 space-y-1">
-                  <a
-                    href="/services/business-consulting"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Business Consulting
-                  </a>
-                  <a
-                    href="/services/marketing-sales-retention"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Marketing, Sales & Retention
-                  </a>
-                  <a
-                    href="/services/operations-management"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Operations Management
-                  </a>
-                  <a
-                    href="/services/talent-acquisition"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Talent Acquisition
-                  </a>
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <a
-                  href="/about"
-                  className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
-                >
-                  About
-                </a>
-                <div className="pl-4 space-y-1">
-                  <a
-                    href="/about"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Who We Are
-                  </a>
-                  <a
-                    href="/about/team"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Our Team
-                  </a>
-                  <a
-                    href="/about/careers"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Careers
-                  </a>
-                  <a
-                    href="/about/testimonials"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Testimonials
-                  </a>
-                  <a
-                    href="/about/press-release"
-                    className="block px-3 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
-                  >
-                    Press Release
-                  </a>
-                </div>
-              </div>
-
-              <a
-                href="/case-studies"
-                className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
-              >
-                Case Studies
-              </a>
-              <a
-                href="/blog"
-                className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
-              >
-                Blog
-              </a>
-              <a
-                href="/contact"
-                className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
-              >
-                Contact
-              </a>
-
-              <div className="pt-2 border-t border-gray-200">
-                <a
-                  href="/contact"
-                  className="block w-full px-3 py-2 text-center bg-[#C8F8A9] text-[#0F3D3A] font-medium rounded-md hover:bg-[#C8F8A9]/80 transition-colors duration-200"
-                >
-                  Contact Us
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </header>
+      <HeaderSection
+        variant="primary"
+        isMenuOpen={isMenuOpen}
+        isScrolled={isScrolled}
+        onToggle={toggleMenu}
+        onLinkClick={closeMenu}
+      />
+      <HeaderSection
+        variant="spacer"
+        isMenuOpen={isMenuOpen}
+        isScrolled={isScrolled}
+        onToggle={toggleMenu}
+        onLinkClick={closeMenu}
+      />
+    </div>
   );
 }
