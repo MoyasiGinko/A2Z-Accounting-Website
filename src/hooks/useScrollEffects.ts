@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ScrollHandler {
   init: () => void;
@@ -16,19 +16,21 @@ export const useScrollEffects = () => {
   const ticking = useRef(false);
 
   // Debounce function
-  const debounce = (
-    func: Function,
+  const debounce = <T extends (...args: unknown[]) => void>(
+    func: T,
     wait: number = 300,
     immediate: boolean = false
   ) => {
-    let timeout: NodeJS.Timeout | undefined;
-    return function executedFunction(...args: any[]) {
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    return (...args: Parameters<T>) => {
       const later = () => {
         timeout = undefined;
         if (!immediate) func(...args);
       };
       const callNow = immediate && !timeout;
-      clearTimeout(timeout);
+      if (timeout) {
+        clearTimeout(timeout);
+      }
       timeout = setTimeout(later, wait);
       if (callNow) func(...args);
     };
@@ -45,7 +47,7 @@ export const useScrollEffects = () => {
   };
 
   // Scroll event handler
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const currentScrollY = window.pageYOffset;
 
     // Update scroll direction
@@ -72,10 +74,10 @@ export const useScrollEffects = () => {
       });
       ticking.current = true;
     }
-  };
+  }, []);
 
   // Resize elements (videos, iframes)
-  const resizeElements = () => {
+  const resizeElements = useCallback(() => {
     const mediaElements = document.querySelectorAll(
       "#page .media-inner iframe, #page .media-inner object, #page .media-inner embed, #page .media-inner video, .wp-block-embed-vimeo:not(.wp-has-aspect-ratio) iframe, .wp-block-embed-vimeo:not(.wp-has-aspect-ratio) object, .wp-block-embed-vimeo:not(.wp-has-aspect-ratio) embed, .wp-block-embed-vimeo:not(.wp-has-aspect-ratio) video, :not(.wp-block-embed__wrapper) > .vamtam-video-frame iframe, :not(.wp-block-embed__wrapper) > .vamtam-video-frame object, :not(.wp-block-embed__wrapper) > .vamtam-video-frame embed, :not(.wp-block-embed__wrapper) > .vamtam-video-frame video"
     );
@@ -112,69 +114,77 @@ export const useScrollEffects = () => {
         });
       });
     }, 100);
-  };
+  }, []);
 
   // Animated page scroll
-  const scrollToElement = (element: HTMLElement, callback?: () => void) => {
-    const headerContents = document.querySelector(
-      "header.main-header .header-contents"
-    ) as HTMLElement;
-    const headerHeight = headerContents ? headerContents.offsetHeight : 0;
-    const adminBarHeight = document.body.classList.contains("admin-bar")
-      ? 32
-      : 0;
-    const targetOffset = element.offsetTop - adminBarHeight - headerHeight;
+  const scrollToElement = useCallback(
+    (element: HTMLElement, callback?: () => void) => {
+      const headerContents = document.querySelector(
+        "header.main-header .header-contents"
+      ) as HTMLElement | null;
+      const headerHeight = headerContents ? headerContents.offsetHeight : 0;
+      const adminBarHeight = document.body.classList.contains("admin-bar")
+        ? 32
+        : 0;
+      const targetOffset = element.offsetTop - adminBarHeight - headerHeight;
 
-    window.scrollTo({
-      left: 0,
-      top: targetOffset,
-      behavior: "smooth",
-    });
+      window.scrollTo({
+        left: 0,
+        top: targetOffset,
+        behavior: "smooth",
+      });
 
-    // Update URL hash
-    if (element.id) {
-      history.pushState
-        ? history.pushState(null, "", `#${element.id}`)
-        : (window.location.hash = element.id);
-    }
+      // Update URL hash
+      if (element.id) {
+        if (history.pushState) {
+          history.pushState(null, "", `#${element.id}`);
+        } else {
+          window.location.hash = element.id;
+        }
+      }
 
-    // Close mobile menus
-    const fallbackMenuToggle = document.getElementById(
-      "vamtam-fallback-main-menu-toggle"
-    );
-    const megaMenuToggle = document.querySelector(
-      "#main-menu > .mega-menu-wrap > .mega-menu-toggle"
-    ) as HTMLElement;
+      // Close mobile menus
+      const fallbackMenuToggle = document.getElementById(
+        "vamtam-fallback-main-menu-toggle"
+      );
+      const megaMenuToggle = document.querySelector(
+        "#main-menu > .mega-menu-wrap > .mega-menu-toggle"
+      ) as HTMLElement;
 
-    if (fallbackMenuToggle)
-      fallbackMenuToggle.classList.remove("mega-menu-open");
-    if (megaMenuToggle) megaMenuToggle.classList.remove("mega-menu-open");
+      if (fallbackMenuToggle)
+        fallbackMenuToggle.classList.remove("mega-menu-open");
+      if (megaMenuToggle) megaMenuToggle.classList.remove("mega-menu-open");
 
-    if (callback) callback();
-  };
+      if (callback) callback();
+    },
+    []
+  );
 
   // Handle animated page scroll clicks
-  const handleAnimatedScrollClick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    const link = target.closest(
-      ".vamtam-animated-page-scroll, .vamtam-animated-page-scroll [href], .vamtam-animated-page-scroll [data-href]"
-    ) as HTMLAnchorElement;
+  const handleAnimatedScrollClick = useCallback(
+    (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest(
+        ".vamtam-animated-page-scroll, .vamtam-animated-page-scroll [href], .vamtam-animated-page-scroll [data-href]"
+      ) as HTMLAnchorElement;
 
-    if (!link) return;
+      if (!link) return;
 
-    const href = link.href || link.dataset.href;
-    if (!href) return;
+      const href = link.href || link.dataset.href;
+      if (!href) return;
 
-    const url = new URL(href, window.location.origin);
-    if (url.pathname !== window.location.pathname) return;
+      const url = new URL(href, window.location.origin);
+      if (url.pathname !== window.location.pathname) return;
 
-    const hash = url.hash.substring(1);
-    const targetElement = document.getElementById(hash);
-    if (!targetElement) return;
+      const hash = url.hash.substring(1);
+      const targetElement = document.getElementById(hash);
+      if (!targetElement) return;
 
-    e.preventDefault();
-    scrollToElement(targetElement);
-  };
+      e.preventDefault();
+      scrollToElement(targetElement);
+    },
+    [scrollToElement]
+  );
 
   // Initialize scroll effects
   useEffect(() => {
@@ -206,7 +216,12 @@ export const useScrollEffects = () => {
       document.removeEventListener("click", handleAnimatedScrollClick);
       window.removeEventListener("resize", debouncedResize);
     };
-  }, []);
+  }, [
+    handleAnimatedScrollClick,
+    handleScroll,
+    resizeElements,
+    scrollToElement,
+  ]);
 
   return {
     scrollY,
