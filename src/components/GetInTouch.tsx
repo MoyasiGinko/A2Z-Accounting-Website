@@ -91,8 +91,8 @@ const GetInTouch: React.FC = () => {
                 >
                   <div className="elementor-widget-container">
                     <span className="elementor-heading-title elementor-size-default">
-                      Fill out the form, and let's talk about how we can support
-                      your business with tailored solutions.
+                      Fill out the form, and let&apos;s talk about how we can
+                      support your business with tailored solutions.
                     </span>
                   </div>
                 </div>

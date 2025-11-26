@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 
+type GtagArguments = [string, ...unknown[]];
+
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
+    gtag?: (...args: GtagArguments) => void;
+    dataLayer?: GtagArguments[];
   }
 }
 
@@ -25,7 +27,7 @@ const Analytics: React.FC<AnalyticsProps> = ({ measurementId }) => {
 
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
+    function gtag(...args: GtagArguments) {
       window.dataLayer!.push(args);
     }
     gtag("js", new Date());

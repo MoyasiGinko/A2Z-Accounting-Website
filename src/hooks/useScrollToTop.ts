@@ -35,8 +35,7 @@ export const useScrollToTop = () => {
 
       // iOS Safari uses simple animation, others use smooth scrolling
       const isIOS =
-        /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-        !(window as any).MSStream;
+        /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window);
 
       if (isIOS) {
         window.scrollTo(0, 0);
@@ -51,7 +50,12 @@ export const useScrollToTop = () => {
 
     // Add event listeners
     window.addEventListener("resize", handleResize, { passive: true });
+    const onScroll = () => handleScroll(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("click", handleClick, true);
+
+    // Initialize on mount
+    onScroll();
 
     // Use the scroll effects hook to handle scroll events
     // This would be integrated with the main scroll effects hook
@@ -59,7 +63,8 @@ export const useScrollToTop = () => {
     // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
-      document.removeEventListener("click", handleClick);
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("click", handleClick, true);
     };
   }, []);
 
