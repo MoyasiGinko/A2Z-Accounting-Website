@@ -73,346 +73,333 @@ const About = () => {
   ];
 
   return (
-    <>
-      {/* Header Section - Exact Elementor Structure */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      data-elementor-type="wp-page"
+      data-elementor-id="17"
+      className="elementor elementor-17"
+      data-elementor-post-type="page"
+    >
+      <div
+        className="elementor-element elementor-element-ffe4657 e-flex e-con-boxed e-con e-parent"
+        data-id="ffe4657"
+        data-element_type="container"
+      >
+        <div className="e-con-inner">
           <div
-            className="elementor-element elementor-element-ffe4657 e-flex e-con-boxed e-con e-parent"
-            data-id="ffe4657"
+            className="elementor-element elementor-element-54101de e-con-full e-flex e-con e-child"
+            data-id="54101de"
             data-element_type="container"
           >
-            <div className="e-con-inner">
+            <div
+              className="elementor-element elementor-element-eec9a88 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
+              data-id="eec9a88"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp"}'
+              data-widget_type="heading.default"
+            >
+              <div className="elementor-widget-container">
+                <span className="elementor-heading-title elementor-size-default">
+                  About Us
+                </span>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-97e1c85 elementor-invisible elementor-widget__width-initial elementor-widget-tablet__width-inherit animated-fast elementor-widget elementor-widget-heading"
+              data-id="97e1c85"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp","_animation_delay":100}'
+              data-widget_type="heading.default"
+            >
+              <div className="elementor-widget-container">
+                <h2 className="elementor-heading-title elementor-size-default">
+                  Driving success through strategy.
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="elementor-element elementor-element-3d29988 elementor-invisible elementor-widget-tablet__width-initial elementor-widget__width-initial elementor-widget elementor-widget-heading"
+            data-id="3d29988"
+            data-element_type="widget"
+            data-settings='{"_animation":"slideInUp","_animation_delay":200}'
+            data-widget_type="heading.default"
+          >
+            <div className="elementor-widget-container">
+              <span className="elementor-heading-title elementor-size-default">
+                We specialize in helping small businesses thrive by providing
+                expert guidance in business planning and growth strategy.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="elementor-element elementor-element-761c5fe e-flex e-con-boxed e-con e-parent"
+        data-id="761c5fe"
+        data-element_type="container"
+      >
+        <div className="e-con-inner">
+          <div
+            className="elementor-element elementor-element-9e8035e e-con-full e-flex e-con e-child"
+            data-id="9e8035e"
+            data-element_type="container"
+          >
+            <div
+              className="elementor-element elementor-element-670c111 e-con-full e-flex e-con e-child"
+              data-id="670c111"
+              data-element_type="container"
+              data-settings='{"background_background":"classic","animation":"none"}'
+            >
               <div
-                className="elementor-element elementor-element-54101de e-con-full e-flex e-con e-child"
-                data-id="54101de"
-                data-element_type="container"
+                className="elementor-element elementor-element-28a605a elementor-widget elementor-widget-image"
+                data-id="28a605a"
+                data-element_type="widget"
+                data-widget_type="image.default"
               >
-                <div
-                  className="elementor-element elementor-element-eec9a88 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-                  data-id="eec9a88"
-                  data-element_type="widget"
-                  data-settings='{"_animation":"slideInUp"}'
-                  data-widget_type="heading.default"
-                >
-                  <div className="elementor-widget-container">
-                    <span className="elementor-heading-title elementor-size-default">
-                      About Us
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-97e1c85 elementor-invisible elementor-widget__width-initial elementor-widget-tablet__width-inherit animated-fast elementor-widget elementor-widget-heading"
-                  data-id="97e1c85"
-                  data-element_type="widget"
-                  data-settings='{"_animation":"slideInUp","_animation_delay":100}'
-                  data-widget_type="heading.default"
-                >
-                  <div className="elementor-widget-container">
-                    <h2 className="elementor-heading-title elementor-size-default">
-                      Driving success through strategy.
-                    </h2>
-                  </div>
+                <div className="elementor-widget-container">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    width="143"
+                    height="76"
+                    src="/wp-content/uploads/2025/03/GettyImages-1958747481.svg"
+                    className="attachment-medium size-medium wp-image-591"
+                    alt=""
+                  />
                 </div>
               </div>
               <div
-                className="elementor-element elementor-element-3d29988 elementor-invisible elementor-widget-tablet__width-initial elementor-widget__width-initial elementor-widget elementor-widget-heading"
-                data-id="3d29988"
+                className="elementor-element elementor-element-956439b elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
+                data-id="956439b"
                 data-element_type="widget"
-                data-settings='{"_animation":"slideInUp","_animation_delay":200}'
                 data-widget_type="heading.default"
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    We specialize in helping small businesses thrive by
-                    providing expert guidance in business planning and growth
-                    strategy.
+                    Success is built on vision, strategy and people!
                   </span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Content + Accordion Section - Exact Elementor Structure */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div
-            className="elementor-element elementor-element-761c5fe e-flex e-con-boxed e-con e-parent"
-            data-id="761c5fe"
-            data-element_type="container"
-          >
-            <div className="e-con-inner">
+            <div
+              className="elementor-element elementor-element-96d8865 e-con-full e-flex e-con e-child"
+              data-id="96d8865"
+              data-element_type="container"
+              data-settings='{"background_background":"classic","animation":"none"}'
+            >
               <div
-                className="elementor-element elementor-element-9e8035e e-con-full e-flex e-con e-child"
-                data-id="9e8035e"
+                className="elementor-element elementor-element-4bc7469 e-con-full e-flex e-con e-child"
+                data-id="4bc7469"
                 data-element_type="container"
+                data-settings='{"background_background":"gradient"}'
               >
                 <div
-                  className="elementor-element elementor-element-670c111 e-con-full e-flex e-con e-child"
-                  data-id="670c111"
-                  data-element_type="container"
-                  data-settings='{"background_background":"classic","animation":"none"}'
-                >
-                  <div
-                    className="elementor-element elementor-element-28a605a elementor-widget elementor-widget-image"
-                    data-id="28a605a"
-                    data-element_type="widget"
-                    data-widget_type="image.default"
-                  >
-                    <div className="elementor-widget-container">
-                      <img
-                        loading="lazy"
-                        decoding="async"
-                        width="143"
-                        height="76"
-                        src="/wp-content/uploads/2025/03/GettyImages-1958747481.svg"
-                        className="attachment-medium size-medium wp-image-591"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="elementor-element elementor-element-956439b elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
-                    data-id="956439b"
-                    data-element_type="widget"
-                    data-widget_type="heading.default"
-                  >
-                    <div className="elementor-widget-container">
-                      <span className="elementor-heading-title elementor-size-default">
-                        Success is built on vision, strategy and people!
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-96d8865 e-con-full e-flex e-con e-child"
-                  data-id="96d8865"
-                  data-element_type="container"
-                  data-settings='{"background_background":"classic","animation":"none"}'
-                >
-                  <div
-                    className="elementor-element elementor-element-4bc7469 e-con-full e-flex e-con e-child"
-                    data-id="4bc7469"
-                    data-element_type="container"
-                    data-settings='{"background_background":"gradient"}'
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #2563eb 100%)",
-                      borderRadius: "12px",
-                      padding: "2rem",
-                      color: "white",
-                    }}
-                  >
-                    <div
-                      className="elementor-element elementor-element-e3eb0c7 elementor-widget elementor-widget-spacer"
-                      data-id="e3eb0c7"
-                      data-element_type="widget"
-                      data-widget_type="spacer.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <div className="elementor-spacer">
-                          <div className="elementor-spacer-inner"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="elementor-element elementor-element-2438951 elementor-widget elementor-widget-heading"
-                      data-id="2438951"
-                      data-element_type="widget"
-                      data-widget_type="heading.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <h5 className="elementor-heading-title elementor-size-default">
-                          Data-driven Insights
-                        </h5>
-                      </div>
-                    </div>
-                    <div
-                      className="elementor-element elementor-element-8c49a09 elementor-align-left elementor-tablet-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                      data-id="8c49a09"
-                      data-element_type="widget"
-                      data-widget_type="icon-list.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <ul className="elementor-icon-list-items">
-                          <li className="elementor-icon-list-item">
-                            <span className="elementor-icon-list-icon">
-                              <i
-                                aria-hidden="true"
-                                className="vamtamtheme- vamtam-theme-chack"
-                              ></i>
-                            </span>
-                            <span className="elementor-icon-list-text">
-                              Proven track record in
-                            </span>
-                          </li>
-                          <li className="elementor-icon-list-item">
-                            <span className="elementor-icon-list-icon">
-                              <i
-                                aria-hidden="true"
-                                className="vamtamtheme- vamtam-theme-chack"
-                              ></i>
-                            </span>
-                            <span className="elementor-icon-list-text">
-                              Expertise in both startups
-                            </span>
-                          </li>
-                          <li className="elementor-icon-list-item">
-                            <span className="elementor-icon-list-icon">
-                              <i
-                                aria-hidden="true"
-                                className="vamtamtheme- vamtam-theme-chack"
-                              ></i>
-                            </span>
-                            <span className="elementor-icon-list-text">
-                              Strategic guidance for
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div
-                      className="vamtam-has-theme-widget-styles elementor-element elementor-element-185f616 vamtam-icon-pos-row-reverse elementor-align-justify vamtam-content-align-space-between elementor-widget elementor-widget-button"
-                      data-id="185f616"
-                      data-element_type="widget"
-                      data-widget_type="button.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <div className="elementor-button-wrapper">
-                          <a
-                            className="elementor-button elementor-button-link elementor-size-sm"
-                            href="/about"
-                          >
-                            <span className="elementor-button-content-wrapper">
-                              <span className="elementor-button-icon">
-                                <i
-                                  aria-hidden="true"
-                                  className="vamtamtheme- vamtam-theme-arrow-right"
-                                ></i>
-                              </span>
-                              <span className="elementor-button-text">
-                                Learn More
-                              </span>
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-4b2e43b e-con-full e-flex e-con e-child"
-                data-id="4b2e43b"
-                data-element_type="container"
-                data-settings='{"animation":"none"}'
-              >
-                <div
-                  className="elementor-element elementor-element-068496a elementor-widget elementor-widget-n-accordion"
-                  data-id="068496a"
+                  className="elementor-element elementor-element-e3eb0c7 elementor-widget elementor-widget-spacer"
+                  data-id="e3eb0c7"
                   data-element_type="widget"
-                  data-settings='{"n_accordion_animation_duration":{"unit":"ms","size":200,"sizes":[]},"default_state":"expanded","max_items_expended":"one"}'
-                  data-widget_type="nested-accordion.default"
+                  data-widget_type="spacer.default"
                 >
                   <div className="elementor-widget-container">
-                    <div
-                      className="e-n-accordion"
-                      aria-label="Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys"
-                    >
-                      {accordionItems.map((item, index) => (
-                        <details
-                          key={item.id}
-                          id={`e-n-accordion-item-${item.id}`}
-                          className="e-n-accordion-item"
-                          open={item.isOpen}
-                        >
-                          <summary
-                            className="e-n-accordion-item-title"
-                            data-accordion-index={index + 1}
-                            tabIndex={item.isOpen ? 0 : -1}
-                            aria-expanded={item.isOpen}
-                            aria-controls={`e-n-accordion-item-${item.id}`}
-                          >
-                            <span className="e-n-accordion-item-title-header">
-                              <div className="e-n-accordion-item-title-text">
-                                {item.title}
-                              </div>
-                            </span>
-                            <span className="e-n-accordion-item-title-icon">
-                              <span className="e-opened">
-                                <i
-                                  aria-hidden="true"
-                                  className="vamtamtheme- vamtam-theme-minus"
-                                ></i>
-                              </span>
-                              <span className="e-closed">
-                                <i
-                                  aria-hidden="true"
-                                  className="vamtamtheme- vamtam-theme-plus"
-                                ></i>
-                              </span>
-                            </span>
-                          </summary>
-                          <div
-                            role="region"
-                            aria-labelledby={`e-n-accordion-item-${item.id}`}
-                            className="elementor-element e-con-full e-flex e-con e-child"
-                            data-id={item.contentContainerId}
-                            data-element_type="container"
-                          >
-                            <div
-                              className="elementor-element elementor-widget elementor-widget-text-editor"
-                              data-id={item.textWidgetId}
-                              data-element_type="widget"
-                              data-widget_type="text-editor.default"
-                            >
-                              <div className="elementor-widget-container">
-                                {item.content.map((paragraph, pIndex) => (
-                                  <p key={pIndex}>{paragraph}</p>
-                                ))}
-                              </div>
-                            </div>
-                            <div
-                              className="elementor-element elementor-align-left elementor-tablet-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                              data-id={item.listWidgetId}
-                              data-element_type="widget"
-                              data-widget_type="icon-list.default"
-                            >
-                              <div className="elementor-widget-container">
-                                <ul className="elementor-icon-list-items">
-                                  {item.features.map((feature, fIndex) => (
-                                    <li
-                                      key={fIndex}
-                                      className="elementor-icon-list-item"
-                                    >
-                                      <span className="elementor-icon-list-icon">
-                                        <i
-                                          aria-hidden="true"
-                                          className="vamtamtheme- vamtam-theme-chack-circle"
-                                        ></i>
-                                      </span>
-                                      <span className="elementor-icon-list-text">
-                                        {feature}
-                                      </span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </details>
-                      ))}
+                    <div className="elementor-spacer">
+                      <div className="elementor-spacer-inner"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-2438951 elementor-widget elementor-widget-heading"
+                  data-id="2438951"
+                  data-element_type="widget"
+                  data-widget_type="heading.default"
+                >
+                  <div className="elementor-widget-container">
+                    <h5 className="elementor-heading-title elementor-size-default">
+                      Data-driven Insights
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-8c49a09 elementor-align-left elementor-tablet-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                  data-id="8c49a09"
+                  data-element_type="widget"
+                  data-widget_type="icon-list.default"
+                >
+                  <div className="elementor-widget-container">
+                    <ul className="elementor-icon-list-items">
+                      <li className="elementor-icon-list-item">
+                        <span className="elementor-icon-list-icon">
+                          <i
+                            aria-hidden="true"
+                            className="vamtamtheme- vamtam-theme-chack"
+                          ></i>
+                        </span>
+                        <span className="elementor-icon-list-text">
+                          Proven track record in
+                        </span>
+                      </li>
+                      <li className="elementor-icon-list-item">
+                        <span className="elementor-icon-list-icon">
+                          <i
+                            aria-hidden="true"
+                            className="vamtamtheme- vamtam-theme-chack"
+                          ></i>
+                        </span>
+                        <span className="elementor-icon-list-text">
+                          Expertise in both startups
+                        </span>
+                      </li>
+                      <li className="elementor-icon-list-item">
+                        <span className="elementor-icon-list-icon">
+                          <i
+                            aria-hidden="true"
+                            className="vamtamtheme- vamtam-theme-chack"
+                          ></i>
+                        </span>
+                        <span className="elementor-icon-list-text">
+                          Strategic guidance for
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  className="vamtam-has-theme-widget-styles elementor-element elementor-element-185f616 vamtam-icon-pos-row-reverse elementor-align-justify vamtam-content-align-space-between elementor-widget elementor-widget-button"
+                  data-id="185f616"
+                  data-element_type="widget"
+                  data-widget_type="button.default"
+                >
+                  <div className="elementor-widget-container">
+                    <div className="elementor-button-wrapper">
+                      <a
+                        className="elementor-button elementor-button-link elementor-size-sm"
+                        href="/about"
+                      >
+                        <span className="elementor-button-content-wrapper">
+                          <span className="elementor-button-icon">
+                            <i
+                              aria-hidden="true"
+                              className="vamtamtheme- vamtam-theme-arrow-right"
+                            ></i>
+                          </span>
+                          <span className="elementor-button-text">
+                            Learn More
+                          </span>
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div
+            className="elementor-element elementor-element-4b2e43b e-con-full e-flex e-con e-child"
+            data-id="4b2e43b"
+            data-element_type="container"
+            data-settings='{"animation":"none"}'
+          >
+            <div
+              className="elementor-element elementor-element-068496a elementor-widget elementor-widget-n-accordion"
+              data-id="068496a"
+              data-element_type="widget"
+              data-settings='{"n_accordion_animation_duration":{"unit":"ms","size":200,"sizes":[]},"default_state":"expanded","max_items_expended":"one"}'
+              data-widget_type="nested-accordion.default"
+            >
+              <div className="elementor-widget-container">
+                <div
+                  className="e-n-accordion"
+                  aria-label="Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys"
+                >
+                  {accordionItems.map((item, index) => (
+                    <details
+                      key={item.id}
+                      id={`e-n-accordion-item-${item.id}`}
+                      className="e-n-accordion-item"
+                      open={item.isOpen}
+                    >
+                      <summary
+                        className="e-n-accordion-item-title"
+                        data-accordion-index={index + 1}
+                        tabIndex={item.isOpen ? 0 : -1}
+                        aria-expanded={item.isOpen}
+                        aria-controls={`e-n-accordion-item-${item.id}`}
+                      >
+                        <span className="e-n-accordion-item-title-header">
+                          <div className="e-n-accordion-item-title-text">
+                            {item.title}
+                          </div>
+                        </span>
+                        <span className="e-n-accordion-item-title-icon">
+                          <span className="e-opened">
+                            <i
+                              aria-hidden="true"
+                              className="vamtamtheme- vamtam-theme-minus"
+                            ></i>
+                          </span>
+                          <span className="e-closed">
+                            <i
+                              aria-hidden="true"
+                              className="vamtamtheme- vamtam-theme-plus"
+                            ></i>
+                          </span>
+                        </span>
+                      </summary>
+                      <div
+                        role="region"
+                        aria-labelledby={`e-n-accordion-item-${item.id}`}
+                        className="elementor-element e-con-full e-flex e-con e-child"
+                        data-id={item.contentContainerId}
+                        data-element_type="container"
+                      >
+                        <div
+                          className="elementor-element elementor-widget elementor-widget-text-editor"
+                          data-id={item.textWidgetId}
+                          data-element_type="widget"
+                          data-widget_type="text-editor.default"
+                        >
+                          <div className="elementor-widget-container">
+                            {item.content.map((paragraph, pIndex) => (
+                              <p key={pIndex}>{paragraph}</p>
+                            ))}
+                          </div>
+                        </div>
+                        <div
+                          className="elementor-element elementor-align-left elementor-tablet-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                          data-id={item.listWidgetId}
+                          data-element_type="widget"
+                          data-widget_type="icon-list.default"
+                        >
+                          <div className="elementor-widget-container">
+                            <ul className="elementor-icon-list-items">
+                              {item.features.map((feature, fIndex) => (
+                                <li
+                                  key={fIndex}
+                                  className="elementor-icon-list-item"
+                                >
+                                  <span className="elementor-icon-list-icon">
+                                    <i
+                                      aria-hidden="true"
+                                      className="vamtamtheme- vamtam-theme-chack-circle"
+                                    ></i>
+                                  </span>
+                                  <span className="elementor-icon-list-text">
+                                    {feature}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 
