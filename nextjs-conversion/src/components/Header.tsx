@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type SubMenuItem = {
   key: string;
@@ -275,6 +275,7 @@ type HeaderSectionProps = {
   variant: "primary" | "spacer";
   isMenuOpen: boolean;
   isScrolled: boolean;
+  isHidden: boolean;
   onToggle: () => void;
   onLinkClick: () => void;
 };
@@ -283,6 +284,7 @@ const HeaderSection = ({
   variant,
   isMenuOpen,
   isScrolled,
+  isHidden,
   onToggle,
   onLinkClick,
 }: HeaderSectionProps) => {
@@ -298,6 +300,7 @@ const HeaderSection = ({
     "e-parent",
     variant === "spacer" ? "vamtam-sticky-header--spacer" : "",
     isScrolled ? "header-section--scrolled" : "",
+    isHidden ? "header-section--hidden" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -324,7 +327,7 @@ const HeaderSection = ({
               <img
                 width="92"
                 height="20"
-                src="assets/wp-content/uploads/2025/03/Logo-white.svg"
+                src="/wp-content/uploads/2025/03/Logo-white.svg"
                 className="attachment-full size-full wp-image-46"
                 alt="Execor"
               />
@@ -373,10 +376,28 @@ const HeaderSection = ({
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    lastScrollY.current = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+      setIsScrolled(currentY > 50);
+
+      if (currentY < 50) {
+        setIsHidden(false);
+      } else if (delta > 8) {
+        setIsHidden(true);
+      } else if (delta < -8) {
+        setIsHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -385,6 +406,12 @@ export default function Header() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsHidden(false);
+    }
+  }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -395,9 +422,16 @@ export default function Header() {
     "elementor-location-header",
     isScrolled ? "header--scrolled" : "",
     isMenuOpen ? "header--menu-open" : "",
+    isHidden ? "header--hidden" : "",
   ]
     .filter(Boolean)
     .join(" ");
+
+  const headerStyle = {
+    transform: isHidden ? "translate3d(0, -120%, 0)" : "translate3d(0, 0, 0)",
+    transition:
+      "transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease",
+  } as const;
 
   return (
     <div
@@ -405,11 +439,13 @@ export default function Header() {
       data-elementor-id="139"
       className={headerClassName}
       data-elementor-post-type="elementor_library"
+      style={headerStyle}
     >
       <HeaderSection
         variant="primary"
         isMenuOpen={isMenuOpen}
         isScrolled={isScrolled}
+        isHidden={isHidden}
         onToggle={toggleMenu}
         onLinkClick={closeMenu}
       />
@@ -417,6 +453,7 @@ export default function Header() {
         variant="spacer"
         isMenuOpen={isMenuOpen}
         isScrolled={isScrolled}
+        isHidden={isHidden}
         onToggle={toggleMenu}
         onLinkClick={closeMenu}
       />
