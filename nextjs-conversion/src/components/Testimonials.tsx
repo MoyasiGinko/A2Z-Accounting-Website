@@ -86,7 +86,7 @@ const LOOP_TEMPLATE_STYLES = `.elementor-1545
   border-radius: 4px 4px 4px 4px;
 }
 
-elementor-1545
+.elementor-1545
   .elementor-element.elementor-element-d8017ee.elementor-element {
   --align-self: flex-start;
 }
