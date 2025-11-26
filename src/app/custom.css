@@ -1,0 +1,268 @@
+/* Standalone overrides for the extracted homepage */
+:root {
+  --standalone-animation-distance: 20px;
+  --standalone-animation-duration: 0.55s;
+  --standalone-marquee-duration: 26s;
+}
+
+html:not(.standalone-js) .elementor-invisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.standalone-js .elementor-invisible {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(var(--standalone-animation-distance));
+}
+
+.standalone-js .standalone-animated {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  animation: standalone-fade-up var(--standalone-animation-duration) ease both;
+}
+
+@keyframes standalone-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--standalone-animation-distance));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile navigation toggle behaviour */
+@media (max-width: 1024px) {
+  .elementor-nav-menu--toggle .elementor-nav-menu__container {
+    display: none;
+  }
+
+  .elementor-nav-menu--toggle .elementor-nav-menu__container.is-open {
+    display: block;
+  }
+
+  .elementor-menu-toggle.elementor-menu-toggle--active
+    .elementor-menu-toggle__icon--open {
+    opacity: 0;
+  }
+
+  .elementor-menu-toggle.elementor-menu-toggle--active
+    .elementor-menu-toggle__icon--close {
+    opacity: 1;
+  }
+
+  .elementor-menu-toggle .elementor-menu-toggle__icon--close {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+/* Basic helper for carousels when Swiper initialises */
+.elementor-widget-loop-carousel .swiper {
+  visibility: hidden;
+}
+
+.elementor-widget-loop-carousel .swiper.is-ready {
+  visibility: visible;
+}
+
+/* Our Clients marquee */
+.standalone-marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.standalone-marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  animation: standalone-marquee var(--standalone-marquee-duration, 26s) linear
+    infinite;
+}
+
+.standalone-marquee-track > * {
+  flex: 0 0 auto;
+}
+
+.standalone-marquee-track:is(:hover, :focus-within) {
+  animation-play-state: paused;
+}
+
+@keyframes standalone-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .standalone-js .standalone-animated {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .standalone-marquee-track {
+    animation: none;
+  }
+}
+
+/* Standalone sticky header */
+body.standalone-header-ready {
+  --standalone-header-height: 0px;
+}
+
+.standalone-header-spacer {
+  display: block !important;
+  height: var(--standalone-header-height);
+}
+
+.standalone-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 45px rgba(15, 61, 58, 0.12);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  will-change: transform;
+}
+
+.standalone-header.is-hidden {
+  transform: translate3d(0, -110%, 0);
+  box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+  .standalone-header {
+    background-color: rgba(15, 61, 58, 0.98);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Sticky stats section fallback (Elementor sticky replacement) */
+@media (min-width: 1025px) {
+  .elementor-element.elementor-element-9383430 {
+    position: sticky;
+    top: 30px;
+  }
+
+  .elementor-element.elementor-element-15cd221 {
+    position: sticky;
+    top: 30px;
+  }
+
+  .elementor-element.elementor-element-17db5fd {
+    position: sticky;
+    top: 155px;
+  }
+
+  .elementor-element.elementor-element-1c92f80 {
+    position: sticky;
+    top: 280px;
+  }
+
+  .elementor-element.elementor-element-258db91 {
+    position: sticky;
+    top: 400px;
+  }
+
+  .elementor-element.elementor-element-e988fa2 {
+    position: sticky;
+    top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .elementor-element.elementor-element-9383430 {
+    position: sticky;
+    top: 30px;
+  }
+
+  .elementor-element.elementor-element-15cd221 {
+    position: sticky;
+    top: 30px;
+  }
+
+  .elementor-element.elementor-element-17db5fd {
+    position: sticky;
+    top: 125px;
+  }
+
+  .elementor-element.elementor-element-1c92f80 {
+    position: sticky;
+    top: 220px;
+  }
+
+  .elementor-element.elementor-element-258db91 {
+    position: sticky;
+    top: 310px;
+  }
+
+  .elementor-element.elementor-element-e988fa2 {
+    position: sticky;
+    top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .elementor-element.elementor-element-15cd221 {
+    position: sticky;
+    top: 60px;
+  }
+
+  .elementor-element.elementor-element-17db5fd {
+    position: sticky;
+    top: 200px;
+  }
+
+  .elementor-element.elementor-element-1c92f80 {
+    position: sticky;
+    top: 340px;
+  }
+
+  .elementor-element.elementor-element-258db91 {
+    position: sticky;
+    top: 475px;
+  }
+
+  .elementor-element.elementor-element-9383430,
+  .elementor-element.elementor-element-e988fa2 {
+    position: relative;
+  }
+}
+
+/* Marquee animation */
+.standalone-marquee {
+  overflow: hidden;
+}
+
+.standalone-marquee-track {
+  display: flex;
+  animation: standalone-marquee-scroll var(--standalone-marquee-duration, 20s)
+    linear infinite;
+  width: calc(100% * 2);
+}
+
+@keyframes standalone-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

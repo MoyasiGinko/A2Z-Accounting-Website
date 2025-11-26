@@ -1,0 +1,483 @@
+import React from "react";
+
+const GetInTouch: React.FC = () => {
+  return (
+    <>
+      <div
+        className="elementor-element elementor-element-ea14ed8 e-flex e-con-boxed e-con e-parent"
+        data-id="ea14ed8"
+        data-element_type="container"
+      >
+        <div className="e-con-inner">
+          <div
+            className="elementor-element elementor-element-18c23ab e-con-full e-flex e-con e-child"
+            data-id="18c23ab"
+            data-element_type="container"
+          >
+            <div
+              className="elementor-element elementor-element-5dfc195 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
+              data-id="5dfc195"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp"}'
+              data-widget_type="heading.default"
+            >
+              <div className="elementor-widget-container">
+                <span className="elementor-heading-title elementor-size-default">
+                  Get in Touch
+                </span>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-583d843 elementor-invisible elementor-widget__width-initial elementor-widget-tablet__width-inherit animated-fast elementor-widget elementor-widget-heading"
+              data-id="583d843"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp","_animation_delay":100}'
+              data-widget_type="heading.default"
+            >
+              <div className="elementor-widget-container">
+                <h2 className="elementor-heading-title elementor-size-default">
+                  Change Starts With a Conversation
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="elementor-element elementor-element-05fb46d e-flex e-con-boxed e-con e-parent"
+        data-id="05fb46d"
+        data-element_type="container"
+      >
+        <div className="e-con-inner">
+          <div
+            className="elementor-element elementor-element-76d6fd8 e-con-full e-flex e-con e-child"
+            data-id="76d6fd8"
+            data-element_type="container"
+            data-settings='{"background_background":"classic"}'
+          ></div>
+          <div
+            className="elementor-element elementor-element-ff6490f e-con-full e-flex e-con e-child"
+            data-id="ff6490f"
+            data-element_type="container"
+          >
+            <div
+              className="elementor-element elementor-element-01bf392 e-con-full blur-background e-flex e-con e-child"
+              data-id="01bf392"
+              data-element_type="container"
+              data-settings='{"background_background":"classic"}'
+            >
+              <div
+                className="elementor-element elementor-element-402605c e-con-full e-flex e-con e-child"
+                data-id="402605c"
+                data-element_type="container"
+              >
+                <div
+                  className="elementor-element elementor-element-b13d4b0 elementor-widget elementor-widget-heading"
+                  data-id="b13d4b0"
+                  data-element_type="widget"
+                  data-widget_type="heading.default"
+                >
+                  <div className="elementor-widget-container">
+                    <h5 className="elementor-heading-title elementor-size-default">
+                      Have a Challenge or an Idea?
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-3c3cc14 elementor-widget elementor-widget-heading"
+                  data-id="3c3cc14"
+                  data-element_type="widget"
+                  data-widget_type="heading.default"
+                >
+                  <div className="elementor-widget-container">
+                    <span className="elementor-heading-title elementor-size-default">
+                      Fill out the form, and let's talk about how we can support
+                      your business with tailored solutions.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="elementor-element elementor-element-87af8c8 e-con-full e-flex e-con e-child"
+                data-id="87af8c8"
+                data-element_type="container"
+                data-settings='{"background_background":"classic"}'
+              >
+                <a
+                  className="elementor-element elementor-element-374d947 e-con-full e-flex e-con e-child"
+                  data-id="374d947"
+                  data-element_type="container"
+                  data-settings='{"background_background":"classic"}'
+                  href="tel:1-800-356-8933"
+                >
+                  <div
+                    className="elementor-element elementor-element-b40313c elementor-view-stacked elementor-shape-rounded elementor-position-left elementor-vertical-align-bottom elementor-widget-mobile__width-initial elementor-widget elementor-widget-icon-box"
+                    data-id="b40313c"
+                    data-element_type="widget"
+                    data-widget_type="icon-box.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <div className="elementor-icon-box-wrapper">
+                        <div className="elementor-icon-box-icon">
+                          <span className="elementor-icon">
+                            <i
+                              aria-hidden="true"
+                              className="vamtamtheme- vamtam-theme-phone"
+                            ></i>
+                          </span>
+                        </div>
+                        <div className="elementor-icon-box-content">
+                          <h6 className="elementor-icon-box-title">
+                            <span> Call us at: </span>
+                          </h6>
+                          <p className="elementor-icon-box-description">
+                            1-800-356-8933
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="vamtam-has-theme-widget-styles elementor-element elementor-element-b463c00 elementor-view-default elementor-widget elementor-widget-icon"
+                    data-id="b463c00"
+                    data-element_type="widget"
+                    data-widget_type="icon.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <div className="elementor-icon-wrapper">
+                        <div className="elementor-icon">
+                          <i
+                            aria-hidden="true"
+                            className="vamtamtheme- vamtam-theme-arrow-right"
+                          ></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div
+                  className="elementor-element elementor-element-f3ce20a elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+                  data-id="f3ce20a"
+                  data-element_type="widget"
+                  data-widget_type="divider.default"
+                >
+                  <div className="elementor-widget-container">
+                    <div className="elementor-divider">
+                      <span className="elementor-divider-separator"></span>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  className="elementor-element elementor-element-2d76964 e-con-full e-flex e-con e-child"
+                  data-id="2d76964"
+                  data-element_type="container"
+                  data-settings='{"background_background":"classic"}'
+                  href="tel:1-800-356-8933"
+                >
+                  <div
+                    className="elementor-element elementor-element-b9673ed elementor-view-stacked elementor-shape-rounded elementor-position-left elementor-vertical-align-bottom elementor-widget-mobile__width-initial elementor-widget elementor-widget-icon-box"
+                    data-id="b9673ed"
+                    data-element_type="widget"
+                    data-widget_type="icon-box.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <div className="elementor-icon-box-wrapper">
+                        <div className="elementor-icon-box-icon">
+                          <span className="elementor-icon">
+                            <i
+                              aria-hidden="true"
+                              className="vamtamtheme- vamtam-theme-location"
+                            ></i>
+                          </span>
+                        </div>
+                        <div className="elementor-icon-box-content">
+                          <h6 className="elementor-icon-box-title">
+                            <span> Visit us at: </span>
+                          </h6>
+                          <p className="elementor-icon-box-description">
+                            Seventh Ave, 20th Floor, New York, NY 10018
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="vamtam-has-theme-widget-styles elementor-element elementor-element-c264aaa elementor-view-default elementor-widget elementor-widget-icon"
+                    data-id="c264aaa"
+                    data-element_type="widget"
+                    data-widget_type="icon.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <div className="elementor-icon-wrapper">
+                        <div className="elementor-icon">
+                          <i
+                            aria-hidden="true"
+                            className="vamtamtheme- vamtam-theme-arrow-right"
+                          ></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-c3eedfc e-con-full animated-fast e-flex e-con e-child"
+              data-id="c3eedfc"
+              data-element_type="container"
+              data-settings='{"animation":"none"}'
+            >
+              <div
+                className="elementor-element elementor-element-c9694fb elementor-invisible e-con-full animated-fast e-flex e-con e-child"
+                data-id="c9694fb"
+                data-element_type="container"
+                data-settings='{"background_background":"classic","animation":"slideInUp","animation_mobile":"none"}'
+              >
+                <div
+                  className="elementor-element elementor-element-2734fe6 elementor-widget elementor-widget-image"
+                  data-id="2734fe6"
+                  data-element_type="widget"
+                  data-widget_type="image.default"
+                >
+                  <div className="elementor-widget-container">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      width="92"
+                      height="20"
+                      src="/wp-content/uploads/2025/03/Logo-white.svg"
+                      className="attachment-medium size-medium wp-image-46"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-aa46181 elementor-widget elementor-widget-heading"
+                  data-id="aa46181"
+                  data-element_type="widget"
+                  data-widget_type="heading.default"
+                >
+                  <div className="elementor-widget-container">
+                    <h5 className="elementor-heading-title elementor-size-default">
+                      Schedule a Free Consultation
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  className="vamtam-has-theme-widget-styles elementor-element elementor-element-0f759a4 elementor-invisible elementor-absolute animated-fast elementor-view-default elementor-widget elementor-widget-icon"
+                  data-id="0f759a4"
+                  data-element_type="widget"
+                  data-settings='{"_position":"absolute","_animation":"slideInLeft","_animation_delay":50}'
+                  data-widget_type="icon.default"
+                >
+                  <div className="elementor-widget-container">
+                    <div className="elementor-icon-wrapper">
+                      <div className="elementor-icon">
+                        <i
+                          aria-hidden="true"
+                          className="vamtamtheme- vamtam-theme-send"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="elementor-element elementor-element-8eea291 e-con-full e-flex e-con e-child"
+                data-id="8eea291"
+                data-element_type="container"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div
+                  className="vamtam-has-theme-widget-styles elementor-element elementor-element-5099fe1 elementor-invisible animated-fast elementor-button-align-stretch elementor-widget elementor-widget-form"
+                  data-id="5099fe1"
+                  data-element_type="widget"
+                  data-settings='{"button_width":"40","step_next_label":"Next","step_previous_label":"Previous","_animation":"fadeIn","step_type":"number_text","step_icon_shape":"circle"}'
+                  data-widget_type="form.default"
+                >
+                  <div className="elementor-widget-container">
+                    <form
+                      className="elementor-form"
+                      method="post"
+                      name="New Form"
+                      aria-label="New Form"
+                    >
+                      <input type="hidden" name="post_id" value="17" />
+                      <input type="hidden" name="form_id" value="5099fe1" />
+                      <input
+                        type="hidden"
+                        name="referer_title"
+                        value="Execor | Execor - Accounting and Consulting WordPress Theme"
+                      />
+                      <input type="hidden" name="queried_id" value="17" />
+                      <div className="elementor-form-fields-wrapper elementor-labels-above">
+                        <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-50 elementor-field-required">
+                          <label
+                            htmlFor="form-field-name"
+                            className="elementor-field-label"
+                          >
+                            First name
+                          </label>
+                          <input
+                            size={1}
+                            type="text"
+                            name="form_fields[name]"
+                            id="form-field-name"
+                            className="elementor-field elementor-size-sm elementor-field-textual"
+                            required
+                          />
+                        </div>
+                        <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_667018e elementor-col-50 elementor-field-required">
+                          <label
+                            htmlFor="form-field-field_667018e"
+                            className="elementor-field-label"
+                          >
+                            Second name
+                          </label>
+                          <input
+                            size={1}
+                            type="text"
+                            name="form_fields[field_667018e]"
+                            id="form-field-field_667018e"
+                            className="elementor-field elementor-size-sm elementor-field-textual"
+                            required
+                          />
+                        </div>
+                        <div className="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+                          <label
+                            htmlFor="form-field-email"
+                            className="elementor-field-label"
+                          >
+                            Email
+                          </label>
+                          <input
+                            size={1}
+                            type="email"
+                            name="form_fields[email]"
+                            id="form-field-email"
+                            className="elementor-field elementor-size-sm elementor-field-textual"
+                            required
+                          />
+                        </div>
+                        <div className="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-field_1dac9e8 elementor-col-100 elementor-field-required">
+                          <label
+                            htmlFor="form-field-field_1dac9e8"
+                            className="elementor-field-label"
+                          >
+                            Phone
+                          </label>
+                          <input
+                            size={1}
+                            type="tel"
+                            name="form_fields[field_1dac9e8]"
+                            id="form-field-field_1dac9e8"
+                            className="elementor-field elementor-size-sm elementor-field-textual"
+                            required
+                            pattern="[0-9()#&+*-=.]+"
+                            title="Only numbers and phone characters (#, -, *, etc) are accepted."
+                          />
+                        </div>
+                        <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_91c029d elementor-col-50">
+                          <label
+                            htmlFor="form-field-field_91c029d"
+                            className="elementor-field-label"
+                          >
+                            Comapny
+                          </label>
+                          <input
+                            size={1}
+                            type="text"
+                            name="form_fields[field_91c029d]"
+                            id="form-field-field_91c029d"
+                            className="elementor-field elementor-size-sm elementor-field-textual"
+                          />
+                        </div>
+                        <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_cc72308 elementor-col-50">
+                          <label
+                            htmlFor="form-field-field_cc72308"
+                            className="elementor-field-label"
+                          >
+                            Job Title
+                          </label>
+                          <input
+                            size={1}
+                            type="text"
+                            name="form_fields[field_cc72308]"
+                            id="form-field-field_cc72308"
+                            className="elementor-field elementor-size-sm elementor-field-textual"
+                          />
+                        </div>
+                        <div className="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100 elementor-field-required">
+                          <label
+                            htmlFor="form-field-message"
+                            className="elementor-field-label"
+                          >
+                            Message
+                          </label>
+                          <textarea
+                            className="elementor-field-textual elementor-field elementor-size-sm"
+                            name="form_fields[message]"
+                            id="form-field-message"
+                            rows={6}
+                            placeholder="To better assist you, please describe how we can help..."
+                            required
+                          ></textarea>
+                        </div>
+                        <div className="elementor-field-group elementor-column elementor-field-type-submit elementor-col-40 e-form__buttons">
+                          <button
+                            className="elementor-button elementor-size-sm"
+                            type="submit"
+                          >
+                            <span className="elementor-button-content-wrapper">
+                              <span className="elementor-button-icon">
+                                <i
+                                  aria-hidden="true"
+                                  className="vamtamtheme- vamtam-theme-arrow-right"
+                                ></i>
+                              </span>
+                              <span className="elementor-button-text">
+                                Submit
+                              </span>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-910203c elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+                  data-id="910203c"
+                  data-element_type="widget"
+                  data-widget_type="divider.default"
+                >
+                  <div className="elementor-widget-container">
+                    <div className="elementor-divider">
+                      <span className="elementor-divider-separator"></span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="elementor-element elementor-element-bf7faf1 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor"
+                  data-id="bf7faf1"
+                  data-element_type="widget"
+                  data-widget_type="text-editor.default"
+                >
+                  <div className="elementor-widget-container">
+                    <p>
+                      By submitting this form you agree to our{" "}
+                      <a href="#">Privacy Policy</a>. Optimum may contact you
+                      via email or phone for scheduling or marketing purposes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default GetInTouch;
