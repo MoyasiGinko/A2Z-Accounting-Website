@@ -30,7 +30,7 @@ const Footer = () => {
                       <img
                         width="92"
                         height="20"
-                        src="assets/wp-content/uploads/2025/03/Logo-white.svg"
+                        src="/wp-content/uploads/2025/03/Logo-white.svg"
                         className="attachment-medium size-medium wp-image-46"
                         alt=""
                       />
