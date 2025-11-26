@@ -5,17 +5,35 @@ import { useEffect } from "react";
 export const useCarousels = () => {
   useEffect(() => {
     const initCarousels = async () => {
-      // Dynamic import to avoid SSR issues
-      const Swiper = (await import("swiper")).default;
-      const { Navigation, Pagination, Autoplay } = await import(
-        "swiper/modules"
-      );
-
-      const widgets = document.querySelectorAll(
+      const swiperNodes = document.querySelectorAll<HTMLElement>(
         ".elementor-widget-loop-carousel .swiper"
       );
-      widgets.forEach((swiperContainer) => {
-        if ((swiperContainer as any).dataset.initialised === "true") {
+
+      if (!swiperNodes.length) {
+        return;
+      }
+
+      const markReady = (node: HTMLElement) => {
+        node.classList.add("is-ready");
+      };
+
+      let SwiperCtor: typeof import("swiper").default | null = null;
+      let modules: typeof import("swiper/modules") | null = null;
+
+      try {
+        SwiperCtor = (await import("swiper")).default;
+        modules = await import("swiper/modules");
+      } catch (error) {
+        swiperNodes.forEach((node) => markReady(node));
+        if (process.env.NODE_ENV !== "production") {
+          // eslint-disable-next-line no-console
+          console.error("Failed to load Swiper for loop carousel", error);
+        }
+        return;
+      }
+
+      swiperNodes.forEach((swiperContainer) => {
+        if (swiperContainer.dataset.initialised === "true") {
           return;
         }
 
@@ -37,20 +55,28 @@ export const useCarousels = () => {
         const autoplayEnabled = settings.autoplay === "yes";
         const autoplayDelay = parseInt(settings.autoplay_speed, 10) || 5000;
         const prev = widget
-          ? widget.querySelector(".elementor-swiper-button-prev")
+          ? (widget.querySelector(
+              ".elementor-swiper-button-prev"
+            ) as HTMLElement | null)
           : null;
         const next = widget
-          ? widget.querySelector(".elementor-swiper-button-next")
+          ? (widget.querySelector(
+              ".elementor-swiper-button-next"
+            ) as HTMLElement | null)
           : null;
         const pagination = widget
-          ? widget.querySelector(".swiper-pagination")
+          ? (widget.querySelector(".swiper-pagination") as HTMLElement | null)
           : null;
 
-        (swiperContainer as any).dataset.initialised = "true";
-        swiperContainer.classList.add("is-ready");
+        swiperContainer.dataset.initialised = "true";
+        markReady(swiperContainer);
 
-        new Swiper(swiperContainer as any, {
-          modules: [Navigation, Pagination, Autoplay],
+        new SwiperCtor!(swiperContainer, {
+          modules: [
+            modules!.Navigation,
+            modules!.Pagination,
+            modules!.Autoplay,
+          ],
           loop: settings.infinite === "yes",
           speed: parseInt(settings.speed, 10) || 500,
           slidesPerView: slidesDesktop,
@@ -58,13 +84,13 @@ export const useCarousels = () => {
           navigation:
             prev && next
               ? {
-                  prevEl: prev as HTMLElement,
-                  nextEl: next as HTMLElement,
+                  prevEl: prev,
+                  nextEl: next,
                 }
               : undefined,
           pagination: pagination
             ? {
-                el: pagination as HTMLElement,
+                el: pagination,
                 clickable: true,
               }
             : undefined,

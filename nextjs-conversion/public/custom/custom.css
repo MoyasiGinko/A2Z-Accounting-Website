@@ -62,11 +62,15 @@ html:not(.standalone-js) .elementor-invisible {
 }
 
 /* Basic helper for carousels when Swiper initialises */
-.elementor-widget-loop-carousel .swiper {
+.standalone-js .elementor-widget-loop-carousel .swiper {
   visibility: hidden;
 }
 
-.elementor-widget-loop-carousel .swiper.is-ready {
+.standalone-js .elementor-widget-loop-carousel .swiper.is-ready {
+  visibility: visible;
+}
+
+html:not(.standalone-js) .elementor-widget-loop-carousel .swiper {
   visibility: visible;
 }
 
