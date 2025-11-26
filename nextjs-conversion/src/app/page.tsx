@@ -10,6 +10,7 @@ import Clients from "../components/Clients";
 import ClientStats from "../components/ClientStats";
 import ClientLogos from "../components/ClientLogos";
 import Testimonials from "../components/Testimonials";
+import GetInTouch from "../components/GetInTouch";
 import BlogCarousel from "../components/BlogCarousel";
 import NewsletterSignup from "../components/NewsletterSignup";
 import Footer from "../components/Footer";
@@ -68,6 +69,7 @@ export default function Home() {
                     <ClientStats />
                     <ClientLogos />
                     <Testimonials />
+                    <GetInTouch />
                     <BlogCarousel />
                     <NewsletterSignup />
                   </div>
