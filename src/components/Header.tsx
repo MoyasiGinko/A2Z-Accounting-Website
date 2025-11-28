@@ -46,10 +46,6 @@ const menuItems: MenuItem[] = [
       { label: "FAQ", href: "/faq" },
     ],
   },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
 ];
 
 export default function Header() {
@@ -88,12 +84,27 @@ export default function Header() {
     };
   }, [lastScrollY]);
 
+  // Determine background style based on scroll position and visibility
+  const getHeaderClasses = () => {
+    const baseClasses =
+      "fixed top-0 left-0 right-0 z-50 shadow-xl transition-all duration-300 ease-in-out backdrop-blur-sm";
+
+    if (!isVisible) {
+      return `${baseClasses} -translate-y-full`;
+    }
+
+    // When visible, check if we're at the top
+    const isAtTop = window.scrollY < 50;
+
+    if (isAtTop) {
+      return `${baseClasses} translate-y-0 bg-transparent`;
+    } else {
+      return `${baseClasses} translate-y-0 bg-[#162C45]`;
+    }
+  };
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-transparent shadow-xl transition-all duration-300 ease-in-out backdrop-blur-sm bg-opacity-95 ${
-        isVisible ? "translate-y-0 " : "-translate-y-full bg-[#162C45]"
-      }`}
-    >
+    <header className={getHeaderClasses()}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -119,7 +130,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <nav className=" md:flex flex-1 justify-center">
+          <nav className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-1">
               {menuItems.map((item) => (
                 <div key={item.label} className="relative group">
@@ -188,7 +199,7 @@ export default function Header() {
           </nav>
 
           {/* Contact Now Button */}
-          <div className=" md:flex flex-shrink-0">
+          <div className="hidden md:flex flex-shrink-0">
             <button
               onClick={() => (window.location.href = "/contact")}
               className="group relative bg-white text-primary-600 hover:bg-gray-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
