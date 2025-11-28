@@ -226,12 +226,12 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
+            <span
               onClick={toggleMobileMenu}
-              className="relative p-2 text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white hover:bg-opacity-10 group"
+              className="relative p-2 text-white hover:text-primary-100 transition-all duration-200 rounded-lg  hover:bg-opacity-10 group"
               aria-label="Toggle mobile menu"
             >
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-200"></div>
+              {/* <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-200"></div> */}
               <svg
                 className="relative z-10 h-6 w-6 transition-all duration-300"
                 fill="none"
@@ -254,13 +254,13 @@ export default function Header() {
                   />
                 )}
               </svg>
-            </button>
+            </span>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-[#162C45] border-t border-[#162C45]/50 backdrop-blur-sm">
+          <div className="md:hidden  border-t border-[#162C45]/50 backdrop-blur-sm">
             <div className="px-4 pt-4 pb-6 space-y-2">
               {menuItems.map((item, index) => (
                 <div
@@ -279,7 +279,7 @@ export default function Header() {
                     </Link>
                   ) : (
                     <div>
-                      <button
+                      <span
                         className="w-full text-left px-4 py-3 text-base font-semibold text-white hover:text-primary-100 hover:bg-white hover:bg-opacity-10 rounded-xl transition-all duration-200 flex items-center justify-between group"
                         onClick={() => toggleSubMenu(item.label)}
                       >
@@ -304,20 +304,20 @@ export default function Header() {
                             d="M19 9l-7 7-7-7"
                           />
                         </svg>
-                      </button>
+                      </span>
 
                       {/* Mobile Sub-menu */}
                       {item.subMenu && openSubMenu === item.label && (
-                        <div className="ml-8 mt-2 space-y-1 bg-primary-800/50 rounded-lg p-3 border border-primary-600/30 animate-slide-down">
+                        <div className="ml-8 mt-2 space-y-1 bg-[#1B3756] rounded-lg p-3 border border-[#84C9E2]/30 animate-slide-down">
                           {item.subMenu.map((subItem, subIndex) => (
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className="group/sub flex items-center px-3 py-2 text-sm text-primary-100 hover:text-white hover:bg-primary-600/50 rounded-lg transition-all duration-200"
+                              className="group/sub flex items-center px-3 py-2 text-sm text-primary-100 hover:text-white hover:bg-[#84C9E2]/50 rounded-lg transition-all duration-200"
                               onClick={() => setIsMobileMenuOpen(false)}
                               style={{ animationDelay: `${subIndex * 30}ms` }}
                             >
-                              <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div>
+                              {/* <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div> */}
                               <span className="font-medium">
                                 {subItem.label}
                               </span>
@@ -353,8 +353,8 @@ export default function Header() {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
+                  {/* <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div> */}
                 </button>
               </div>
             </div>
