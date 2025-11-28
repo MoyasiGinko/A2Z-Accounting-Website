@@ -144,9 +144,10 @@ export default function Header() {
                       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-200 group-hover:w-full transition-all duration-300"></div>
                     </Link>
                   ) : (
-                    <button
+                    <Link
                       className="relative px-4 py-2 text-sm font-semibold text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white hover:bg-opacity-10 group flex items-center"
                       onClick={() => toggleSubMenu(item.label)}
+                      href="#!"
                     >
                       <span className="relative z-10">{item.label}</span>
                       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-200"></div>
@@ -168,7 +169,7 @@ export default function Header() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </button>
+                    </Link>
                   )}
 
                   {/* Desktop Sub-menu */}
@@ -202,7 +203,7 @@ export default function Header() {
           <div className="hidden md:flex flex-shrink-0">
             <button
               onClick={() => (window.location.href = "/contact")}
-              className="group relative bg-white text-primary-600 hover:bg-gray-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
+              className="group relative bg-white text-primary-600  px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform  hover:shadow-xl shadow-lg overflow-hidden flex items-center"
             >
               <span className="relative z-10">Contact Now</span>
               <svg
@@ -218,8 +219,8 @@ export default function Header() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
+              {/* <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div> */}
             </button>
           </div>
 
@@ -259,7 +260,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-gradient-to-b from-primary-700 to-primary-800 border-t border-primary-500/50 backdrop-blur-sm">
+          <div className="md:hidden bg-[#162C45] border-t border-[#162C45]/50 backdrop-blur-sm">
             <div className="px-4 pt-4 pb-6 space-y-2">
               {menuItems.map((item, index) => (
                 <div
