@@ -90,8 +90,8 @@ export default function Header() {
 
   return (
     <header
-      className={`custom-header fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-primary-700 shadow-xl transition-all duration-300 ease-in-out backdrop-blur-sm bg-opacity-95 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-0 right-0 z-50 bg-transparent shadow-xl transition-all duration-300 ease-in-out backdrop-blur-sm bg-opacity-95 ${
+        isVisible ? "translate-y-0 " : "-translate-y-full bg-[#162C45]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +119,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex flex-1 justify-center custom-nav">
+          <nav className=" md:flex flex-1 justify-center">
             <div className="flex items-center space-x-1">
               {menuItems.map((item) => (
                 <div key={item.label} className="relative group">
@@ -188,30 +188,28 @@ export default function Header() {
           </nav>
 
           {/* Contact Now Button */}
-          <div className="hidden md:flex flex-shrink-0">
-            <Link
-              href="/contact"
-              className="group relative bg-white text-primary-600 hover:bg-gray-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden"
+          <div className=" md:flex flex-shrink-0">
+            <button
+              onClick={() => (window.location.href = "/contact")}
+              className="group relative bg-white text-primary-600 hover:bg-gray-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
             >
-              <span className="relative z-10 flex items-center">
-                Contact Now
-                <svg
-                  className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
+              <span className="relative z-10">Contact Now</span>
+              <svg
+                className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div>
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -322,30 +320,30 @@ export default function Header() {
 
               {/* Mobile Contact Now Button */}
               <div className="pt-6 border-t border-primary-500/30 mt-6">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => {
+                    window.location.href = "/contact";
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="group relative w-full bg-white text-primary-600 hover:bg-gray-50 px-6 py-3 rounded-full text-center font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg flex items-center justify-center overflow-hidden"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="relative z-10 flex items-center">
-                    Contact Now
-                    <svg
-                      className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </span>
+                  <span className="relative z-10">Contact Now</span>
+                  <svg
+                    className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div>
-                </Link>
+                </button>
               </div>
             </div>
           </div>
