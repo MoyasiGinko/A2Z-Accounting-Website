@@ -53,6 +53,7 @@ export default function Header() {
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -63,6 +64,12 @@ export default function Header() {
   };
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -82,7 +89,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, isClient]);
 
   // Determine background style based on scroll position and visibility
   const getHeaderClasses = () => {
@@ -93,8 +100,8 @@ export default function Header() {
       return `${baseClasses} -translate-y-full`;
     }
 
-    // When visible, check if we're at the top
-    const isAtTop = window.scrollY < 50;
+    // When visible, check if we're at the top (only on client side)
+    const isAtTop = isClient ? window.scrollY < 50 : true;
 
     if (isAtTop) {
       return `${baseClasses} translate-y-0 bg-transparent`;
@@ -201,9 +208,9 @@ export default function Header() {
 
           {/* Contact Now Button */}
           <div className="hidden md:flex flex-shrink-0">
-            <button
-              onClick={() => (window.location.href = "/contact")}
-              className="group relative bg-white text-primary-600  px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform  hover:shadow-xl shadow-lg overflow-hidden flex items-center"
+            <Link
+              href="/contact"
+              className="group relative bg-white text-primary-600 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
             >
               <span className="relative z-10">Contact Now</span>
               <svg
@@ -221,7 +228,7 @@ export default function Header() {
               </svg>
               {/* <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
               {/* <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div> */}
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -332,11 +339,9 @@ export default function Header() {
 
               {/* Mobile Contact Now Button */}
               <div className="pt-6 border-t border-primary-500/30 mt-6">
-                <button
-                  onClick={() => {
-                    window.location.href = "/contact";
-                    setIsMobileMenuOpen(false);
-                  }}
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="group relative w-full bg-white text-primary-600 hover:bg-gray-50 px-6 py-3 rounded-full text-center font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg flex items-center justify-center overflow-hidden"
                 >
                   <span className="relative z-10">Contact Now</span>
@@ -355,7 +360,7 @@ export default function Header() {
                   </svg>
                   {/* <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
                   {/* <div className="absolute inset-0 bg-white opacity-90 group-hover:opacity-0 transition-opacity duration-300"></div> */}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
