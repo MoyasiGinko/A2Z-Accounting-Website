@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Override WordPress/Elementor header styles to ensure Tailwind takes precedence */
+.custom-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  background: linear-gradient(
+    to right,
+    rgb(37 99 235),
+    rgb(59 130 246)
+  ) !important; /* primary-600 to primary-700 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease-in-out !important;
+  backdrop-filter: saturate(180%) blur(20px) !important;
+  background-opacity: 0.95 !important;
+}
+
+/* Force navigation to be visible */
+.custom-header nav {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* .custom-header nav * {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+} */
+
+/* Prevent Elementor sticky header styles from interfering */
+.custom-header.vamtam-sticky-header,
+.vamtam-sticky-header .custom-header {
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  transform: none !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Ensure custom header styles override Elementor */
+.custom-header {
+  background: linear-gradient(
+    to right,
+    rgb(37 99 235),
+    rgb(59 130 246)
+  ) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.custom-header.translate-y-0 {
+  transform: translateY(0) !important;
+}
+
+.custom-header.-translate-y-full {
+  transform: translateY(-100%) !important;
+}
+
+/* Override Elementor sticky header styles with higher specificity */
+body:not(.elementor-editor-active) .custom-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  transform: translateY(0) !important;
+  transition: transform 0.3s ease-in-out !important;
+  background: linear-gradient(
+    to right,
+    rgb(37 99 235),
+    rgb(59 130 246)
+  ) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Ensure mobile menu styles are not overridden */
+.custom-header .md\\:hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .custom-header .md\\:hidden {
+    display: block !important;
+  }
+
+  .custom-header .hidden.md\\:flex {
+    display: none !important;
+  }
+}
+
+/* Prevent Elementor from affecting our custom header */
+.custom-header.vamtam-sticky-header,
+.custom-header.vamtam-sticky-header--mobile,
+.custom-header.vamtam-sticky-header--fixed-shown,
+.custom-header.vamtam-sticky-header--fixed-hidden {
+  position: fixed !important;
+  top: 0 !important;
+  transform: translateY(0) !important;
+  background: linear-gradient(
+    to right,
+    rgb(37 99 235),
+    rgb(59 130 246)
+  ) !important;
+}
+
+/* Override Elementor nav menu styles for our custom header - only prevent list styles */
+.custom-header nav,
+.custom-header nav *,
+.custom-header nav div,
+.custom-header nav button,
+.custom-header nav a {
+  list-style: none !important;
+  list-style-type: none !important;
+  list-style-image: none !important;
+  text-decoration: none !important;
+  /* Let Tailwind handle display, flex, padding, etc. */
+}
+
+/* Override any Elementor nav menu item styles - only prevent conflicts */
+.custom-header .elementor-nav-menu,
+.custom-header .elementor-nav-menu *,
+.custom-header .elementor-item,
+.custom-header .elementor-nav-menu__item {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  /* Let Tailwind handle layout */
+}
+
+/* Specific styles for custom navigation - only override Elementor conflicts */
+
+/* Ensure navigation links and buttons don't inherit list styles - let Tailwind handle styling */
+.custom-header .custom-nav a,
+.custom-header .custom-nav button {
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  list-style: none !important;
+  /* Let Tailwind handle display, padding, colors, etc. */
+}
+
+/* Prevent any inheritance of list styles */
+.custom-header .custom-nav *,
+.custom-header .custom-nav *::before,
+.custom-header .custom-nav *::after {
+  list-style: none !important;
+  list-style-type: none !important;
+  list-style-image: none !important;
+}
+
+/* Custom animations for header */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}
+
+/* Custom styles can go here */

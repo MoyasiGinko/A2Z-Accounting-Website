@@ -38,6 +38,8 @@ export default function Home() {
   return (
     <>
       <div id="top"></div>
+      {/* Header Spacer */}
+      <div className="h-16"></div>
       <Header />
       <div id="page" className="main-container">
         <div id="main-content">
