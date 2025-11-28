@@ -122,17 +122,14 @@ export default function Header() {
             >
               <div className="relative">
                 <Image
-                  src="/wp-content/uploads/2025/03/fav-icon-150x150.png"
+                  src="/wp-content/uploads/2025/03/Logo-white.svg"
                   alt="A2Z Accounting Logo"
-                  width={40}
-                  height={40}
+                  width={44}
+                  height={44}
                   className="h-10 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
                 />
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
               </div>
-              <span className="ml-3 text-xl font-bold text-white tracking-wide group-hover:text-primary-100 transition-colors duration-200">
-                A2Z Accounting
-              </span>
             </Link>
           </div>
 
