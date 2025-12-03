@@ -61,18 +61,23 @@ export default function Home() {
                     data-elementor-post-type="page"
                   >
                     <Hero />
-                    <Services />
+                    {/*new section: calculator (2nd in order)*/}
+                    {/*new section: why dubai (3rd in order)*/}
+
                     <PromoSection />
-                    <About />
+                    {/* <About /> */}
                     <Vision />
                     <Tabs />
                     <Clients />
                     <ClientStats />
+                    <Services />
+                    <BlogCarousel />
                     <ClientLogos />
                     <Testimonials />
-                    <GetInTouch />
-                    <BlogCarousel />
-                    <NewsletterSignup />
+                    <div className="mb-40">
+                      <GetInTouch />
+                    </div>
+                    {/* <NewsletterSignup /> */}
                   </div>
                 </div>
               </article>

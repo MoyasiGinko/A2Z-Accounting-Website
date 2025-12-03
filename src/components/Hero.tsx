@@ -24,8 +24,12 @@ const Hero = () => {
             >
               <div className="elementor-widget-container">
                 <h1 className="elementor-heading-title elementor-size-default">
-                  Тransforming Businesses for a
-                  <span className="color-accent-2">Stronger Future</span>.
+                  Establish Business in Dubai. Keep More of What you Earn.
+                  <span className="color-accent-2">
+                    {" "}
+                    Live Tax-Free, Stress Free
+                  </span>
+                  .
                 </h1>
               </div>
             </div>
@@ -38,7 +42,9 @@ const Hero = () => {
             >
               <div className="elementor-widget-container">
                 <h5 className="elementor-heading-title elementor-size-default">
-                  Guiding businesses at every stage toward strategic success.
+                  End-to-end Dubai company setup, tax optimisation, banking, and
+                  residency — handled for high-earning founders who want global
+                  freedom and zero stress.
                 </h5>
               </div>
             </div>
@@ -63,7 +69,7 @@ const Hero = () => {
                         ></i>
                       </span>
                       <span className="elementor-button-text">
-                        Book A Free Strategy Call
+                        Book a Consultation
                       </span>
                     </span>
                   </a>
@@ -156,7 +162,7 @@ const Hero = () => {
           >
             <div className="elementor-widget-container">
               <h6 className="elementor-heading-title elementor-size-default">
-                What Sets Us Apart
+                UK-UAE Structuring & Advisory
               </h6>
             </div>
           </div>
@@ -181,7 +187,7 @@ const Hero = () => {
                       ></i>
                     </span>
                     <span className="elementor-icon-list-text">
-                      Data-Driven Strategies
+                      Tax Efficiency
                     </span>
                   </li>
                 </ul>
@@ -203,7 +209,7 @@ const Hero = () => {
                       ></i>
                     </span>
                     <span className="elementor-icon-list-text">
-                      Proven Results
+                      Visa & Residency
                     </span>
                   </li>
                 </ul>
@@ -225,7 +231,7 @@ const Hero = () => {
                       ></i>
                     </span>
                     <span className="elementor-icon-list-text">
-                      Scalable Growth
+                      Compliance Support
                     </span>
                   </li>
                 </ul>
@@ -247,7 +253,7 @@ const Hero = () => {
                       ></i>
                     </span>
                     <span className="elementor-icon-list-text">
-                      Trusted Expertise
+                      Wealth Protection
                     </span>
                   </li>
                 </ul>
