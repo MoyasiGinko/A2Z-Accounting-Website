@@ -16,18 +16,19 @@ const WhyDubai: React.FC = () => {
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-left mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-4xl md:text-5xl mt-0 font-bold text-gray-900 leading-tight">
             Why Dubai
-            <span className="block text-2xl md:text-3xl font-medium text-primary-600 mt-2">
+            <span className="font-medium text-primary-600 ">
+              {" "}
               (Designed for High Revenue Earners)
             </span>
           </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-gray-700 mb-8 leading-tight">
+          <p className="text-gray-700 max-w-lg self-end leading-tight">
             Why High Revenue Entrepreneurs Choose Dubai
-          </h3>
-          <div className="w-24 h-1 bg-primary-500 rounded-full"></div>
+          </p>
         </div>
+        <div className="w-full h-[1px] bg-gray-200 mb-8"></div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -50,6 +51,26 @@ const WhyDubai: React.FC = () => {
               </blockquote>
               <div className="w-16 h-1 bg-primary-500 rounded-full mt-4"></div>
             </div>
+
+            {/* Call to Action */}
+            <div className="text-left mt-16">
+              <div className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
+                <span className="mr-3">Discover Dubai Opportunities</span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
 
           {/* Right Side: Key Benefits */}
@@ -66,7 +87,7 @@ const WhyDubai: React.FC = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Icon */}
-                  <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors duration-300">
+                  <div className="w-10 h-10 bg-primary-500/50 hover:bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors duration-300">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -89,26 +110,6 @@ const WhyDubai: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-left mt-16">
-          <div className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
-            <span className="mr-3">Discover Dubai Opportunities</span>
-            <svg
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
           </div>
         </div>
       </div>
