@@ -70,7 +70,7 @@ const Vision = () => {
             >
               <div className="elementor-widget-container">
                 <span className="elementor-heading-title elementor-size-default">
-                  Our Vision
+                  Who We Help
                 </span>
               </div>
             </div>
@@ -95,8 +95,7 @@ const Vision = () => {
             >
               <div className="elementor-widget-container">
                 <h2 className="elementor-heading-title elementor-size-default">
-                  We add value by focusing on understanding your business and
-                  applying our experience and implementation approach.
+                  Built for £150K+ Profit Businesses & High-Net-Worth Founders
                 </h2>
               </div>
             </div>
