@@ -46,16 +46,15 @@ const CalcSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-left mb-16">
+        <div className="text-left mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
             Why Choose Us?
           </h2>
-          <h3 className="text-lg md:text-xl font-medium text-primary-700 mb-8 leading-tight">
+          <p className=" font-medium text-primary-700 mb-6 leading-tight">
             Your High-End Partner for International Business Expansion
-          </h3>
-          <div className="w-16 h-1 bg-primary-500 rounded-full"></div>
+          </p>
+          <div className="w-full h-[1px] bg-gray-200 "></div>
         </div>
-
         {/* Split Layout: Content Left, Calculator Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side: Key Points in Single Card */}
@@ -116,7 +115,7 @@ const CalcSection: React.FC = () => {
           </div>
 
           {/* Right Side: Tax Calculator in Card */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-fit">
             {/* Calculator Header */}
             <div className="text-left mb-8">
               <h4 className="text-2xl font-bold text-gray-900 mb-2">
