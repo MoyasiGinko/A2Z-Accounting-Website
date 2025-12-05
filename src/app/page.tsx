@@ -3,6 +3,7 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import CalcSection from "../components/CalcSection";
+import WhyDubai from "../components/WhyDubai";
 import Services from "../components/Services";
 import Vision from "../components/Vision";
 import Tabs from "../components/Tabs";
@@ -64,6 +65,7 @@ export default function Home() {
                     <CalcSection />
 
                     {/*new section: why dubai (3rd in order)*/}
+                    <WhyDubai />
 
                     <PromoSection />
                     {/* <About /> */}

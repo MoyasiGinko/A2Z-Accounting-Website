@@ -59,7 +59,9 @@ const CalcSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side: Key Points in Single Card */}
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50">
+              <div className="absolute inset-4 bg-gradient-to-r from-primary-400/30 to-primary-600/30 rounded-2xl opacity-30 blur-3xl  pointer-events-none"></div>
+
               <div className="space-y-6">
                 {keyPoints.map((point, index) => (
                   <div
@@ -115,9 +117,12 @@ const CalcSection: React.FC = () => {
           </div>
 
           {/* Right Side: Tax Calculator in Card */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-fit">
+          <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50 h-fit">
+            {/* Glowing Rounded Rectangle Background */}
+            <div className="absolute inset-4 bg-gradient-to-r from-primary-400/30 to-primary-600/30 rounded-2xl opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
+
             {/* Calculator Header */}
-            <div className="text-left mb-8">
+            <div className="relative z-10 text-left mb-8">
               <h4 className="text-2xl font-bold text-gray-900 mb-2">
                 Tax Savings Calculator
               </h4>
@@ -128,7 +133,7 @@ const CalcSection: React.FC = () => {
 
             {/* Tax Savings Banner - Only show after calculation */}
             {showResults && (
-              <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
+              <div className="relative z-10 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
                 <div>
                   <p className="text-lg font-medium mb-1">Tax Savings in UAE</p>
                   <p className="text-base">
@@ -143,7 +148,7 @@ const CalcSection: React.FC = () => {
             )}
 
             {/* Input Fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Annual Turnover (£)
@@ -177,7 +182,7 @@ const CalcSection: React.FC = () => {
             </div>
 
             {/* Calculate Button */}
-            <div className="text-left mb-8">
+            <div className="relative z-10 text-left mb-8">
               <button
                 onClick={handleCalculate}
                 className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md"
@@ -188,9 +193,9 @@ const CalcSection: React.FC = () => {
 
             {/* Comparison Cards - Only show after calculation */}
             {showResults && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in">
+              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in">
                 {/* UK Card */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
                   <div className="bg-red-600 text-white p-4">
                     <h5 className="font-bold text-lg">UK Corporation</h5>
                   </div>
@@ -230,7 +235,7 @@ const CalcSection: React.FC = () => {
                 </div>
 
                 {/* UAE Card */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
                   <div className="bg-green-600 text-white p-4">
                     <h5 className="font-bold text-lg">UAE Corporation</h5>
                   </div>
