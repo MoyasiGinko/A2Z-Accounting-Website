@@ -2,8 +2,9 @@
 
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import CalcSection from "../components/CalcSection";
+import WhyDubai from "../components/WhyDubai";
 import Services from "../components/Services";
-import About from "../components/About";
 import Vision from "../components/Vision";
 import Tabs from "../components/Tabs";
 import Clients from "../components/Clients";
@@ -12,7 +13,6 @@ import ClientLogos from "../components/ClientLogos";
 import Testimonials from "../components/Testimonials";
 import GetInTouch from "../components/GetInTouch";
 import BlogCarousel from "../components/BlogCarousel";
-import NewsletterSignup from "../components/NewsletterSignup";
 import Footer from "../components/Footer";
 import { useScrollEffects } from "../hooks/useScrollEffects";
 import { useStickyHeader } from "../hooks/useStickyHeader";
@@ -61,18 +61,26 @@ export default function Home() {
                     data-elementor-post-type="page"
                   >
                     <Hero />
-                    <Services />
+                    {/*new section: calculator (2nd in order)*/}
+                    <CalcSection />
+
+                    {/*new section: why dubai (3rd in order)*/}
+                    <WhyDubai />
+
                     <PromoSection />
-                    <About />
+                    {/* <About /> */}
                     <Vision />
                     <Tabs />
                     <Clients />
                     <ClientStats />
+                    <Services />
+                    <BlogCarousel />
                     <ClientLogos />
                     <Testimonials />
-                    <GetInTouch />
-                    <BlogCarousel />
-                    <NewsletterSignup />
+                    <div className="mb-40">
+                      <GetInTouch />
+                    </div>
+                    {/* <NewsletterSignup /> */}
                   </div>
                 </div>
               </article>

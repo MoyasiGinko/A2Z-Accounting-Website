@@ -17,8 +17,16 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   {
-    label: "Home",
-    href: "/",
+    label: "About Us",
+    href: "/about-us",
+  },
+  {
+    label: "Why Dubai",
+    href: "/why-dubai",
+  },
+  {
+    label: "Who We Serve",
+    href: "/who-we-serve",
   },
   {
     label: "Services",
@@ -30,21 +38,17 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
-    label: "About",
+    label: "Free Resources",
     subMenu: [
-      { label: "Our Story", href: "/about/story" },
-      { label: "Our Team", href: "/about/team" },
-      { label: "Careers", href: "/about/careers" },
+      { label: "Free Materials", href: "/free-materials" },
+      { label: "Blog", href: "/blog" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Tax Calculators", href: "/tax-calculators" },
     ],
   },
   {
-    label: "Resources",
-    subMenu: [
-      { label: "Blog", href: "/blog" },
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Whitepapers", href: "/resources/whitepapers" },
-      { label: "FAQ", href: "/faq" },
-    ],
+    label: "A2Z Accounting UK",
+    href: "/a2z-accounting-uk",
   },
 ];
 
@@ -209,7 +213,7 @@ export default function Header() {
               href="/contact"
               className="group relative bg-white text-primary-600 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
             >
-              <span className="relative z-10">Contact Now</span>
+              <span className="relative z-10">Enquire Today</span>
               <svg
                 className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                 fill="none"

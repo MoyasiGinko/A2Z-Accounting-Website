@@ -32,7 +32,8 @@ const Tabs: React.FC = () => {
             >
               <div className="elementor-widget-container">
                 <h2 className="elementor-heading-title elementor-size-default">
-                  Find the Right Solution
+                  Entrepreneurs Who Want a Smarter Way to Grow, Whether Moving
+                  to Dubai or Staying in the UK
                 </h2>
               </div>
             </div>
