@@ -201,11 +201,34 @@ const Tabs: React.FC = () => {
                 {activeTab.title}
               </h3>
               <p className="mt-4 text-lg text-slate-600">{activeTab.summary}</p>
-              <p className="mt-3 text-base text-slate-500">
-                {activeTab.description}
-              </p>
+              {activeTab.description.startsWith("These clients want:") ? (
+                <div className="mt-8">
+                  <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                    What Our Clients Want
+                  </h4>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    {activeTab.description
+                      .split(":")[1]
+                      .split(",")
+                      .map((item, index) => (
+                        <div
+                          key={index}
+                          className="rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm hover:shadow-md transition-shadow"
+                        >
+                          <p className="text-sm font-medium text-slate-700">
+                            {item.trim()}
+                          </p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-3 text-base text-slate-500">
+                  {activeTab.description}
+                </p>
+              )}
 
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {/* <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 {activeTab.metrics.map((metric) => (
                   <div
                     key={metric.label}
@@ -219,9 +242,12 @@ const Tabs: React.FC = () => {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <div className="mt-10 space-y-6">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                  How We Help
+                </h4>
                 {activeTab.strategies.map((strategy) => (
                   <div
                     key={strategy.title}
@@ -249,7 +275,7 @@ const Tabs: React.FC = () => {
               <img
                 src={activeTab.media.imageUrl}
                 alt={activeTab.media.alt}
-                className="h-full w-full object-fit cover"
+                className="h-full w-full object-cover"
                 loading="lazy"
               />
               <div
