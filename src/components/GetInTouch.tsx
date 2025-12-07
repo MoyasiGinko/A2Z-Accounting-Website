@@ -36,7 +36,7 @@ const GetInTouch: React.FC = () => {
             >
               <div className="elementor-widget-container">
                 <h2 className="elementor-heading-title elementor-size-default">
-                  Change Starts With a Conversation
+                  Ready to protect your profits and live tax-free?
                 </h2>
               </div>
             </div>
@@ -79,7 +79,7 @@ const GetInTouch: React.FC = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      Have a Challenge or an Idea?
+                      Book My Free Strategy Session
                     </h5>
                   </div>
                 </div>
@@ -259,7 +259,8 @@ const GetInTouch: React.FC = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      Schedule a Free Consultation
+                      Speak to our Dubai tax strategists and see how much you
+                      can save.
                     </h5>
                   </div>
                 </div>
