@@ -200,7 +200,7 @@ const Tabs: React.FC = () => {
               <h3 className="mt-3 text-3xl font-semibold text-slate-900">
                 {activeTab.title}
               </h3>
-              <p className="mt-4 text-lg text-slate-600">{activeTab.summary}</p>
+              {/* <p className="mt-4 text-lg text-slate-600">{activeTab.summary}</p> */}
               {activeTab.description.startsWith("These clients want:") ? (
                 <div className="mt-8">
                   <h4 className="text-lg font-semibold text-slate-900 mb-4">
@@ -271,23 +271,43 @@ const Tabs: React.FC = () => {
               </a>
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl bg-slate-900 text-white shadow-2xl">
-              <img
-                src={activeTab.media.imageUrl}
-                alt={activeTab.media.alt}
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
+            <div className="flex flex-col gap-6">
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${activeTab.media.gradient}`}
-              ></div>
-              <div className="relative z-10 flex h-full flex-col justify-end p-8">
-                <span className="inline-flex max-w-max items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  {activeTab.media.badge}
-                </span>
-                <p className="mt-4 text-lg text-white/90">
-                  “{activeTab.summary}”
-                </p>
+                className="relative overflow-hidden rounded-3xl bg-slate-900 text-white shadow-2xl"
+                style={{
+                  height: "600px",
+                  backgroundImage: `url(${activeTab.media.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${activeTab.media.gradient}`}
+                ></div>
+                <div className="relative z-10 flex h-full flex-col justify-end p-8">
+                  <span className="inline-flex max-w-max items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    {activeTab.media.badge}
+                  </span>
+                  <p className="mt-4 text-lg text-white/90">
+                    "{activeTab.summary}"
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2">
+                {activeTab.metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-2xl border border-slate-100 bg-slate-50 p-4"
+                  >
+                    <p className="text-3xl font-semibold text-slate-900">
+                      {metric.value}
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-slate-500">
+                      {metric.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
