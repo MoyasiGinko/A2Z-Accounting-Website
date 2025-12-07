@@ -289,7 +289,7 @@ const Tabs: React.FC = () => {
                     {activeTab.media.badge}
                   </span>
                   <p className="mt-4 text-lg text-white/90">
-                    "{activeTab.summary}"
+                    &ldquo;{activeTab.summary}&rdquo;
                   </p>
                 </div>
               </div>
