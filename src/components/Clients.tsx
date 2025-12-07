@@ -20,7 +20,7 @@ const Clients = () => {
           >
             <div className="elementor-widget-container">
               <span className="elementor-heading-title elementor-size-default">
-                Our Clients
+                Process Overview
               </span>
             </div>
           </div>
@@ -33,7 +33,8 @@ const Clients = () => {
           >
             <div className="elementor-widget-container">
               <h2 className="elementor-heading-title elementor-size-default">
-                Trusted by Businesses, Proven by Results.
+                A Seamless, Stress-Free Process — Tailored for High-Earning
+                Founders
               </h2>
             </div>
           </div>
@@ -47,9 +48,9 @@ const Clients = () => {
         >
           <div className="elementor-widget-container">
             <span className="elementor-heading-title elementor-size-default">
-              From emerging startups to established global leaders, our clients
-              rely on our expertise to overcome challenges, seize opportunities,
-              and achieve measurable results.
+              We handle everything from structuring to setup to compliance,
+              whether you’re relocating to Dubai or staying in the UK with a UAE
+              company.
             </span>
           </div>
         </div>

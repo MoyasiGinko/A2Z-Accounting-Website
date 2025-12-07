@@ -123,7 +123,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    10+
+                    1ST
                   </span>
                 </div>
               </div>
@@ -140,7 +140,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      Years of Experience
+                      1. Initial Strategy Call & Tax Assessment
                     </h5>
                   </div>
                 </div>
@@ -152,7 +152,12 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <div className="elementor-heading-title elementor-size-default">
-                      A decade of expertise in strategy and business consulting.
+                      Private consultation covering revenue, tax exposure,
+                      goals, and residency to define your relocation or
+                      stay-in-UK pathway. Key points: understand your business
+                      model, review UK tax/HMRC risks, determine optimal UAE
+                      structure, map both pathways, and deliver a personalised
+                      Dubai Tax Blueprint.
                     </div>
                   </div>
                 </div>
@@ -178,7 +183,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    100+
+                    2ND
                   </span>
                 </div>
               </div>
@@ -195,7 +200,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      Satisfied Clients
+                      2. Tailored Company Structure & Free Zone Selection
                     </h5>
                   </div>
                 </div>
@@ -207,8 +212,12 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <div className="elementor-heading-title elementor-size-default">
-                      Helping businesses of all sizes achieve measurable
-                      success.
+                      We architect the ideal legal structure—Mainland or Free
+                      Zone—for maximum tax efficiency and compliance. Key
+                      points: select the right free zone (DMCC, Meydan, IFZA,
+                      etc.), draft the corporate structure, prepare legal
+                      documentation, and register trade name, activities, and
+                      licences.
                     </div>
                   </div>
                 </div>
@@ -234,7 +243,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    $500
+                    3RD
                   </span>
                 </div>
               </div>
@@ -251,7 +260,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      Million Revenue Growth
+                      3. Company Setup, Bank Account Opening & Residency
                     </h5>
                   </div>
                 </div>
@@ -263,7 +272,11 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <div className="elementor-heading-title elementor-size-default">
-                      Optimizing operations for sustainable profitability
+                      End-to-end execution for trade licences, banking, and
+                      visas without you navigating government queues. Key
+                      points: company incorporation, UAE bank account,
+                      investor/partner/employment visas, Emirates ID with
+                      medicals/biometrics, plus optional UK residency planning.
                     </div>
                   </div>
                 </div>
@@ -289,7 +302,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    95%
+                    4TH
                   </span>
                 </div>
               </div>
@@ -306,7 +319,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      Client Retention Rate
+                      4. Ongoing Compliance, Accounting & Tax Advisory
                     </h5>
                   </div>
                 </div>
@@ -318,7 +331,11 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <div className="elementor-heading-title elementor-size-default">
-                      Delivering measurable results that matter
+                      Continuous support keeps your Dubai entity compliant
+                      whether you relocate or remain in the UK. Key points:
+                      accounting and filings, corporate tax planning, VAT
+                      management, HMRC non-resident guidance, renewals, and a
+                      dedicated advisor for every update.
                     </div>
                   </div>
                 </div>
@@ -345,7 +362,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    $1B+
+                    ONGOING CARE
                   </span>
                 </div>
               </div>
@@ -362,7 +379,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      In Cost Savings Identified
+                      Dedicated Advisor & Proactive Compliance Updates
                     </h5>
                   </div>
                 </div>
@@ -374,7 +391,10 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <div className="elementor-heading-title elementor-size-default">
-                      Optimizing operations for sustainable profitability.
+                      Direct access to a senior advisor who oversees HMRC
+                      communication, free zone renewals, and every strategic
+                      adjustment so your structure stays clean, legal, and
+                      optimised.
                     </div>
                   </div>
                 </div>
