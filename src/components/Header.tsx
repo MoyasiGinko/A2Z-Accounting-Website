@@ -33,7 +33,7 @@ const menuItems: MenuItem[] = [
     subMenu: [
       { label: "Accounting Services", href: "/services/accounting" },
       { label: "Tax Consulting", href: "/services/tax" },
-      { label: "Business Consulting", href: "/services/consulting" },
+      { label: "Business Consulting", href: "/services/business-consulting" },
       { label: "Audit Services", href: "/services/audit" },
     ],
   },
