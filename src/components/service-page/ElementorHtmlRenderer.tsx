@@ -27,6 +27,38 @@ const cloneScriptElement = (source: HTMLScriptElement) => {
   return script;
 };
 
+const activateLazyRenderedBlocks = (root: HTMLElement) => {
+  root
+    .querySelectorAll<HTMLElement>("[data-wpr-lazyrender]")
+    .forEach((node) => {
+      node.removeAttribute("data-wpr-lazyrender");
+      node.classList.add("wpr-lazyrendered");
+    });
+};
+
+const revealElementorAnimations = (root: HTMLElement) => {
+  root
+    .querySelectorAll<HTMLElement>(".elementor-invisible")
+    .forEach((node) => node.classList.remove("elementor-invisible"));
+};
+
+const triggerLifecycleEvents = () => {
+  const events: Array<{ target: Window | Document; type: string }> = [
+    { target: document, type: "DOMContentLoaded" },
+    { target: window, type: "load" },
+    { target: document, type: "elementor/lazyload/observe" },
+  ];
+
+  events.forEach(({ target, type }) => {
+    try {
+      const event = new Event(type, { bubbles: true });
+      target.dispatchEvent(event);
+    } catch (error) {
+      console.warn(`Failed to dispatch ${type}`, error);
+    }
+  });
+};
+
 const ElementorHtmlRenderer = ({
   bodyAttributes,
   bodyContent,
@@ -124,6 +156,11 @@ const ElementorHtmlRenderer = ({
       const executedScript = cloneScriptElement(scriptElement);
       scriptElement.replaceWith(executedScript);
     });
+
+    activateLazyRenderedBlocks(container);
+    revealElementorAnimations(container);
+
+    triggerLifecycleEvents();
 
     return () => {
       container.innerHTML = "";
