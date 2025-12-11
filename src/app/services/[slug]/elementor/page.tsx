@@ -7,6 +7,11 @@ import {
 } from "@/data/elementorTemplates";
 import { loadElementorDocument } from "@/lib/elementorTemplate";
 import ElementorHtmlRenderer from "@/components/service-page/ElementorHtmlRenderer";
+import BusinessConsultingElementor from "@/components/service-page/templates/BusinessConsultingElementor";
+
+const templateOverrides: Partial<Record<ServiceSlug, () => JSX.Element>> = {
+  "business-consulting": BusinessConsultingElementor,
+};
 
 interface PageProps {
   params: Promise<{ slug: ServiceSlug | string }>;
@@ -61,6 +66,16 @@ export default async function ElementorServicePage({ params }: PageProps) {
 
   if (!content) {
     notFound();
+  }
+
+  const Template = templateOverrides[slug as ServiceSlug];
+
+  if (Template) {
+    return (
+      <div className="elementor-page-host min-h-screen bg-white">
+        <Template />
+      </div>
+    );
   }
 
   const { headResourcesMarkup, bodyAttributes, bodyContent } =

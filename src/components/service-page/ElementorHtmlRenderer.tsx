@@ -42,6 +42,12 @@ const revealElementorAnimations = (root: HTMLElement) => {
     .forEach((node) => node.classList.remove("elementor-invisible"));
 };
 
+const markLazyBackgroundsAsLoaded = (root: HTMLElement) => {
+  root
+    .querySelectorAll<HTMLElement>(".e-con.e-parent:not(.e-lazyloaded)")
+    .forEach((node) => node.classList.add("e-lazyloaded"));
+};
+
 const triggerLifecycleEvents = () => {
   const events: Array<{ target: Window | Document; type: string }> = [
     { target: document, type: "DOMContentLoaded" },
@@ -159,6 +165,7 @@ const ElementorHtmlRenderer = ({
 
     activateLazyRenderedBlocks(container);
     revealElementorAnimations(container);
+    markLazyBackgroundsAsLoaded(container);
 
     triggerLifecycleEvents();
 
