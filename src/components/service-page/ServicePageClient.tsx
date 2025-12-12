@@ -20,7 +20,7 @@ interface ServicePageClientProps {
 
 const sectionBase = "px-4 py-16 sm:px-6 lg:px-0";
 const cardBase =
-  "rounded-2xl border border-slate-100 bg-white/80 p-6 shadow-sm backdrop-blur";
+  "rounded-2xl border border-slate-100 bg-white/80 shadow-sm backdrop-blur";
 
 const SectionHeader = ({
   eyebrow,
@@ -80,7 +80,7 @@ const ServicePageClient = ({ content }: ServicePageClientProps) => {
                     <MembershipHighlights content={content} />
                     <ServiceOverview content={content} />
                     <ServiceGrid content={content} />
-                    <Callout content={content} />
+                    {/* <Callout content={content} /> */}
                     <ProcessTimeline content={content} />
                     <ExpertiseSpotlight content={content} />
                     <RelatedServices content={content} />
@@ -258,7 +258,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
       {content.services.map((service) => (
         <div
           key={service.title}
-          className={`${cardBase} flex flex-col items-left gap-4 p-6`}
+          className={`${cardBase} h-40 flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
         >
           <div className="flex-shrink-0">
             <svg
@@ -266,24 +266,29 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
               width="37"
               height="34"
               viewBox="0 0 37 34"
-              className="w-9 h-8"
+              className="w-9 h-8 text-[#84C9E2] group-hover:text-white"
             >
               <g fill="none" fillRule="evenodd">
-                <circle fill="#F2F5F1" cx="17" cy="17" r="11.33" />
-                <g fill="#84C9E2">
+                <circle
+                  className="fill-[#F2F5F1] group-hover:fill-[#6cb1ff]"
+                  cx="17"
+                  cy="17"
+                  r="11.33"
+                />
+                <g fill="currentColor">
                   <path d="M16.84 34c-5.3 0-10.3-2.52-13.47-6.8a17.13 17.13 0 0 1-2.7-14.97A16.93 16.93 0 0 1 10.94 1.08a16.69 16.69 0 0 1 14.99 1.6c.18.11.3.29.36.5a.78.78 0 0 1-.6.94c-.2.04-.42 0-.6-.13a15.17 15.17 0 0 0-12.92-1.7 15.37 15.37 0 0 0-9.53 8.99 15.6 15.6 0 0 0 .8 13.15 15.19 15.19 0 0 0 23.17 4.49A15.51 15.51 0 0 0 32.13 17v-1.55a.78.78 0 0 1 .69-.85c.42-.04.8.27.84.7V17c0 4.5-1.77 8.83-4.93 12.02A16.74 16.74 0 0 1 16.84 34Z" />
                   <path d="M19.14 20.48c-.2 0-.4-.09-.54-.23l-6.88-6.96c-.3-.3-.3-.8 0-1.1.3-.3.78-.3 1.08 0l6.34 6.36 16.3-16.39c.29-.3.78-.3 1.08 0 .3.3.3.8 0 1.1l-16.83 17a.76.76 0 0 1-.55.22Z" />
                 </g>
               </g>
             </svg>
           </div>
-          <h4 className="text-lg font-semibold text-slate-900 text-left">
+          <h4 className="text-lg font-semibold text-slate-900 text-left group-hover:text-white">
             {service.title}
           </h4>
         </div>
       ))}
       <div
-        className={`${cardBase} h-46 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-l from-[#84C9E2] to-[#306eb6]`}
+        className={`${cardBase} h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-l from-[#84C9E2] to-[#306eb6]`}
       >
         <div className="flex flex-col">
           <h2 className="text-xl font-semibold !text-slate-50">
@@ -341,43 +346,41 @@ const Callout = ({ content }: { content: ServicePageContent }) => (
 
 const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <SectionHeader
-      eyebrow={content.process.eyebrow}
-      title={content.process.heading}
-      description={content.process.description}
-    />
-
-    <ol className="relative grid gap-6 md:grid-cols-2">
-      {content.process.steps.map((step, index) => (
-        <li
-          key={step.title}
-          className={`${cardBase} relative border-slate-200 bg-white p-7`}
-        >
-          <div className="flex items-start gap-4">
-            <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-primary-700 text-base font-semibold text-white shadow-sm">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Step {index + 1}
-              </p>
-              <h3 className="mt-2 text-lg font-semibold text-slate-900">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                {step.description}
-              </p>
-            </div>
+    <div className="grid gap-8 lg:grid-cols-2">
+      <div className="space-y-4">
+        <Eyebrow>{content.process.eyebrow}</Eyebrow>
+        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+          {content.process.heading}
+        </h2>
+        <p className="text-base leading-relaxed text-slate-600">
+          {content.process.description}
+        </p>
+        <div className="space-y-6">
+          <div className="space-y-4">
+            {content.process.steps.map((step, index) => (
+              <div key={step.title} className={`${cardBase} px-6 py-4`}>
+                {/* <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Step {index + 1}
+                </p> */}
+                <h4 className="text-lg font-semibold text-slate-900">
+                  {step.title}
+                </h4>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                  {step.description}
+                </p>
+              </div>
+            ))}
           </div>
-          <div className="mt-6 border-t border-slate-100 pt-5">
-            <p className="text-sm font-semibold text-slate-900">Outcome</p>
-            <p className="mt-2 text-sm text-slate-600">
-              Clear deliverables and next actions at every stage.
-            </p>
-          </div>
-        </li>
-      ))}
-    </ol>
+        </div>
+      </div>
+      <div className="flex items-center justify-center">
+        <img
+          src={content.process.image}
+          alt="Process Timeline"
+          className="w-full h-auto rounded-2xl shadow-sm"
+        />
+      </div>
+    </div>
   </Section>
 );
 

@@ -39,6 +39,7 @@ export interface ServicePageContent {
     heading: string;
     description: string;
     steps: { title: string; description: string }[];
+    image: string;
   };
   expertise: {
     eyebrow: string;
@@ -175,6 +176,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Formation process",
+      image: "/images/service-1.webp",
       description:
         "A structured workflow that keeps approvals moving and paperwork correct.",
       steps: [
@@ -305,6 +307,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "A reliable monthly rhythm",
+      image: "/images/service-1.webp",
       description:
         "We set the cadence and checkpoints so your reporting arrives consistently.",
       steps: [
@@ -428,6 +431,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Compliance workflow",
+      image: "/images/service-1.webp",
       description:
         "A clear sequence that keeps filings timely and documentation consistent.",
       steps: [
@@ -541,6 +545,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Operational support cadence",
+      image: "/images/service-1.webp",
       description:
         "We implement checklists and timelines so payroll and renewals stay predictable.",
       steps: [
@@ -665,6 +670,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Advisory engagement",
+      image: "/images/service-1.webp",
       description:
         "A tight loop: assess, model, decide, and implement with documentation.",
       steps: [
