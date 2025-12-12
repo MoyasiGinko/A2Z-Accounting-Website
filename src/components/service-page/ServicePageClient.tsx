@@ -3,7 +3,11 @@
 import Link from "next/link";
 import Header from "../Header";
 import Footer from "../Footer";
-import { ServicePageContent } from "@/data/services";
+import {
+  ServicePageContent,
+  serviceSlugs,
+  servicesContent,
+} from "@/data/services";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 import { useStickyHeader } from "@/hooks/useStickyHeader";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -262,7 +266,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
       {content.services.map((service) => (
         <div
           key={service.title}
-          className={`${cardBase} h-46 border-slate-300 flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
+          className={`${cardBase} h-46 border-[#84C9E2] flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
         >
           <div className="flex-shrink-0">
             <svg
@@ -322,32 +326,6 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
   </Section>
 );
 
-const Callout = ({ content }: { content: ServicePageContent }) => (
-  <Section>
-    <div className="relative overflow-hidden rounded-[32px] border border-primary-200 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 p-10 text-white shadow-2xl">
-      <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
-      <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
-
-      <h3 className="relative text-2xl font-semibold sm:text-3xl">
-        {content.callout.heading}
-      </h3>
-      {content.callout.subheading && (
-        <p className="relative mt-3 max-w-2xl text-base leading-relaxed text-white/85">
-          {content.callout.subheading}
-        </p>
-      )}
-      <div className="relative mt-7">
-        <Link
-          href={content.callout.cta.href}
-          className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-primary-800 transition hover:bg-primary-100"
-        >
-          {content.callout.cta.label}
-        </Link>
-      </div>
-    </div>
-  </Section>
-);
-
 const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
   <Section className="bg-[#f2f5f1]">
     <div className="grid gap-8 lg:grid-cols-2 ">
@@ -361,8 +339,11 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
         </p>
         <div className="space-y-6">
           <div className="space-y-4">
-            {content.process.steps.map((step, index) => (
-              <div key={step.title} className={`${cardBase} px-6 py-4`}>
+            {content.process.steps.map((step) => (
+              <div
+                key={step.title}
+                className={`${cardBase} bg-white/50 px-6 py-4`}
+              >
                 <div className="flex items-center gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-4">
@@ -431,7 +412,15 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
 );
 
 const RelatedServices = ({ content }: { content: ServicePageContent }) => {
-  if (!content.relatedServices.length) {
+  const otherServices = serviceSlugs
+    .filter((slug) => slug !== content.slug)
+    .map((slug) => ({
+      label: servicesContent[slug].label,
+      href: `/services/${slug}`,
+    }))
+    .slice(0, 4);
+
+  if (!otherServices.length) {
     return null;
   }
 
@@ -443,36 +432,28 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
         description="If you need end-to-end support, these services fit well together."
       />
 
-      <div className="grid gap-4 md:grid-cols-3">
-        {content.relatedServices.map((service) => (
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {otherServices.map((service) => (
           <Link
             key={service.label}
             href={service.href}
-            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:shadow-md hover:bg-[#84C9E2]"
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:bg-primary-50 hover:shadow-md"
           >
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6 text-[#84C9E2] group-hover:text-white"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1">
-                <p className="text-base font-semibold text-slate-900 group-hover:text-white">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className="text-base font-semibold text-slate-900">
                   {service.label}
                 </p>
-                <p className="mt-2 text-sm text-slate-600 group-hover:text-white/80">
-                  See what’s included and how we deliver.
+                <p className="mt-2 text-sm text-slate-600">
+                  See scope, deliverables, and process.
                 </p>
               </div>
+              <span
+                aria-hidden
+                className="text-xl font-semibold text-primary-700 transition group-hover:translate-x-1"
+              >
+                →
+              </span>
             </div>
           </Link>
         ))}
@@ -480,44 +461,5 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
     </Section>
   );
 };
-
-const NewsletterPanel = ({ content }: { content: ServicePageContent }) => (
-  <Section className="pb-24">
-    <div className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
-      <SectionHeader
-        align="center"
-        eyebrow={content.newsletter.heading}
-        title={content.newsletter.subheading}
-        description={content.newsletter.description}
-      />
-      <form
-        className="mt-8 flex flex-col gap-4 sm:flex-row"
-        method="post"
-        action={content.newsletter.action ?? "#"}
-      >
-        <label className="sr-only" htmlFor="newsletter-email">
-          {content.newsletter.placeholder}
-        </label>
-        <input
-          id="newsletter-email"
-          name="email"
-          type="email"
-          placeholder={content.newsletter.placeholder}
-          required
-          className="flex-1 rounded-full border border-slate-300 bg-white px-5 py-3 text-base text-slate-700 shadow-sm focus:border-primary-400 focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="rounded-full bg-primary-700 px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-600"
-        >
-          {content.newsletter.buttonLabel}
-        </button>
-      </form>
-      <p className="mt-4 text-center text-xs text-slate-500">
-        {content.newsletter.privacy}
-      </p>
-    </div>
-  </Section>
-);
 
 export default ServicePageClient;
