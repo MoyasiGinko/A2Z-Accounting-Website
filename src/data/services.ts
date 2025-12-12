@@ -109,7 +109,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Set up the right UAE entity—end to end.",
       description:
-        "We guide you from jurisdiction selection to licensing and documentation, so your company is structured correctly for banking, visas, and ongoing compliance.",
+        "We guide you from jurisdiction selection to licensing and documentation, so your company is structured correctly for banking, visas, and ongoing compliance. Our comprehensive approach ensures that every step is handled with precision, from initial consultations to final approvals, minimizing risks and maximizing efficiency. Whether you're establishing a mainland company, a free zone entity, or an offshore setup, we tailor the process to your specific business needs, providing expert advice on activity selection, shareholder structures, and regulatory requirements. With our end-to-end support, you can focus on growing your business while we manage the complexities of UAE company formation, ensuring a smooth and compliant launch that sets the foundation for long-term success.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -253,7 +253,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Keep your books clean and your reporting dependable.",
       description:
-        "We handle bookkeeping, reconciliations, and month-end closes so you always have accurate financial statements to support decisions, audits, and tax filings.",
+        "We handle bookkeeping, reconciliations, and month-end closes so you always have accurate financial statements to support decisions, audits, and tax filings. Our dedicated team ensures meticulous attention to detail, categorizing transactions correctly, reconciling accounts regularly, and preparing comprehensive reports that provide a clear picture of your financial health. By leveraging advanced cloud accounting tools like QuickBooks, Xero, or Zoho, we streamline processes, reduce errors, and deliver timely insights. Whether you need monthly bookkeeping, quarterly reviews, or annual financial statements, our service is designed to scale with your business, offering flexibility and reliability to keep your finances in order and your operations running smoothly.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -382,7 +382,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Stay compliant with VAT and Corporate Tax—without surprises.",
       description:
-        "We support registrations, filings, and documentation standards so submissions are on time, accurate, and backed by audit-ready records.",
+        "We support registrations, filings, and documentation standards so submissions are on time, accurate, and backed by audit-ready records. Our expert team navigates the complexities of UAE tax laws, ensuring you meet all VAT and Corporate Tax obligations seamlessly. From initial registrations to periodic filings, we provide proactive guidance, helping you maintain impeccable documentation that withstands scrutiny. We also assist with regulatory requirements like Economic Substance and UBO filings, minimizing risks and penalties. With our comprehensive compliance support, you can focus on your core business activities, confident that your tax affairs are handled professionally and efficiently, adapting to changes in regulations as your business evolves.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -509,7 +509,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Run payroll and HR/PRO workflows with confidence.",
       description:
-        "We help you manage WPS payroll and essential HR/PRO processes with clear checklists and consistent documentation—so your team operations stay compliant and smooth.",
+        "We help you manage WPS payroll and essential HR/PRO processes with clear checklists and consistent documentation—so your team operations stay compliant and smooth. Our streamlined approach covers everything from payroll calculations and tax withholdings to visa processing and government filings, ensuring accuracy and timeliness. We handle the intricacies of UAE labor laws, providing support for employee visas, residency permits, and renewals, while maintaining detailed records for audits and compliance checks. By outsourcing these critical functions to us, you reduce administrative burdens, minimize errors, and allow your HR team to focus on strategic initiatives, fostering a productive and compliant workforce that drives your business forward.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -629,7 +629,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Turn financial data into a practical growth plan.",
       description:
-        "We provide operator-focused advisory—budgeting, KPIs, and performance insights—so you can make confident decisions and prioritise what moves the business forward.",
+        "We provide operator-focused advisory—budgeting, KPIs, and performance insights—so you can make confident decisions and prioritise what moves the business forward. Our advisory services delve deep into your financials, offering tailored strategies for corporate structuring that optimize tax efficiency and compliance across jurisdictions. We assist with forecasting and budgeting to predict cash flows, manage expenses, and plan for expansion, while providing governance support to ensure audit readiness and internal controls. For cross-border operations, we navigate complex international regulations, helping you align your UAE entity with global standards. With our expert guidance, you gain actionable insights that drive profitability, mitigate risks, and position your business for sustainable growth in a competitive landscape.",
       image: sharedWhatWeDoImage,
     },
     overview: {

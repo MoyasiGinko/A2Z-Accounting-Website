@@ -137,7 +137,7 @@ const Eyebrow = ({
 );
 
 const ServiceHero = ({ content }: { content: ServicePageContent }) => (
-  <Section className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-700 pt-20 text-white">
+  <Section className="relative overflow-hidden bg-gradient-to-br from-[#84C9E2] to-[#1B3756] pt-20 text-white">
     <div className="space-y-6 pt-8">
       <Eyebrow className="text-white">{content.hero.eyebrow}</Eyebrow>
       <div className="space-y-4">
@@ -164,7 +164,7 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
 
 const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+    <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
       <div className="flex items-center justify-center">
         <img
           src={content.whatWeDo.image}
@@ -172,7 +172,7 @@ const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
           className="w-full h-auto rounded-2xl shadow-sm"
         />
       </div>
-      <div className="space-y-3">
+      <div className="space-y-4 px-4">
         <Eyebrow>{content.whatWeDo.eyebrow}</Eyebrow>
         <p className="text-2xl font-semibold text-slate-900">
           {content.whatWeDo.heading}
