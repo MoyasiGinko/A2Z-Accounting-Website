@@ -359,15 +359,22 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
           <div className="space-y-4">
             {content.process.steps.map((step, index) => (
               <div key={step.title} className={`${cardBase} px-6 py-4`}>
-                {/* <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  Step {index + 1}
-                </p> */}
-                <h4 className="text-lg font-semibold text-slate-900">
-                  {step.title}
-                </h4>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                  {step.description}
-                </p>
+                <div className="flex items-center gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4">
+                      <div className="relative mt-2 flex-shrink-0">
+                        <div className="w-3 h-3 bg-primary-600 rounded-full"></div>
+                        <div className="absolute inset-0 w-3 h-3 bg-primary-600 rounded-full animate-ping opacity-75"></div>
+                      </div>
+                      <h4 className="text-lg font-semibold text-slate-900">
+                        {step.title}
+                      </h4>
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
