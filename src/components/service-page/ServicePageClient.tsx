@@ -288,7 +288,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         </div>
       ))}
       <div
-        className={`${cardBase} h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-l from-[#84C9E2] to-[#306eb6]`}
+        className={`rounded-[32px] border border-slate-100 bg-white/80 shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#84C9E2] to-[#1B3756]`}
       >
         <div className="flex flex-col">
           <h2 className="text-xl font-semibold !text-slate-50">
@@ -302,7 +302,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         </div>
         <Link
           href={content.callout.cta.href}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary-700 border border-primary-200 rounded-full hover:bg-primary-50"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-full hover:bg-primary-50"
         >
           <span>{content.callout.cta.label}</span>
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -363,8 +363,8 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
                   <div className="flex-1">
                     <div className="flex items-center gap-4">
                       <div className="relative mt-2 flex-shrink-0">
-                        <div className="w-3 h-3 bg-primary-600 rounded-full"></div>
-                        <div className="absolute inset-0 w-3 h-3 bg-primary-600 rounded-full animate-ping opacity-75"></div>
+                        <div className="w-3 h-3 bg-[#84C9E2] rounded-full"></div>
+                        <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-full animate-ping opacity-75"></div>
                       </div>
                       <h4 className="text-lg font-semibold text-slate-900">
                         {step.title}
