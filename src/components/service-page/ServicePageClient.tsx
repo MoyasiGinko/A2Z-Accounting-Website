@@ -444,22 +444,32 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
           <Link
             key={service.label}
             href={service.href}
-            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:shadow-md"
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:shadow-md hover:bg-[#84C9E2]"
           >
-            <div className="flex items-center justify-between gap-4">
-              <p className="text-base font-semibold text-slate-900">
-                {service.label}
-              </p>
-              <span
-                aria-hidden
-                className="text-xl text-primary-700 transition group-hover:translate-x-1"
-              >
-                →
-              </span>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="w-6 h-6 text-[#84C9E2] group-hover:text-white"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-base font-semibold text-slate-900 group-hover:text-white">
+                  {service.label}
+                </p>
+                <p className="mt-2 text-sm text-slate-600 group-hover:text-white/80">
+                  See what’s included and how we deliver.
+                </p>
+              </div>
             </div>
-            <p className="mt-3 text-sm text-slate-600">
-              See what’s included and how we deliver.
-            </p>
           </Link>
         ))}
       </div>
