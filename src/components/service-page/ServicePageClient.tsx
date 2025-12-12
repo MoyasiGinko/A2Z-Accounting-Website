@@ -393,30 +393,30 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
 
 const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-6 rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[0.65fr_1.35fr]">
-      <div className="space-y-2">
-        <Eyebrow>{content.expertise.eyebrow}</Eyebrow>
-        <h3 className="text-2xl font-semibold text-slate-900">
+    <div className="grid gap-8 rounded-[32px] bg-gradient-to-br from-[#84C9E2] to-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
+      <div className="flex flex-col justify-center">
+        {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
+        <h3 className="text-2xl !text-white font-semibold">
           {content.expertise.heading}
         </h3>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm mt-2 text-white/80">
           Clear, documented processes—built for UAE operators.
         </p>
       </div>
-      <div className="space-y-5">
-        <p className="text-base leading-relaxed text-slate-600">
+      <div className="space-y-5 flex flex-col justify-center">
+        <p className="text-base leading-relaxed text-white/90">
           {content.expertise.body}
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
             href={content.expertise.cta.href}
-            className="inline-flex items-center justify-center rounded-full bg-primary-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-600"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] transition hover:bg-[#84C9E2]"
           >
             {content.expertise.cta.label}
           </Link>
           <Link
             href="#"
-            className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-primary-200"
+            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
           >
             Request a checklist
           </Link>
