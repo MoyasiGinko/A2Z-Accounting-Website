@@ -137,7 +137,7 @@ const Eyebrow = ({
 );
 
 const ServiceHero = ({ content }: { content: ServicePageContent }) => (
-  <Section className="relative overflow-hidden bg-gradient-to-br from-[#84C9E2] to-[#1B3756] pt-20 text-white">
+  <Section className="relative overflow-hidden bg-[#1B3756] pt-20 text-white">
     <div className="space-y-6 pt-8">
       <Eyebrow className="text-white">{content.hero.eyebrow}</Eyebrow>
       <div className="space-y-4">
@@ -201,7 +201,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
       </div>
 
       <div className="space-y-4">
-        <div className="rounded-[32px] bg-gradient-to-br from-[#84C9E2] to-[#1B3756] p-8 text-white shadow-xl">
+        <div className="rounded-[32px] bg-[#1B3756] p-8 text-white shadow-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
             At a glance
           </p>
@@ -286,7 +286,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         </div>
       ))}
       <div
-        className={`rounded-[32px] border border-slate-100 bg-white/80 shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#84C9E2] to-[#1B3756]`}
+        className={`rounded-[32px] border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
       >
         <div className="flex flex-col">
           <h2 className=" !font-medium !text-slate-50">
@@ -368,7 +368,7 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
 
 const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-8 rounded-[32px] bg-gradient-to-br from-[#84C9E2] to-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
+    <div className="grid gap-8 rounded-[32px] bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
       <div className="flex flex-col justify-center">
         {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
         <h2 className="text-2xl !text-white !font-medium">
