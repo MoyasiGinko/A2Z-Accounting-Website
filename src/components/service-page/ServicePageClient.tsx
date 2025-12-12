@@ -13,6 +13,7 @@ import { useNavMenus } from "@/hooks/useNavMenus";
 import { useCarousels } from "@/hooks/useCarousels";
 import { useClientMarquee } from "@/hooks/useClientMarquee";
 import { ReactNode } from "react";
+import GetInTouch from "../GetInTouch";
 
 interface ServicePageClientProps {
   content: ServicePageContent;
@@ -84,7 +85,10 @@ const ServicePageClient = ({ content }: ServicePageClientProps) => {
                     <ProcessTimeline content={content} />
                     <ExpertiseSpotlight content={content} />
                     <RelatedServices content={content} />
-                    <NewsletterPanel content={content} />
+                    {/* <NewsletterPanel content={content} /> */}
+                    <div className="mb-40">
+                      <GetInTouch />
+                    </div>
                   </div>
                 </div>
               </article>
@@ -258,7 +262,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
       {content.services.map((service) => (
         <div
           key={service.title}
-          className={`${cardBase} h-40 flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
+          className={`${cardBase} h-46 border-slate-300 flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
         >
           <div className="flex-shrink-0">
             <svg
@@ -345,8 +349,8 @@ const Callout = ({ content }: { content: ServicePageContent }) => (
 );
 
 const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
-  <Section>
-    <div className="grid gap-8 lg:grid-cols-2">
+  <Section className="bg-[#f2f5f1]">
+    <div className="grid gap-8 lg:grid-cols-2 ">
       <div className="space-y-4">
         <Eyebrow>{content.process.eyebrow}</Eyebrow>
         <h2 className=" font-semibold text-slate-900 sm:text-4xl">
