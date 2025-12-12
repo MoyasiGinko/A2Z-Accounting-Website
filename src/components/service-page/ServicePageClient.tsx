@@ -270,7 +270,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
             >
               <g fill="none" fillRule="evenodd">
                 <circle fill="#F2F5F1" cx="17" cy="17" r="11.33" />
-                <g fill="#1F6E69">
+                <g fill="#84C9E2">
                   <path d="M16.84 34c-5.3 0-10.3-2.52-13.47-6.8a17.13 17.13 0 0 1-2.7-14.97A16.93 16.93 0 0 1 10.94 1.08a16.69 16.69 0 0 1 14.99 1.6c.18.11.3.29.36.5a.78.78 0 0 1-.6.94c-.2.04-.42 0-.6-.13a15.17 15.17 0 0 0-12.92-1.7 15.37 15.37 0 0 0-9.53 8.99 15.6 15.6 0 0 0 .8 13.15 15.19 15.19 0 0 0 23.17 4.49A15.51 15.51 0 0 0 32.13 17v-1.55a.78.78 0 0 1 .69-.85c.42-.04.8.27.84.7V17c0 4.5-1.77 8.83-4.93 12.02A16.74 16.74 0 0 1 16.84 34Z" />
                   <path d="M19.14 20.48c-.2 0-.4-.09-.54-.23l-6.88-6.96c-.3-.3-.3-.8 0-1.1.3-.3.78-.3 1.08 0l6.34 6.36 16.3-16.39c.29-.3.78-.3 1.08 0 .3.3.3.8 0 1.1l-16.83 17a.76.76 0 0 1-.55.22Z" />
                 </g>
@@ -282,10 +282,19 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
           </h4>
         </div>
       ))}
-      <div className={`${cardBase} p-6 flex items-center justify-between`}>
-        <h2 className="text-xl font-semibold text-slate-900">
-          {content.callout.heading}
-        </h2>
+      <div
+        className={`${cardBase} h-46 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-l from-[#84C9E2] to-[#306eb6]`}
+      >
+        <div className="flex flex-col">
+          <h2 className="text-xl font-semibold !text-slate-50">
+            {content.callout.heading}
+          </h2>
+          {content.callout.subheading && (
+            <p className="relative  max-w-2xl text-base leading-relaxed text-white/85">
+              {content.callout.subheading}
+            </p>
+          )}
+        </div>
         <Link
           href={content.callout.cta.href}
           className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary-700 border border-primary-200 rounded-full hover:bg-primary-50"
