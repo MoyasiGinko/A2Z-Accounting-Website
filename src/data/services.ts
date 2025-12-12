@@ -1,11 +1,9 @@
 export type ServiceSlug =
-  | "business-consulting"
-  | "accounting"
-  | "tax"
-  | "audit"
-  | "marketing-sales-retention"
-  | "operations-management"
-  | "talent-acquisition";
+  | "company-formation"
+  | "accounting-bookkeeping"
+  | "tax-compliance"
+  | "payroll-hr-pro"
+  | "business-advisory";
 
 export interface ServicePageContent {
   slug: ServiceSlug;
@@ -30,7 +28,7 @@ export interface ServicePageContent {
     heading: string;
     supporting: string;
   };
-  services: { title: string; description: string }[];
+  services: { title: string; description: string; bullets?: string[] }[];
   callout: {
     heading: string;
     subheading?: string;
@@ -71,15 +69,12 @@ const sharedBreadcrumb = (label: string): ServicePageContent["breadcrumb"] => [
 ];
 
 const sharedCta = {
-  label: "Book A Free Strategy Call",
-  href: "https://execor.vamtam.com/free-consultation/",
+  label: "Book a Free Consultation",
+  href: "#",
 };
 
-const sharedMembershipsLabel = "We are a proud member of the:";
-const sharedMemberships = [
-  "Association of Accredited Small Business Consultants",
-  "A+ rated Member with the BBB of Arkansas",
-];
+const sharedMembershipsLabel = "Compliance areas we cover:";
+const sharedMemberships = ["VAT", "Corporate Tax", "UBO / AML", "WPS Payroll"];
 
 const sharedNewsletter: ServicePageContent["newsletter"] = {
   heading: "Stay Ahead.",
@@ -94,781 +89,632 @@ const sharedNewsletter: ServicePageContent["newsletter"] = {
 };
 
 export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
-  "business-consulting": {
-    slug: "business-consulting",
-    label: "Business Consulting",
-    breadcrumb: sharedBreadcrumb("Business Consulting"),
+  "company-formation": {
+    slug: "company-formation",
+    label: "Company Formation & Corporate Setup",
+    breadcrumb: sharedBreadcrumb("Company Formation & Corporate Setup"),
     hero: {
       eyebrow: "Services",
-      title: "Business Consulting",
+      title: "Company Formation & Corporate Setup",
       summary:
-        "Business consultants guide companies on overcoming challenges and seizing opportunities to drive growth and efficiency.",
+        "Set up the right UAE entity—mainland, free zone, or offshore—with a clear plan from day one.",
       description:
-        "We research and deeply understand every client's business, ask the right questions, and build custom playbooks that balance capacity, budget, competition, and long-term goals.",
+        "We help you choose the correct business activity, handle documentation, coordinate licensing, and guide you through the setup steps so you can start operating with confidence.",
       ctas: [sharedCta],
     },
     membershipsLabel: sharedMembershipsLabel,
     memberships: sharedMemberships,
     overview: {
-      eyebrow: "What We Do",
-      heading: "Comprehensive Consulting Solutions",
+      eyebrow: "Overview",
+      heading: "A clean, compliant setup—without the guesswork",
       paragraphs: [
-        "Business consultants guide and advise organizations on overcoming challenges and capitalizing on opportunities. We invest the time to understand how you operate today, listening before prescribing.",
-        "There is no one-size-fits-all answer. We evaluate capacity, budgets, competition, and growth goals to tailor every plan, targeting quick wins first and then building a sustainable scaling roadmap.",
-        "Unlike traditional firms, we stay involved through execution so the strategy we craft actually ships and sticks inside your business.",
+        "Company formation is more than a licence. The right structure impacts banking, visas, tax registration, and long-term flexibility.",
+        "We start with your operating model, ownership needs, and growth plans—then recommend the best-fit jurisdiction and activity selection.",
+        "From paperwork to approvals, we keep the process moving while keeping you compliant with ongoing renewal and filing requirements.",
       ],
     },
     servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Our Consulting and Coaching Services",
+      eyebrow: "Sub-services",
+      heading: "What’s included",
       supporting:
-        "We help you achieve your goals with customized strategies, practical solutions, and hands-on execution to drive success.",
+        "Everything you need to establish and maintain a legal entity in the UAE.",
     },
     services: [
       {
-        title: "Maximize Profit & Increase Operational Efficiencies",
+        title: "Registration & Licensing",
         description:
-          "Tighten processes, reduce leakage across teams, and surface the metrics that keep margins healthy.",
+          "Get incorporated with the right licence and renewals handled.",
+        bullets: [
+          "Mainland company registration (DED)",
+          "Free-zone company registration",
+          "Offshore company registration (where applicable)",
+          "Trade licence application & renewal",
+        ],
       },
       {
-        title: "Business Planning, Operations, & Revenue Growth",
+        title: "Corporate Documentation",
         description:
-          "Translate vision into measurable roadmaps with aligned revenue, product, and operating plans.",
+          "Align shareholder structure and required legal documents.",
+        bullets: [
+          "MOA / AOA and corporate agreements",
+          "Shareholder structure advisory",
+          "Corporate nominee arrangements (if required)",
+        ],
       },
       {
-        title: "Marketing, Sales, Retention, & Customer Experience",
+        title: "Business Activity & Compliance",
         description:
-          "Unify full-funnel programs so prospects hear a single story from first touch through renewal.",
+          "Choose permitted activities correctly and stay aligned with regulations.",
+        bullets: [
+          "Business-activity advisory (permitted activity selection)",
+          "Compliance guidance for ongoing requirements",
+        ],
       },
       {
-        title: "Sales & Customer Service Training",
+        title: "Banking Setup Support",
         description:
-          "Enable your frontline teams with playbooks, coaching, and accountability rhythms that stick.",
+          "Set up corporate banking with the documentation banks expect.",
+        bullets: [
+          "Corporate bank account opening assistance",
+          "KYC/documentation preparation",
+          "Corporate banking & payment processing advisory",
+        ],
       },
       {
-        title: "Recruiting, Staffing, & Culture",
+        title: "Liquidation / Deregistration",
         description:
-          "Build teams faster with structured hiring, onboarding, and culture rituals that attract top talent.",
-      },
-      {
-        title: "Processes & Workflows",
-        description:
-          "Document, automate, and optimize workflows so work moves faster with fewer escalations.",
+          "If you need to exit, we guide the closure process end-to-end.",
+        bullets: ["Company liquidation", "Deregistration support"],
       },
     ],
     callout: {
-      heading: "Call Us Today to Schedule a Free Consultation",
-      subheading: "Let's map your next move together.",
+      heading: "Start your UAE setup with clarity",
+      subheading: "Tell us your business model—we’ll map the best route.",
       cta: sharedCta,
     },
     process: {
       eyebrow: "Our Process",
-      heading: "Business Consulting Process",
+      heading: "Formation process",
       description:
-        "We serve Northwest Arkansas, the entire state, and clients nationwide through a blend of in-person sessions, workshops, video calls, and async check-ins.",
+        "A structured workflow that keeps approvals moving and paperwork correct.",
       steps: [
         {
-          title: "Intro Consultation & Basic Research",
+          title: "Consultation",
           description:
-            "We learn your story, goals, and constraints while assembling baseline data.",
+            "Understand your goals, ownership plan, and intended activities.",
         },
         {
-          title: "Discovery",
+          title: "Jurisdiction & Activity Selection",
           description:
-            "Deep competitive analysis plus stakeholder interviews highlight the real opportunities.",
+            "Choose mainland/free zone/offshore and confirm permitted activities.",
         },
         {
-          title: "Build Plan",
+          title: "Documentation & Submission",
           description:
-            "We co-create a prioritised roadmap with clear owners, budgets, and milestones.",
+            "Prepare filings and coordinate with relevant authorities.",
         },
         {
-          title: "Execute",
+          title: "Licence Issuance & Next Steps",
           description:
-            "Our team stays in the trenches to launch, test, and optimize every initiative.",
+            "Guide banking setup, renewals, and compliance milestones.",
         },
       ],
     },
     expertise: {
-      eyebrow: "Expertise",
-      heading: "Industry-seasoned consultants on your side",
-      body: "Our team blends marketing, revenue, and operational leaders with experience across multiple industries. We stay close to platform shifts and best practices so you get pragmatic recommendations, not theory.",
+      eyebrow: "Why A2Z",
+      heading: "Structured setup, clean documentation",
+      body: "We prioritise correctness and speed—so your entity is set up for banking, tax registration, and operational scale.",
       cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
+        label: "Speak to an Advisor",
+        href: "#",
       },
     },
     relatedServices: [
       {
-        label: "Marketing, Sales, & Retention",
-        href: "/services/marketing-sales-retention",
+        label: "Accounting & Bookkeeping",
+        href: "/services/accounting-bookkeeping",
       },
       {
-        label: "Operations Management",
-        href: "/services/operations-management",
+        label: "Tax & Regulatory Compliance",
+        href: "/services/tax-compliance",
       },
-      {
-        label: "Talent Acquisition",
-        href: "/services/talent-acquisition",
-      },
+      { label: "Payroll & PRO Services", href: "/services/payroll-hr-pro" },
     ],
     newsletter: sharedNewsletter,
     meta: {
-      title: "Business Consulting Services | A2Z Accounting",
+      title: "Company Formation & Corporate Setup | A2Z Accounting",
       description:
-        "Strategic business consulting that blends planning, operations, revenue growth, and execution support for ambitious teams.",
+        "UAE company formation for mainland, free zone, and offshore setups, plus licensing and banking support.",
     },
   },
-  accounting: {
-    slug: "accounting",
-    label: "Accounting Services",
-    breadcrumb: sharedBreadcrumb("Accounting Services"),
+  "accounting-bookkeeping": {
+    slug: "accounting-bookkeeping",
+    label: "Accounting, Bookkeeping & Financial Reporting",
+    breadcrumb: sharedBreadcrumb(
+      "Accounting, Bookkeeping & Financial Reporting"
+    ),
     hero: {
       eyebrow: "Services",
-      title: "Accounting Services",
+      title: "Accounting, Bookkeeping & Financial Reporting",
       summary:
-        "Fractional controllers keep your books accurate and close every month without adding headcount.",
+        "Accurate books, clean reconciliations, and reporting you can trust—month after month.",
       description:
-        "From day-to-day bookkeeping to board-ready reporting, our accounting pod plugs into your stack, modernizes workflows, and gives leadership the confidence to make faster decisions.",
+        "We keep your financial records organised and compliant, giving you timely visibility through structured reporting and modern cloud accounting workflows.",
       ctas: [sharedCta],
     },
     membershipsLabel: sharedMembershipsLabel,
     memberships: sharedMemberships,
     overview: {
-      eyebrow: "What We Do",
-      heading: "Hands-on accounting support",
+      eyebrow: "Overview",
+      heading: "Financial clarity for operators",
       paragraphs: [
-        "We build a durable close process tailored to your systems and team capacity. You get reconciliations, variance analysis, and narratives that finance and operators can both trust.",
-        "Whether you run QuickBooks, NetSuite, or spreadsheets, we clean up the chart of accounts, document procedures, and automate the repetitive work.",
-        "You stay audit ready year-round while we monitor cash, forecast scenarios, and flag risks before they become emergencies.",
+        "Good bookkeeping is the foundation for VAT returns, Corporate Tax filings, and decision-making.",
+        "We set up and maintain a consistent process for reconciliations, payables/receivables tracking, and month-end closes.",
+        "You get reliable financial statements (P&L, Balance Sheet, Cashflow) that are ready for lenders, stakeholders, and auditors if needed.",
       ],
     },
     servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Accounting capabilities",
+      eyebrow: "Sub-services",
+      heading: "Core accounting support",
       supporting:
-        "Mix and match support from daily transaction processing through CFO-level insights.",
+        "Flexible coverage from day-to-day bookkeeping to management reporting.",
     },
     services: [
       {
-        title: "Monthly Close & Reporting",
-        description:
-          "Timely reconciliations, accruals, and commentary that keep leadership in the loop.",
+        title: "Bookkeeping",
+        description: "Keep records current and categorised correctly.",
+        bullets: ["Monthly / quarterly / annual bookkeeping"],
       },
       {
-        title: "Accounts Payable Automation",
-        description:
-          "Digitize approvals, eliminate duplicates, and negotiate better vendor terms.",
+        title: "Cloud Accounting Setup",
+        description: "Build a clean system and workflow that scales.",
+        bullets: [
+          "QuickBooks / Xero / Zoho setup",
+          "Chart of accounts configuration",
+        ],
       },
       {
-        title: "Payroll & Employee Expense Management",
-        description:
-          "Coordinate payroll runs, tax deposits, and policies across locations.",
+        title: "Reconciliations & Tracking",
+        description: "Maintain control of cash and outstanding items.",
+        bullets: [
+          "Bank reconciliations",
+          "Accounts payable / receivable tracking",
+        ],
       },
       {
-        title: "Financial Systems Cleanup",
+        title: "Financial Statements",
+        description: "Timely reporting for better decisions.",
+        bullets: [
+          "Profit & Loss (P&L)",
+          "Balance Sheet",
+          "Cashflow statements",
+        ],
+      },
+      {
+        title: "Asset & Inventory Accounting",
         description:
-          "Optimize your GL, map integrations, and document workflows for scale.",
+          "If relevant to your business model, keep registers accurate.",
+        bullets: ["Fixed asset register", "Inventory accounting"],
       },
     ],
     callout: {
-      heading: "Handle month-end without stress",
-      subheading: "Let our accounting pod own the checklist and deliverables.",
+      heading: "Know your numbers—without chasing spreadsheets",
+      subheading: "We’ll keep your books clean and your reporting on time.",
       cta: sharedCta,
     },
     process: {
       eyebrow: "Our Process",
-      heading: "Accounting engagement cadence",
+      heading: "A reliable monthly rhythm",
       description:
-        "We embed alongside your internal team, using secure remote access and recurring reviews to keep data flowing.",
+        "We set the cadence and checkpoints so your reporting arrives consistently.",
       steps: [
         {
-          title: "Discovery & System Walkthrough",
+          title: "Onboarding",
           description:
-            "Understand tools, policies, and bottlenecks across finance and operations.",
+            "Collect access, documents, and define your reporting requirements.",
         },
         {
-          title: "Close Blueprint",
+          title: "System Setup",
           description:
-            "Document owners, timelines, and KPIs for each key accounting cycle.",
+            "Configure cloud accounting tools and establish a clean workflow.",
         },
         {
-          title: "Execution",
+          title: "Monthly Close",
           description:
-            "Run the close, produce reports, and iterate on automations every month.",
+            "Reconcile accounts, post adjustments, and finalise statements.",
         },
         {
-          title: "Strategic Reviews",
+          title: "Review & Improve",
           description:
-            "Quarterly sessions turn insights into budget adjustments and forecasts.",
+            "Spot anomalies, improve categorisation, and refine processes.",
         },
       ],
     },
     expertise: {
-      eyebrow: "Expertise",
-      heading: "Controllers, analysts, and systems pros",
-      body: "Our accounting bench includes CPAs and industry specialists who have scaled finance teams for SaaS, retail, and professional services firms.",
+      eyebrow: "Why A2Z",
+      heading: "Bookkeeping that stays tax-ready",
+      body: "We structure records to support VAT and Corporate Tax compliance while keeping reporting readable for founders.",
       cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
+        label: "Get Started",
+        href: "#",
       },
     },
     relatedServices: [
-      { label: "Tax Consulting", href: "/services/tax" },
-      { label: "Audit Services", href: "/services/audit" },
-      { label: "Business Consulting", href: "/services/business-consulting" },
+      {
+        label: "Tax & Regulatory Compliance",
+        href: "/services/tax-compliance",
+      },
+      { label: "Company Formation", href: "/services/company-formation" },
+      { label: "Business Advisory", href: "/services/business-advisory" },
     ],
     newsletter: sharedNewsletter,
     meta: {
-      title: "Accounting Services | A2Z Accounting",
+      title: "Accounting & Bookkeeping Services | A2Z Accounting",
       description:
-        "Outsourced accounting, monthly close support, and reporting for growing companies.",
+        "Bookkeeping, cloud accounting setup, reconciliations, and financial reporting for UAE businesses.",
     },
   },
-  tax: {
-    slug: "tax",
-    label: "Tax Consulting",
-    breadcrumb: sharedBreadcrumb("Tax Consulting"),
+  "tax-compliance": {
+    slug: "tax-compliance",
+    label: "Tax & Regulatory Compliance",
+    breadcrumb: sharedBreadcrumb("Tax & Regulatory Compliance"),
     hero: {
       eyebrow: "Services",
-      title: "Tax Consulting",
+      title: "Tax & Regulatory Compliance",
       summary:
-        "Stay ahead of filings, incentives, and regulatory updates without hiring an internal tax department.",
+        "Stay compliant with UAE requirements—without last-minute panic or penalty risk.",
       description:
-        "We orchestrate compliance calendars, model liabilities, and translate complex rules into human language so your team can focus on growth.",
+        "From VAT registration to Corporate Tax filing and regulatory submissions, we help you meet requirements on time and with clean supporting documentation.",
       ctas: [sharedCta],
     },
     membershipsLabel: sharedMembershipsLabel,
     memberships: sharedMemberships,
     overview: {
-      eyebrow: "What We Do",
-      heading: "Year-round tax intelligence",
+      eyebrow: "Overview",
+      heading: "Compliance support that protects your business",
       paragraphs: [
-        "Proactive planning keeps surprises out of cash flow. We monitor legislative shifts and advise on entity structure, credits, and apportionment.",
-        "Our team coordinates with your accounting pod and auditors to ensure documentation is consistent and defensible.",
-        "We also build education tracks so founders and department heads know what decisions impact taxes before they act.",
+        "Compliance is ongoing: registrations, periodic filings, documentation standards, and audit readiness.",
+        "We help you implement the right process so compliance becomes predictable—not disruptive.",
+        "If your business grows or changes, we adapt registrations and filing approaches accordingly.",
       ],
     },
     servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Tax support built for operators",
+      eyebrow: "Sub-services",
+      heading: "What we handle",
       supporting:
-        "Compliance meets strategy with research memos, calendar management, and representation.",
+        "Practical support for registrations, filings, and regulatory requirements.",
     },
     services: [
       {
-        title: "Corporate & Pass-through Tax Planning",
+        title: "VAT Compliance",
         description:
-          "Model quarterly estimates, entity elections, and distribution strategies.",
+          "Get registered and file returns with clean documentation.",
+        bullets: [
+          "VAT registration",
+          "VAT return filing and compliance support",
+        ],
       },
       {
-        title: "Sales & Use Tax Monitoring",
+        title: "Corporate Tax",
         description:
-          "Track nexus, file multi-state returns, and document exemption certificates.",
+          "Support with registration and periodic/annual filing requirements.",
+        bullets: ["Corporate Tax registration", "Corporate Tax filing support"],
       },
       {
-        title: "Credits & Incentives",
-        description:
-          "Surface R&D, jobs, and investment credits with airtight substantiation.",
+        title: "Regulatory Filings & Advisory",
+        description: "Help with common UAE compliance requirements.",
+        bullets: [
+          "Economic Substance (if required)",
+          "UBO filings (if required)",
+          "AML compliance guidance (if required)",
+        ],
       },
       {
-        title: "Exam & Notice Response",
+        title: "Audit-Ready Accounting",
         description:
-          "Manage correspondence and keep regulators focused on facts, not assumptions.",
+          "Support coordination and preparation when audited financials are needed.",
+        bullets: [
+          "Compliance audits support",
+          "Statutory audit coordination",
+          "Audit-ready bookkeeping and documentation",
+        ],
       },
     ],
     callout: {
-      heading: "Never miss a deadline again",
-      subheading: "We run the calendar and keep you compliant.",
+      heading: "Build a compliance calendar that runs itself",
+      subheading: "We’ll keep you on-track and organised.",
       cta: sharedCta,
     },
     process: {
       eyebrow: "Our Process",
-      heading: "Tax engagement flow",
+      heading: "Compliance workflow",
       description:
-        "We combine recurring reviews with rapid research sprints whenever laws shift.",
+        "A clear sequence that keeps filings timely and documentation consistent.",
       steps: [
         {
           title: "Assessment",
           description:
-            "Collect prior filings, ownership info, and open notices to baseline risk.",
+            "Review your entity, activities, and current registrations and records.",
         },
         {
-          title: "Planning",
+          title: "Registration",
           description:
-            "Deliver strategy memos with elections, entity tweaks, and cash impact.",
+            "Register for VAT/Corporate Tax where applicable and set requirements.",
         },
         {
-          title: "Compliance",
+          title: "Filing & Documentation",
           description:
-            "Prepare and file returns, coordinate signatures, and archive support.",
+            "Prepare filings and ensure supporting records are organised.",
         },
         {
-          title: "Review & Advisory",
+          title: "Ongoing Monitoring",
           description:
-            "Quarterly sessions highlight new legislation and savings opportunities.",
+            "Maintain schedules, updates, and advisory for regulatory changes.",
         },
       ],
     },
     expertise: {
-      eyebrow: "Expertise",
-      heading: "Tax strategists on speed dial",
-      body: "Former Big Four managers and seasoned state and local tax specialists translate regulation into practical playbooks.",
+      eyebrow: "Why A2Z",
+      heading: "Simple, defensible documentation",
+      body: "We focus on clean records and consistent workflows so compliance stays manageable as you scale.",
       cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
+        label: "Talk to Us",
+        href: "#",
       },
     },
     relatedServices: [
-      { label: "Accounting Services", href: "/services/accounting" },
-      { label: "Audit Services", href: "/services/audit" },
-      { label: "Business Consulting", href: "/services/business-consulting" },
+      {
+        label: "Accounting & Bookkeeping",
+        href: "/services/accounting-bookkeeping",
+      },
+      { label: "Company Formation", href: "/services/company-formation" },
+      { label: "Payroll & PRO Services", href: "/services/payroll-hr-pro" },
     ],
     newsletter: sharedNewsletter,
     meta: {
-      title: "Tax Consulting Services | A2Z Accounting",
+      title: "UAE Tax & Compliance Services | A2Z Accounting",
       description:
-        "Tax planning, multi-state compliance, and audit defense for ambitious companies.",
+        "VAT and Corporate Tax support plus regulatory compliance workflows for UAE businesses.",
     },
   },
-  audit: {
-    slug: "audit",
-    label: "Audit Services",
-    breadcrumb: sharedBreadcrumb("Audit Services"),
+  "payroll-hr-pro": {
+    slug: "payroll-hr-pro",
+    label: "Payroll & HR / PRO Services",
+    breadcrumb: sharedBreadcrumb("Payroll & HR / PRO Services"),
     hero: {
       eyebrow: "Services",
-      title: "Audit Services",
+      title: "Payroll & HR / PRO Services",
       summary:
-        "Be audit-ready year-round with documentation, internal controls, and testing handled for you.",
+        "Payroll processing, visa support, and government liaison—handled end-to-end.",
       description:
-        "We partner with your external auditors, prep schedules, and run mock walkthroughs so the real engagement moves quickly and confidently.",
+        "If you employ staff or sponsor visas, you need payroll and compliance done correctly. We support payroll runs, renewals, document clearing, and ongoing liaison so operations stay smooth.",
       ctas: [sharedCta],
     },
     membershipsLabel: sharedMembershipsLabel,
     memberships: sharedMemberships,
     overview: {
-      eyebrow: "What We Do",
-      heading: "Controls and compliance",
+      eyebrow: "Overview",
+      heading: "Workforce support built for UAE operations",
       paragraphs: [
-        "Audit prep shouldn't derail operations. We maintain PBC lists, refresh policies, and keep tie-outs clean.",
-        "Whether you need a review, compilation, or full GAAS audit, our team coordinates with auditors so requests arrive organized.",
-        "We also coach stakeholders on how to answer auditor questions succinctly and with confidence.",
+        "Payroll and visa processes create operational risk when they’re inconsistent or delayed.",
+        "We help you set up a repeatable payroll workflow and manage key documentation requirements.",
+        "For visas and renewals, we keep the admin burden off your team with clear checklists and timelines.",
       ],
     },
     servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Audit readiness stack",
+      eyebrow: "Sub-services",
+      heading: "What we support",
       supporting:
-        "Documentation, controls testing, and remediation handled by veterans of public accounting.",
+        "Payroll, visa workflows, and government liaison with structured follow-through.",
     },
     services: [
       {
-        title: "Internal Controls Review",
-        description:
-          "Map key processes, identify gaps, and draft control narratives and matrices.",
+        title: "Payroll Processing",
+        description: "Reliable payroll with compliance in mind.",
+        bullets: ["Payroll processing", "Wage Protection (WPS) compliance"],
       },
       {
-        title: "PBC Coordination",
+        title: "Visa Processing",
         description:
-          "Own the audit request list, gather evidence, and manage status updates.",
+          "Support for common visa and residency workflows as your team grows.",
+        bullets: [
+          "Investor / Partner / Employee visas",
+          "Residency permits",
+          "Labour cards & renewal support",
+        ],
       },
       {
-        title: "Technical Accounting Support",
-        description:
-          "Draft memos for revenue recognition, leases, and other complex areas.",
-      },
-      {
-        title: "Remediation & Training",
-        description:
-          "Close noted deficiencies with pragmatic SOPs and team workshops.",
+        title: "Government Liaison & PRO",
+        description: "Document clearing and ongoing admin handling.",
+        bullets: [
+          "Visa/immigration handling",
+          "Licence renewals",
+          "Compliance filings support",
+        ],
       },
     ],
     callout: {
-      heading: "Be audit ready before the auditors arrive",
-      subheading:
-        "We quarterback every request so you stay focused on customers.",
+      heading: "Reduce workforce admin load",
+      subheading: "Keep payroll and renewals on schedule.",
       cta: sharedCta,
     },
     process: {
       eyebrow: "Our Process",
-      heading: "Audit support cadence",
+      heading: "Operational support cadence",
       description:
-        "Structured sprints keep evidence fresh and communication clear with your external firm.",
+        "We implement checklists and timelines so payroll and renewals stay predictable.",
       steps: [
         {
-          title: "Planning & Risk Assessment",
+          title: "Setup",
           description:
-            "Review prior findings, key controls, and reporting deadlines.",
+            "Confirm workforce needs, required documents, and a compliance timeline.",
         },
         {
-          title: "Documentation",
+          title: "Implementation",
           description:
-            "Update narratives, walkthroughs, and schedules aligned to auditor formats.",
+            "Configure payroll workflow and align required documentation.",
         },
         {
-          title: "Testing",
+          title: "Processing",
           description:
-            "Perform sample selections and compile support before auditors request it.",
+            "Run payroll cycles and manage visa/renewal submissions as required.",
         },
         {
-          title: "Closeout & Lessons Learned",
+          title: "Ongoing Support",
           description:
-            "Summarize adjustments, update SOPs, and plan for the next period.",
+            "Track renewals and keep your compliance checklist current.",
         },
       ],
     },
     expertise: {
-      eyebrow: "Expertise",
-      heading: "Former external auditors on your team",
-      body: "We know how firms operate, which keeps engagements efficient and collegial.",
+      eyebrow: "Why A2Z",
+      heading: "Consistent paperwork. Fewer delays.",
+      body: "We keep processes simple and documented so your team can focus on delivery while compliance stays organised.",
       cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
+        label: "Enquire Now",
+        href: "#",
       },
     },
     relatedServices: [
-      { label: "Accounting Services", href: "/services/accounting" },
-      { label: "Tax Consulting", href: "/services/tax" },
+      { label: "Company Formation", href: "/services/company-formation" },
       {
-        label: "Operations Management",
-        href: "/services/operations-management",
+        label: "Tax & Regulatory Compliance",
+        href: "/services/tax-compliance",
+      },
+      {
+        label: "Accounting & Bookkeeping",
+        href: "/services/accounting-bookkeeping",
       },
     ],
     newsletter: sharedNewsletter,
     meta: {
-      title: "Audit Support Services | A2Z Accounting",
+      title: "Payroll & PRO Services | A2Z Accounting",
       description:
-        "Internal controls, documentation, and coordination so audits finish faster.",
+        "Payroll processing, WPS compliance, visa workflows, and PRO support for UAE businesses.",
     },
   },
-  "marketing-sales-retention": {
-    slug: "marketing-sales-retention",
-    label: "Marketing, Sales, & Retention",
-    breadcrumb: sharedBreadcrumb("Marketing, Sales, & Retention"),
+  "business-advisory": {
+    slug: "business-advisory",
+    label: "Business Advisory & Corporate Structuring",
+    breadcrumb: sharedBreadcrumb("Business Advisory & Corporate Structuring"),
     hero: {
       eyebrow: "Services",
-      title: "Marketing, Sales, & Retention",
+      title: "Business Advisory & Corporate Structuring",
       summary:
-        "Bring revenue, creative, and customer experience into one operating rhythm.",
+        "Plan confidently with structuring, forecasting, and governance support as you scale.",
       description:
-        "We tighten positioning, align handoffs, and stand up retention programs so every stage of the funnel compounds.",
+        "We help founders and finance leads build tax-efficient structures, forecast cashflow, and set up internal controls—especially for cross-border operations.",
       ctas: [sharedCta],
     },
     membershipsLabel: sharedMembershipsLabel,
     memberships: sharedMemberships,
     overview: {
-      eyebrow: "What We Do",
-      heading: "Full-funnel GTM leadership",
+      eyebrow: "Overview",
+      heading: "Advisory that stays practical",
       paragraphs: [
-        "Teams need clarity on ICPs, offers, and measurement. We facilitate workshops, build playbooks, and embed fractional leaders until hiring is right.",
-        "Campaigns are launched with clear metrics and enablement for sales and success teams.",
-        "Revenue leaders get dashboards that combine marketing spend, pipeline health, and retention signals in one place.",
+        "When revenue grows, the cost of a weak structure grows too—banking, tax, compliance, and operational complexity all compound.",
+        "We support entity planning, forecasting, and budget controls so decisions are backed by numbers.",
+        "For cross-border operations, we help you understand how choices impact compliance and reporting.",
       ],
     },
     servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Revenue program building",
+      eyebrow: "Sub-services",
+      heading: "Advisory capabilities",
       supporting:
-        "Strategy, execution pods, and analytics to keep pipeline predictable.",
+        "Planning, modelling, and governance support for growing teams.",
     },
     services: [
       {
-        title: "Positioning & Message Architecture",
-        description: "Clarify value props across website, decks, and outreach.",
+        title: "Corporate Structuring",
+        description: "Design a structure that supports growth and compliance.",
+        bullets: [
+          "Tax-efficient entity planning (UAE + abroad)",
+          "Corporate structuring advisory",
+        ],
       },
       {
-        title: "Campaign & Offer Development",
-        description:
-          "Launch paid, email, event, and partner plays with creative oversight.",
+        title: "Forecasting & Budgeting",
+        description: "Plan cashflow, hiring, and runway with clarity.",
+        bullets: ["Financial modelling", "Forecasting", "Budget planning"],
       },
       {
-        title: "Sales Enablement & Playbooks",
+        title: "Cross-border Advisory",
         description:
-          "Arm reps with stories, talk tracks, and competitive intel.",
+          "Support for international founders operating via a UAE entity.",
+        bullets: [
+          "Entity selection and compliance planning",
+          "Residency / tax strategy considerations",
+        ],
       },
       {
-        title: "Lifecycle & Retention Programs",
+        title: "Governance & Audit Preparation",
         description:
-          "Design onboarding, expansion, and renewal motions with CX.",
+          "Controls and documentation that keep your business audit-ready.",
+        bullets: [
+          "Audit preparation support",
+          "Internal controls setup",
+          "Governance advisory",
+        ],
       },
     ],
     callout: {
-      heading: "Unlock pipeline predictability",
-      subheading: "Get a unified revenue plan in weeks, not months.",
+      heading: "Make decisions with confidence",
+      subheading: "Turn numbers into an actionable plan.",
       cta: sharedCta,
     },
     process: {
       eyebrow: "Our Process",
-      heading: "Revenue acceleration sprints",
+      heading: "Advisory engagement",
       description:
-        "Every engagement blends research, collaborative builds, and embedded execution.",
+        "A tight loop: assess, model, decide, and implement with documentation.",
       steps: [
         {
           title: "Discovery",
           description:
-            "Interview customers, review data, and map your GTM maturity.",
+            "Understand goals, constraints, and your current structure and records.",
         },
         {
-          title: "Strategy Sprint",
+          title: "Analysis",
           description:
-            "Align leadership on objectives, messaging, and measurement.",
+            "Model scenarios and map compliance and operational implications.",
         },
         {
-          title: "Execution Pods",
+          title: "Recommendations",
           description:
-            "Stand up cross-functional squads to launch and iterate campaigns.",
+            "Deliver a clear plan with next actions and required documentation.",
         },
         {
-          title: "Optimization",
+          title: "Implementation Support",
           description:
-            "Quarterly business reviews highlight learnings and next experiments.",
+            "Coordinate follow-through across accounting, tax, and operations.",
         },
       ],
     },
     expertise: {
-      eyebrow: "Expertise",
-      heading: "Operators, not theorists",
-      body: "Our marketers, sellers, and retention strategists have shipped programs for venture-backed and family-run companies alike.",
+      eyebrow: "Why A2Z",
+      heading: "Operator-friendly advisory",
+      body: "We keep it pragmatic—clear decisions, documented steps, and a plan your team can execute.",
       cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
+        label: "Book a Call",
+        href: "#",
       },
     },
     relatedServices: [
-      { label: "Business Consulting", href: "/services/business-consulting" },
+      { label: "Company Formation", href: "/services/company-formation" },
       {
-        label: "Operations Management",
-        href: "/services/operations-management",
-      },
-      { label: "Talent Acquisition", href: "/services/talent-acquisition" },
-    ],
-    newsletter: sharedNewsletter,
-    meta: {
-      title: "Marketing, Sales & Retention Services | A2Z Accounting",
-      description:
-        "Fractional marketing and revenue leadership that ships campaigns and improves retention.",
-    },
-  },
-  "operations-management": {
-    slug: "operations-management",
-    label: "Operations Management",
-    breadcrumb: sharedBreadcrumb("Operations Management"),
-    hero: {
-      eyebrow: "Services",
-      title: "Operations Management",
-      summary:
-        "Turn messy processes into scalable operating systems across every department.",
-      description:
-        "We diagnose bottlenecks, implement tooling, and coach managers so execution feels calm even when growth spikes.",
-      ctas: [sharedCta],
-    },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
-    overview: {
-      eyebrow: "What We Do",
-      heading: "Operator-first consulting",
-      paragraphs: [
-        "We map your critical journeys, from lead to cash to service delivery, then design playbooks that keep teams aligned.",
-        "Leaders get visibility into KPIs, while ICs know exactly how to win every week.",
-        "Change management support ensures new behavior sticks long after we roll off.",
-      ],
-    },
-    servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Operational upgrades",
-      supporting:
-        "Process design, tooling, and enablement tailored to your stage.",
-    },
-    services: [
-      {
-        title: "Workflow Mapping & SOPs",
-        description:
-          "Visualize every step, identify friction, and codify the best way to work.",
+        label: "Accounting & Bookkeeping",
+        href: "/services/accounting-bookkeeping",
       },
       {
-        title: "Systems & Tooling Advisory",
-        description:
-          "Select, configure, and integrate platforms that teams actually adopt.",
-      },
-      {
-        title: "Capacity & Resource Planning",
-        description:
-          "Match demand with supply using scenario models and hiring triggers.",
-      },
-      {
-        title: "Change Management Enablement",
-        description:
-          "Rolling communications, training, and reinforcement loops.",
-      },
-    ],
-    callout: {
-      heading: "Turn chaos into clarity",
-      subheading: "Give your team the guardrails they crave.",
-      cta: sharedCta,
-    },
-    process: {
-      eyebrow: "Our Process",
-      heading: "Operational excellence roadmap",
-      description:
-        "We combine onsite sessions with async documentation so improvements land quickly.",
-      steps: [
-        {
-          title: "Diagnostics",
-          description:
-            "Shadow teams, pull metrics, and identify the top friction points.",
-        },
-        {
-          title: "Design",
-          description:
-            "Prototype new workflows, governance, and KPI dashboards.",
-        },
-        {
-          title: "Enable",
-          description:
-            "Train managers, launch pilots, and collect feedback fast.",
-        },
-        {
-          title: "Scale",
-          description:
-            "Institutionalize wins with documentation and ownership transfers.",
-        },
-      ],
-    },
-    expertise: {
-      eyebrow: "Expertise",
-      heading: "Operators who have scaled before",
-      body: "COO advisors, project managers, and RevOps pros help you execute without the burnout.",
-      cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
-      },
-    },
-    relatedServices: [
-      { label: "Business Consulting", href: "/services/business-consulting" },
-      {
-        label: "Marketing, Sales, & Retention",
-        href: "/services/marketing-sales-retention",
-      },
-      { label: "Talent Acquisition", href: "/services/talent-acquisition" },
-    ],
-    newsletter: sharedNewsletter,
-    meta: {
-      title: "Operations Management Consulting | A2Z Accounting",
-      description:
-        "Process design, tooling, and enablement support for growing operators.",
-    },
-  },
-  "talent-acquisition": {
-    slug: "talent-acquisition",
-    label: "Talent Acquisition",
-    breadcrumb: sharedBreadcrumb("Talent Acquisition"),
-    hero: {
-      eyebrow: "Services",
-      title: "Talent Acquisition",
-      summary:
-        "Recruit with confidence using structured scorecards, sourcing campaigns, and onboarding playbooks.",
-      description:
-        "We align leadership on hiring plans, write compelling job narratives, and run coordinated candidate experiences that protect your brand.",
-      ctas: [sharedCta],
-    },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
-    overview: {
-      eyebrow: "What We Do",
-      heading: "People programs that scale",
-      paragraphs: [
-        "We act as your embedded talent team—calibrating roles, building pipelines, and ensuring compensation and benefits stay competitive.",
-        "Hiring managers gain clarity on process while candidates enjoy responsive communication.",
-        "Once someone signs, we ensure onboarding and early enablement drive retention.",
-      ],
-    },
-    servicesIntro: {
-      eyebrow: "Services Offered",
-      heading: "Talent acquisition toolkit",
-      supporting:
-        "Everything from workforce planning to recruiting operations.",
-    },
-    services: [
-      {
-        title: "Workforce Planning & Scorecards",
-        description:
-          "Define roles, success metrics, and interview panels before posting.",
-      },
-      {
-        title: "Sourcing & Employer Branding",
-        description:
-          "Multi-channel outreach, campaigns, and brand assets that attract the right people.",
-      },
-      {
-        title: "Interview Enablement",
-        description:
-          "Training, guides, and structured feedback loops that reduce bias.",
-      },
-      {
-        title: "Onboarding & Retention",
-        description:
-          "Launch cohorts, buddy systems, and 30/60/90 plans to help new hires thrive.",
-      },
-    ],
-    callout: {
-      heading: "Recruit with confidence",
-      subheading:
-        "We fill critical roles while your team keeps serving customers.",
-      cta: sharedCta,
-    },
-    process: {
-      eyebrow: "Our Process",
-      heading: "Talent acquisition partnership",
-      description:
-        "Clear stages keep stakeholders aligned from intake to signed offer.",
-      steps: [
-        {
-          title: "Role Calibration",
-          description:
-            "Align on goals, competencies, and compensation for each search.",
-        },
-        {
-          title: "Sourcing",
-          description:
-            "Activate networks, campaigns, and referrals with daily status sharing.",
-        },
-        {
-          title: "Selection",
-          description:
-            "Coordinate interviews, prep panels, and capture decision data.",
-        },
-        {
-          title: "Onboard",
-          description:
-            "Deliver start-day plans, benefits briefings, and retention checkpoints.",
-        },
-      ],
-    },
-    expertise: {
-      eyebrow: "Expertise",
-      heading: "Recruiters, HR leaders, and coaches",
-      body: "We have staffed hyper-growth startups and multi-location service brands, so we know how to balance speed with quality.",
-      cta: {
-        label: "Meet the Team",
-        href: "https://execor.vamtam.com/about/team/",
-      },
-    },
-    relatedServices: [
-      {
-        label: "Operations Management",
-        href: "/services/operations-management",
-      },
-      { label: "Business Consulting", href: "/services/business-consulting" },
-      {
-        label: "Marketing, Sales, & Retention",
-        href: "/services/marketing-sales-retention",
+        label: "Tax & Regulatory Compliance",
+        href: "/services/tax-compliance",
       },
     ],
     newsletter: sharedNewsletter,
     meta: {
-      title: "Talent Acquisition Services | A2Z Accounting",
+      title: "Business Advisory & Structuring | A2Z Accounting",
       description:
-        "Recruiting strategy, sourcing, and onboarding support for growing teams.",
+        "Corporate structuring, forecasting, and governance advisory for UAE and cross-border operations.",
     },
   },
 };

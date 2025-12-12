@@ -31,10 +31,26 @@ const menuItems: MenuItem[] = [
   {
     label: "Services",
     subMenu: [
-      { label: "Accounting Services", href: "/services/accounting" },
-      { label: "Tax Consulting", href: "/services/tax" },
-      { label: "Business Consulting", href: "/services/business-consulting" },
-      { label: "Audit Services", href: "/services/audit" },
+      {
+        label: "Company Formation & Corporate Setup",
+        href: "/services/company-formation",
+      },
+      {
+        label: "Accounting & Bookkeeping",
+        href: "/services/accounting-bookkeeping",
+      },
+      {
+        label: "Tax & Regulatory Compliance",
+        href: "/services/tax-compliance",
+      },
+      {
+        label: "Payroll & PRO Services",
+        href: "/services/payroll-hr-pro",
+      },
+      {
+        label: "Business Advisory & Structuring",
+        href: "/services/business-advisory",
+      },
     ],
   },
   {

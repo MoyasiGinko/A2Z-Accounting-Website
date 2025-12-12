@@ -22,6 +22,36 @@ const sectionBase = "px-4 py-16 sm:px-6 lg:px-0";
 const cardBase =
   "rounded-2xl border border-slate-100 bg-white/80 p-6 shadow-sm backdrop-blur";
 
+const SectionHeader = ({
+  eyebrow,
+  title,
+  description,
+  align = "left",
+}: {
+  eyebrow: ReactNode;
+  title: ReactNode;
+  description?: ReactNode;
+  align?: "left" | "center";
+}) => (
+  <div className={align === "center" ? "text-center" : ""}>
+    <Eyebrow>{eyebrow}</Eyebrow>
+    <div
+      className={
+        align === "center" ? "mx-auto mt-3 max-w-3xl" : "mt-3 max-w-3xl"
+      }
+    >
+      <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-3 text-base leading-relaxed text-slate-600">
+          {description}
+        </p>
+      )}
+    </div>
+  </div>
+);
+
 const ServicePageClient = ({ content }: ServicePageClientProps) => {
   useScrollEffects();
   useStickyHeader();
@@ -82,52 +112,39 @@ const Section = ({
   </section>
 );
 
-const Eyebrow = ({ children }: { children: ReactNode }) => (
-  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600">
+const Eyebrow = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => (
+  <p
+    className={`text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 ${
+      className ?? ""
+    }`}
+  >
     {children}
   </p>
 );
 
 const ServiceHero = ({ content }: { content: ServicePageContent }) => (
-  <Section className="pt-12">
-    <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
-      <ol className="flex flex-wrap items-center gap-2">
-        {content.breadcrumb.map((crumb, index) => (
-          <li key={crumb.label} className="flex items-center gap-2">
-            {crumb.href ? (
-              <Link
-                href={crumb.href}
-                className="transition hover:text-primary-600"
-              >
-                {crumb.label}
-              </Link>
-            ) : (
-              <span className="text-slate-700">{crumb.label}</span>
-            )}
-            {index < content.breadcrumb.length - 1 && (
-              <span aria-hidden="true" className="text-slate-400">
-                /
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
-    <div className="space-y-6 rounded-3xl border border-slate-100 bg-white/80 p-8 shadow-lg ring-1 ring-slate-100">
-      <Eyebrow>{content.hero.eyebrow}</Eyebrow>
+  <Section className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-700 pt-20 text-white">
+    <div className="space-y-6 pt-8">
+      <Eyebrow className="text-white">{content.hero.eyebrow}</Eyebrow>
       <div className="space-y-4">
-        <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
+        <h1 className="text-4xl font-semibold !text-white sm:text-5xl lg:text-6xl">
           {content.hero.title}
         </h1>
-        <p className="text-lg text-slate-600">{content.hero.summary}</p>
-        <p className="text-base text-slate-500">{content.hero.description}</p>
+        <p className="text-lg text-white/90">{content.hero.summary}</p>
+        <p className="text-base text-white/80">{content.hero.description}</p>
       </div>
       <div className="flex flex-wrap gap-4">
         {content.hero.ctas.map((cta) => (
           <Link
             key={cta.label}
             href={cta.href}
-            className="inline-flex items-center justify-center rounded-full bg-primary-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-600"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-primary-100"
           >
             {cta.label}
           </Link>
@@ -139,24 +156,31 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
 
 const MembershipHighlights = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div
-      className={`${cardBase} items-start gap-6 border-dashed border-primary-200 lg:flex`}
-    >
-      <div className="space-y-2">
+    <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="space-y-3">
         <Eyebrow>{content.membershipsLabel}</Eyebrow>
-        <p className="text-base text-slate-600">
-          Independent bodies keep us sharp and accountable to measurable
-          standards.
+        <p className="text-2xl font-semibold text-slate-900">
+          Built for compliance, designed for speed.
+        </p>
+        <p className="max-w-2xl text-base text-slate-600">
+          We help you stay on top of requirements with a clear workflow and
+          consistent documentation.
         </p>
       </div>
-      <div className="flex flex-1 flex-wrap gap-3">
-        {content.memberships.map((membership) => (
-          <span
+
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+        {content.memberships.slice(0, 4).map((membership) => (
+          <div
             key={membership}
-            className="inline-flex rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-medium text-primary-800"
+            className="rounded-2xl border border-slate-200 bg-white p-4"
           >
-            {membership}
-          </span>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+              Focus
+            </p>
+            <p className="mt-2 text-sm font-semibold text-slate-900">
+              {membership}
+            </p>
+          </div>
         ))}
       </div>
     </div>
@@ -165,30 +189,58 @@ const MembershipHighlights = ({ content }: { content: ServicePageContent }) => (
 
 const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-10 rounded-[32px] bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600 p-10 text-white lg:grid-cols-[1.1fr_0.9fr]">
-      <div className="space-y-5">
-        <Eyebrow>{content.overview.eyebrow}</Eyebrow>
-        <h2 className="text-3xl font-semibold">{content.overview.heading}</h2>
-        <div className="space-y-4 text-base text-white/80">
+    <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+        <SectionHeader
+          eyebrow={content.overview.eyebrow}
+          title={content.overview.heading}
+        />
+        <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
           {content.overview.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
       </div>
-      <div
-        className={`space-y-4 ${cardBase} border-white/10 bg-white/10 text-white`}
-      >
-        <p className="text-sm uppercase tracking-[0.3em] text-white/80">
-          How we engage
-        </p>
-        <p className="text-lg text-white/90">
-          Workshops, in-person deep dives, remote standups, and async updates
-          keep momentum without burning your team.
-        </p>
-        <p className="text-sm text-white/70">
-          We own the project cadence so you can stay focused on serving
-          customers.
-        </p>
+
+      <div className="space-y-4">
+        <div className="rounded-[32px] bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 p-8 text-white shadow-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
+            At a glance
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+                Turnaround
+              </p>
+              <p className="mt-2 text-lg font-semibold">Fast & structured</p>
+            </div>
+            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+                Coverage
+              </p>
+              <p className="mt-2 text-lg font-semibold">End-to-end</p>
+            </div>
+            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+                Reporting
+              </p>
+              <p className="mt-2 text-lg font-semibold">Clear & timely</p>
+            </div>
+            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+                Compliance
+              </p>
+              <p className="mt-2 text-lg font-semibold">Audit-ready</p>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-[32px] border border-slate-200 bg-slate-50/60 p-8">
+          <p className="text-sm font-semibold text-slate-900">How we work</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            Clear milestones, shared checklists, and proactive updates—so you
+            always know what’s next.
+          </p>
+        </div>
       </div>
     </div>
   </Section>
@@ -196,51 +248,80 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
 
 const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="space-y-4">
-      <Eyebrow>{content.servicesIntro.eyebrow}</Eyebrow>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          {content.servicesIntro.heading}
-        </h2>
-        <p className="max-w-2xl text-base text-slate-500">
-          {content.servicesIntro.supporting}
-        </p>
-      </div>
-    </div>
-    <div className="grid gap-6 md:grid-cols-2">
+    <SectionHeader
+      eyebrow={content.servicesIntro.eyebrow}
+      title={content.servicesIntro.heading}
+      description={content.servicesIntro.supporting}
+    />
+
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {content.services.map((service) => (
         <div
           key={service.title}
-          className={`${cardBase} flex h-full flex-col transition hover:-translate-y-1`}
+          className={`${cardBase} flex flex-col items-left gap-4 p-6`}
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-primary-700">
-            <span aria-hidden className="text-lg">
-              •
-            </span>
+          <div className="flex-shrink-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="37"
+              height="34"
+              viewBox="0 0 37 34"
+              className="w-9 h-8"
+            >
+              <g fill="none" fillRule="evenodd">
+                <circle fill="#F2F5F1" cx="17" cy="17" r="11.33" />
+                <g fill="#1F6E69">
+                  <path d="M16.84 34c-5.3 0-10.3-2.52-13.47-6.8a17.13 17.13 0 0 1-2.7-14.97A16.93 16.93 0 0 1 10.94 1.08a16.69 16.69 0 0 1 14.99 1.6c.18.11.3.29.36.5a.78.78 0 0 1-.6.94c-.2.04-.42 0-.6-.13a15.17 15.17 0 0 0-12.92-1.7 15.37 15.37 0 0 0-9.53 8.99 15.6 15.6 0 0 0 .8 13.15 15.19 15.19 0 0 0 23.17 4.49A15.51 15.51 0 0 0 32.13 17v-1.55a.78.78 0 0 1 .69-.85c.42-.04.8.27.84.7V17c0 4.5-1.77 8.83-4.93 12.02A16.74 16.74 0 0 1 16.84 34Z" />
+                  <path d="M19.14 20.48c-.2 0-.4-.09-.54-.23l-6.88-6.96c-.3-.3-.3-.8 0-1.1.3-.3.78-.3 1.08 0l6.34 6.36 16.3-16.39c.29-.3.78-.3 1.08 0 .3.3.3.8 0 1.1l-16.83 17a.76.76 0 0 1-.55.22Z" />
+                </g>
+              </g>
+            </svg>
           </div>
-          <h3 className="mt-5 text-xl font-semibold text-slate-900">
+          <h4 className="text-lg font-semibold text-slate-900 text-left">
             {service.title}
-          </h3>
-          <p className="mt-3 text-sm text-slate-600">{service.description}</p>
+          </h4>
         </div>
       ))}
+      <div className={`${cardBase} p-6 flex items-center justify-between`}>
+        <h2 className="text-xl font-semibold text-slate-900">
+          {content.callout.heading}
+        </h2>
+        <Link
+          href={content.callout.cta.href}
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary-700 border border-primary-200 rounded-full hover:bg-primary-50"
+        >
+          <span>{content.callout.cta.label}</span>
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fillRule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Link>
+      </div>
     </div>
   </Section>
 );
 
 const Callout = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="rounded-[32px] bg-gradient-to-r from-primary-800 to-primary-500 p-10 text-white shadow-2xl">
-      <h3 className="text-2xl font-semibold">{content.callout.heading}</h3>
+    <div className="relative overflow-hidden rounded-[32px] border border-primary-200 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 p-10 text-white shadow-2xl">
+      <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
+      <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
+
+      <h3 className="relative text-2xl font-semibold sm:text-3xl">
+        {content.callout.heading}
+      </h3>
       {content.callout.subheading && (
-        <p className="mt-2 text-base text-white/80">
+        <p className="relative mt-3 max-w-2xl text-base leading-relaxed text-white/85">
           {content.callout.subheading}
         </p>
       )}
-      <div className="mt-6">
+      <div className="relative mt-7">
         <Link
           href={content.callout.cta.href}
-          className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-primary-50"
+          className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-primary-800 transition hover:bg-primary-100"
         >
           {content.callout.cta.label}
         </Link>
@@ -251,33 +332,39 @@ const Callout = ({ content }: { content: ServicePageContent }) => (
 
 const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="space-y-4">
-      <Eyebrow>{content.process.eyebrow}</Eyebrow>
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <h2 className="text-3xl font-semibold text-slate-900">
-            {content.process.heading}
-          </h2>
-          <p className="mt-3 max-w-3xl text-base text-slate-600">
-            {content.process.description}
-          </p>
-        </div>
-      </div>
-    </div>
-    <ol className="grid gap-6 md:grid-cols-2">
+    <SectionHeader
+      eyebrow={content.process.eyebrow}
+      title={content.process.heading}
+      description={content.process.description}
+    />
+
+    <ol className="relative grid gap-6 md:grid-cols-2">
       {content.process.steps.map((step, index) => (
         <li
           key={step.title}
-          className={`${cardBase} relative border-primary-50`}
+          className={`${cardBase} relative border-slate-200 bg-white p-7`}
         >
-          <span className="absolute -top-4 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-base font-semibold text-white">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <div className="pt-6">
-            <h3 className="text-lg font-semibold text-slate-900">
-              {step.title}
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">{step.description}</p>
+          <div className="flex items-start gap-4">
+            <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-primary-700 text-base font-semibold text-white shadow-sm">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Step {index + 1}
+              </p>
+              <h3 className="mt-2 text-lg font-semibold text-slate-900">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {step.description}
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 border-t border-slate-100 pt-5">
+            <p className="text-sm font-semibold text-slate-900">Outcome</p>
+            <p className="mt-2 text-sm text-slate-600">
+              Clear deliverables and next actions at every stage.
+            </p>
           </div>
         </li>
       ))}
@@ -287,22 +374,34 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
 
 const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-6 rounded-[32px] border border-slate-200 bg-slate-50/60 p-8 lg:grid-cols-[0.6fr_1.4fr]">
+    <div className="grid gap-6 rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[0.65fr_1.35fr]">
       <div className="space-y-2">
         <Eyebrow>{content.expertise.eyebrow}</Eyebrow>
         <h3 className="text-2xl font-semibold text-slate-900">
           {content.expertise.heading}
         </h3>
+        <p className="text-sm text-slate-500">
+          Clear, documented processes—built for UAE operators.
+        </p>
       </div>
-      <div className="space-y-4">
-        <p className="text-base text-slate-600">{content.expertise.body}</p>
-        <Link
-          href={content.expertise.cta.href}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 transition hover:text-primary-500"
-        >
-          {content.expertise.cta.label}
-          <span aria-hidden>→</span>
-        </Link>
+      <div className="space-y-5">
+        <p className="text-base leading-relaxed text-slate-600">
+          {content.expertise.body}
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href={content.expertise.cta.href}
+            className="inline-flex items-center justify-center rounded-full bg-primary-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-600"
+          >
+            {content.expertise.cta.label}
+          </Link>
+          <Link
+            href="#"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-primary-200"
+          >
+            Request a checklist
+          </Link>
+        </div>
       </div>
     </div>
   </Section>
@@ -315,22 +414,35 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
 
   return (
     <Section>
-      <div className="space-y-4">
-        <Eyebrow>More Services</Eyebrow>
-        <div className="grid gap-4 md:grid-cols-3">
-          {content.relatedServices.map((service) => (
-            <Link
-              key={service.label}
-              href={service.href}
-              className={`${cardBase} flex items-center justify-between text-base font-semibold text-slate-800 transition hover:border-primary-200`}
-            >
-              {service.label}
-              <span aria-hidden className="text-xl text-primary-600">
+      <SectionHeader
+        eyebrow="Explore"
+        title="Related services"
+        description="If you need end-to-end support, these services fit well together."
+      />
+
+      <div className="grid gap-4 md:grid-cols-3">
+        {content.relatedServices.map((service) => (
+          <Link
+            key={service.label}
+            href={service.href}
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:shadow-md"
+          >
+            <div className="flex items-center justify-between gap-4">
+              <p className="text-base font-semibold text-slate-900">
+                {service.label}
+              </p>
+              <span
+                aria-hidden
+                className="text-xl text-primary-700 transition group-hover:translate-x-1"
+              >
                 →
               </span>
-            </Link>
-          ))}
-        </div>
+            </div>
+            <p className="mt-3 text-sm text-slate-600">
+              See what’s included and how we deliver.
+            </p>
+          </Link>
+        ))}
       </div>
     </Section>
   );
@@ -338,18 +450,13 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
 
 const NewsletterPanel = ({ content }: { content: ServicePageContent }) => (
   <Section className="pb-24">
-    <div className="rounded-[32px] border border-slate-100 bg-gradient-to-br from-white via-primary-50/40 to-white p-8 shadow-xl">
-      <div className="space-y-3 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary-600">
-          {content.newsletter.heading}
-        </p>
-        <h3 className="text-3xl font-semibold text-slate-900">
-          {content.newsletter.subheading}
-        </h3>
-        <p className="text-base text-slate-600">
-          {content.newsletter.description}
-        </p>
-      </div>
+    <div className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+      <SectionHeader
+        align="center"
+        eyebrow={content.newsletter.heading}
+        title={content.newsletter.subheading}
+        description={content.newsletter.description}
+      />
       <form
         className="mt-8 flex flex-col gap-4 sm:flex-row"
         method="post"
@@ -364,11 +471,11 @@ const NewsletterPanel = ({ content }: { content: ServicePageContent }) => (
           type="email"
           placeholder={content.newsletter.placeholder}
           required
-          className="flex-1 rounded-full border border-slate-200 bg-white px-5 py-3 text-base text-slate-700 focus:border-primary-400 focus:outline-none"
+          className="flex-1 rounded-full border border-slate-300 bg-white px-5 py-3 text-base text-slate-700 shadow-sm focus:border-primary-400 focus:outline-none"
         />
         <button
           type="submit"
-          className="rounded-full bg-primary-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-600"
+          className="rounded-full bg-primary-700 px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-600"
         >
           {content.newsletter.buttonLabel}
         </button>
