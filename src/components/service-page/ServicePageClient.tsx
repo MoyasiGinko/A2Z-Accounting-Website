@@ -291,7 +291,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         className={`rounded-[32px] border border-slate-100 bg-white/80 shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#84C9E2] to-[#1B3756]`}
       >
         <div className="flex flex-col">
-          <h2 className="text-xl font-semibold !text-slate-50">
+          <h2 className=" !font-medium !text-slate-50">
             {content.callout.heading}
           </h2>
           {content.callout.subheading && (
@@ -349,7 +349,7 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 lg:grid-cols-2">
       <div className="space-y-4">
         <Eyebrow>{content.process.eyebrow}</Eyebrow>
-        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        <h2 className=" font-semibold text-slate-900 sm:text-4xl">
           {content.process.heading}
         </h2>
         <p className="text-base leading-relaxed text-slate-600">
@@ -396,9 +396,9 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 rounded-[32px] bg-gradient-to-br from-[#84C9E2] to-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
       <div className="flex flex-col justify-center">
         {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
-        <h3 className="text-2xl !text-white font-semibold">
+        <h2 className="text-2xl !text-white !font-medium">
           {content.expertise.heading}
-        </h3>
+        </h2>
         <p className="text-sm mt-2 text-white/80">
           Clear, documented processes—built for UAE operators.
         </p>
