@@ -120,7 +120,7 @@ const Eyebrow = ({
   className?: string;
 }) => (
   <p
-    className={`text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 ${
+    className={`text-sm font-semibold uppercase tracking-[0.2em] text-[#1B3756] ${
       className ?? ""
     }`}
   >
