@@ -82,7 +82,7 @@ const ServicePageClient = ({ content }: ServicePageClientProps) => {
                 <div className="page-content clearfix the-content-parent">
                   <div className="elementor elementor-17">
                     <ServiceHero content={content} />
-                    <MembershipHighlights content={content} />
+                    <WhatWeDo content={content} />
                     <ServiceOverview content={content} />
                     <ServiceGrid content={content} />
                     {/* <Callout content={content} /> */}
@@ -145,7 +145,7 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
           {content.hero.title}
         </h1>
         <p className="text-lg text-white/90">{content.hero.summary}</p>
-        <p className="text-base text-white/80">{content.hero.description}</p>
+        {/* <p className="text-base text-white/80">{content.hero.description}</p> */}
       </div>
       <div className="flex flex-wrap gap-4">
         {content.hero.ctas.map((cta) => (
@@ -162,34 +162,24 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
   </Section>
 );
 
-const MembershipHighlights = ({ content }: { content: ServicePageContent }) => (
+const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+    <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="flex items-center justify-center">
+        <img
+          src={content.whatWeDo.image}
+          alt="What we do"
+          className="w-full h-auto rounded-2xl shadow-sm"
+        />
+      </div>
       <div className="space-y-3">
-        <Eyebrow>{content.membershipsLabel}</Eyebrow>
+        <Eyebrow>{content.whatWeDo.eyebrow}</Eyebrow>
         <p className="text-2xl font-semibold text-slate-900">
-          Built for compliance, designed for speed.
+          {content.whatWeDo.heading}
         </p>
         <p className="max-w-2xl text-base text-slate-600">
-          We help you stay on top of requirements with a clear workflow and
-          consistent documentation.
+          {content.whatWeDo.description}
         </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
-        {content.memberships.slice(0, 4).map((membership) => (
-          <div
-            key={membership}
-            className="rounded-2xl border border-slate-200 bg-white p-4"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-              Focus
-            </p>
-            <p className="mt-2 text-sm font-semibold text-slate-900">
-              {membership}
-            </p>
-          </div>
-        ))}
       </div>
     </div>
   </Section>
@@ -211,7 +201,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
       </div>
 
       <div className="space-y-4">
-        <div className="rounded-[32px] bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 p-8 text-white shadow-xl">
+        <div className="rounded-[32px] bg-gradient-to-br from-[#84C9E2] to-[#1B3756] p-8 text-white shadow-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
             At a glance
           </p>

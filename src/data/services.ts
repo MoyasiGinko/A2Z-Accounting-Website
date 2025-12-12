@@ -13,11 +13,14 @@ export interface ServicePageContent {
     eyebrow: string;
     title: string;
     summary: string;
-    description: string;
     ctas: { label: string; href: string }[];
   };
-  membershipsLabel: string;
-  memberships: string[];
+  whatWeDo: {
+    eyebrow: string;
+    heading: string;
+    description: string;
+    image: string;
+  };
   overview: {
     eyebrow: string;
     heading: string;
@@ -74,8 +77,8 @@ const sharedCta = {
   href: "#",
 };
 
-const sharedMembershipsLabel = "Compliance areas we cover:";
-const sharedMemberships = ["VAT", "Corporate Tax", "UBO / AML", "WPS Payroll"];
+const sharedWhatWeDoEyebrow = "What we do";
+const sharedWhatWeDoImage = "/images/service-1.webp";
 
 const sharedNewsletter: ServicePageContent["newsletter"] = {
   heading: "Stay Ahead.",
@@ -99,12 +102,16 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       title: "Company Formation & Corporate Setup",
       summary:
         "Set up the right UAE entity—mainland, free zone, or offshore—with a clear plan from day one.",
-      description:
-        "We help you choose the correct business activity, handle documentation, coordinate licensing, and guide you through the setup steps so you can start operating with confidence.",
+
       ctas: [sharedCta],
     },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
+    whatWeDo: {
+      eyebrow: sharedWhatWeDoEyebrow,
+      heading: "Set up the right UAE entity—end to end.",
+      description:
+        "We guide you from jurisdiction selection to licensing and documentation, so your company is structured correctly for banking, visas, and ongoing compliance.",
+      image: sharedWhatWeDoImage,
+    },
     overview: {
       eyebrow: "Overview",
       heading: "A clean, compliant setup—without the guesswork",
@@ -240,12 +247,15 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       title: "Accounting, Bookkeeping & Financial Reporting",
       summary:
         "Accurate books, clean reconciliations, and reporting you can trust—month after month.",
-      description:
-        "We keep your financial records organised and compliant, giving you timely visibility through structured reporting and modern cloud accounting workflows.",
       ctas: [sharedCta],
     },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
+    whatWeDo: {
+      eyebrow: sharedWhatWeDoEyebrow,
+      heading: "Keep your books clean and your reporting dependable.",
+      description:
+        "We handle bookkeeping, reconciliations, and month-end closes so you always have accurate financial statements to support decisions, audits, and tax filings.",
+      image: sharedWhatWeDoImage,
+    },
     overview: {
       eyebrow: "Overview",
       heading: "Financial clarity for operators",
@@ -366,12 +376,15 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       title: "Tax & Regulatory Compliance",
       summary:
         "Stay compliant with UAE requirements—without last-minute panic or penalty risk.",
-      description:
-        "From VAT registration to Corporate Tax filing and regulatory submissions, we help you meet requirements on time and with clean supporting documentation.",
       ctas: [sharedCta],
     },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
+    whatWeDo: {
+      eyebrow: sharedWhatWeDoEyebrow,
+      heading: "Stay compliant with VAT and Corporate Tax—without surprises.",
+      description:
+        "We support registrations, filings, and documentation standards so submissions are on time, accurate, and backed by audit-ready records.",
+      image: sharedWhatWeDoImage,
+    },
     overview: {
       eyebrow: "Overview",
       heading: "Compliance support that protects your business",
@@ -490,12 +503,15 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       title: "Payroll & HR / PRO Services",
       summary:
         "Payroll processing, visa support, and government liaison—handled end-to-end.",
-      description:
-        "If you employ staff or sponsor visas, you need payroll and compliance done correctly. We support payroll runs, renewals, document clearing, and ongoing liaison so operations stay smooth.",
       ctas: [sharedCta],
     },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
+    whatWeDo: {
+      eyebrow: sharedWhatWeDoEyebrow,
+      heading: "Run payroll and HR/PRO workflows with confidence.",
+      description:
+        "We help you manage WPS payroll and essential HR/PRO processes with clear checklists and consistent documentation—so your team operations stay compliant and smooth.",
+      image: sharedWhatWeDoImage,
+    },
     overview: {
       eyebrow: "Overview",
       heading: "Workforce support built for UAE operations",
@@ -607,12 +623,15 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       title: "Business Advisory & Corporate Structuring",
       summary:
         "Plan confidently with structuring, forecasting, and governance support as you scale.",
-      description:
-        "We help founders and finance leads build tax-efficient structures, forecast cashflow, and set up internal controls—especially for cross-border operations.",
       ctas: [sharedCta],
     },
-    membershipsLabel: sharedMembershipsLabel,
-    memberships: sharedMemberships,
+    whatWeDo: {
+      eyebrow: sharedWhatWeDoEyebrow,
+      heading: "Turn financial data into a practical growth plan.",
+      description:
+        "We provide operator-focused advisory—budgeting, KPIs, and performance insights—so you can make confident decisions and prioritise what moves the business forward.",
+      image: sharedWhatWeDoImage,
+    },
     overview: {
       eyebrow: "Overview",
       heading: "Advisory that stays practical",
