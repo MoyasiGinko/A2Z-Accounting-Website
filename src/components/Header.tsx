@@ -226,7 +226,7 @@ export default function Header() {
           {/* Contact Now Button */}
           <div className="hidden md:flex flex-shrink-0">
             <Link
-              href="/contact"
+              href="/contact-us"
               className="group relative bg-white text-[#162C45] px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
             >
               <span className="relative z-10">Enquire Today</span>
