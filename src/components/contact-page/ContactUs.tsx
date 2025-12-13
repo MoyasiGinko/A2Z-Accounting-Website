@@ -360,7 +360,9 @@ export default function ContactSection() {
           <div className="lg:col-span-7 mt-8 lg:mt-0">
             <div className="bg-white rounded-md shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden">
               <div className="bg-[#162C45] px-8 py-6 flex justify-between items-center text-white">
-                <h3 className="font-serif text-xl font-medium">Contact Form</h3>
+                <h3 className="font-serif text-xl !text-white font-medium">
+                  Contact Form
+                </h3>
                 <div className="text-[#84C9E2]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

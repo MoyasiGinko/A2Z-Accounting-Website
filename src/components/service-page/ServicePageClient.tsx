@@ -18,6 +18,7 @@ import { useCarousels } from "@/hooks/useCarousels";
 import { useClientMarquee } from "@/hooks/useClientMarquee";
 import { ReactNode } from "react";
 import GetInTouch from "../GetInTouch";
+import ContactSection from "../contact-page/ContactUs";
 
 interface ServicePageClientProps {
   content: ServicePageContent;
@@ -90,9 +91,10 @@ const ServicePageClient = ({ content }: ServicePageClientProps) => {
                   <ExpertiseSpotlight content={content} />
                   <RelatedServices content={content} />
                   {/* <NewsletterPanel content={content} /> */}
-                  <div className="mb-40">
+                  {/* <div className="mb-40">
                     <GetInTouch />
-                  </div>
+                  </div> */}
+                  <ContactSection />
                 </div>
               </div>
             </article>
