@@ -258,8 +258,11 @@ export default function RootLayout({
       </head>
       <body className="home wp-singular page-template-default page page-id-17 wp-custom-logo wp-embed-responsive wp-theme-execor full header-layout-logo-menu has-page-header no-middle-header responsive-layout vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-slider-active vamtam-font-smoothing layout-full elementor-default elementor-kit-5 elementor-page elementor-page-17">
         <ErrorBoundary>
+          <div id="top"></div>
           <Header />
-          {children}
+          <div id="page" className="main-container min-h-screen">
+            {children}
+          </div>
           <Footer />
           <div id="scroll-to-top" className="vamtam-scroll-to-top">
             <div id="scroll-to-top-text">top</div>

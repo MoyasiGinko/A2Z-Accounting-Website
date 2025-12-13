@@ -69,41 +69,41 @@ const ServicePageClient = ({ content }: ServicePageClientProps) => {
 
   return (
     <>
-      <div id="top"></div>
+      {/* <div id="top"></div> */}
       {/* <Header /> */}
-      <div id="page" className="main-container">
-        <div id="main-content">
-          <div id="sub-header" className="layout-full elementor-page-title">
-            <div className="meta-header" />
-          </div>
-          <main id="main" role="main" className="vamtam-main layout-full">
-            <div className="page-wrapper">
-              <article className="full">
-                <div className="page-content clearfix the-content-parent">
-                  <div className="elementor elementor-17">
-                    <ServiceHero content={content} />
-                    <WhatWeDo content={content} />
-                    <ServiceOverview content={content} />
-                    <ServiceGrid content={content} />
-                    {/* <Callout content={content} /> */}
-                    <ProcessTimeline content={content} />
-                    <ExpertiseSpotlight content={content} />
-                    <RelatedServices content={content} />
-                    {/* <NewsletterPanel content={content} /> */}
-                    <div className="mb-40">
-                      <GetInTouch />
-                    </div>
+      {/* <div id="page" className="main-container"> */}
+      <div id="main-content">
+        <div id="sub-header" className="layout-full elementor-page-title">
+          <div className="meta-header" />
+        </div>
+        <main id="main" role="main" className="vamtam-main layout-full">
+          <div className="page-wrapper">
+            <article className="full">
+              <div className="page-content clearfix the-content-parent">
+                <div className="elementor elementor-17">
+                  <ServiceHero content={content} />
+                  <WhatWeDo content={content} />
+                  <ServiceOverview content={content} />
+                  <ServiceGrid content={content} />
+                  {/* <Callout content={content} /> */}
+                  <ProcessTimeline content={content} />
+                  <ExpertiseSpotlight content={content} />
+                  <RelatedServices content={content} />
+                  {/* <NewsletterPanel content={content} /> */}
+                  <div className="mb-40">
+                    <GetInTouch />
                   </div>
                 </div>
-              </article>
-            </div>
-          </main>
-        </div>
+              </div>
+            </article>
+          </div>
+        </main>
       </div>
-      <Footer />
+      {/* </div> */}
+      {/* <Footer />
       <div id="scroll-to-top" className="vamtam-scroll-to-top">
         <div id="scroll-to-top-text">top</div>
-      </div>
+      </div> */}
     </>
   );
 };
