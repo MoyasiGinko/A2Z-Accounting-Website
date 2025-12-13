@@ -209,11 +209,17 @@ const Tabs: React.FC = () => {
                         .map((item, index) => (
                           <div
                             key={index}
-                            className="rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm hover:shadow-md transition-shadow"
+                            className="rounded-xl border border-slate-200 bg-white/30 p-4 shadow-sm hover:shadow-md transition-shadow"
                           >
-                            <p className="text-sm font-medium text-slate-700">
-                              {item.trim()}
-                            </p>
+                            <div className="flex items-start gap-3">
+                              <div className="relative mt-2">
+                                <div className="w-2 h-2 bg-slate-700 rounded-full"></div>
+                                <div className="absolute inset-0 w-2 h-2 bg-slate-700 rounded-full animate-ping opacity-75"></div>
+                              </div>
+                              <p className="text-base !mt-0 text-left font-medium text-slate-700">
+                                {item.trim()}
+                              </p>
+                            </div>
                           </div>
                         ))}
                     </div>
