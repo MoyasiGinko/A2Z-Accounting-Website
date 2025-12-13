@@ -255,12 +255,16 @@ const Tabs: React.FC = () => {
                       key={strategy.title}
                       className="rounded-2xl border border-slate-100 p-5 shadow-sm shadow-slate-900/5"
                     >
-                      <p className="text-base font-semibold text-slate-900">
-                        {strategy.title}
-                      </p>
-                      <p className="mt-2 text-sm text-slate-600">
-                        {strategy.description}
-                      </p>
+                      <div className="!border-l-2 !border-slate-900">
+                        <p className="text-base !mb-0 ml-3 font-semibold text-slate-900">
+                          {strategy.title}
+                        </p>
+                      </div>
+                      <div className="!border-l-2 !border-slate-300">
+                        <p className="!mt-0 ml-3 text-sm text-slate-600">
+                          {strategy.description}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>
