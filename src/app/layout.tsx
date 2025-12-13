@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Analytics from "../components/Analytics";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://execor.vamtam.com"),
@@ -256,7 +258,12 @@ export default function RootLayout({
       </head>
       <body className="home wp-singular page-template-default page page-id-17 wp-custom-logo wp-embed-responsive wp-theme-execor full header-layout-logo-menu has-page-header no-middle-header responsive-layout vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-slider-active vamtam-font-smoothing layout-full elementor-default elementor-kit-5 elementor-page elementor-page-17">
         <ErrorBoundary>
+          <Header />
           {children}
+          <Footer />
+          <div id="scroll-to-top" className="vamtam-scroll-to-top">
+            <div id="scroll-to-top-text">top</div>
+          </div>
           <Analytics
             measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
           />

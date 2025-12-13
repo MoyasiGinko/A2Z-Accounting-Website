@@ -70,7 +70,7 @@ const ServicePageClient = ({ content }: ServicePageClientProps) => {
   return (
     <>
       <div id="top"></div>
-      <Header />
+      {/* <Header /> */}
       <div id="page" className="main-container">
         <div id="main-content">
           <div id="sub-header" className="layout-full elementor-page-title">

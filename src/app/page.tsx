@@ -39,7 +39,7 @@ export default function Home() {
     <>
       <div id="top"></div>
       {/* Header Spacer */}
-      <Header />
+      {/* <Header /> */}
       <div id="page" className="main-container">
         <div id="main-content">
           <div id="sub-header" className="layout-full elementor-page-title">
@@ -88,10 +88,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer />
       <div id="scroll-to-top" className="vamtam-scroll-to-top">
         <div id="scroll-to-top-text">top</div>
-      </div>
+      </div> */}
     </>
   );
 }
