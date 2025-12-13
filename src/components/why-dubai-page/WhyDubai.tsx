@@ -36,7 +36,7 @@ const pillars: WhyDubaiPillar[] = [
       "Full ownership of your company (no local sponsor required)",
     ],
     image:
-      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+      "https://www.timeoutdubai.com/cloud/timeoutdubai/2022/11/30/Dubai.jpg",
     icon: DollarSign,
   },
   {
@@ -50,7 +50,7 @@ const pillars: WhyDubaiPillar[] = [
       "Established Free Zones designed for SMEs and high-earning individuals",
     ],
     image:
-      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+      "https://m.thepeninsulaqatar.com/get/maximage/20250117_1737102017-197.JPG?1737102017",
     icon: Globe,
   },
   {
@@ -66,7 +66,7 @@ const pillars: WhyDubaiPillar[] = [
       "World-class healthcare and education options",
     ],
     image:
-      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+      "https://www.shutterstock.com/image-photo/luxurious-balcony-overlooking-dubai-downtown-600nw-2645925131.jpg",
     icon: Home,
   },
   {
@@ -78,8 +78,7 @@ const pillars: WhyDubaiPillar[] = [
       "Family sponsorship options",
       "Full access to UAE banking",
     ],
-    image:
-      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    image: "https://www.grovy.ae/wp-content/uploads/2025/02/2151328531.jpg",
     icon: MapPin,
   },
   {
@@ -95,7 +94,7 @@ const pillars: WhyDubaiPillar[] = [
       "Want a structure that is compliant in both the UK and UAE",
     ],
     image:
-      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+      "https://media.istockphoto.com/id/473016474/photo/emirati-doing-business.jpg?s=612x612&w=0&k=20&c=iQS3v20_p5zRkBROQMDNmGg7r9TPBmzfUbzqrmLvZ7E=",
     icon: Flag,
     highlight: {
       title: "UK-focused support",
@@ -114,7 +113,7 @@ const pillars: WhyDubaiPillar[] = [
       "World-leading Free Zone innovation",
     ],
     image:
-      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+      "https://assets.entrepreneur.com/content/3x2/2000/1742193731-Shutterstock-2483595635.jpg",
     icon: TrendingUp,
   },
 ];
