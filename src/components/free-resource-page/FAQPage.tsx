@@ -108,7 +108,7 @@ const FAQPage = () => {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f7f8fa] to-[#e8f4f8] text-[#0f172a]">
+    <main className="min-h-screen mt-10 bg-gradient-to-br from-[#f7f8fa] to-[#e8f4f8] text-[#0f172a]">
       <div className="max-w-5xl mx-auto px-6 md:px-8 lg:px-10 py-16">
         {/* Header Section */}
         <header className="text-center mb-16">
