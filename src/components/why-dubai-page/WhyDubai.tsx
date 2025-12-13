@@ -9,6 +9,7 @@ import {
   Flag,
   TrendingUp,
 } from "lucide-react";
+import ContactSection from "../contact-page/ContactUs";
 
 type WhyDubaiPillar = {
   title: string;
@@ -313,35 +314,7 @@ export default function WhyDubaiPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800 p-10 text-white shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
-            The Bottom Line
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-            More freedom. More opportunity. Less stress.
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90">
-            Dubai gives you the structure to protect wealth, scale globally, and
-            build long-term stability — with a lifestyle that supports high
-            performance.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-900 transition hover:bg-primary-50"
-            >
-              Speak to an Advisor
-            </Link>
-            <Link
-              href="/services/company-formation"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-            >
-              See How We Help
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </div>
   );
 }
