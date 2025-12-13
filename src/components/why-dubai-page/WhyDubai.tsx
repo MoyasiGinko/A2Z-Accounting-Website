@@ -205,7 +205,7 @@ export default function WhyDubaiPage() {
 
           <div className="mt-10 space-y-8">
             {pillars.map((pillar, index) => {
-              const Icon = pillar.icon;
+              // const Icon = pillar.icon;
               const isEven = index % 2 === 0;
               return (
                 <div
@@ -225,7 +225,7 @@ export default function WhyDubaiPage() {
                       />
                       <div className="flex flex-col justify-center space-y-4">
                         <div className="flex items-center gap-4">
-                          <Icon className="w-10 h-10 text-primary-900" />
+                          {/* <Icon className="w-10 h-10 text-primary-900" /> */}
                           <h3 className="text-2xl font-semibold text-slate-900 leading-tight">
                             {pillar.title}
                           </h3>
@@ -265,7 +265,7 @@ export default function WhyDubaiPage() {
                     <>
                       <div className="flex flex-col justify-center space-y-4">
                         <div className="flex items-center gap-4">
-                          <Icon className="w-10 h-10 text-primary-900" />
+                          {/* <Icon className="w-10 h-10 text-primary-900" /> */}
                           <h3 className="text-2xl font-semibold text-slate-900 leading-tight">
                             {pillar.title}
                           </h3>
