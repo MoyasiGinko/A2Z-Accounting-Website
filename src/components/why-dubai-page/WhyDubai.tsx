@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import type { LucideIcon } from "lucide-react";
 import {
   DollarSign,
   Globe,
@@ -13,11 +14,17 @@ type WhyDubaiPillar = {
   title: string;
   summary: string;
   bullets?: string[];
+  image: string;
+  icon: LucideIcon;
+  highlight?: {
+    title: string;
+    body: string;
+  };
 };
 
 const pillars: WhyDubaiPillar[] = [
   {
-    title: "1. Minimal Tax, Maximum Freedom",
+    title: "Minimal Tax, Maximum Freedom",
     summary:
       "Dubai offers one of the most favourable tax environments in the world:",
     bullets: [
@@ -28,9 +35,12 @@ const pillars: WhyDubaiPillar[] = [
       "Business-friendly corporate tax rules",
       "Full ownership of your company (no local sponsor required)",
     ],
+    image:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    icon: DollarSign,
   },
   {
-    title: "2. A Global Hub for High-Profit Entrepreneurs",
+    title: "A Global Hub for High-Profit Entrepreneurs",
     summary: "Dubai is built for business owners who think globally:",
     bullets: [
       "Fast and modern business incorporation",
@@ -39,9 +49,12 @@ const pillars: WhyDubaiPillar[] = [
       "Government systems that are digital, smooth, and efficient",
       "Established Free Zones designed for SMEs and high-earning individuals",
     ],
+    image:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    icon: Globe,
   },
   {
-    title: "3. A Lifestyle Upgrade That Actually Saves You Money",
+    title: "A Lifestyle Upgrade That Actually Saves You Money",
     summary:
       "Beyond business, Dubai is one of the world’s safest, cleanest, and most forward-thinking cities:",
     bullets: [
@@ -52,9 +65,12 @@ const pillars: WhyDubaiPillar[] = [
       "Year-round sunshine",
       "World-class healthcare and education options",
     ],
+    image:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    icon: Home,
   },
   {
-    title: "4. Easy Residency & Seamless Global Mobility",
+    title: "Easy Residency & Seamless Global Mobility",
     summary: "Setting up a company gives you the ability to obtain:",
     bullets: [
       "A UAE Residency Visa",
@@ -62,10 +78,13 @@ const pillars: WhyDubaiPillar[] = [
       "Family sponsorship options",
       "Full access to UAE banking",
     ],
+    image:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    icon: MapPin,
   },
   {
     title:
-      "5. Perfect for UK Entrepreneurs (Especially Those Still Living in the UK)",
+      "Perfect for UK Entrepreneurs (Especially Those Still Living in the UK)",
     summary: "Dubai is especially powerful for UK-based business owners who:",
     bullets: [
       "Are earning £150K+ profit",
@@ -75,9 +94,16 @@ const pillars: WhyDubaiPillar[] = [
       "Want to run operations internationally",
       "Want a structure that is compliant in both the UK and UAE",
     ],
+    image:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    icon: Flag,
+    highlight: {
+      title: "UK-focused support",
+      body: "We specialise in helping UK entrepreneurs build Dubai structures the right way, with full cross-border compliance, protection, and tax efficiency.",
+    },
   },
   {
-    title: "6. A Future-Proof Place to Build Your Business",
+    title: "A Future-Proof Place to Build Your Business",
     summary: "Dubai continues to invest heavily in:",
     bullets: [
       "Digital infrastructure",
@@ -87,18 +113,10 @@ const pillars: WhyDubaiPillar[] = [
       "Visa reforms",
       "World-leading Free Zone innovation",
     ],
+    image:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-cottonbro-5989928.jpg",
+    icon: TrendingUp,
   },
-];
-
-const icons = [DollarSign, Globe, Home, MapPin, Flag, TrendingUp];
-
-const images = [
-  "/images/tax-freedom.jpg",
-  "/images/global-hub.jpg",
-  "/images/lifestyle-upgrade.jpg",
-  "/images/easy-residency.jpg",
-  "/images/uk-entrepreneurs.jpg",
-  "/images/future-proof.jpg",
 ];
 
 export default function WhyDubaiPage() {
@@ -137,7 +155,7 @@ export default function WhyDubaiPage() {
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
           <div className="relative">
             <img
-              src="/images/dubai-overview.jpg"
+              src="https://gmz.ae/wp-content/uploads/2025/02/Burj-Al-Arab-851x851.png"
               alt="Dubai skyline"
               className="w-full h-auto rounded-3xl shadow-lg"
             />
@@ -187,28 +205,31 @@ export default function WhyDubaiPage() {
 
           <div className="mt-10 space-y-8">
             {pillars.map((pillar, index) => {
-              const Icon = icons[index];
+              const Icon = pillar.icon;
+              const isEven = index % 2 === 0;
               return (
                 <div
                   key={pillar.title}
-                  className={`grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm min-h-[200px] ${
-                    index % 2 === 0
+                  className={`grid gap-6 rounded-3xl  bg-transparent p-8 min-h-[200px] ${
+                    isEven
                       ? "grid-cols-[1.1fr_0.9fr]"
                       : "grid-cols-[0.9fr_1.1fr]"
                   }`}
                 >
-                  {index % 2 === 0 ? (
+                  {isEven ? (
                     <>
                       <img
-                        src={images[index]}
+                        src={pillar.image}
                         alt={pillar.title}
-                        className="w-full h-full object-cover rounded-3xl"
+                        className="w-full h-auto object-cover rounded-3xl"
                       />
                       <div className="flex flex-col justify-center space-y-4">
-                        <Icon className="w-10 h-10 text-primary-900" />
-                        <h3 className="text-2xl font-semibold text-slate-900 leading-tight">
-                          {pillar.title}
-                        </h3>
+                        <div className="flex items-center gap-4">
+                          <Icon className="w-10 h-10 text-primary-900" />
+                          <h3 className="text-2xl font-semibold text-slate-900 leading-tight">
+                            {pillar.title}
+                          </h3>
+                        </div>
                         <p className="text-base leading-relaxed text-slate-600">
                           {pillar.summary}
                         </p>
@@ -228,16 +249,13 @@ export default function WhyDubaiPage() {
                           </ul>
                         ) : null}
 
-                        {pillar.title.startsWith("5.") ? (
+                        {pillar.highlight ? (
                           <div className="rounded-2xl border border-primary-900/10 bg-primary-50/60 p-4">
                             <p className="text-sm font-semibold text-slate-900">
-                              UK-focused support
+                              {pillar.highlight.title}
                             </p>
                             <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                              We specialise in helping UK entrepreneurs build
-                              Dubai structures the right way, with full
-                              cross-border compliance, protection, and tax
-                              efficiency.
+                              {pillar.highlight.body}
                             </p>
                           </div>
                         ) : null}
@@ -246,10 +264,12 @@ export default function WhyDubaiPage() {
                   ) : (
                     <>
                       <div className="flex flex-col justify-center space-y-4">
-                        <Icon className="w-10 h-10 text-primary-900" />
-                        <h3 className="text-2xl font-semibold text-slate-900 leading-tight">
-                          {pillar.title}
-                        </h3>
+                        <div className="flex items-center gap-4">
+                          <Icon className="w-10 h-10 text-primary-900" />
+                          <h3 className="text-2xl font-semibold text-slate-900 leading-tight">
+                            {pillar.title}
+                          </h3>
+                        </div>
                         <p className="text-base leading-relaxed text-slate-600">
                           {pillar.summary}
                         </p>
@@ -269,24 +289,21 @@ export default function WhyDubaiPage() {
                           </ul>
                         ) : null}
 
-                        {pillar.title.startsWith("5.") ? (
+                        {pillar.highlight ? (
                           <div className="rounded-2xl border border-primary-900/10 bg-primary-50/60 p-4">
                             <p className="text-sm font-semibold text-slate-900">
-                              UK-focused support
+                              {pillar.highlight.title}
                             </p>
                             <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                              We specialise in helping UK entrepreneurs build
-                              Dubai structures the right way, with full
-                              cross-border compliance, protection, and tax
-                              efficiency.
+                              {pillar.highlight.body}
                             </p>
                           </div>
                         ) : null}
                       </div>
                       <img
-                        src={images[index]}
+                        src={pillar.image}
                         alt={pillar.title}
-                        className="w-full h-full object-cover rounded-3xl"
+                        className="w-full h-auto object-cover rounded-3xl"
                       />
                     </>
                   )}
