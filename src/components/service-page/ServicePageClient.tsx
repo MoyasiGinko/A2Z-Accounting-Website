@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Header from "../Header";
-import Footer from "../Footer";
 import {
   ServicePageContent,
   serviceSlugs,
@@ -17,7 +15,6 @@ import { useNavMenus } from "@/hooks/useNavMenus";
 import { useCarousels } from "@/hooks/useCarousels";
 import { useClientMarquee } from "@/hooks/useClientMarquee";
 import { ReactNode } from "react";
-import GetInTouch from "../GetInTouch";
 import ContactSection from "../contact-page/ContactUs";
 
 interface ServicePageClientProps {

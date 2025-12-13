@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import CalcSection from "../components/CalcSection";
 import WhyDubai from "../components/WhyDubai";
@@ -13,7 +12,6 @@ import ClientLogos from "../components/ClientLogos";
 import Testimonials from "../components/Testimonials";
 import GetInTouch from "../components/GetInTouch";
 import BlogCarousel from "../components/BlogCarousel";
-import Footer from "../components/Footer";
 import { useScrollEffects } from "../hooks/useScrollEffects";
 import { useStickyHeader } from "../hooks/useStickyHeader";
 import { useScrollToTop } from "../hooks/useScrollToTop";

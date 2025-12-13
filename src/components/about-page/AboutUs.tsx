@@ -416,7 +416,7 @@ export default function AboutUs() {
             {/* Card 1: Branding Card */}
             <div className="bg-[#162C45] rounded p-8 flex flex-col justify-between text-white min-h-[350px]">
               <p className="font-serif text-lg leading-relaxed mb-6">
-                "Legacy of success can power your future!"
+                &ldquo;Legacy of success can power your future!&rdquo;
               </p>
               <div>
                 <div className="text-[#84C9E2] text-5xl font-signature mb-4 font-[family-name:var(--font-great-vibes)]">
