@@ -24,6 +24,7 @@ interface TabConfig {
   title: string;
   summary: string;
   description: string;
+  clientWants?: string[];
   strategies: TabStrategy[];
   metrics: TabMetric[];
   cta: {
@@ -43,7 +44,15 @@ const tabs: TabConfig[] = [
     summary:
       "We help high-revenue agency owners, consultants & coaches, e-commerce/FBA brands, SaaS founders, investors & traders, and contractors with location-independent income.",
     description:
-      "These clients want: Full relocation support, UAE residency & Emirates ID, HMRC exit strategy, private banking, lifestyle, and family relocation guidance, and a tax-efficient HQ for global operations.",
+      "We help you relocate cleanly and confidently while setting up the right UAE structure for long-term flexibility.",
+    clientWants: [
+      "Full relocation support",
+      "UAE residency & Emirates ID",
+      "HMRC exit strategy",
+      "Private banking",
+      "Lifestyle and family relocation guidance",
+      "A tax-efficient HQ for global operations",
+    ],
     strategies: [
       {
         title: "Relocation planning",
@@ -87,7 +96,14 @@ const tabs: TabConfig[] = [
     summary:
       "We help UK-based entrepreneurs wanting international expansion, founders wanting to reduce exposure through corporate structuring, businesses needing a UAE entity for global operations, payments, or investors, and brands using Dubai as a tax-neutral hub for international trade.",
     description:
-      "These clients want: A UAE company while legally maintaining UK residency, reduced corporate tax exposure through global structuring, international payment processing advantages, UAE banking for borderless operations, and a dual-presence business setup that remains fully compliant.",
+      "We set up a UAE company that supports international growth while keeping your UK position compliant.",
+    clientWants: [
+      "A UAE company while legally maintaining UK residency",
+      "Reduced corporate tax exposure through global structuring",
+      "International payment processing advantages",
+      "UAE banking for borderless operations",
+      "A dual-presence business setup that remains fully compliant",
+    ],
     strategies: [
       {
         title: "Corporate structuring",
@@ -197,35 +213,30 @@ const Tabs: React.FC = () => {
                   {activeTab.title}
                 </h5>
                 {/* <p className="mt-4 text-lg text-slate-600">{activeTab.summary}</p> */}
-                {activeTab.description.startsWith("These clients want:") ? (
+                {activeTab.clientWants?.length ? (
                   <div className="mt-8">
                     <h5 className="font-semibold text-slate-900 mb-4">
                       What Our Clients Want
                     </h5>
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                      {activeTab.description
-                        .split(":")[1]
-                        .split(",")
-                        .map((item, index) => (
-                          <div
-                            key={index}
-                            className="rounded-xl border border-slate-200 bg-white/30 p-4 shadow-sm hover:shadow-md transition-shadow"
-                          >
-                            <div className="flex items-start gap-3">
-                              <div className="relative mt-2">
-                                <div className="w-2 h-2 bg-slate-700 rounded-full"></div>
-                                <div className="absolute inset-0 w-2 h-2 bg-slate-700 rounded-full animate-ping opacity-75"></div>
-                              </div>
-                              <p className="text-base !mt-0 text-left font-medium text-slate-700">
-                                {item.trim()}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                    </div>
+                    <ul className="space-y-3">
+                      {activeTab.clientWants.map((want) => (
+                        <li key={want} className="flex items-start gap-3">
+                          <span
+                            aria-hidden
+                            className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-slate-800"
+                          />
+                          <p className="text-base !mt-0 text-left font-medium text-slate-700">
+                            {want}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-6 text-base text-slate-600">
+                      {activeTab.description}
+                    </p>
                   </div>
                 ) : (
-                  <p className="mt-3 text-base text-slate-500">
+                  <p className="mt-3 text-base text-slate-600">
                     {activeTab.description}
                   </p>
                 )}
