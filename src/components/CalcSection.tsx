@@ -41,8 +41,8 @@ const CalcSection: React.FC = () => {
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-200 rounded-full -translate-x-48 -translate-y-48"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-300 rounded-full translate-x-48 translate-y-48"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#84C9E2]/50 rounded-full -translate-x-48 -translate-y-48"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#84C9E2] rounded-full translate-x-48 translate-y-48"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -51,7 +51,7 @@ const CalcSection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl mt-0 font-bold text-gray-900 leading-tight">
             Why Choose Us?
           </h2>
-          <p className="font-medium max-w-lg self-end text-primary-700 leading-tight">
+          <p className="font-medium max-w-lg self-end text-[#162C45] leading-tight">
             Your High-End Partner for International Business Expansion & Tax
             Optimisation
           </p>
@@ -62,7 +62,7 @@ const CalcSection: React.FC = () => {
           {/* Left Side: Key Points in Single Card */}
           <div className="space-y-8">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50">
-              <div className="absolute inset-4 bg-gradient-to-r from-primary-400/30 to-primary-600/30 rounded-2xl opacity-30 blur-3xl  pointer-events-none"></div>
+              <div className="absolute inset-4 bg-gradient-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl  pointer-events-none"></div>
 
               <div className="space-y-6">
                 {keyPoints.map((point, index) => (
@@ -72,9 +72,9 @@ const CalcSection: React.FC = () => {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* Icon */}
-                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
                       <svg
-                        className="w-5 h-5 text-primary-600 group-hover:text-white transition-colors duration-300"
+                        className="w-5 h-5 text-[#84C9E2] group-hover:text-white transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ const CalcSection: React.FC = () => {
 
             {/* CTA Button aligned with left content */}
             <div className="flex justify-start">
-              <div className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
+              <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
                 <span className="mr-3">Get Started Today</span>
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -121,7 +121,7 @@ const CalcSection: React.FC = () => {
           {/* Right Side: Tax Calculator in Card */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50 h-fit">
             {/* Glowing Rounded Rectangle Background */}
-            <div className="absolute inset-4 bg-gradient-to-r from-primary-400/30 to-primary-600/30 rounded-2xl opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
+            <div className="absolute inset-4 bg-gradient-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
 
             {/* Calculator Header */}
             <div className="relative z-10 text-left mb-8">
@@ -135,7 +135,7 @@ const CalcSection: React.FC = () => {
 
             {/* Tax Savings Banner - Only show after calculation */}
             {showResults && (
-              <div className="relative z-10 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
+              <div className="relative z-10 bg-gradient-to-r from-[#84C9E2] to-[#6bb1d9] rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
                 <div>
                   <p className="text-lg font-medium mb-1">Tax Savings in UAE</p>
                   <p className="text-base">
@@ -177,7 +177,7 @@ const CalcSection: React.FC = () => {
                     setAnnualExpense(Number(e.target.value) || 0);
                     setShowResults(false); // Hide results when input changes
                   }}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#84C9E2] focus:border-[#84C9E2] transition-colors"
                   placeholder="50000"
                 />
               </div>

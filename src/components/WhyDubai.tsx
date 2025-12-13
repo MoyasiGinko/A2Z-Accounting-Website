@@ -19,7 +19,7 @@ const WhyDubai: React.FC = () => {
         <div className="flex justify-between items-center mb-2">
           <h2 className="text-4xl md:text-5xl mt-0 font-bold text-gray-900 leading-tight">
             Why Dubai
-            <span className="font-medium text-primary-600 ">
+            <span className="font-medium text-[#84C9E2] ">
               {" "}
               (Designed for High Revenue Earners)
             </span>
@@ -44,17 +44,17 @@ const WhyDubai: React.FC = () => {
 
             {/* Premium Quote */}
             <div className="bg-primary-50 rounded-2xl p-8 border border-primary-200">
-              <blockquote className="text-lg md:text-xl text-primary-800 font-semibold italic leading-relaxed">
+              <blockquote className="text-lg md:text-xl text-[#162C45] font-semibold italic leading-relaxed">
                 &ldquo;For serious entrepreneurs, Dubai isn&apos;t just a tax
                 benefit — it&apos;s a strategic base for global expansion and
                 long-term wealth protection.&rdquo;
               </blockquote>
-              <div className="w-16 h-1 bg-primary-500 rounded-full mt-4"></div>
+              <div className="w-16 h-1 bg-[#84C9E2] rounded-full mt-4"></div>
             </div>
 
             {/* Call to Action */}
             <div className="text-left mt-16">
-              <div className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
+              <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
                 <span className="mr-3">Discover Dubai Opportunities</span>
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -87,7 +87,7 @@ const WhyDubai: React.FC = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Icon */}
-                  <div className="w-10 h-10 bg-primary-500/50 hover:bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors duration-300">
+                  <div className="w-10 h-10 bg-[#84C9E2]/50 hover:bg-[#84C9E2] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#6bb1d9] transition-colors duration-300">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -104,7 +104,7 @@ const WhyDubai: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <span className="text-gray-700 font-medium group-hover:text-primary-900 transition-colors duration-300">
+                  <span className="text-gray-700 font-medium group-hover:text-[#6bb1d9] transition-colors duration-300">
                     {benefit}
                   </span>
                 </div>
