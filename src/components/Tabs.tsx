@@ -155,7 +155,7 @@ const Tabs: React.FC = () => {
     <section className="bg-slate-50 py-16" aria-label="Growth strategy tabs">
       <div className="mx-auto max-w-7xl  px-4 sm:px-6 lg:px-8">
         <div className="rounded-t-xl items-center justify-center flex flex-col bg-gradient-to-r from-[#174758] to-[#1B3756] py-8 px-4 text-center text-white">
-          <h1 className="text-3xl !text-white !font-bold sm:text-4xl">
+          <h1 className="text-3xl !text-white !font-medium sm:text-4xl">
             Entrepreneurs Who Want a Smarter Way to Grow, Whether Moving to
             Dubai or Staying in the UK
           </h1>
