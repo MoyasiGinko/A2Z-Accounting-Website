@@ -125,7 +125,7 @@ const tabs: TabConfig[] = [
 ];
 
 const tabButtonBase =
-  "relative !w-full inline-flex !flex-row items-center border px-4 py-2 text-lg font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "relative !w-full inline-flex !flex-row items-center  px-4 py-2 text-lg font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
 const Tabs: React.FC = () => {
   const [activeKey, setActiveKey] = useState<string>(tabs[0]?.key ?? "");
@@ -165,8 +165,8 @@ const Tabs: React.FC = () => {
                   tabIndex={0}
                   className={`${tabButtonBase} flex-1 p-2 py-4 justify-center !text-center cursor-pointer ${
                     isActive
-                      ? "border-slate-900 bg-slate-900 text-white shadow-lg shadow-slate-900/20"
-                      : "border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-900"
+                      ? "border-b-2 border-primary-900 text-primary-900"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                   onClick={() => setActiveKey(tab.key)}
                   onKeyDown={(e) => {
@@ -186,22 +186,22 @@ const Tabs: React.FC = () => {
             id={`tab-panel-${activeTab.key}`}
             role="tabpanel"
             aria-live="polite"
-            className="mt-12 rounded-3xl bg-white/5 p-6 shadow-xl shadow-slate-900/5 ring-1 ring-slate-100 sm:p-8 lg:p-10"
+            className="mt-6 rounded-3xl bg-white/5 p-6 shadow-xl shadow-slate-900/5 ring-1 ring-slate-100 sm:p-8 lg:p-10"
           >
             <div className="grid gap-10 lg:grid-cols-[1.1fr_minmax(0,0.9fr)]">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+                {/* <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
                   {activeTab.eyebrow}
-                </p>
-                <h3 className="mt-3 text-3xl font-semibold text-slate-900">
+                </p> */}
+                <h5 className="!mt-0 font-semibold text-slate-900">
                   {activeTab.title}
-                </h3>
+                </h5>
                 {/* <p className="mt-4 text-lg text-slate-600">{activeTab.summary}</p> */}
                 {activeTab.description.startsWith("These clients want:") ? (
                   <div className="mt-8">
-                    <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                    <h5 className="font-semibold text-slate-900 mb-4">
                       What Our Clients Want
-                    </h4>
+                    </h5>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                       {activeTab.description
                         .split(":")[1]
@@ -240,10 +240,10 @@ const Tabs: React.FC = () => {
                 ))}
               </div> */}
 
-                <div className="mt-10 space-y-6">
-                  <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                <div className="mt-10 space-y-4">
+                  <h5 className="text-lg font-semibold text-slate-900">
                     How We Help
-                  </h4>
+                  </h5>
                   {activeTab.strategies.map((strategy) => (
                     <div
                       key={strategy.title}
