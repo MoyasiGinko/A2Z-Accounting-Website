@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const CalcSection: React.FC = () => {
+const CalculatorPage: React.FC = () => {
   const [annualTurnover, setAnnualTurnover] = useState<number>(500000);
   const [annualExpense, setAnnualExpense] = useState<number>(50000);
   const [showResults, setShowResults] = useState<boolean>(false);
@@ -38,7 +38,7 @@ const CalcSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br mt-10 from-gray-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary-200 rounded-full -translate-x-48 -translate-y-48"></div>
@@ -46,17 +46,6 @@ const CalcSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="flex justify-between items-center mb-2">
-          <h2 className="text-3xl md:text-4xl mt-0 font-bold text-gray-900 leading-tight">
-            Why Choose Us?
-          </h2>
-          <p className="font-medium max-w-lg self-end text-primary-700 leading-tight">
-            Your High-End Partner for International Business Expansion & Tax
-            Optimisation
-          </p>
-        </div>
-        <div className="w-full h-[1px] bg-gray-200 mb-8"></div>
         {/* Split Layout: Content Left, Calculator Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side: Key Points in Single Card */}
@@ -284,4 +273,4 @@ const CalcSection: React.FC = () => {
   );
 };
 
-export default CalcSection;
+export default CalculatorPage;

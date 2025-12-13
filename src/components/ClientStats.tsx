@@ -140,7 +140,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      1. Initial Strategy Call & Tax Assessment
+                      1. Comprehensive Initial Strategy Call & Tax Assessment
                     </h5>
                   </div>
                 </div>
