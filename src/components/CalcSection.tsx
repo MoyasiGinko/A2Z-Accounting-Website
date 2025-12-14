@@ -47,15 +47,15 @@ const CalcSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex justify-between items-center mb-2">
-          <h2 className="text-3xl md:text-4xl mt-0 font-bold text-gray-900 leading-tight">
-            Why Choose Us?
-          </h2>
-          <p className="font-medium max-w-lg self-end text-[#162C45] leading-tight">
-            Your High-End Partner for International Business Expansion & Tax
-            Optimisation
-          </p>
-        </div>
+        {/* <div className="flex justify-between items-center mb-2"> */}
+        <h2 className="text-3xl md:text-4xl mt-0 font-bold text-gray-900 leading-tight">
+          Why Choose Us?
+        </h2>
+        <p className="font-medium mb-6 self-end text-[#162C45] leading-tight">
+          Your High-End Partner for International Business Expansion & Tax
+          Optimisation
+        </p>
+        {/* </div> */}
         <div className="w-full h-[1px] bg-gray-200 mb-8"></div>
         {/* Split Layout: Content Left, Calculator Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -137,7 +137,9 @@ const CalcSection: React.FC = () => {
             {showResults && (
               <div className="relative z-10 bg-gradient-to-r from-[#84C9E2] to-[#6bb1d9] rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
                 <div>
-                  <p className="text-lg font-medium mb-1">Tax Savings in UAE</p>
+                  <p className="text-lg !font-medium mb-1">
+                    Tax Savings in UAE
+                  </p>
                   <p className="text-base">
                     Setting up in the UAE could qualify you for small business
                     relief and save you up to
@@ -198,8 +200,10 @@ const CalcSection: React.FC = () => {
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in">
                 {/* UK Card */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                  <div className="bg-red-600 text-white p-4">
-                    <h5 className="font-bold text-lg">UK Corporation</h5>
+                  <div className="bg-[#e4572c]  p-4">
+                    <h5 className="!font-medium !text-white text-lg">
+                      UK Corporation
+                    </h5>
                   </div>
                   <div className="p-4 space-y-3">
                     <div className="flex justify-between">
@@ -238,8 +242,10 @@ const CalcSection: React.FC = () => {
 
                 {/* UAE Card */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                  <div className="bg-green-600 text-white p-4">
-                    <h5 className="font-bold text-lg">UAE Corporation</h5>
+                  <div className="bg-[#84C9E2]  p-4">
+                    <h5 className="!font-medium !text-white text-lg">
+                      UAE Corporation
+                    </h5>
                   </div>
                   <div className="p-4 space-y-3">
                     <div className="flex justify-between">
