@@ -28,12 +28,12 @@ const WhyDubai: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#162C45]/5 border border-[#162C45]/10 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#162C45]"></span>
-            <span className="text-[#162C45] text-xs font-bold uppercase tracking-widest">
+            <span className="text-[#162C45] text-xs font-bold uppercase tracking-widest font-sans">
               Global Strategy
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-serif text-[#162C45] mb-6">
+          <h2 className="text-4xl !mt-0 md:text-5xl !font-serif text-[#162C45] mb-6">
             Why High Revenue Entrepreneurs <br />
             <span className="italic text-[#84C9E2]">Choose Dubai</span>
           </h2>
@@ -44,7 +44,7 @@ const WhyDubai: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* LEFT: NARRATIVE & VISUAL QUOTE CARD */}
           <div className="space-y-8">
-            <div className="prose prose-lg text-gray-600 font-light">
+            <div className="prose prose-lg text-gray-600 font-light font-sans">
               <p className="text-xl leading-relaxed">
                 Dubai offers one of the world&apos;s most attractive tax and
                 business environments — perfect for founders earning{" "}
@@ -82,7 +82,7 @@ const WhyDubai: React.FC = () => {
                 </blockquote>
 
                 <div className="flex items-center gap-4 border-t border-white/20 pt-6">
-                  <div className="text-sm font-bold uppercase tracking-wider text-[#84C9E2]">
+                  <div className="text-sm font-bold uppercase tracking-wider text-[#84C9E2] font-sans">
                     The A2Z Advantage
                   </div>
                 </div>
@@ -90,7 +90,7 @@ const WhyDubai: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <button className="hidden lg:inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#73b2c9] text-[#162C45] font-bold rounded-lg transition-all duration-300 shadow-lg shadow-[#84C9E2]/20 group">
+            <button className="hidden lg:inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#73b2c9] text-[#162C45] font-bold rounded-lg transition-all duration-300 shadow-lg shadow-[#84C9E2]/20 group font-sans">
               <span className="mr-2">Discover Dubai Opportunities</span>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -130,7 +130,7 @@ const WhyDubai: React.FC = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-[#162C45] font-medium pt-1 group-hover:text-[#162C45]">
+                <span className="text-[#162C45] font-medium pt-1 group-hover:text-[#162C45] font-sans">
                   {benefit}
                 </span>
               </div>
@@ -138,7 +138,7 @@ const WhyDubai: React.FC = () => {
 
             {/* Mobile CTA (Visible only on small screens) */}
             <div className="sm:col-span-2 mt-8 lg:hidden">
-              <button className="w-full inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] text-[#162C45] font-bold rounded-lg shadow-lg">
+              <button className="w-full inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] text-[#162C45] font-bold rounded-lg shadow-lg font-sans">
                 Discover Dubai Opportunities
               </button>
             </div>

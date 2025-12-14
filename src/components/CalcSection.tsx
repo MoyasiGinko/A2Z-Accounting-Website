@@ -48,10 +48,10 @@ const CalcSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         {/* <div className="flex justify-between items-center mb-2"> */}
-        <h2 className="text-3xl md:text-4xl mt-0 font-bold text-gray-900 leading-tight">
+        <h2 className="text-3xl md:text-4xl mt-0 !font-serif font-bold text-gray-900 leading-tight">
           Why Choose Us?
         </h2>
-        <p className="font-medium mb-6 self-end text-[#162C45] leading-tight">
+        <p className="font-medium mb-6 self-end text-[#162C45] leading-tight font-sans">
           Your High-End Partner for International Business Expansion & Tax
           Optimisation
         </p>
@@ -125,10 +125,10 @@ const CalcSection: React.FC = () => {
 
             {/* Calculator Header */}
             <div className="relative z-10 text-left mb-8">
-              <h4 className="text-2xl font-bold text-gray-900 mb-2">
+              <h4 className="text-2xl font-bold !font-serif text-gray-900 mb-2">
                 Tax Savings Calculator
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-600 font-sans">
                 Compare corporate tax rates between UK and UAE
               </p>
             </div>
@@ -137,10 +137,10 @@ const CalcSection: React.FC = () => {
             {showResults && (
               <div className="relative z-10 bg-gradient-to-r from-[#84C9E2] to-[#6bb1d9] rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
                 <div>
-                  <p className="text-lg !font-medium mb-1">
+                  <h5 className="text-2xl !text-white !font-serif !font-semibold mb-1">
                     Tax Savings in UAE
-                  </p>
-                  <p className="text-base">
+                  </h5>
+                  <p className="text-base font-sans">
                     Setting up in the UAE could qualify you for small business
                     relief and save you up to
                   </p>
