@@ -5,9 +5,15 @@ const CalcSection: React.FC = () => {
   const [annualTurnover, setAnnualTurnover] = useState<number>(500000);
   const [annualExpense, setAnnualExpense] = useState<number>(50000);
   const [showResults, setShowResults] = useState<boolean>(false);
+  const [isCalculating, setIsCalculating] = useState<boolean>(false);
 
   const handleCalculate = () => {
-    setShowResults(true);
+    setIsCalculating(true);
+    // Simulate calculation delay
+    setTimeout(() => {
+      setShowResults(true);
+      setIsCalculating(false);
+    }, 1000);
   };
 
   // Calculate gross profit
@@ -123,15 +129,17 @@ const CalcSection: React.FC = () => {
             {/* Glowing Rounded Rectangle Background */}
             <div className="absolute inset-4 bg-gradient-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
 
-            {/* Calculator Header */}
-            <div className="relative z-10 text-left mb-8">
-              <h4 className="text-2xl font-bold !font-serif text-gray-900 mb-2">
-                Tax Savings Calculator
-              </h4>
-              <p className="text-gray-600 font-sans">
-                Compare corporate tax rates between UK and UAE
-              </p>
-            </div>
+            {/* Calculator Header - Hide when results are shown */}
+            {!showResults && (
+              <div className="relative z-10 text-left mb-8">
+                <h4 className="text-2xl font-bold !font-serif text-gray-900 mb-2">
+                  Tax Savings Calculator
+                </h4>
+                <p className="text-gray-600 font-sans">
+                  Compare corporate tax rates between UK and UAE
+                </p>
+              </div>
+            )}
 
             {/* Tax Savings Banner - Only show after calculation */}
             {showResults && (
@@ -186,13 +194,26 @@ const CalcSection: React.FC = () => {
             </div>
 
             {/* Calculate Button */}
-            <div className="relative z-10 text-left mb-8">
+            <div className="relative z-10 text-left mb-8 flex gap-4">
               <button
                 onClick={handleCalculate}
-                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans"
+                disabled={isCalculating}
+                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Calculate Tax Savings
+                {isCalculating ? "Calculating..." : "Calculate Tax Savings"}
               </button>
+              {showResults && (
+                <button
+                  onClick={() => {
+                    setShowResults(false);
+                    setAnnualTurnover(500000);
+                    setAnnualExpense(50000);
+                  }}
+                  className="px-8 py-3 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-300 font-sans"
+                >
+                  Clear
+                </button>
+              )}
             </div>
 
             {/* Comparison Cards - Only show after calculation */}
