@@ -64,6 +64,7 @@ const Services: React.FC = () => {
         data-element_type="container"
       >
         <div className="e-con-inner !flex !justify-center !items-center">
+          {/* Service 1: Company Formation & Corporate Setup */}
           <div
             className="elementor-element elementor-element-e99c1cd elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
             data-id="e99c1cd"
@@ -101,8 +102,8 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="https://execor.vamtam.com/services/business-consulting/">
-                      Business Consulting
+                    <a href="/services/company-formation">
+                      Company Formation &amp; Corporate Setup
                     </a>
                   </h3>
                 </div>
@@ -129,7 +130,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Strategy development &amp; growth
+                        LLC &amp; Free Zone setup
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -140,7 +141,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Market research &amp; competitors
+                        Business licenses
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -151,7 +152,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Risk management
+                        Corporate structuring
                       </span>
                     </li>
                   </ul>
@@ -167,7 +168,7 @@ const Services: React.FC = () => {
                   <div className="elementor-button-wrapper">
                     <a
                       className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://execor.vamtam.com/services/business-consulting/"
+                      href="/services/company-formation"
                     >
                       <span className="elementor-button-content-wrapper">
                         <span className="elementor-button-icon">
@@ -187,6 +188,7 @@ const Services: React.FC = () => {
             </div>
           </div>
 
+          {/* Service 2: Accounting & Bookkeeping */}
           <div
             className="elementor-element elementor-element-667edd7 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
             data-id="667edd7"
@@ -224,8 +226,8 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="https://execor.vamtam.com/services/marketing-sales-retention/">
-                      Marketing, Sales, &amp; Retention
+                    <a href="/services/accounting-bookkeeping">
+                      Accounting &amp; Bookkeeping
                     </a>
                   </h3>
                 </div>
@@ -252,7 +254,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Brand positioning &amp; messaging
+                        Financial records
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -263,7 +265,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Lead generation &amp; sales
+                        Monthly reporting
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -274,7 +276,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Customer retention &amp; loyalty
+                        Audit prep
                       </span>
                     </li>
                   </ul>
@@ -290,7 +292,7 @@ const Services: React.FC = () => {
                   <div className="elementor-button-wrapper">
                     <a
                       className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://execor.vamtam.com/services/marketing-sales-retention/"
+                      href="/services/accounting-bookkeeping"
                     >
                       <span className="elementor-button-content-wrapper">
                         <span className="elementor-button-icon">
@@ -310,6 +312,7 @@ const Services: React.FC = () => {
             </div>
           </div>
 
+          {/* Service 3: Tax & Regulatory Compliance */}
           <div
             className="elementor-element elementor-element-b47eb84 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
             data-id="b47eb84"
@@ -348,8 +351,8 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="https://execor.vamtam.com/services/operations-management/">
-                      Operations Management
+                    <a href="/services/tax-compliance">
+                      Tax &amp; Regulatory Compliance
                     </a>
                   </h3>
                 </div>
@@ -376,7 +379,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Process optimization
+                        Tax planning &amp; filing
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -387,7 +390,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Cost reduction &amp; efficiency
+                        VAT &amp; corporate tax
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -398,7 +401,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        KPI tracking &amp; insights
+                        Regulatory compliance
                       </span>
                     </li>
                   </ul>
@@ -414,7 +417,7 @@ const Services: React.FC = () => {
                   <div className="elementor-button-wrapper">
                     <a
                       className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://execor.vamtam.com/services/operations-management/"
+                      href="/services/tax-compliance"
                     >
                       <span className="elementor-button-content-wrapper">
                         <span className="elementor-button-icon">
@@ -435,129 +438,7 @@ const Services: React.FC = () => {
           </div>
         </div>
         <div className="e-con-inner !mt-4 !flex !justify-center !items-center">
-          <div
-            className="elementor-element elementor-element-e99c1cd elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
-            data-id="e99c1cd"
-            data-element_type="container"
-            data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":0}'
-          >
-            <div
-              className="elementor-element elementor-element-67b2bba e-con-full e-flex e-con e-child"
-              data-id="67b2bba"
-              data-element_type="container"
-              data-settings='{"background_background":"classic"}'
-            >
-              <div
-                className="elementor-element elementor-element-e31725c elementor-widget elementor-widget-image"
-                data-id="e31725c"
-                data-element_type="widget"
-                data-widget_type="image.default"
-              >
-                <div className="elementor-widget-container">
-                  <img
-                    decoding="async"
-                    width="76"
-                    height="76"
-                    src="/wp-content/uploads/2025/03/consulting.svg"
-                    className="attachment-medium size-medium wp-image-481"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-ee0f743 elementor-widget elementor-widget-heading"
-                data-id="ee0f743"
-                data-element_type="widget"
-                data-widget_type="heading.default"
-              >
-                <div className="elementor-widget-container">
-                  <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="https://execor.vamtam.com/services/business-consulting/">
-                      Business Consulting
-                    </a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div
-              className="elementor-element elementor-element-8338fc4 e-con-full e-flex e-con e-child"
-              data-id="8338fc4"
-              data-element_type="container"
-            >
-              <div
-                className="elementor-element elementor-element-2cb85b3 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                data-id="2cb85b3"
-                data-element_type="widget"
-                data-widget_type="icon-list.default"
-              >
-                <div className="elementor-widget-container">
-                  <ul className="elementor-icon-list-items">
-                    <li className="elementor-icon-list-item">
-                      <span className="elementor-icon-list-icon">
-                        <i
-                          aria-hidden="true"
-                          className="vamtamtheme- vamtam-theme-chack"
-                        ></i>
-                      </span>
-                      <span className="elementor-icon-list-text">
-                        Strategy development &amp; growth
-                      </span>
-                    </li>
-                    <li className="elementor-icon-list-item">
-                      <span className="elementor-icon-list-icon">
-                        <i
-                          aria-hidden="true"
-                          className="vamtamtheme- vamtam-theme-chack"
-                        ></i>
-                      </span>
-                      <span className="elementor-icon-list-text">
-                        Market research &amp; competitors
-                      </span>
-                    </li>
-                    <li className="elementor-icon-list-item">
-                      <span className="elementor-icon-list-icon">
-                        <i
-                          aria-hidden="true"
-                          className="vamtamtheme- vamtam-theme-chack"
-                        ></i>
-                      </span>
-                      <span className="elementor-icon-list-text">
-                        Risk management
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div
-                className="vamtam-has-theme-widget-styles elementor-element elementor-element-4c9e6a9 vamtam-icon-pos-row-reverse elementor-align-justify vamtam-content-align-space-between elementor-widget elementor-widget-button"
-                data-id="4c9e6a9"
-                data-element_type="widget"
-                data-widget_type="button.default"
-              >
-                <div className="elementor-widget-container">
-                  <div className="elementor-button-wrapper">
-                    <a
-                      className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://execor.vamtam.com/services/business-consulting/"
-                    >
-                      <span className="elementor-button-content-wrapper">
-                        <span className="elementor-button-icon">
-                          <i
-                            aria-hidden="true"
-                            className="vamtamtheme- vamtam-theme-arrow-right"
-                          ></i>
-                        </span>
-                        <span className="elementor-button-text">
-                          Learn More
-                        </span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          {/* Service 4: Payroll & HR Pro */}
           <div
             className="elementor-element elementor-element-667edd7 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
             data-id="667edd7"
@@ -595,9 +476,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="https://execor.vamtam.com/services/marketing-sales-retention/">
-                      Marketing, Sales, &amp; Retention
-                    </a>
+                    <a href="/services/payroll-hr-pro">Payroll &amp; HR Pro</a>
                   </h3>
                 </div>
               </div>
@@ -623,7 +502,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Brand positioning &amp; messaging
+                        Employee payroll
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -634,7 +513,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Lead generation &amp; sales
+                        HR management
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">
@@ -645,7 +524,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Customer retention &amp; loyalty
+                        Compliance support
                       </span>
                     </li>
                   </ul>
@@ -661,7 +540,130 @@ const Services: React.FC = () => {
                   <div className="elementor-button-wrapper">
                     <a
                       className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://execor.vamtam.com/services/marketing-sales-retention/"
+                      href="/services/payroll-hr-pro"
+                    >
+                      <span className="elementor-button-content-wrapper">
+                        <span className="elementor-button-icon">
+                          <i
+                            aria-hidden="true"
+                            className="vamtamtheme- vamtam-theme-arrow-right"
+                          ></i>
+                        </span>
+                        <span className="elementor-button-text">
+                          Learn More
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Service 5: Business Advisory */}
+          <div
+            className="elementor-element elementor-element-b47eb84 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
+            data-id="b47eb84"
+            data-element_type="container"
+            data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":100}'
+          >
+            <div
+              className="elementor-element elementor-element-709e22f e-con-full e-flex e-con e-child"
+              data-id="709e22f"
+              data-element_type="container"
+              data-settings='{"background_background":"classic"}'
+            >
+              <div
+                className="elementor-element elementor-element-ab84c2d elementor-widget elementor-widget-image"
+                data-id="ab84c2d"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div className="elementor-widget-container">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    width="76"
+                    height="76"
+                    src="/wp-content/uploads/2025/03/operations.svg"
+                    className="attachment-medium size-medium wp-image-332"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                className="elementor-element elementor-element-009293b elementor-widget elementor-widget-heading"
+                data-id="009293b"
+                data-element_type="widget"
+                data-widget_type="heading.default"
+              >
+                <div className="elementor-widget-container">
+                  <h3 className="elementor-heading-title elementor-size-default">
+                    <a href="/services/business-advisory">Business Advisory</a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-a1560a1 e-con-full e-flex e-con e-child"
+              data-id="a1560a1"
+              data-element_type="container"
+            >
+              <div
+                className="elementor-element elementor-element-e1ff428 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                data-id="e1ff428"
+                data-element_type="widget"
+                data-widget_type="icon-list.default"
+              >
+                <div className="elementor-widget-container">
+                  <ul className="elementor-icon-list-items">
+                    <li className="elementor-icon-list-item">
+                      <span className="elementor-icon-list-icon">
+                        <i
+                          aria-hidden="true"
+                          className="vamtamtheme- vamtam-theme-chack"
+                        ></i>
+                      </span>
+                      <span className="elementor-icon-list-text">
+                        Business strategy
+                      </span>
+                    </li>
+                    <li className="elementor-icon-list-item">
+                      <span className="elementor-icon-list-icon">
+                        <i
+                          aria-hidden="true"
+                          className="vamtamtheme- vamtam-theme-chack"
+                        ></i>
+                      </span>
+                      <span className="elementor-icon-list-text">
+                        Financial planning
+                      </span>
+                    </li>
+                    <li className="elementor-icon-list-item">
+                      <span className="elementor-icon-list-icon">
+                        <i
+                          aria-hidden="true"
+                          className="vamtamtheme- vamtam-theme-chack"
+                        ></i>
+                      </span>
+                      <span className="elementor-icon-list-text">
+                        Market analysis
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                className="vamtam-has-theme-widget-styles elementor-element elementor-element-9cf0fbb vamtam-icon-pos-row-reverse elementor-align-justify vamtam-content-align-space-between elementor-widget elementor-widget-button"
+                data-id="9cf0fbb"
+                data-element_type="widget"
+                data-widget_type="button.default"
+              >
+                <div className="elementor-widget-container">
+                  <div className="elementor-button-wrapper">
+                    <a
+                      className="elementor-button elementor-button-link elementor-size-sm"
+                      href="/services/business-advisory"
                     >
                       <span className="elementor-button-content-wrapper">
                         <span className="elementor-button-icon">
