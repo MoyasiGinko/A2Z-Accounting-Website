@@ -89,7 +89,7 @@ const CalcSection: React.FC = () => {
                     </div>
 
                     {/* Content */}
-                    <p className="text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300 flex-1">
+                    <p className="text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300 flex-1 font-sans">
                       {point}
                     </p>
                   </div>
@@ -100,7 +100,7 @@ const CalcSection: React.FC = () => {
             {/* CTA Button aligned with left content */}
             <div className="flex justify-start">
               <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
-                <span className="mr-3">Get Started Today</span>
+                <span className="mr-3 font-sans">Get Started Today</span>
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -154,7 +154,7 @@ const CalcSection: React.FC = () => {
             {/* Input Fields */}
             <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2 font-sans">
                   Annual Turnover (£)
                 </label>
                 <input
@@ -169,7 +169,7 @@ const CalcSection: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2 font-sans">
                   Annual Expenses (£)
                 </label>
                 <input
@@ -189,7 +189,7 @@ const CalcSection: React.FC = () => {
             <div className="relative z-10 text-left mb-8">
               <button
                 onClick={handleCalculate}
-                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md"
+                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans"
               >
                 Calculate Tax Savings
               </button>
@@ -201,36 +201,36 @@ const CalcSection: React.FC = () => {
                 {/* UK Card */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
                   <div className="bg-[#e4572c]  p-4">
-                    <h5 className="!font-medium !text-white text-lg">
+                    <h5 className="!font-medium !text-white text-lg font-serif">
                       UK Corporation
                     </h5>
                   </div>
                   <div className="p-4 space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Gross profit</span>
+                      <span className="text-gray-600 font-sans">Gross profit</span>
                       <span className="font-semibold">
                         £{grossProfit.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Corporate Tax</span>
+                      <span className="text-gray-600 font-sans">Corporate Tax</span>
                       <span className="font-semibold text-red-600">
                         £{ukCorporateTax.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Effective Tax Rate</span>
+                      <span className="text-gray-600 font-sans">Effective Tax Rate</span>
                       <span className="font-semibold">
                         {ukEffectiveRate.toFixed(1)}%
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Actual Tax Rate</span>
+                      <span className="text-gray-600 font-sans">Actual Tax Rate</span>
                       <span className="font-semibold">25%</span>
                     </div>
                     <hr className="my-3" />
                     <div className="flex justify-between">
-                      <span className="font-bold text-gray-900">
+                      <span className="font-bold text-gray-900 font-sans">
                         NET profit
                       </span>
                       <span className="font-bold text-green-600">
@@ -243,36 +243,36 @@ const CalcSection: React.FC = () => {
                 {/* UAE Card */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
                   <div className="bg-[#84C9E2]  p-4">
-                    <h5 className="!font-medium !text-white text-lg">
+                    <h5 className="!font-medium !text-white text-lg font-serif">
                       UAE Corporation
                     </h5>
                   </div>
                   <div className="p-4 space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Gross profit</span>
+                      <span className="text-gray-600 font-sans">Gross profit</span>
                       <span className="font-semibold">
                         £{grossProfit.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Corporate Tax</span>
+                      <span className="text-gray-600 font-sans">Corporate Tax</span>
                       <span className="font-semibold text-green-600">
                         £{uaeCorporateTax.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Effective Tax Rate</span>
+                      <span className="text-gray-600 font-sans">Effective Tax Rate</span>
                       <span className="font-semibold">
                         {uaeEffectiveRate.toFixed(1)}%
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Actual Tax Rate</span>
+                      <span className="text-gray-600 font-sans">Actual Tax Rate</span>
                       <span className="font-semibold">9%</span>
                     </div>
                     <hr className="my-3" />
                     <div className="flex justify-between">
-                      <span className="font-bold text-gray-900">
+                      <span className="font-bold text-gray-900 font-sans">
                         NET profit
                       </span>
                       <span className="font-bold text-green-600">
