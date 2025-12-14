@@ -151,7 +151,7 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
           <Link
             key={cta.label}
             href={cta.href}
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center text-black justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-[#84C9E2]"
           >
             {cta.label}
           </Link>
