@@ -181,7 +181,7 @@ const Tabs: React.FC = () => {
                   tabIndex={0}
                   className={`${tabButtonBase} flex-1 p-2 py-4 justify-center !text-center cursor-pointer !font-sans ${
                     isActive
-                      ? "border-b-2 border-primary-900 text-primary-900"
+                      ? "border-b-2 border-black text-black"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                   onClick={() => setActiveKey(tab.key)}
