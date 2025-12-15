@@ -99,9 +99,9 @@ export default function WhyDubaiPage() {
               </p>
             </div>
           </div>
-          <div className="glass-badge p-2 md:p-4 rounded-md flex items-center gap-3 w-max transform hover:-translate-x-1 transition-transform duration-300 delay-100">
-            <div className="w-2 h-2 rounded-full bg-green-400"></div>
-            <div className="text-right">
+          <div className="glass-badge p-2 md:p-4 rounded-md flex items-start gap-3 w-max transform hover:-translate-x-1 transition-transform duration-300 delay-100">
+            <div className="w-2 h-2 mt-3 rounded-full bg-green-400"></div>
+            <div className="text-left">
               <p className="text-white !font-serif text-xs md:text-lg leading-none">
                 100% Ownership
               </p>
