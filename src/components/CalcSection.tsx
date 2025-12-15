@@ -47,8 +47,8 @@ const CalcSection: React.FC = () => {
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#84C9E2]/50 rounded-full -translate-x-48 -translate-y-48"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#84C9E2] rounded-full translate-x-48 translate-y-48"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#84C9E2]/50 rounded-md -translate-x-48 -translate-y-48"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#84C9E2] rounded-md translate-x-48 translate-y-48"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -105,7 +105,7 @@ const CalcSection: React.FC = () => {
 
             {/* CTA Button aligned with left content */}
             <div className="flex justify-start">
-              <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
+              <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
                 <span className="mr-3 font-sans">Get Started Today</span>
                 <svg
                   className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"

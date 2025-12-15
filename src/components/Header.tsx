@@ -133,7 +133,7 @@ export default function Header() {
   return (
     <header className={getHeaderClasses()}>
       <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link
@@ -148,7 +148,7 @@ export default function Header() {
                   height={44}
                   className="h-16 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
                 />
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
               </div>
             </Link>
           </div>
@@ -208,7 +208,7 @@ export default function Header() {
                               href={subItem.href}
                               className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-all duration-200"
                             >
-                              <div className="w-2 h-2 bg-primary-400 rounded-full mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div>
+                              <div className="w-2 h-2 bg-primary-400 rounded-md mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div>
                               <span className="font-medium">
                                 {subItem.label}
                               </span>
@@ -227,7 +227,7 @@ export default function Header() {
           <div className="hidden md:flex flex-shrink-0">
             <Link
               href="/contact-us"
-              className="group relative bg-white text-[#162C45] px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
+              className="group relative bg-white text-[#162C45] px-6 py-2.5 rounded-md text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
             >
               <span className="relative z-10">Enquire Today</span>
               <svg
@@ -298,7 +298,7 @@ export default function Header() {
                       className="group flex items-center px-4 py-3 text-base font-semibold text-white hover:text-primary-100 hover:bg-white hover:bg-opacity-10 rounded-xl transition-all duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <div className="w-2 h-2 bg-primary-300 rounded-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                      <div className="w-2 h-2 bg-primary-300 rounded-md mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                       <span>{item.label}</span>
                     </Link>
                   ) : (
@@ -308,7 +308,7 @@ export default function Header() {
                         onClick={() => toggleSubMenu(item.label)}
                       >
                         <div className="flex items-center">
-                          <div className="w-2 h-2 bg-primary-300 rounded-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                          <div className="w-2 h-2 bg-primary-300 rounded-md mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                           <span>{item.label}</span>
                         </div>
                         <svg
@@ -341,7 +341,7 @@ export default function Header() {
                               onClick={() => setIsMobileMenuOpen(false)}
                               style={{ animationDelay: `${subIndex * 30}ms` }}
                             >
-                              {/* <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div> */}
+                              {/* <div className="w-1.5 h-1.5 bg-primary-400 rounded-md mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div> */}
                               <span className="font-medium">
                                 {subItem.label}
                               </span>
@@ -359,7 +359,7 @@ export default function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="group relative w-full bg-white text-primary-600 hover:bg-gray-50 px-6 py-3 rounded-full text-center font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg flex items-center justify-center overflow-hidden"
+                  className="group relative w-full bg-white text-primary-600 hover:bg-gray-50 px-6 py-3 rounded-md text-center font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg flex items-center justify-center overflow-hidden"
                 >
                   <span className="relative z-10">Contact Now</span>
                   <svg
