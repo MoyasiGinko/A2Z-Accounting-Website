@@ -248,9 +248,9 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
+              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
                 Relocate to Dubai
-              </h3>
+              </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 For entrepreneurs wanting to move to Dubai for a tax-efficient
                 lifestyle.
@@ -275,9 +275,9 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
+              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
                 UK Resident & UAE Biz
-              </h3>
+              </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Live in the UK while operating a UAE-based company with perfect
                 compliance.
@@ -302,9 +302,9 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
+              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
                 Reduce Tax Liability
-              </h3>
+              </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Legally reduce personal and business tax burdens through smarter
                 structuring.
@@ -329,9 +329,9 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
+              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
                 Global Expansion
-              </h3>
+              </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Build a holding company structure designed to facilitate
                 international growth.
@@ -356,9 +356,9 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
+              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
                 Protect Wealth
-              </h3>
+              </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Secure your assets and structure your business for long-term
                 financial freedom.
@@ -383,9 +383,9 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
+              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
                 Zero Admin Stress
-              </h3>
+              </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Run a business with zero stress. We handle setup, banking, and
                 compliance.
@@ -491,7 +491,7 @@ export default function AboutUs() {
             <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6 !font-sans">
               Our Promise
             </span>
-            <h2 className="text-4xl lg:text-5xl !font-serif text-primary mb-8 leading-tight">
+            <h2 className="text-4xl !mt-0 lg:text-5xl !font-serif text-primary mb-8 leading-tight">
               Simplicity & Excellence
             </h2>
             <p className="text-gray-600 text-lg mb-6 leading-relaxed !font-sans">
@@ -517,7 +517,7 @@ export default function AboutUs() {
               <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 !font-sans">
                 Our Team
               </span>
-              <h2 className="text-4xl !font-serif text-primary">
+              <h2 className="text-4xl !mt-0 !font-serif text-primary">
                 Meet Our Leaders
               </h2>
             </div>
