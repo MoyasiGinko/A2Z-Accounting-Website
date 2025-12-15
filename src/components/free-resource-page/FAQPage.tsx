@@ -156,7 +156,7 @@ const FAQPage = () => {
               className="w-full px-6 py-4 pl-14 rounded-2xl border-2 border-[#84C9E2] border-opacity-20 bg-white shadow-sm focus:outline-none focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2] focus:ring-opacity-10 transition-all duration-300 font-inter"
             />
             <svg
-              className="w-6 h-6 absolute left-4 top-1/2 transform -translate-y-1/2 text-[#84C9E2]"
+              className="w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-[#84C9E2]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
