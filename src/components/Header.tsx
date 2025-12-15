@@ -64,7 +64,7 @@ const menuItems: MenuItem[] = [
   },
   {
     label: "A2Z Accounting UK",
-    href: "/a2z-accounting-uk",
+    href: "https://a2zaccounting.co.uk/",
   },
 ];
 
@@ -146,7 +146,7 @@ export default function Header() {
                   alt="A2Z Accounting Logo"
                   width={44}
                   height={44}
-                  className="h-10 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
+                  className="h-16 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
                 />
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
               </div>
