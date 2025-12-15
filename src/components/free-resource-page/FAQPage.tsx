@@ -180,7 +180,7 @@ const FAQPage = () => {
                 key={cat.id}
                 className={`category-tab px-6 py-2.5 rounded-full !font-sans font-semibold text-sm transition-all duration-300 transform ${
                   isActive
-                    ? "bg-[#162C45] text-white scale-105"
+                    ? "bg-[#162C45] !text-white scale-105"
                     : "bg-[rgba(132,201,226,0.1)] text-[#162C45]"
                 }`}
                 data-category={cat.id}
@@ -198,7 +198,7 @@ const FAQPage = () => {
         {/* FAQ Accordion / No Results */}
         {filteredFaqs.length === 0 ? (
           <div id="no-results" className="text-center py-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#84C9E2] bg-opacity-10 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#84C9E2]  bg-opacity-10 mb-6">
               <svg
                 className="w-10 h-10 text-[#84C9E2]"
                 fill="none"
@@ -230,7 +230,7 @@ const FAQPage = () => {
                   className="faq-item bg-white rounded-2xl border border-[#84C9E2] border-opacity-20 shadow-sm hover:shadow-md transition-all duration-300"
                   data-category={faq.category}
                 >
-                  <button
+                  <div
                     className="faq-trigger w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left group"
                     onClick={() => handleToggle(faq.question)}
                   >
@@ -259,7 +259,7 @@ const FAQPage = () => {
                         />
                       </svg>
                     </div>
-                  </button>
+                  </div>
                   <div
                     className={`accordion-content px-6 md:px-8 ${
                       isOpen ? "active" : ""
