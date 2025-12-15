@@ -563,7 +563,7 @@ export default function AboutUs() {
             <div className="group">
               <div className="rounded overflow-hidden h-[350px] mb-4 bg-gray-200">
                 <img
-                  src="#"
+                  src="/images/team/person-1.jpg"
                   alt="Shabbir Rahman"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -584,7 +584,7 @@ export default function AboutUs() {
             <div className="group">
               <div className="rounded overflow-hidden h-[350px] mb-4 bg-gray-200">
                 <img
-                  src="#"
+                  src="/images/team/person-2.jpg"
                   alt="Shovon Mostofa"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -604,7 +604,7 @@ export default function AboutUs() {
           </div>
         </section>
       </div>
-      <section className="bg-primary w-full text-white py-20 md:py-24 relative overflow-hidden w-full mt-20 md:mt-20">
+      <section className="bg-primary w-full text-white py-20 md:py-24 relative overflow-hidden mt-20 md:mt-20">
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
           <div
             className="absolute inset-0 opacity-[0.03]"
@@ -626,13 +626,13 @@ export default function AboutUs() {
         </div>
 
         <div className="container mx-auto px-6 text-center max-w-6xl relative z-10 reveal-up">
-          <h2 className="text-2xl md:text-4xl !font-forum mb-6 md:mb-8 text-white relative inline-block">
+          <h2 className="text-2xl !mt-0 md:text-4xl !font-forum mb-6 md:mb-8 !text-white relative inline-block">
             Dubai gives you more freedom, more opportunity,
             <br className="hidden md:block" />
             more profit — and far less stress.
           </h2>
 
-          <p className="text-lg md:text-xl font-light !font-dm text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-light !font-dm !text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             For entrepreneurs who want to elevate both their income and
             lifestyle, no other country offers such a powerful combination of
             tax efficiency, safety, and long-term stability.
@@ -646,7 +646,7 @@ export default function AboutUs() {
               efficiency, safety, and long-term stability.&quot;
             </p>
 
-            <button className="bg-secondary text-primary !font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:bg-secondaryHover transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
+            <button className="bg-secondary hover:!bg-[#84c9e2]/90 text-primary !hover:text-[#162C45] !font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
               Get Free Consultation
             </button>
           </div>
