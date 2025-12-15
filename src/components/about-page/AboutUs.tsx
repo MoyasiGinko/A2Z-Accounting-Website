@@ -646,7 +646,7 @@ export default function AboutUs() {
               efficiency, safety, and long-term stability.&quot;
             </p>
 
-            <button className="bg-secondary hover:!bg-[#84c9e2]/90 text-primary !hover:text-[#162C45] !font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
+            <button className="bg-secondary hover:!bg-[#84c9e2]/90 text-primary hover:!text-[#162C45] !font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
               Get Free Consultation
             </button>
           </div>
