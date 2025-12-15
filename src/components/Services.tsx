@@ -477,7 +477,9 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <Link href="/services/payroll-hr-pro">Payroll &amp; HR Pro</Link>
+                    <Link href="/services/payroll-hr-pro">
+                      Payroll &amp; HR Pro
+                    </Link>
                   </h3>
                 </div>
               </div>
@@ -600,7 +602,9 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <Link href="/services/business-advisory">Business Advisory</Link>
+                    <Link href="/services/business-advisory">
+                      Business Advisory
+                    </Link>
                   </h3>
                 </div>
               </div>
