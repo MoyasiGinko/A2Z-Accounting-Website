@@ -23,7 +23,7 @@ interface ServicePageClientProps {
 
 const sectionBase = "px-4 py-16 sm:px-6 lg:px-0";
 const cardBase =
-  "rounded-2xl border border-slate-100 bg-white/80 shadow-sm backdrop-blur";
+  "rounded-md border border-slate-100 bg-white/80 shadow-sm backdrop-blur";
 
 const SectionHeader = ({
   eyebrow,
@@ -43,11 +43,11 @@ const SectionHeader = ({
         align === "center" ? "mx-auto mt-3 max-w-3xl" : "mt-3 max-w-3xl"
       }
     >
-      <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+      <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl !font-serif">
         {title}
       </h2>
       {description && (
-        <p className="mt-3 text-base leading-relaxed text-slate-600">
+        <p className="mt-3 text-base leading-relaxed text-slate-600 !font-sans">
           {description}
         </p>
       )}
@@ -127,7 +127,7 @@ const Eyebrow = ({
   className?: string;
 }) => (
   <p
-    className={`text-sm font-semibold uppercase tracking-[0.2em] text-[#1B3756] ${
+    className={`text-sm font-semibold uppercase tracking-[0.2em] text-[#1B3756] !font-serif ${
       className ?? ""
     }`}
   >
@@ -140,10 +140,12 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
     <div className="space-y-6 pt-8">
       <Eyebrow className="text-white">{content.hero.eyebrow}</Eyebrow>
       <div className="space-y-4">
-        <h1 className="text-4xl font-semibold !text-white sm:text-5xl lg:text-6xl">
+        <h1 className="text-4xl font-semibold !text-white sm:text-5xl lg:text-6xl !font-serif">
           {content.hero.title}
         </h1>
-        <p className="text-lg text-white/90">{content.hero.summary}</p>
+        <p className="text-lg text-white/90 !font-sans">
+          {content.hero.summary}
+        </p>
         {/* <p className="text-base text-white/80">{content.hero.description}</p> */}
       </div>
       <div className="flex flex-wrap gap-4">
@@ -151,7 +153,7 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
           <Link
             key={cta.label}
             href={cta.href}
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center text-black justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:text-[#162C45] hover:bg-[#84C9E2]"
           >
             {cta.label}
           </Link>
@@ -168,15 +170,15 @@ const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
         <img
           src={content.whatWeDo.image}
           alt="What we do"
-          className="w-full h-auto rounded-2xl shadow-sm"
+          className="w-full h-auto rounded-md shadow-sm"
         />
       </div>
       <div className="space-y-4 px-4">
         <Eyebrow>{content.whatWeDo.eyebrow}</Eyebrow>
-        <p className="text-2xl font-semibold text-slate-900">
+        <p className="text-2xl font-semibold text-slate-900 !font-serif">
           {content.whatWeDo.heading}
         </p>
-        <p className="max-w-2xl text-base text-slate-600">
+        <p className="max-w-2xl text-base text-slate-600 !font-sans">
           {content.whatWeDo.description}
         </p>
       </div>
@@ -187,12 +189,12 @@ const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
 const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
   <Section>
     <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-      <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+      <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm">
         <SectionHeader
           eyebrow={content.overview.eyebrow}
           title={content.overview.heading}
         />
-        <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
+        <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600 !font-sans">
           {content.overview.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -200,40 +202,50 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
       </div>
 
       <div className="space-y-4">
-        <div className="rounded-[32px] bg-[#1B3756] p-8 text-white shadow-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
+        <div className="rounded-md bg-[#1B3756] p-8 text-white shadow-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80 !font-serif">
             At a glance
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Turnaround
               </p>
-              <p className="mt-2 text-lg font-semibold">Fast & structured</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                Fast & structured
+              </p>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Coverage
               </p>
-              <p className="mt-2 text-lg font-semibold">End-to-end</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                End-to-end
+              </p>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Reporting
               </p>
-              <p className="mt-2 text-lg font-semibold">Clear & timely</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                Clear & timely
+              </p>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Compliance
               </p>
-              <p className="mt-2 text-lg font-semibold">Audit-ready</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                Audit-ready
+              </p>
             </div>
           </div>
         </div>
-        <div className="rounded-[32px] border border-slate-200 bg-slate-50/60 p-8">
-          <p className="text-sm font-semibold text-slate-900">How we work</p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+        <div className="rounded-md border border-slate-200 bg-slate-50/60 p-8">
+          <p className="text-sm font-semibold text-slate-900 !font-serif">
+            How we work
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 !font-sans">
             Clear milestones, shared checklists, and proactive updates—so you
             always know what’s next.
           </p>
@@ -279,27 +291,27 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
               </g>
             </svg>
           </div>
-          <h4 className="text-lg font-semibold text-slate-900 text-left group-hover:text-white">
+          <h4 className="text-lg font-semibold text-slate-900 text-left group-hover:text-white !font-serif">
             {service.title}
           </h4>
         </div>
       ))}
       <div
-        className={`rounded-[32px] border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
+        className={`rounded-md border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
       >
         <div className="flex flex-col">
-          <h2 className=" !font-medium !text-slate-50">
+          <h2 className=" !font-medium !text-slate-50 !font-serif">
             {content.callout.heading}
           </h2>
           {content.callout.subheading && (
-            <p className="relative  max-w-2xl text-base leading-relaxed text-white/85">
+            <p className="relative  max-w-2xl text-base leading-relaxed text-white/85 !font-sans">
               {content.callout.subheading}
             </p>
           )}
         </div>
         <Link
           href={content.callout.cta.href}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-full hover:bg-primary-50"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-md hover:bg-[#84C9E2] transition"
         >
           <span>{content.callout.cta.label}</span>
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -320,10 +332,10 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 lg:grid-cols-2 ">
       <div className="space-y-4">
         <Eyebrow>{content.process.eyebrow}</Eyebrow>
-        <h2 className=" font-semibold text-slate-900 sm:text-4xl">
+        <h2 className=" font-semibold text-slate-900 sm:text-4xl !font-serif">
           {content.process.heading}
         </h2>
-        <p className="text-base leading-relaxed text-slate-600">
+        <p className="text-base leading-relaxed text-slate-600 !font-sans">
           {content.process.description}
         </p>
         <div className="space-y-6">
@@ -337,14 +349,14 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
                   <div className="flex-1">
                     <div className="flex items-center gap-4">
                       <div className="relative mt-2 flex-shrink-0">
-                        <div className="w-3 h-3 bg-[#84C9E2] rounded-full"></div>
-                        <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-full animate-ping opacity-75"></div>
+                        <div className="w-3 h-3 bg-[#84C9E2] rounded-md"></div>
+                        <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-md animate-ping opacity-75"></div>
                       </div>
-                      <h4 className="text-lg font-semibold text-slate-900">
+                      <h4 className="text-lg font-semibold text-slate-900 !font-serif">
                         {step.title}
                       </h4>
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600 !font-sans">
                       {step.description}
                     </p>
                   </div>
@@ -358,7 +370,7 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
         <img
           src={content.process.image}
           alt="Process Timeline"
-          className="w-full h-auto rounded-2xl shadow-sm"
+          className="w-full h-auto rounded-md shadow-sm"
         />
       </div>
     </div>
@@ -367,30 +379,30 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
 
 const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-8 rounded-[32px] bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
+    <div className="grid gap-8 rounded-md bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
       <div className="flex flex-col justify-center">
         {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
-        <h2 className="text-2xl !text-white !font-medium">
+        <h2 className="text-2xl !text-white !font-medium !font-serif">
           {content.expertise.heading}
         </h2>
-        <p className="text-sm mt-2 text-white/80">
+        <p className="text-sm mt-2 text-white/80 !font-sans">
           Clear, documented processes—built for UAE operators.
         </p>
       </div>
       <div className="space-y-5 flex flex-col justify-center">
-        <p className="text-base leading-relaxed text-white/90">
+        <p className="text-base leading-relaxed text-white/90 !font-sans">
           {content.expertise.body}
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
             href={content.expertise.cta.href}
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] hover:text-[#162C45] transition hover:bg-[#84C9E2]"
           >
             {content.expertise.cta.label}
           </Link>
           <Link
             href="#"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+            className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
           >
             Request a checklist
           </Link>
@@ -426,14 +438,14 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
           <Link
             key={service.label}
             href={service.href}
-            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:bg-primary-50 hover:shadow-md"
+            className="group rounded-md border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:bg-primary-50 hover:shadow-md"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <p className="text-base font-semibold text-slate-900">
+                <p className="text-base font-semibold text-slate-900 !font-serif">
                   {service.label}
                 </p>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-slate-600 !font-sans">
                   See scope, deliverables, and process.
                 </p>
               </div>

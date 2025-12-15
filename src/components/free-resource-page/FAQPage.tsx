@@ -113,7 +113,7 @@ const FAQPage = () => {
         {/* Header Section */}
         <header className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-sm font-medium font-dm-sans pulse-badge">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-sm font-medium !font-sans pulse-badge">
               <svg
                 className="w-4 h-4 mr-2"
                 fill="currentColor"
@@ -130,7 +130,7 @@ const FAQPage = () => {
           </div>
 
           <h1
-            className="font-forum text-[#162C45] mb-4"
+            className="!font-serif !mt-0 !text-[#162C45] mb-4"
             style={{
               fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
               letterSpacing: "-0.02em",
@@ -156,7 +156,7 @@ const FAQPage = () => {
               className="w-full px-6 py-4 pl-14 rounded-2xl border-2 border-[#84C9E2] border-opacity-20 bg-white shadow-sm focus:outline-none focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2] focus:ring-opacity-10 transition-all duration-300 font-inter"
             />
             <svg
-              className="w-6 h-6 absolute left-4 top-1/2 transform -translate-y-1/2 text-[#84C9E2]"
+              className="w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-[#84C9E2]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -178,9 +178,9 @@ const FAQPage = () => {
             return (
               <button
                 key={cat.id}
-                className={`category-tab px-6 py-2.5 rounded-full font-dm-sans font-semibold text-sm transition-all duration-300 transform ${
+                className={`category-tab px-6 py-2.5 rounded-full !font-sans font-semibold text-sm transition-all duration-300 transform ${
                   isActive
-                    ? "bg-[#162C45] text-white scale-105"
+                    ? "bg-[#162C45] !text-white scale-105"
                     : "bg-[rgba(132,201,226,0.1)] text-[#162C45]"
                 }`}
                 data-category={cat.id}
@@ -198,7 +198,7 @@ const FAQPage = () => {
         {/* FAQ Accordion / No Results */}
         {filteredFaqs.length === 0 ? (
           <div id="no-results" className="text-center py-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#84C9E2] bg-opacity-10 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#84C9E2]  bg-opacity-10 mb-6">
               <svg
                 className="w-10 h-10 text-[#84C9E2]"
                 fill="none"
@@ -213,7 +213,7 @@ const FAQPage = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-dm-sans font-semibold text-[#162C45] mb-2">
+            <h3 className="text-xl !font-sans !mt-0 !font-semibold !text-[#162C45] mb-2">
               No matching questions found
             </h3>
             <p className="text-[#334155] font-inter">
@@ -230,15 +230,15 @@ const FAQPage = () => {
                   className="faq-item bg-white rounded-2xl border border-[#84C9E2] border-opacity-20 shadow-sm hover:shadow-md transition-all duration-300"
                   data-category={faq.category}
                 >
-                  <button
+                  <div
                     className="faq-trigger w-full px-6 md:px-8 py-6 flex items-start justify-between gap-4 text-left group"
                     onClick={() => handleToggle(faq.question)}
                   >
                     <div className="flex-1">
-                      <div className="inline-block px-3 py-1 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-xs font-dm-sans font-semibold uppercase mb-3 tracking-wide">
+                      <div className="inline-block px-3 py-1 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-xs !font-sans font-semibold uppercase mb-3 tracking-wide">
                         {faq.category}
                       </div>
-                      <h3 className="font-dm-sans font-semibold text-[#162C45] text-lg md:text-xl leading-snug group-hover:text-[#84C9E2] transition-colors duration-200">
+                      <h3 className="!font-sans !mt-0 !font-semibold !text-[#162C45] !text-lg md:!text-xl leading-snug group-hover:text-[#84C9E2] transition-colors duration-200">
                         {faq.question}
                       </h3>
                     </div>
@@ -259,7 +259,7 @@ const FAQPage = () => {
                         />
                       </svg>
                     </div>
-                  </button>
+                  </div>
                   <div
                     className={`accordion-content px-6 md:px-8 ${
                       isOpen ? "active" : ""
@@ -286,7 +286,7 @@ const FAQPage = () => {
         {/* Still Have Questions CTA */}
         <div className="mt-16 text-center">
           <div className="max-w-3xl mx-auto bg-gradient-to-br from-[#162C45] to-[#1B3756] rounded-md p-8 md:p-12 shadow-xl">
-            <h2 className="font-dm-sans font-bold text-white text-2xl md:text-3xl mb-4">
+            <h2 className="!font-sans !mt-0 font-bold !text-white !text-2xl md:!text-3xl mb-4">
               Still have questions?
             </h2>
             <p className="text-white text-opacity-90 font-inter text-lg mb-6 leading-relaxed">
@@ -295,7 +295,7 @@ const FAQPage = () => {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#84C9E2] text-[#162C45] font-dm-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
             >
               Contact Support
               <svg

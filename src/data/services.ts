@@ -78,7 +78,8 @@ const sharedCta = {
 };
 
 const sharedWhatWeDoEyebrow = "What we do";
-const sharedWhatWeDoImage = "/images/service-1.webp";
+const sharedWhatWeDoImage =
+  "https://assets.entrepreneur.com/content/3x2/2000/1742193731-Shutterstock-2483595635.jpg";
 
 const sharedNewsletter: ServicePageContent["newsletter"] = {
   heading: "Stay Ahead.",
@@ -110,7 +111,8 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       heading: "Set up the right UAE entity—end to end.",
       description:
         "We guide you from jurisdiction selection to licensing and documentation, so your company is structured correctly for banking, visas, and ongoing compliance. Our comprehensive approach ensures that every step is handled with precision, from initial consultations to final approvals, minimizing risks and maximizing efficiency. Whether you're establishing a mainland company, a free zone entity, or an offshore setup, we tailor the process to your specific business needs, providing expert advice on activity selection, shareholder structures, and regulatory requirements. With our end-to-end support, you can focus on growing your business while we manage the complexities of UAE company formation, ensuring a smooth and compliant launch that sets the foundation for long-term success.",
-      image: sharedWhatWeDoImage,
+      image:
+        "https://media.istockphoto.com/id/473016474/photo/emirati-doing-business.jpg?s=612x612&w=0&k=20&c=iQS3v20_p5zRkBROQMDNmGg7r9TPBmzfUbzqrmLvZ7E=",
     },
     overview: {
       eyebrow: "Overview",
@@ -183,7 +185,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Formation process",
-      image: "/images/service-1.webp",
+      image: "https://www.grovy.ae/wp-content/uploads/2025/02/2151328531.jpg",
       description:
         "A structured workflow that keeps approvals moving and paperwork correct.",
       steps: [
@@ -254,7 +256,8 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       heading: "Keep your books clean and your reporting dependable.",
       description:
         "We handle bookkeeping, reconciliations, and month-end closes so you always have accurate financial statements to support decisions, audits, and tax filings. Our dedicated team ensures meticulous attention to detail, categorizing transactions correctly, reconciling accounts regularly, and preparing comprehensive reports that provide a clear picture of your financial health. By leveraging advanced cloud accounting tools like QuickBooks, Xero, or Zoho, we streamline processes, reduce errors, and deliver timely insights. Whether you need monthly bookkeeping, quarterly reviews, or annual financial statements, our service is designed to scale with your business, offering flexibility and reliability to keep your finances in order and your operations running smoothly.",
-      image: sharedWhatWeDoImage,
+      image:
+        "https://www.shutterstock.com/image-photo/luxurious-balcony-overlooking-dubai-downtown-600nw-2645925131.jpg",
     },
     overview: {
       eyebrow: "Overview",
@@ -317,7 +320,8 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "A reliable monthly rhythm",
-      image: "/images/service-1.webp",
+      image:
+        "https://m.thepeninsulaqatar.com/get/maximage/20250117_1737102017-197.JPG?1737102017",
       description:
         "We set the cadence and checkpoints so your reporting arrives consistently.",
       steps: [
@@ -444,7 +448,8 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Compliance workflow",
-      image: "/images/service-1.webp",
+      image:
+        "https://www.timeoutdubai.com/cloud/timeoutdubai/2022/11/30/Dubai.jpg",
       description:
         "A clear sequence that keeps filings timely and documentation consistent.",
       steps: [
@@ -561,7 +566,8 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Operational support cadence",
-      image: "/images/service-1.webp",
+      image:
+        "https://media.istockphoto.com/id/473016474/photo/emirati-doing-business.jpg?s=612x612&w=0&k=20&c=iQS3v20_p5zRkBROQMDNmGg7r9TPBmzfUbzqrmLvZ7E=",
       description:
         "We implement checklists and timelines so payroll and renewals stay predictable.",
       steps: [
@@ -689,7 +695,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     process: {
       eyebrow: "Our Process",
       heading: "Advisory engagement",
-      image: "/images/service-1.webp",
+      image: "https://www.grovy.ae/wp-content/uploads/2025/02/2151328531.jpg",
       description:
         "A tight loop: assess, model, decide, and implement with documentation.",
       steps: [

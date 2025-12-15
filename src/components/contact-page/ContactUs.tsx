@@ -46,10 +46,10 @@ export default function ContactSection() {
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         {/* --- Header --- */}
         <header className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-serif text-[#162C45] mb-4">
+          <h1 className="text-5xl md:text-6xl !font-serif text-[#162C45] mb-4">
             Get In Touch
           </h1>
-          <p className="text-lg text-gray-600 font-sans">
+          <p className="text-lg text-gray-600 !font-sans">
             We Look Forward to Connecting With You
           </p>
         </header>
@@ -81,10 +81,10 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-xl mb-2 text-[#162C45]">
+                <h3 className="!font-serif text-xl mb-2 text-[#162C45]">
                   Visit us at:
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-sm !font-sans">
                   Seventh Ave, 20th Floor, New York,
                   <br />
                   NY 10018
@@ -129,10 +129,10 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-xl mb-2 text-[#162C45]">
+                <h3 className="!font-serif text-xl mb-2 text-[#162C45]">
                   Call us at:
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm font-medium">
+                <p className="text-gray-600 leading-relaxed text-sm font-medium !font-sans">
                   1-800-356-8933
                 </p>
               </div>
@@ -175,10 +175,10 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-xl mb-2 text-[#162C45]">
+                <h3 className="!font-serif text-xl mb-2 text-[#162C45]">
                   Email us at:
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm font-medium">
+                <p className="text-gray-600 leading-relaxed text-sm font-medium !font-sans">
                   office@execor.com
                 </p>
               </div>
@@ -207,13 +207,13 @@ export default function ContactSection() {
           {/* Left Column: Information */}
           <div className="lg:col-span-5 flex flex-col gap-10">
             <div>
-              <span className="bg-gray-200 text-[#162C45] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6">
+              <span className="bg-gray-200 text-[#162C45] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6 !font-sans">
                 Contact Us Form
               </span>
-              <h2 className="text-5xl lg:text-[3.5rem] leading-[1.1] font-serif text-[#162C45] mb-8">
+              <h2 className="text-5xl lg:text-[3.5rem] leading-[1.1] !font-serif text-[#162C45] mb-8">
                 Our Experts Always Ready to Work With You
               </h2>
-              <p className="text-gray-600 text-lg mb-4">
+              <p className="text-gray-600 text-lg mb-4 !font-sans">
                 Ask about general information. Please send us a message.
               </p>
             </div>
@@ -241,7 +241,7 @@ export default function ContactSection() {
                       />
                     </svg>
                   </div>
-                  <div className="text-sm font-medium text-[#162C45]">
+                  <div className="text-sm font-medium text-[#162C45] !font-sans">
                     <span className="block text-gray-800">
                       For career inquires, please email
                     </span>
@@ -286,7 +286,7 @@ export default function ContactSection() {
                       />
                     </svg>
                   </div>
-                  <div className="text-sm font-medium text-[#162C45]">
+                  <div className="text-sm font-medium text-[#162C45] !font-sans">
                     <span className="block text-gray-800">
                       For any other inquires, please email
                     </span>
@@ -331,7 +331,7 @@ export default function ContactSection() {
                       />
                     </svg>
                   </div>
-                  <div className="text-sm font-medium text-[#162C45]">
+                  <div className="text-sm font-medium text-[#162C45] !font-sans">
                     <span className="block text-gray-800">
                       Connect with a specific team member
                     </span>
@@ -360,7 +360,7 @@ export default function ContactSection() {
           <div className="lg:col-span-7 mt-8 lg:mt-0">
             <div className="bg-white rounded-md shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden">
               <div className="bg-[#162C45] px-8 py-6 flex justify-between items-center text-white">
-                <h3 className="font-serif text-xl !text-white font-medium">
+                <h3 className="!font-serif text-xl !text-white font-medium">
                   Contact Form
                 </h3>
                 <div className="text-[#84C9E2]">
@@ -380,7 +380,7 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="fname"
-                      className="block text-[0.95rem] text-gray-600 mb-2 font-sans"
+                      className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                     >
                       First name
                     </label>
@@ -394,7 +394,7 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="lname"
-                      className="block text-[0.95rem] text-gray-600 mb-2 font-sans"
+                      className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                     >
                       Last name
                     </label>
@@ -410,7 +410,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-[0.95rem] text-gray-600 mb-2 font-sans"
+                    className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                   >
                     Email
                   </label>
@@ -425,7 +425,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-[0.95rem] text-gray-600 mb-2 font-sans"
+                    className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                   >
                     Phone
                   </label>
@@ -439,7 +439,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-[0.95rem] text-gray-600 mb-2 font-sans"
+                    className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                   >
                     Message
                   </label>
@@ -499,10 +499,10 @@ export default function ContactSection() {
                       className="h-4 w-4 rounded border-gray-300 text-[#84C9E2] focus:ring-[#84C9E2] cursor-pointer"
                     />
                   </div>
-                  <div className="text-xs text-gray-400 leading-relaxed">
+                  <div className="text-xs text-gray-400 leading-relaxed !font-sans">
                     <label
                       htmlFor="privacy-consent"
-                      className="font-medium text-gray-500 select-none cursor-pointer"
+                      className="font-medium text-gray-500 select-none cursor-pointer !font-sans"
                     >
                       By submitting this form you agree to our{" "}
                       <a

@@ -49,17 +49,17 @@ const FreeResourcesPage = () => {
   const hasResources = resources.length > 0;
 
   return (
-    <main className="bg-[#f7f8fa] text-[#0f172a] font-body min-h-screen">
+    <main className="bg-[#f7f8fa] mt-10 text-[#0f172a] min-h-screen">
       <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 py-16">
         {/* Header Section */}
         <header className="text-center mb-12">
           <h1
-            className="font-serif-display font-semibold text-[#0f172a] mb-4"
+            className="!font-serif !mt-0 font-semibold !text-[#0f172a] mb-4"
             style={{ fontSize: "clamp(2rem, 3vw, 2.75rem)" }}
           >
             Download Our Free Resources
           </h1>
-          <p className="text-[#334155] text-lg md:text-xl max-w-2xl mx-auto font-medium">
+          <p className="text-[#334155] text-lg md:text-xl max-w-2xl mx-auto !font-sans font-medium">
             Download our curated collection of guides, templates, and tools to
             accelerate your growth.
           </p>
@@ -87,13 +87,13 @@ const FreeResourcesPage = () => {
 
                 {/* Card Body */}
                 <div className="p-6 space-y-4">
-                  <h3 className="line-clamp-2 font-serif-display font-semibold text-[#0f172a] text-[1.1rem] leading-snug min-h-[2.6rem]">
+                  <h3 className="line-clamp-2 !mt-0 !font-serif !font-semibold !text-[#0f172a] !text-[1.1rem] leading-snug min-h-[2.6rem]">
                     {resource.title}
                   </h3>
 
                   <a
                     href={resource.downloadUrl}
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#84C9E2] text-black text-sm font-semibold transition-colors duration-200 hover:bg-[#6ab5d1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#84C9E2]"
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#84C9E2] text-black text-sm !font-sans font-semibold transition-colors duration-200 hover:bg-[#6ab5d1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#84C9E2]"
                   >
                     <svg
                       className="w-4 h-4 mr-2"
@@ -117,10 +117,10 @@ const FreeResourcesPage = () => {
           </div>
         ) : (
           <div id="empty-state" className="text-center py-16">
-            <p className="text-[#334155] text-lg mb-6">
+            <p className="text-[#334155] text-lg mb-6 !font-sans">
               No resources available at the moment.
             </p>
-            <button className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#84C9E2] text-white text-sm font-semibold transition hover:bg-[#6ab5d1] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#84C9E2]">
+            <button className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#84C9E2] text-white text-sm !font-sans font-semibold transition hover:bg-[#6ab5d1] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#84C9E2]">
               Check Back Soon
             </button>
           </div>
