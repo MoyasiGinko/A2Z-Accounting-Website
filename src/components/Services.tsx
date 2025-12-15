@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Services: React.FC = () => {
   return (
@@ -102,9 +103,9 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="/services/company-formation">
+                    <Link href="/services/company-formation">
                       Company Formation &amp; Corporate Setup
-                    </a>
+                    </Link>
                   </h3>
                 </div>
               </div>
@@ -166,7 +167,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <div className="elementor-button-wrapper">
-                    <a
+                    <Link
                       className="elementor-button elementor-button-link elementor-size-sm"
                       href="/services/company-formation"
                     >
@@ -181,7 +182,7 @@ const Services: React.FC = () => {
                           Learn More
                         </span>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -226,9 +227,9 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="/services/accounting-bookkeeping">
+                    <Link href="/services/accounting-bookkeeping">
                       Accounting &amp; Bookkeeping
-                    </a>
+                    </Link>
                   </h3>
                 </div>
               </div>
@@ -290,7 +291,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <div className="elementor-button-wrapper">
-                    <a
+                    <Link
                       className="elementor-button elementor-button-link elementor-size-sm"
                       href="/services/accounting-bookkeeping"
                     >
@@ -305,7 +306,7 @@ const Services: React.FC = () => {
                           Learn More
                         </span>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -351,9 +352,9 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="/services/tax-compliance">
+                    <Link href="/services/tax-compliance">
                       Tax &amp; Regulatory Compliance
-                    </a>
+                    </Link>
                   </h3>
                 </div>
               </div>
@@ -415,7 +416,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <div className="elementor-button-wrapper">
-                    <a
+                    <Link
                       className="elementor-button elementor-button-link elementor-size-sm"
                       href="/services/tax-compliance"
                     >
@@ -430,7 +431,7 @@ const Services: React.FC = () => {
                           Learn More
                         </span>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -476,7 +477,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="/services/payroll-hr-pro">Payroll &amp; HR Pro</a>
+                    <Link href="/services/payroll-hr-pro">Payroll &amp; HR Pro</Link>
                   </h3>
                 </div>
               </div>
@@ -538,7 +539,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <div className="elementor-button-wrapper">
-                    <a
+                    <Link
                       className="elementor-button elementor-button-link elementor-size-sm"
                       href="/services/payroll-hr-pro"
                     >
@@ -553,7 +554,7 @@ const Services: React.FC = () => {
                           Learn More
                         </span>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -599,7 +600,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
-                    <a href="/services/business-advisory">Business Advisory</a>
+                    <Link href="/services/business-advisory">Business Advisory</Link>
                   </h3>
                 </div>
               </div>
@@ -661,7 +662,7 @@ const Services: React.FC = () => {
               >
                 <div className="elementor-widget-container">
                   <div className="elementor-button-wrapper">
-                    <a
+                    <Link
                       className="elementor-button elementor-button-link elementor-size-sm"
                       href="/services/business-advisory"
                     >
@@ -676,7 +677,7 @@ const Services: React.FC = () => {
                           Learn More
                         </span>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
