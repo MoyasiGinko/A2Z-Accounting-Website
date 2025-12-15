@@ -3,16 +3,16 @@ import React from "react";
 export default function AboutUs() {
   return (
     <>
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+      <div className="max-w-[1320px] mt-6 mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <header className="mb-20 fade-in-up">
-          <h1 className="text-4xl md:text-6xl font-serif text-primary mb-6">
+          <h1 className="text-4xl md:text-6xl !font-serif text-primary mb-6">
             About Us — A2Z Accounting Dubai
           </h1>
-          <p className="text-lg text-gray-600 font-sans max-w-3xl leading-relaxed font-medium">
+          <p className="text-lg text-gray-600 !font-sans max-w-3xl leading-relaxed font-medium">
             From Aberdeen&apos;s #1 Accounting Firm to Dubai&apos;s Leading
             Tax-Efficient Business Setup Partner.
           </p>
-          <p className="text-gray-500 mt-4 max-w-4xl leading-relaxed">
+          <p className="text-gray-500 mt-4 max-w-4xl leading-relaxed !font-sans">
             A2Z Accounting Dubai is the international expansion of A2Z
             Accounting Solutions — Aberdeen&apos;s highest-rated and most
             trusted accounting firm. We help entrepreneurs worldwide establish
@@ -32,10 +32,10 @@ export default function AboutUs() {
             </div>
 
             <div className="hidden md:block absolute bottom-10 -right-12 lg:right-[-40px] lg:bottom-12 bg-secondary p-8 rounded shadow-xl max-w-xs z-10 text-primary">
-              <h3 className="font-serif text-2xl mb-4">
+              <h3 className="!font-serif text-2xl mb-4">
                 Aberdeen&apos;s #1 Firm
               </h3>
-              <ul className="space-y-3 mb-6 text-sm font-medium">
+              <ul className="space-y-3 mb-6 text-sm !font-sans font-medium">
                 <li className="flex items-center gap-2">
                   <svg
                     className="w-4 h-4"
@@ -85,31 +85,31 @@ export default function AboutUs() {
                   5-Star Rated
                 </li>
               </ul>
-              <div className="text-xs font-bold uppercase tracking-widest text-primary border-t border-primary/20 pt-4">
+              <div className="text-xs font-bold uppercase tracking-widest text-primary border-t border-primary/20 pt-4 !font-sans">
                 UK Standards in Dubai
               </div>
             </div>
           </div>
 
           <div className="fade-in-up delay-200">
-            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6">
+            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6 !font-sans">
               Our Roots
             </span>
-            <h2 className="text-4xl lg:text-5xl font-serif text-primary mb-8 leading-tight">
+            <h2 className="text-4xl lg:text-5xl !mt-0 !font-serif text-primary mb-8 leading-tight">
               Trusted, Proven, Respected
             </h2>
-            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed !font-sans">
               Our parent company, A2Z Accounting Solutions in Aberdeen, is
               widely recognised as a specialist in tax planning, bookkeeping,
               and compliance.
             </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-600 mb-8 leading-relaxed !font-sans">
               This reputation for accuracy, trust, and client success is at the
               core of our UAE operations. We bring UK-level accounting standards
               to Dubai — something most UAE firms cannot match.
             </p>
 
-            <h4 className="font-serif text-2xl text-primary mb-6">
+            <h4 className="!font-serif text-2xl text-primary mb-6">
               Our UAE Expertise
             </h4>
 
@@ -131,10 +131,10 @@ export default function AboutUs() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-primary font-bold text-lg">
+                  <h4 className="text-primary !mt-0 !font-serif font-bold text-lg">
                     UK–UAE Hybrid Models
                   </h4>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-gray-500 mt-1 !font-sans">
                     Expert guidance for clients who want to live in the UK while
                     running a UAE company efficiently.
                   </p>
@@ -157,10 +157,10 @@ export default function AboutUs() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-primary font-bold text-lg">
+                  <h4 className="text-primary !mt-0 !font-serif font-bold text-lg">
                     International Tax Planning
                   </h4>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-gray-500 mt-1 !font-sans">
                     Perfect for clients earning £150K+ profit who want to reduce
                     tax burden while staying compliant.
                   </p>
@@ -183,10 +183,10 @@ export default function AboutUs() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-primary font-bold text-lg">
+                  <h4 className="text-primary !mt-0 !font-serif font-bold text-lg">
                     UK-Standard Accounting
                   </h4>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-gray-500 mt-1 !font-sans">
                     Detailed, accurate, and transparent reporting delivered with
                     the precision of a UK accountancy.
                   </p>
@@ -198,15 +198,15 @@ export default function AboutUs() {
 
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 mb-32 border-t border-gray-200 pt-20 fade-in-up">
           <div className="lg:col-span-4">
-            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4">
+            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 !font-sans">
               Our Purpose
             </span>
-            <h2 className="text-4xl font-serif text-primary leading-tight">
+            <h2 className="text-4xl !mt-0 !font-serif text-primary leading-tight">
               Smarter, Compliant, Global.
             </h2>
           </div>
           <div className="lg:col-span-8 flex items-center">
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed !font-sans">
               Our purpose is simple: to give ambitious entrepreneurs a smarter,
               compliant way to reduce tax exposure, protect profits, build
               wealth, and enjoy a stress-free global lifestyle. We support
@@ -217,11 +217,13 @@ export default function AboutUs() {
 
         <section className="mb-32 fade-in-up">
           <div className="text-center mb-16">
-            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4">
+            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 !font-sans">
               Client Profile
             </span>
-            <h2 className="text-4xl font-serif text-primary">Who We Help</h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            <h2 className="text-4xl !mt-0 !font-serif text-primary">
+              Who We Help
+            </h2>
+            <p className="text-gray-500 mt-4 max-w-2xl mx-auto !font-sans">
               Our services are designed for entrepreneurs generating £150K+
               annual profit who want to:
             </p>
@@ -246,10 +248,10 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">
+              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
                 Relocate to Dubai
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 For entrepreneurs wanting to move to Dubai for a tax-efficient
                 lifestyle.
               </p>
@@ -273,10 +275,10 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">
+              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
                 UK Resident & UAE Biz
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Live in the UK while operating a UAE-based company with perfect
                 compliance.
               </p>
@@ -300,10 +302,10 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">
+              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
                 Reduce Tax Liability
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Legally reduce personal and business tax burdens through smarter
                 structuring.
               </p>
@@ -327,10 +329,10 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">
+              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
                 Global Expansion
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Build a holding company structure designed to facilitate
                 international growth.
               </p>
@@ -354,10 +356,10 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">
+              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
                 Protect Wealth
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Secure your assets and structure your business for long-term
                 financial freedom.
               </p>
@@ -381,10 +383,10 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">
+              <h3 className="!text-xl !font-sans !font-bold text-primary mb-3">
                 Zero Admin Stress
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Run a business with zero stress. We handle setup, banking, and
                 compliance.
               </p>
@@ -395,19 +397,19 @@ export default function AboutUs() {
         <section className="mb-32 fade-in-up delay-100">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div className="pl-6 border-l-2 border-secondary">
-              <h3 className="font-serif text-2xl text-primary mb-3">
+              <h3 className="!font-serif text-2xl text-primary mb-3">
                 UK-Trained Expertise
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed !font-sans">
                 We bring deep UK–UAE tax strategy knowledge and British
                 accounting excellence to the UAE.
               </p>
             </div>
             <div className="pl-6 border-l-2 border-secondary">
-              <h3 className="font-serif text-2xl text-primary mb-3">
+              <h3 className="!font-serif text-2xl text-primary mb-3">
                 Transparent Pricing
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed !font-sans">
                 Fixed, all-inclusive pricing with no hidden fees, no delays, and
                 no confusion.
               </p>
@@ -423,7 +425,7 @@ export default function AboutUs() {
 
             <div className="absolute bottom-8 left-8">
               <div className="bg-secondary/90 backdrop-blur text-primary px-6 py-3 rounded flex items-center gap-4 cursor-pointer hover:bg-white transition-colors">
-                <span className="font-bold text-sm">
+                <span className="!font-serif font-bold text-sm">
                   Start Your UAE Journey
                 </span>
                 <svg
@@ -457,15 +459,15 @@ export default function AboutUs() {
               <span className="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">
                 A2Z Promise
               </span>
-              <div className="text-3xl font-serif mb-4 leading-none">
+              <div className="text-3xl !font-serif mb-4 leading-none">
                 End-to-End Service
               </div>
-              <p className="text-sm text-gray-300 mb-6">
+              <p className="text-sm text-gray-300 mb-6 !font-sans">
                 Setup → Banking → Accounting → Compliance
               </p>
               <a
                 href="#"
-                className="w-full bg-secondary hover:bg-secondaryHover text-primary font-bold py-3 px-6 rounded flex items-center justify-between text-sm transition-colors"
+                className="w-full bg-secondary hover:bg-secondaryHover text-primary !font-sans font-bold py-3 px-6 rounded flex items-center justify-between text-sm transition-colors"
               >
                 Book Consultation
                 <svg
@@ -486,22 +488,22 @@ export default function AboutUs() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6">
+            <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-6 !font-sans">
               Our Promise
             </span>
-            <h2 className="text-4xl lg:text-5xl font-serif text-primary mb-8 leading-tight">
+            <h2 className="text-4xl lg:text-5xl !font-serif text-primary mb-8 leading-tight">
               Simplicity & Excellence
             </h2>
-            <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-6 leading-relaxed !font-sans">
               A2Z Accounting Dubai blends British accounting excellence + UAE
               tax efficiency + world-class simplicity.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed mb-8 !font-sans">
               We handle everything — advisory, setup, compliance, and ongoing
               accounting — so you can focus on scaling your business, building
               wealth, and enjoying the lifestyle you&apos;ve worked hard for.
             </p>
-            <p className="font-serif text-2xl text-primary italic">
+            <p className="!font-serif text-2xl text-primary italic">
               &quot;Because running a global business shouldn&apos;t be
               complicated. With the right structure, it becomes
               effortless.&quot;
@@ -512,15 +514,15 @@ export default function AboutUs() {
         <section className="fade-in-up delay-100">
           <div className="flex flex-col items-center text-center lg:flex-row lg:items-end lg:justify-between lg:text-left mb-12 gap-8">
             <div className="max-w-xl">
-              <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4">
+              <span className="bg-gray-200 text-primary text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 inline-block mb-4 !font-sans">
                 Our Team
               </span>
-              <h2 className="text-4xl font-serif text-primary">
+              <h2 className="text-4xl !font-serif text-primary">
                 Meet Our Leaders
               </h2>
             </div>
             <div className="max-w-md">
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed !font-sans">
                 Our team is composed of seasoned professionals with diverse
                 backgrounds in management, finance, technology, and operations.
               </p>
@@ -529,7 +531,7 @@ export default function AboutUs() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-primary rounded p-8 flex flex-col justify-between text-white min-h-[350px]">
-              <p className="font-serif text-lg leading-relaxed mb-6">
+              <p className="!font-serif text-lg leading-relaxed mb-6">
                 &quot;Legacy of success can power your future!&quot;
               </p>
               <div>
@@ -538,7 +540,7 @@ export default function AboutUs() {
                 </div>
                 <a
                   href="#"
-                  className="bg-secondary hover:bg-secondaryHover text-primary text-xs font-bold uppercase py-3 px-6 rounded flex items-center justify-between transition-colors"
+                  className="bg-secondary hover:bg-secondaryHover text-primary !font-sans text-xs font-bold uppercase py-3 px-6 rounded flex items-center justify-between transition-colors"
                 >
                   Contact us
                   <svg
@@ -566,13 +568,13 @@ export default function AboutUs() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-serif text-xl text-primary">
+              <h3 className="!font-serif text-xl text-primary">
                 Shabbir Rahman
               </h3>
-              <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+              <p className="text-xs text-gray-500 uppercase tracking-wide mb-2 !font-sans">
                 Head Accountant
               </p>
-              <p className="text-xs text-gray-400 line-clamp-3">
+              <p className="text-xs text-gray-400 line-clamp-3 !font-sans">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
                 doloremque blanditiis optio eos repellat illum quis reiciendis?
                 Dicta, quis incidunt.
@@ -587,13 +589,13 @@ export default function AboutUs() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-serif text-xl text-primary">
+              <h3 className="!font-serif text-xl text-primary">
                 Shovon Mostofa
               </h3>
-              <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+              <p className="text-xs text-gray-500 uppercase tracking-wide mb-2 !font-sans">
                 Director of Operations
               </p>
-              <p className="text-xs text-gray-400 line-clamp-3">
+              <p className="text-xs text-gray-400 line-clamp-3 !font-sans">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae,
                 vel dolorum. Ullam quaerat nisi nulla minus quae, quis quo
                 doloribus?
@@ -624,13 +626,13 @@ export default function AboutUs() {
         </div>
 
         <div className="container mx-auto px-6 text-center max-w-6xl relative z-10 reveal-up">
-          <h2 className="text-2xl md:text-4xl font-forum mb-6 md:mb-8 text-white relative inline-block">
+          <h2 className="text-2xl md:text-4xl !font-forum mb-6 md:mb-8 text-white relative inline-block">
             Dubai gives you more freedom, more opportunity,
             <br className="hidden md:block" />
             more profit — and far less stress.
           </h2>
 
-          <p className="text-lg md:text-xl font-light font-dm text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-light !font-dm text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             For entrepreneurs who want to elevate both their income and
             lifestyle, no other country offers such a powerful combination of
             tax efficiency, safety, and long-term stability.
@@ -639,12 +641,12 @@ export default function AboutUs() {
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-lg inline-block mx-auto max-w-2xl shadow-2xl shadow-primary/50 relative group">
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full opacity-50 group-hover:animate-ping"></div>
 
-            <p className="text-secondary font-forum text-md md:text-lg italic mb-8 relative z-10">
+            <p className="text-secondary !font-forum text-md md:text-lg italic mb-8 relative z-10">
               &quot;No other country offers such a powerful combination of tax
               efficiency, safety, and long-term stability.&quot;
             </p>
 
-            <button className="bg-secondary text-primary font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:bg-secondaryHover transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
+            <button className="bg-secondary text-primary !font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:bg-secondaryHover transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
               Get Free Consultation
             </button>
           </div>
