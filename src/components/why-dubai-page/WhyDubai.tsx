@@ -1,20 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Forum, DM_Sans } from "next/font/google";
-
-// 1. Font Configuration
-const forum = Forum({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-forum",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-dm",
-});
 
 export default function WhyDubaiPage() {
   // 2. Animation Logic (Replaces the vanilla JS script)
@@ -44,7 +30,7 @@ export default function WhyDubaiPage() {
 
   return (
     <main
-      className={`${forum.variable} ${dmSans.variable} !font-sans bg-[#f7f8fa] text-[#1B3756] overflow-x-hidden scroll-smooth`}
+      className={`!font-sans bg-[#f7f8fa] text-[#1B3756] overflow-x-hidden scroll-smooth`}
     >
       {/* 3. Embedded Custom Styles for Glassmorphism & Animations */}
       <style jsx global>{`
@@ -128,11 +114,11 @@ export default function WhyDubaiPage() {
 
         {/* Hero Content */}
         <div className="relative z-30 container mx-auto px-4 text-center max-w-4xl mt-[-20px]">
-          <p className="text-[#84C9E2] !font-serif font-bold tracking-[0.2em] uppercase mb-4 text-[10px] md:text-sm reveal-up">
+          <p className="text-[#84C9E2] !font-sans font-bold tracking-[0.2em] uppercase mb-4 text-[10px] md:text-sm reveal-up">
             Why Dubai?
           </p>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl !font-serif text-white leading-[1.1] mb-6 md:mb-8 reveal-up delay-100">
+          <h1 className="!text-4xl !mt-0 sm:!text-6xl md:!text-7xl lg:!text-8xl !font-serif !text-white leading-[1.1] mb-6 md:mb-8 reveal-up delay-100">
             The World’s Most <br />
             <span className="italic text-[#84C9E2]">Tax-Efficient</span> Place
           </h1>
