@@ -153,7 +153,7 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
           <Link
             key={cta.label}
             href={cta.href}
-            className="inline-flex items-center text-black justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center text-black justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:text-[#162C45] hover:bg-[#84C9E2]"
           >
             {cta.label}
           </Link>
@@ -311,7 +311,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         </div>
         <Link
           href={content.callout.cta.href}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-md hover:bg-primary-50"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-md hover:bg-[#84C9E2] transition"
         >
           <span>{content.callout.cta.label}</span>
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -396,7 +396,7 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
         <div className="flex flex-wrap gap-3">
           <Link
             href={content.expertise.cta.href}
-            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] hover:text-[#162C45] transition hover:bg-[#84C9E2]"
           >
             {content.expertise.cta.label}
           </Link>
