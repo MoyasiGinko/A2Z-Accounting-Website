@@ -1,20 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Forum, DM_Sans } from "next/font/google";
-
-// 1. Font Setup
-const forum = Forum({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-forum",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "700"],
-  variable: "--font-dm",
-});
 
 export default function WhoWeServe() {
   // 2. Animation Logic
@@ -41,9 +27,7 @@ export default function WhoWeServe() {
   }, []);
 
   return (
-    <main
-      className={`${forum.variable} ${dmSans.variable} font-dm bg-[#f7f8fa] text-[#162c45] overflow-x-hidden`}
-    >
+    <main className={` bg-[#f7f8fa] text-[#162c45] overflow-x-hidden`}>
       {/* 3. Global CSS for Animations & Glass Effects */}
       <style jsx global>{`
         /* Smooth Scroll */
@@ -135,7 +119,7 @@ export default function WhoWeServe() {
         </div>
 
         {/* Floating Badges */}
-        <div className="absolute top-[20%] left-[10%] glass-badge px-6 py-3 rounded-full text-white/90 text-sm font-dm tracking-wide animate-float hidden lg:block z-10">
+        <div className="absolute top-[20%] left-[10%] glass-badge px-6 py-3 rounded-full text-white/90 text-sm !font-dans tracking-wide animate-float hidden lg:block z-10">
           <span className="text-[#84C9E2] font-bold mr-2">0%</span> Corporate
           Tax Optimization
         </div>
@@ -143,23 +127,23 @@ export default function WhoWeServe() {
         <div className="absolute bottom-[7%] right-[5%] glass-badge p-3 md:p-6 rounded-lg text-white max-w-xs animate-float-delayed hidden lg:block z-10">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-3 h-3 rounded-full bg-green-400"></div>
-            <span className="font-forum text-lg">Global Compliance</span>
+            <span className="!font-serif text-lg">Global Compliance</span>
           </div>
-          <p className="font-dm text-xs text-white/70">
+          <p className="!font-dans text-xs text-white/70">
             Fully aligned structures for UK & UAE operations.
           </p>
         </div>
 
         {/* Hero Content */}
         <div className="relative z-20 text-center px-6 max-w-5xl mx-auto mt-10">
-          <span className="reveal-up inline-block text-[#84C9E2] font-dm font-bold tracking-[0.2em] uppercase text-sm mb-6">
+          <span className="reveal-up inline-block text-[#84C9E2] !font-dans font-bold tracking-[0.2em] uppercase !text-sm mb-6">
             Who We Serve
           </span>
-          <h1 className="reveal-up delay-100 font-forum text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-8">
+          <h1 className="reveal-up delay-100 !mt-0 !font-serif !text-5xl md:!text-7xl lg:!text-8xl !text-white leading-[1.1] mb-8">
             Smart Entrepreneurs <br />
             <span className="italic animate-text-glow"> Global Ambitions </span>
           </h1>
-          <p className="reveal-up delay-200 font-dm text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="reveal-up delay-200 !font-dans text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
             For those who want tax efficiency, global flexibility, and a
             stress-free business life. We structure your success legally and
             compliantly.
@@ -172,7 +156,7 @@ export default function WhoWeServe() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-white/50 hover:text-white transition-colors cursor-pointer group"
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-dm tracking-widest uppercase">
+            <span className="text-xs !font-dans tracking-widest uppercase">
               Explore
             </span>
             <svg
@@ -198,22 +182,22 @@ export default function WhoWeServe() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             {/* Left Sticky Col */}
-            <div className="reveal-up sticky top-24">
+            <div className="reveal-up !sticky top-24">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#84C9E2]/10 border border-[#84C9E2]/20 mb-8">
                 <span className="w-2 h-2 rounded-full bg-[#84C9E2]"></span>
-                <span className="text-[#84C9E2] font-dm font-bold text-xs uppercase tracking-widest">
+                <span className="text-[#84C9E2] !font-dans font-bold text-xs uppercase tracking-widest">
                   Our Ideal Client
                 </span>
               </div>
 
-              <h2 className="font-forum text-4xl md:text-5xl text-[#162C45] mb-8 leading-[1.15]">
+              <h1 className="!font-serif !mt-0 text-4xl md:text-5xl text-[#162C45] mb-8 leading-[1.15]">
                 We serve entrepreneurs generating
                 <span className="text-[#84C9E2] italic px-2">£150K+</span>
                 in annual profit.
-              </h2>
+              </h1>
 
               <div className="border-l-2 border-gray-200 pl-6 py-2">
-                <p className="font-dm text-lg text-[#162C45] font-medium opacity-80">
+                <p className="!font-dans text-lg text-[#162C45] font-medium opacity-80">
                   Smart Entrepreneurs who value clarity, compliance, and
                   long-term financial optimisation.
                 </p>
@@ -223,14 +207,14 @@ export default function WhoWeServe() {
             {/* Right Scroll Col */}
             <div className="reveal-up delay-100 relative">
               <div className="bg-[#f7f8fa] p-8 md:p-10 rounded-2xl relative border-t-4 border-[#84C9E2]">
-                <p className="font-dm text-lg text-gray-600 leading-loose mb-8 font-light">
+                <p className="!font-dans text-lg text-gray-600 leading-loose mb-8 font-light">
                   A2Z Accounting Dubai supports ambitious individuals and
                   businesses who want to build smarter, compliant, and
                   tax-efficient structures that protect their profits and
                   elevate their lifestyle.
                 </p>
 
-                <p className="font-dm text-md md:text-lg text-gray-600 leading-loose font-light mb-8">
+                <p className="!font-dans text-md md:text-lg text-gray-600 leading-loose font-light mb-8">
                   Whether you want to relocate to Dubai or keep living in the UK
                   while building a UAE-based company, we structure everything
                   the right way:
@@ -251,7 +235,7 @@ export default function WhoWeServe() {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="font-forum text-xl text-[#162C45]">
+                    <span className="!font-serif text-xl text-[#162C45]">
                       Fully Legally
                     </span>
                   </li>
@@ -269,7 +253,7 @@ export default function WhoWeServe() {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="font-forum text-xl text-[#162C45]">
+                    <span className="!font-serif text-xl text-[#162C45]">
                       Fully Compliant
                     </span>
                   </li>
@@ -287,7 +271,7 @@ export default function WhoWeServe() {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="font-forum text-xl text-[#162C45]">
+                    <span className="!font-serif text-xl text-[#162C45]">
                       Fully Aligned with Goals
                     </span>
                   </li>
@@ -321,23 +305,23 @@ export default function WhoWeServe() {
                 />
                 <div className="absolute inset-0 bg-[#162C45]/20 group-hover:bg-transparent transition-colors duration-500"></div>
               </div>
-              <div className="absolute -top-6 -left-6 bg-[#84C9E2] text-[#162C45] font-forum text-4xl w-20 h-20 flex items-center justify-center rounded-br-3xl shadow-float z-20">
+              <div className="absolute -top-6 -left-6 bg-[#84C9E2] text-[#162C45] !font-serif text-4xl w-20 h-20 flex items-center justify-center rounded-br-3xl shadow-float z-20">
                 01
               </div>
             </div>
             <div className="md:w-7/12 pt-10 md:pt-0 flex flex-col justify-center">
-              <h3 className="font-forum text-3xl md:text-4xl text-[#162C45] mb-4">
+              <h2 className="!font-serif !mt-0 text-3xl md:text-4xl text-[#162C45] mb-4">
                 UK Entrepreneurs
                 <span className="italic text-gray-400 block text-2xl mt-1">
                   Reducing Tax While Staying in the UK
                 </span>
-              </h3>
-              <p className="font-dm text-gray-600 mb-6 leading-relaxed">
+              </h2>
+              <p className="!font-dans text-gray-600 mb-6 leading-relaxed">
                 Many of our clients continue to live and operate in the UK but
                 use Dubai as a base for holding companies, consulting, or global
                 expansion. We specialise in UK–UAE hybrid structures.
               </p>
-              <ul className="grid grid-cols-2 gap-y-2 font-dm text-sm text-[#162C45] font-medium">
+              <ul className="grid grid-cols-2 gap-y-2 !font-dans text-sm text-[#162C45] font-medium">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-[#84C9E2] rounded-full"></span>
                   Consultants
@@ -368,23 +352,23 @@ export default function WhoWeServe() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white text-[#162C45] font-forum text-4xl w-20 h-20 flex items-center justify-center rounded-tl-3xl shadow-float z-20 border border-gray-100">
+              <div className="absolute -bottom-6 -right-6 bg-white text-[#162C45] !font-serif text-4xl w-20 h-20 flex items-center justify-center rounded-tl-3xl shadow-float z-20 border border-gray-100">
                 02
               </div>
             </div>
             <div className="md:w-7/12 pt-10 md:pt-0 flex flex-col justify-center md:text-right">
-              <h3 className="font-forum text-3xl md:text-4xl text-[#162C45] mb-4">
+              <h2 className="!font-serif !mt-0 text-3xl md:text-4xl text-[#162C45] mb-4">
                 Relocating to Dubai
                 <span className="italic text-gray-400 block text-2xl mt-1">
                   For a Tax-Efficient Lifestyle
                 </span>
-              </h3>
-              <p className="font-dm text-gray-600 mb-6 leading-relaxed">
+              </h2>
+              <p className="!font-dans text-gray-600 mb-6 leading-relaxed">
                 Company setup, residency visas, and Emirates ID—we manage the
                 entire process. Enjoy 0% income tax, safety, and global
                 opportunities while we handle the strategy.
               </p>
-              <div className="flex flex-wrap justify-end gap-3 font-dm text-sm text-[#162C45]">
+              <div className="flex flex-wrap justify-end gap-3 !font-dans text-sm text-[#162C45]">
                 <span className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
                   Solo Founders
                 </span>
@@ -408,23 +392,23 @@ export default function WhoWeServe() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <div className="absolute -top-6 -left-6 bg-[#1B3756] text-white font-forum text-4xl w-20 h-20 flex items-center justify-center rounded-br-3xl shadow-float z-20">
+              <div className="absolute -top-6 -left-6 bg-[#1B3756] text-white !font-serif text-4xl w-20 h-20 flex items-center justify-center rounded-br-3xl shadow-float z-20">
                 03
               </div>
             </div>
             <div className="md:w-7/12 pt-10 md:pt-0 flex flex-col justify-center">
-              <h3 className="font-forum text-3xl md:text-4xl text-[#162C45] mb-4">
+              <h2 className="!font-serif !mt-0 text-3xl md:text-4xl text-[#162C45] mb-4">
                 Growing Businesses
                 <span className="italic text-gray-400 block text-2xl mt-1">
                   Wanting a UAE Base
                 </span>
-              </h3>
-              <p className="font-dm text-gray-600 mb-6 leading-relaxed">
+              </h2>
+              <p className="!font-dans text-gray-600 mb-6 leading-relaxed">
                 For companies expanding internationally, Dubai provides a
                 tax-efficient headquarters with zero currency restrictions. We
                 help build a future-proof entity.
               </p>
-              <ul className="space-y-2 font-dm text-sm text-gray-500">
+              <ul className="space-y-2 !font-dans text-sm text-gray-500">
                 <li className="flex items-center gap-3">
                   <svg
                     className="w-5 h-5 text-[#84C9E2]"
@@ -485,45 +469,45 @@ export default function WhoWeServe() {
 
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className="px-3 py-1 rounded-full border border-[#84C9E2]/30 bg-[#84C9E2]/10">
-                  <span className="font-dm text-xs font-bold tracking-widest text-[#84C9E2] uppercase">
+                  <span className="!font-dans text-xs font-bold tracking-widest text-[#84C9E2] uppercase">
                     Wealth & Assets
                   </span>
                 </div>
-                <span className="font-forum text-5xl text-white/10 group-hover:text-[#84C9E2] transition-colors duration-500">
+                <span className="!font-serif !mt-0 text-5xl text-white/10 group-hover:text-[#84C9E2] transition-colors duration-500">
                   04
                 </span>
               </div>
 
-              <h3 className="font-forum text-3xl text-white mb-2 relative z-10">
+              <h2 className="!font-serif !mt-0 text-3xl !text-white mb-2 relative z-10">
                 High-Performing Individuals
-              </h3>
-              <p className="font-dm text-white/60 text-sm mb-6 relative z-10 italic">
+              </h2>
+              <p className="!font-dans text-white/60 text-sm mb-4 relative z-10 italic">
                 For those earning £150K+ profit
               </p>
 
-              <ul className="space-y-3 mb-8 relative z-10 flex-grow">
+              <ul className="space-y-3 mb-6 relative z-10 flex-grow">
                 <li className="flex items-center gap-3 text-gray-300">
                   <span className="w-1.5 h-1.5 bg-[#84C9E2] rounded-full"></span>
-                  <span className="font-dm font-light">
+                  <span className="!font-dans font-light">
                     Protect assets & reduce tax exposure
                   </span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <span className="w-1.5 h-1.5 bg-[#84C9E2] rounded-full"></span>
-                  <span className="font-dm font-light">
+                  <span className="!font-dans font-light">
                     Build long-term wealth
                   </span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
                   <span className="w-1.5 h-1.5 bg-[#84C9E2] rounded-full"></span>
-                  <span className="font-dm font-light">
+                  <span className="!font-dans font-light">
                     Secure residency for family
                   </span>
                 </li>
               </ul>
 
               <div className="relative z-10 pt-6 border-t border-white/10">
-                <p className="font-dm text-white text-sm">
+                <p className="!font-dans text-white text-sm">
                   Dubai provides the ideal environment for long-term financial
                   planning.
                 </p>
@@ -542,23 +526,23 @@ export default function WhoWeServe() {
 
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className="px-3 py-1 rounded-full bg-gray-100">
-                  <span className="font-dm text-xs font-bold tracking-widest text-[#162C45]/70 uppercase">
+                  <span className="!font-dans text-xs font-bold tracking-widest text-[#162C45]/70 uppercase">
                     Strategic Structure
                   </span>
                 </div>
-                <span className="font-forum text-5xl text-gray-100 group-hover:text-[#84C9E2] transition-colors duration-500">
+                <span className="!font-serif text-5xl text-gray-100 group-hover:text-[#84C9E2] transition-colors duration-500">
                   05
                 </span>
               </div>
 
-              <h3 className="font-forum text-3xl text-[#162C45] mb-2 relative z-10">
+              <h2 className="!font-serif !mt-0 text-3xl text-[#162C45] mb-2 relative z-10">
                 Investors & Consultants
-              </h3>
-              <p className="font-dm text-gray-400 text-sm mb-6 relative z-10 italic">
+              </h2>
+              <p className="!font-dans text-gray-400 text-sm mb-4 relative z-10 italic">
                 Optimised for global income
               </p>
 
-              <ul className="space-y-3 mb-8 relative z-10 flex-grow">
+              <ul className="space-y-3 mb-6 relative z-10 flex-grow">
                 <li className="flex items-center gap-3 text-gray-600">
                   <svg
                     className="w-4 h-4 text-[#84C9E2]"
@@ -573,7 +557,7 @@ export default function WhoWeServe() {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  <span className="font-dm font-light">
+                  <span className="!font-dans font-light">
                     Private consulting & contracting
                   </span>
                 </li>
@@ -591,7 +575,7 @@ export default function WhoWeServe() {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  <span className="font-dm font-light">
+                  <span className="!font-dans font-light">
                     Dividends & distributions
                   </span>
                 </li>
@@ -609,14 +593,14 @@ export default function WhoWeServe() {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  <span className="font-dm font-light">
+                  <span className="!font-dans font-light">
                     Multi-country income streams
                   </span>
                 </li>
               </ul>
 
               <div className="relative z-10 pt-6 border-t border-gray-100">
-                <p className="font-dm text-[#162C45] text-sm font-medium">
+                <p className="!font-dans text-[#162C45] text-sm font-medium">
                   We ensure your structure is compliant, efficient, and
                   future-proof.
                 </p>
@@ -644,12 +628,12 @@ export default function WhoWeServe() {
         </div>
 
         <div className="container mx-auto px-6 text-center max-w-6xl relative z-10 reveal-up">
-          <h2 className="text-2xl md:text-4xl font-forum mb-6 md:mb-8 text-white relative inline-block">
+          <h2 className="!text-2xl md:!text-4xl !font-serif mb-6 md:mb-8 !text-white relative inline-block">
             If You Want More Profit, Less Tax & Zero Stress Dubai gives you more
             freedom, more opportunity, more profit — and far less stress.
           </h2>
 
-          <p className="text-lg md:text-xl font-light font-dm text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-light !font-dans text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             For entrepreneurs who want to elevate both their income and
             lifestyle, no other country offers such a powerful combination of
             tax efficiency, safety, and long-term stability.
@@ -657,11 +641,11 @@ export default function WhoWeServe() {
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-lg inline-block mx-auto max-w-2xl shadow-2xl shadow-[#162C45]/50 relative group">
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#84C9E2] rounded-full opacity-50 group-hover:animate-ping"></div>
-            <p className="text-[#84C9E2] font-forum text-md md:text-lg italic mb-8 relative z-10">
+            <p className="text-[#84C9E2] !font-serif text-md md:text-lg italic mb-8 relative z-10">
               &ldquo;No other country offers such a powerful combination of tax
               efficiency, safety, and long-term stability.&rdquo;
             </p>
-            <button className="bg-[#84C9E2] text-[#162C45] font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:bg-[#73b2c9] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
+            <button className="bg-[#84C9E2] text-[#162C45] !font-dans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:!bg-[#73b2c9] hover:!text-[#162C45] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
               Get Free Consultation
             </button>
           </div>
