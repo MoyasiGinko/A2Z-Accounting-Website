@@ -189,7 +189,7 @@ export default function WhyDubaiPage() {
             </div>
 
             <div className="lg:col-span-7 lg:pl-12 reveal-up delay-100 mt-8 lg:mt-0">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl !font-serif text-[#162C45] mb-6 md:mb-8 leading-[1.1]">
+              <h2 className="!text-3xl !mt-0 md:!text-5xl lg:!text-6xl !font-serif !text-[#162C45] mb-6 md:mb-8 leading-[1.1]">
                 More than just a <br />
                 <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#84C9E2] to-[#162C45] pr-2">
                   tax-friendly
@@ -224,7 +224,7 @@ export default function WhyDubaiPage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="mb-16 md:mb-24 reveal-up">
             <span className="block w-20 h-1 bg-[#84C9E2] mb-6"></span>
-            <h2 className="text-3xl md:text-5xl !font-serif text-[#162C45]">
+            <h2 className="!text-3xl !mt-0 md:!text-5xl !font-serif !text-[#162C45]">
               Key Advantages
             </h2>
           </div>
@@ -236,7 +236,7 @@ export default function WhyDubaiPage() {
               <span className="!font-serif text-5xl md:text-6xl text-slate-100 absolute right-6 top-6 group-hover:text-[#84C9E2] number-transition">
                 01
               </span>
-              <h3 className="text-xl md:text-2xl !font-serif text-[#162C45] mb-4 mr-8 relative z-10">
+              <h3 className="!text-xl !mt-0 md:!text-2xl !font-serif !text-[#162C45] mb-4 mr-8 relative z-10">
                 Minimal Tax, Maximum Freedom
               </h3>
               <ul className="!font-sans space-y-3 mb-6 text-slate-600 text-sm relative z-10">
@@ -269,7 +269,7 @@ export default function WhyDubaiPage() {
               <span className="!font-serif text-5xl md:text-6xl text-slate-100 absolute right-6 top-6 group-hover:text-[#84C9E2] number-transition">
                 02
               </span>
-              <h3 className="text-xl md:text-2xl !font-serif text-[#162C45] mb-4 mr-10 relative z-10">
+              <h3 className="!text-xl !mt-0 md:!text-2xl !font-serif !text-[#162C45] mb-4 mr-10 relative z-10">
                 Global Hub for Entrepreneurs
               </h3>
               <ul className="space-y-3 mb-6 text-slate-600 text-sm relative z-10">
@@ -298,7 +298,7 @@ export default function WhyDubaiPage() {
               <span className="!font-serif text-5xl md:text-6xl text-slate-100 absolute right-6 top-6 group-hover:text-[#84C9E2] number-transition">
                 03
               </span>
-              <h3 className="text-xl md:text-2xl !font-serif text-[#162C45] mb-4 relative z-10">
+              <h3 className="!text-xl !mt-0 md:!text-2xl !font-serif !text-[#162C45] mb-4 relative z-10">
                 Lifestyle Upgrade
               </h3>
               <ul className="!font-sans space-y-3 mb-6 text-slate-600 text-sm relative z-10">
@@ -327,7 +327,7 @@ export default function WhyDubaiPage() {
               <span className="!font-serif text-5xl md:text-6xl text-slate-100 absolute right-6 top-6 group-hover:text-[#84C9E2] number-transition">
                 04
               </span>
-              <h3 className="text-xl md:text-2xl !font-serif text-[#162C45] mb-4 relative z-10">
+              <h3 className="!text-xl !mt-0 md:!text-2xl !font-serif !text-[#162C45] mb-4 relative z-10">
                 Residency & Mobility
               </h3>
               <p className="!font-sans text-slate-600 mb-4 text-sm relative z-10">
@@ -357,7 +357,7 @@ export default function WhyDubaiPage() {
                 05
               </span>
 
-              <h3 className="text-2xl md:text-3xl !font-serif text-white mb-2 relative z-10">
+              <h3 className="!text-2xl !mt-0 md:!text-3xl !font-serif !text-white mb-2 relative z-10">
                 Perfect for UK Entrepreneurs
               </h3>
               <p className="!font-sans text-[#84C9E2] mb-8 text-[10px] md:text-xs uppercase tracking-widest font-bold">
@@ -420,7 +420,7 @@ export default function WhyDubaiPage() {
               <span className="!font-serif text-5xl md:text-6xl text-slate-100 absolute right-6 top-6 group-hover:text-[#84C9E2] number-transition">
                 06
               </span>
-              <h3 className="text-xl md:text-2xl !font-serif text-[#162C45] mb-4 relative z-10">
+              <h3 className="!text-xl !mt-0 md:!text-2xl !font-serif !text-[#162C45] mb-4 relative z-10">
                 Future-Proof Business
               </h3>
               <ul className="!font-sans space-y-3 mb-6 text-slate-600 text-sm relative z-10">
@@ -462,7 +462,7 @@ export default function WhyDubaiPage() {
         </div>
 
         <div className="container mx-auto px-6 text-center max-w-6xl relative z-10 reveal-up">
-          <h2 className="text-2xl md:text-4xl !font-serif mb-6 md:mb-8 text-white relative inline-block">
+          <h2 className="!text-2xl !mt-0 md:!text-4xl !font-serif mb-6 md:mb-8 !text-white relative inline-block">
             Dubai gives you more freedom, more opportunity,
             <br className="hidden md:block" />
             more profit — and far less stress.
@@ -482,7 +482,7 @@ export default function WhyDubaiPage() {
               efficiency, safety, and long-term stability.&rdquo;
             </p>
 
-            <button className="bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:bg-[#73b2c9] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
+            <button className="bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:!bg-[#73b2c9] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
               Get Free Consultation
             </button>
           </div>
