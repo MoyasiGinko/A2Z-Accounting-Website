@@ -23,7 +23,7 @@ interface ServicePageClientProps {
 
 const sectionBase = "px-4 py-16 sm:px-6 lg:px-0";
 const cardBase =
-  "rounded-2xl border border-slate-100 bg-white/80 shadow-sm backdrop-blur";
+  "rounded-md border border-slate-100 bg-white/80 shadow-sm backdrop-blur";
 
 const SectionHeader = ({
   eyebrow,
@@ -153,7 +153,7 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
           <Link
             key={cta.label}
             href={cta.href}
-            className="inline-flex items-center text-black justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center text-black justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-800 transition hover:bg-[#84C9E2]"
           >
             {cta.label}
           </Link>
@@ -170,7 +170,7 @@ const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
         <img
           src={content.whatWeDo.image}
           alt="What we do"
-          className="w-full h-auto rounded-2xl shadow-sm"
+          className="w-full h-auto rounded-md shadow-sm"
         />
       </div>
       <div className="space-y-4 px-4">
@@ -189,7 +189,7 @@ const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
 const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
   <Section>
     <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-      <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+      <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm">
         <SectionHeader
           eyebrow={content.overview.eyebrow}
           title={content.overview.heading}
@@ -202,12 +202,12 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
       </div>
 
       <div className="space-y-4">
-        <div className="rounded-[32px] bg-[#1B3756] p-8 text-white shadow-xl">
+        <div className="rounded-md bg-[#1B3756] p-8 text-white shadow-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80 !font-serif">
             At a glance
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
               <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Turnaround
               </p>
@@ -215,7 +215,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
                 Fast & structured
               </p>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
               <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Coverage
               </p>
@@ -223,7 +223,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
                 End-to-end
               </p>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
               <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Reporting
               </p>
@@ -231,7 +231,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
                 Clear & timely
               </p>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
+            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
               <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Compliance
               </p>
@@ -241,7 +241,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
             </div>
           </div>
         </div>
-        <div className="rounded-[32px] border border-slate-200 bg-slate-50/60 p-8">
+        <div className="rounded-md border border-slate-200 bg-slate-50/60 p-8">
           <p className="text-sm font-semibold text-slate-900 !font-serif">
             How we work
           </p>
@@ -297,7 +297,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         </div>
       ))}
       <div
-        className={`rounded-[32px] border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
+        className={`rounded-md border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
       >
         <div className="flex flex-col">
           <h2 className=" !font-medium !text-slate-50 !font-serif">
@@ -311,7 +311,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         </div>
         <Link
           href={content.callout.cta.href}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-full hover:bg-primary-50"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white border border-primary-200 rounded-md hover:bg-primary-50"
         >
           <span>{content.callout.cta.label}</span>
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -349,8 +349,8 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
                   <div className="flex-1">
                     <div className="flex items-center gap-4">
                       <div className="relative mt-2 flex-shrink-0">
-                        <div className="w-3 h-3 bg-[#84C9E2] rounded-full"></div>
-                        <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-full animate-ping opacity-75"></div>
+                        <div className="w-3 h-3 bg-[#84C9E2] rounded-md"></div>
+                        <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-md animate-ping opacity-75"></div>
                       </div>
                       <h4 className="text-lg font-semibold text-slate-900 !font-serif">
                         {step.title}
@@ -370,7 +370,7 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
         <img
           src={content.process.image}
           alt="Process Timeline"
-          className="w-full h-auto rounded-2xl shadow-sm"
+          className="w-full h-auto rounded-md shadow-sm"
         />
       </div>
     </div>
@@ -379,7 +379,7 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
 
 const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
   <Section>
-    <div className="grid gap-8 rounded-[32px] bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
+    <div className="grid gap-8 rounded-md bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
       <div className="flex flex-col justify-center">
         {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
         <h2 className="text-2xl !text-white !font-medium !font-serif">
@@ -396,13 +396,13 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
         <div className="flex flex-wrap gap-3">
           <Link
             href={content.expertise.cta.href}
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] transition hover:bg-[#84C9E2]"
+            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] transition hover:bg-[#84C9E2]"
           >
             {content.expertise.cta.label}
           </Link>
           <Link
             href="#"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+            className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
           >
             Request a checklist
           </Link>
@@ -438,7 +438,7 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
           <Link
             key={service.label}
             href={service.href}
-            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:bg-primary-50 hover:shadow-md"
+            className="group rounded-md border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200 hover:bg-primary-50 hover:shadow-md"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
