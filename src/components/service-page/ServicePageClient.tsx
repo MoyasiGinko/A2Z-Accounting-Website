@@ -43,11 +43,11 @@ const SectionHeader = ({
         align === "center" ? "mx-auto mt-3 max-w-3xl" : "mt-3 max-w-3xl"
       }
     >
-      <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+      <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl !font-serif">
         {title}
       </h2>
       {description && (
-        <p className="mt-3 text-base leading-relaxed text-slate-600">
+        <p className="mt-3 text-base leading-relaxed text-slate-600 !font-sans">
           {description}
         </p>
       )}
@@ -127,7 +127,7 @@ const Eyebrow = ({
   className?: string;
 }) => (
   <p
-    className={`text-sm font-semibold uppercase tracking-[0.2em] text-[#1B3756] ${
+    className={`text-sm font-semibold uppercase tracking-[0.2em] text-[#1B3756] !font-serif ${
       className ?? ""
     }`}
   >
@@ -140,10 +140,12 @@ const ServiceHero = ({ content }: { content: ServicePageContent }) => (
     <div className="space-y-6 pt-8">
       <Eyebrow className="text-white">{content.hero.eyebrow}</Eyebrow>
       <div className="space-y-4">
-        <h1 className="text-4xl font-semibold !text-white sm:text-5xl lg:text-6xl">
+        <h1 className="text-4xl font-semibold !text-white sm:text-5xl lg:text-6xl !font-serif">
           {content.hero.title}
         </h1>
-        <p className="text-lg text-white/90">{content.hero.summary}</p>
+        <p className="text-lg text-white/90 !font-sans">
+          {content.hero.summary}
+        </p>
         {/* <p className="text-base text-white/80">{content.hero.description}</p> */}
       </div>
       <div className="flex flex-wrap gap-4">
@@ -173,10 +175,10 @@ const WhatWeDo = ({ content }: { content: ServicePageContent }) => (
       </div>
       <div className="space-y-4 px-4">
         <Eyebrow>{content.whatWeDo.eyebrow}</Eyebrow>
-        <p className="text-2xl font-semibold text-slate-900">
+        <p className="text-2xl font-semibold text-slate-900 !font-serif">
           {content.whatWeDo.heading}
         </p>
-        <p className="max-w-2xl text-base text-slate-600">
+        <p className="max-w-2xl text-base text-slate-600 !font-sans">
           {content.whatWeDo.description}
         </p>
       </div>
@@ -192,7 +194,7 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
           eyebrow={content.overview.eyebrow}
           title={content.overview.heading}
         />
-        <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
+        <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600 !font-sans">
           {content.overview.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -201,39 +203,49 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
 
       <div className="space-y-4">
         <div className="rounded-[32px] bg-[#1B3756] p-8 text-white shadow-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/80 !font-serif">
             At a glance
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4">
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Turnaround
               </p>
-              <p className="mt-2 text-lg font-semibold">Fast & structured</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                Fast & structured
+              </p>
             </div>
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Coverage
               </p>
-              <p className="mt-2 text-lg font-semibold">End-to-end</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                End-to-end
+              </p>
             </div>
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Reporting
               </p>
-              <p className="mt-2 text-lg font-semibold">Clear & timely</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                Clear & timely
+              </p>
             </div>
             <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
                 Compliance
               </p>
-              <p className="mt-2 text-lg font-semibold">Audit-ready</p>
+              <p className="mt-2 text-lg font-semibold !font-serif">
+                Audit-ready
+              </p>
             </div>
           </div>
         </div>
         <div className="rounded-[32px] border border-slate-200 bg-slate-50/60 p-8">
-          <p className="text-sm font-semibold text-slate-900">How we work</p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+          <p className="text-sm font-semibold text-slate-900 !font-serif">
+            How we work
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 !font-sans">
             Clear milestones, shared checklists, and proactive updates—so you
             always know what’s next.
           </p>
@@ -279,7 +291,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
               </g>
             </svg>
           </div>
-          <h4 className="text-lg font-semibold text-slate-900 text-left group-hover:text-white">
+          <h4 className="text-lg font-semibold text-slate-900 text-left group-hover:text-white !font-serif">
             {service.title}
           </h4>
         </div>
@@ -288,11 +300,11 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
         className={`rounded-[32px] border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
       >
         <div className="flex flex-col">
-          <h2 className=" !font-medium !text-slate-50">
+          <h2 className=" !font-medium !text-slate-50 !font-serif">
             {content.callout.heading}
           </h2>
           {content.callout.subheading && (
-            <p className="relative  max-w-2xl text-base leading-relaxed text-white/85">
+            <p className="relative  max-w-2xl text-base leading-relaxed text-white/85 !font-sans">
               {content.callout.subheading}
             </p>
           )}
@@ -320,10 +332,10 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 lg:grid-cols-2 ">
       <div className="space-y-4">
         <Eyebrow>{content.process.eyebrow}</Eyebrow>
-        <h2 className=" font-semibold text-slate-900 sm:text-4xl">
+        <h2 className=" font-semibold text-slate-900 sm:text-4xl !font-serif">
           {content.process.heading}
         </h2>
-        <p className="text-base leading-relaxed text-slate-600">
+        <p className="text-base leading-relaxed text-slate-600 !font-sans">
           {content.process.description}
         </p>
         <div className="space-y-6">
@@ -340,11 +352,11 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
                         <div className="w-3 h-3 bg-[#84C9E2] rounded-full"></div>
                         <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-full animate-ping opacity-75"></div>
                       </div>
-                      <h4 className="text-lg font-semibold text-slate-900">
+                      <h4 className="text-lg font-semibold text-slate-900 !font-serif">
                         {step.title}
                       </h4>
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600 !font-sans">
                       {step.description}
                     </p>
                   </div>
@@ -370,15 +382,15 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 rounded-[32px] bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
       <div className="flex flex-col justify-center">
         {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
-        <h2 className="text-2xl !text-white !font-medium">
+        <h2 className="text-2xl !text-white !font-medium !font-serif">
           {content.expertise.heading}
         </h2>
-        <p className="text-sm mt-2 text-white/80">
+        <p className="text-sm mt-2 text-white/80 !font-sans">
           Clear, documented processes—built for UAE operators.
         </p>
       </div>
       <div className="space-y-5 flex flex-col justify-center">
-        <p className="text-base leading-relaxed text-white/90">
+        <p className="text-base leading-relaxed text-white/90 !font-sans">
           {content.expertise.body}
         </p>
         <div className="flex flex-wrap gap-3">
@@ -430,10 +442,10 @@ const RelatedServices = ({ content }: { content: ServicePageContent }) => {
           >
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <p className="text-base font-semibold text-slate-900">
+                <p className="text-base font-semibold text-slate-900 !font-serif">
                   {service.label}
                 </p>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-slate-600 !font-sans">
                   See scope, deliverables, and process.
                 </p>
               </div>
