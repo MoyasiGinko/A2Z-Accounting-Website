@@ -568,9 +568,9 @@ export default function AboutUs() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="!font-serif text-xl text-primary">
+              <h4 className="!font-serif !mt-0 !mb-0 text-xl text-primary">
                 Shabbir Rahman
-              </h3>
+              </h4>
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-2 !font-sans">
                 Head Accountant
               </p>
@@ -589,9 +589,9 @@ export default function AboutUs() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="!font-serif text-xl text-primary">
+              <h4 className="!font-serif !mt-0 !mb-0 text-xl text-primary">
                 Shovon Mostofa
-              </h3>
+              </h4>
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-2 !font-sans">
                 Director of Operations
               </p>
