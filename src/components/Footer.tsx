@@ -31,40 +31,6 @@ const Footer = () => {
               Strategic Insights. Lasting Impact. Professional accounting &
               advisory for UAE.
             </p>
-            <div className="!flex !gap-3 !mt-4">
-              <a
-                aria-label="Twitter"
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="!text-[#BBDFF6] hover:!text-white"
-              >
-                <svg
-                  className="!w-5 !h-5"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden
-                >
-                  <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.55 8.55 0 0 1-2.7 1.03 4.26 4.26 0 0 0-7.26 3.88A12.1 12.1 0 0 1 3.15 4.6a4.26 4.26 0 0 0 1.32 5.69 4.22 4.22 0 0 1-1.93-.53v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.26 4.26 0 0 0 3.98 2.96A8.53 8.53 0 0 1 2 19.54a12.06 12.06 0 0 0 6.54 1.92c7.85 0 12.14-6.5 12.14-12.13l-.01-.55A8.7 8.7 0 0 0 24 5.5a8.43 8.43 0 0 1-2.54.7z" />
-                </svg>
-              </a>
-              <a
-                aria-label="LinkedIn"
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="!text-[#BBDFF6] hover:!text-white"
-              >
-                <svg
-                  className="!w-5 !h-5"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden
-                >
-                  <path d="M4.98 3.5a2.88 2.88 0 1 0 0 5.76 2.88 2.88 0 0 0 0-5.76zM3 9h4v12H3zM9 9h3.84v1.65h.05c.54-1 1.86-2.05 3.83-2.05C20.6 8.6 22 10.5 22 14.2V21h-4v-6c0-1.43-.03-3.26-1.99-3.26-1.99 0-2.29 1.55-2.29 3.15V21H9V9z" />
-                </svg>
-              </a>
-            </div>
           </div>
 
           {/* Services */}
@@ -154,19 +120,74 @@ const Footer = () => {
             </p>
 
             <div className="!mt-4">
-              <label htmlFor="footer-news" className="!sr-only">
-                Email
-              </label>
-              <div className="!flex !gap-2">
-                <input
-                  id="footer-news"
-                  type="email"
-                  placeholder="Your email"
-                  className="!flex-1 !px-3 !py-2 !rounded-md !border-0 !text-[#0f172a] !font-dm-sans"
-                />
-                <button className="!bg-[#84C9E2] !text-[#162C45] !px-4 !py-2 !rounded-md !font-dm-sans hover:!opacity-90">
-                  Subscribe
-                </button>
+              <div className="!flex !gap-3">
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.55 8.55 0 0 1-2.7 1.03 4.26 4.26 0 0 0-7.26 3.88A12.1 12.1 0 0 1 3.15 4.6a4.26 4.26 0 0 0 1.32 5.69 4.22 4.22 0 0 1-1.93-.53v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.26 4.26 0 0 0 3.98 2.96A8.53 8.53 0 0 1 2 19.54a12.06 12.06 0 0 0 6.54 1.92c7.85 0 12.14-6.5 12.14-12.13l-.01-.55A8.7 8.7 0 0 0 24 5.5a8.43 8.43 0 0 1-2.54.7z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M4.98 3.5a2.88 2.88 0 1 0 0 5.76 2.88 2.88 0 0 0 0-5.76zM3 9h4v12H3zM9 9h3.84v1.65h.05c.54-1 1.86-2.05 3.83-2.05C20.6 8.6 22 10.5 22 14.2V21h-4v-6c0-1.43-.03-3.26-1.99-3.26-1.99 0-2.29 1.55-2.29 3.15V21H9V9z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.5c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.88h2.74l-.44 2.89h-2.3V21.9C18.34 21.12 22 17 22 12z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zM18.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
