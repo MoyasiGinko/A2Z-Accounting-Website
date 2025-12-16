@@ -11,7 +11,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="!bg-[#162C45] !text-white !py-8 md:!py-12">
+    <footer className="!bg-[#162C45] !text-white !py-8 md:!py-12 relative">
       <div className="!max-w-7xl !mx-auto !px-6 md:!px-8 lg:!px-10">
         <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-4 !gap-8 !items-start">
           {/* Logo / About */}
@@ -215,11 +215,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      {/* Back to top floating button inside footer */}
+      {/* Back to top button placed inside footer flow (shows only with footer) */}
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
-        className="fixed right-6 bottom-6 z-50 inline-flex items-center justify-center rounded-full bg-white text-[#162C45] p-3 shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#84C9E2]"
+        className="absolute right-6 bottom-6 z-50 inline-flex items-center justify-center rounded-full bg-white text-[#162C45] p-3 shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#84C9E2]"
       >
         <svg
           className="w-5 h-5"
