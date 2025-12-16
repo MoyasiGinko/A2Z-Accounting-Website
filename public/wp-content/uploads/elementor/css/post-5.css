@@ -82,7 +82,7 @@
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
 }
 
-
+.elementor-kit-5 button,
 .elementor-kit-5 input[type="button"],
 .elementor-kit-5 input[type="submit"],
 .elementor-kit-5 .elementor-button {
