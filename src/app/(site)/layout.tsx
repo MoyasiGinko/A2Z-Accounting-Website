@@ -88,9 +88,6 @@ export default function RootLayout({
             {children}
           </div>
           <Footer />
-          <div id="scroll-to-top" className="vamtam-scroll-to-top">
-            <div id="scroll-to-top-text">top</div>
-          </div>
           <Analytics
             measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
           />
