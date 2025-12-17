@@ -154,12 +154,12 @@ const Tabs: React.FC = () => {
   return (
     <section className="bg-slate-50 py-16" aria-label="Growth strategy tabs">
       <div className="mx-auto max-w-7xl  px-4 sm:px-4 lg:px-4">
-        <div className="rounded-t-xl items-center justify-center flex flex-col bg-gradient-to-r from-[#174758] to-[#1B3756] py-8 px-4 text-center text-white">
-          <h1 className="text-3xl !text-white !font-serif !font-medium sm:text-4xl">
+        <div className="rounded-t-xl items-center justify-center flex flex-col bg-linear-to-r from-[#174758] to-[#1B3756] py-8 px-4 text-center text-white">
+          <h1 className="text-3xl text-white! font-serif! font-medium! sm:text-4xl">
             Entrepreneurs Who Want a Smarter Way to Grow, Whether Moving to
             Dubai or Staying in the UK
           </h1>
-          <p className="mt-4 self-center max-w-3xl text-base sm:text-lg !font-sans">
+          <p className="mt-4 self-center max-w-3xl text-base sm:text-lg font-sans!">
             We work with founders and business owners earning £150K+ in Profit
             who want a clean, legal, and strategic way to expand into the UAE,
             regardless of whether they plan to relocate or remain UK-based.
@@ -179,7 +179,7 @@ const Tabs: React.FC = () => {
                   aria-selected={isActive}
                   aria-controls={`tab-panel-${tab.key}`}
                   tabIndex={0}
-                  className={`${tabButtonBase} flex-1 p-2 py-4 justify-center !text-center cursor-pointer !font-sans ${
+                  className={`${tabButtonBase} flex-1 p-2 py-4 justify-center text-center cursor-pointer font-sans! ${
                     isActive
                       ? "border-b-2 border-black text-black"
                       : "text-slate-600 hover:text-slate-900"
@@ -209,13 +209,13 @@ const Tabs: React.FC = () => {
                 {/* <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
                   {activeTab.eyebrow}
                 </p> */}
-                <h5 className="!mt-0 font-semibold text-slate-900 !font-serif">
+                <h5 className="mt-0! font-semibold! text-slate-900 font-serif!">
                   {activeTab.title}
                 </h5>
                 {/* <p className="mt-4 text-lg text-slate-600">{activeTab.summary}</p> */}
                 {activeTab.clientWants?.length ? (
                   <div className="mt-8">
-                    <h5 className="!font-semibold text-slate-900 mb-4 !font-serif">
+                    <h5 className="font-semibold! text-slate-900 mb-4 font-serif!">
                       What Our Clients Want
                     </h5>
                     <ul className="space-y-3">
@@ -223,20 +223,20 @@ const Tabs: React.FC = () => {
                         <li key={want} className="flex items-start gap-3">
                           <span
                             aria-hidden
-                            className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-slate-800"
+                            className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-800"
                           />
-                          <p className="text-base !mt-0 text-left font-medium text-slate-700 !font-sans">
+                          <p className="text-base mt-0! text-left font-medium text-slate-700 font-sans!">
                             {want}
                           </p>
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-6 text-base text-slate-600 !font-sans">
+                    <p className="mt-6 text-base text-slate-600 font-sans!">
                       {activeTab.description}
                     </p>
                   </div>
                 ) : (
-                  <p className="mt-3 text-base !font-sans text-slate-600">
+                  <p className="mt-3 text-base font-sans! text-slate-600">
                     {activeTab.description}
                   </p>
                 )}
@@ -258,7 +258,7 @@ const Tabs: React.FC = () => {
               </div> */}
 
                 <div className="mt-10 space-y-4">
-                  <h5 className="text-lg !font-semibold text-slate-900 !font-serif">
+                  <h5 className="text-lg font-semibold! text-slate-900 font-serif!">
                     How We Help
                   </h5>
                   {activeTab.strategies.map((strategy) => (
@@ -266,13 +266,13 @@ const Tabs: React.FC = () => {
                       key={strategy.title}
                       className="rounded-2xl border border-slate-100 p-5 shadow-sm shadow-slate-900/5"
                     >
-                      <div className="!border-l-2 !border-slate-900">
-                        <h5 className="text-base !mb-0 ml-3 !font-semibold text-slate-900 !font-serif">
+                      <div className="border-l-2! border-slate-900!">
+                        <h5 className="text-base mb-0! ml-3! font-semibold! text-slate-900 font-serif!">
                           {strategy.title}
                         </h5>
                       </div>
-                      <div className="!border-l-2 !border-slate-300">
-                        <p className="!mt-0 ml-3 text-sm text-slate-600 !font-sans">
+                      <div className="border-l-2! border-slate-300!">
+                        <p className="mt-0! ml-3! text-sm text-slate-600 font-sans!">
                           {strategy.description}
                         </p>
                       </div>
@@ -284,7 +284,7 @@ const Tabs: React.FC = () => {
                   onClick={() => {
                     window.location.href = activeTab.cta.href;
                   }}
-                  className="mt-10 inline-flex items-center justify-center rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 !font-sans"
+                  className="mt-10 inline-flex items-center justify-center rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 font-sans!"
                 >
                   {activeTab.cta.label}
                 </button>
@@ -301,13 +301,13 @@ const Tabs: React.FC = () => {
                   }}
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${activeTab.media.gradient}`}
+                    className={`absolute inset-0 bg-linear-to-br ${activeTab.media.gradient}`}
                   ></div>
                   <div className="relative z-10 flex h-full flex-col justify-end p-8">
-                    <span className="inline-flex max-w-max items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest !font-sans">
+                    <span className="inline-flex max-w-max items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest font-sans!">
                       {activeTab.media.badge}
                     </span>
-                    <p className="mt-4 text-lg text-white/90 !font-sans">
+                    <p className="mt-4 text-lg text-white/90 font-sans!">
                       &ldquo;{activeTab.summary}&rdquo;
                     </p>
                   </div>
@@ -317,9 +317,9 @@ const Tabs: React.FC = () => {
                   {activeTab.metrics.map((metric) => (
                     <div
                       key={metric.label}
-                      className="rounded-2xl border border-slate-100 !bg-slate-50/90 p-4"
+                      className="rounded-2xl border border-slate-100 bg-slate-50/90! p-4"
                     >
-                      <p className="text-3xl font-semibold !font-serif text-slate-900">
+                      <p className="text-3xl! font-semibold font-serif! text-slate-900">
                         {metric.value}
                       </p>
                       <p className="mt-1 text-sm font-medium text-slate-500 font-sans">
