@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import AppShell from "@/components/AppShell";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
@@ -78,15 +77,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-US" className="no-js">
+    <html lang="en-US">
       <head></head>
-      <body className="">
+      <body>
         <ErrorBoundary>
           <div id="top"></div>
           <Header />
-          <div id="page" className="main-container min-h-screen">
-            {children}
-          </div>
+          <main className="min-h-screen">{children}</main>
           <Footer />
           <Analytics
             measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}

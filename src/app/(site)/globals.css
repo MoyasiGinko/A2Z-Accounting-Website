@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Custom animations for header */
 @keyframes fade-in {
   from {
@@ -44,7 +48,7 @@
     transform: translateY(0);
   }
 }
-.delay-100 {
+/* .delay-100 {
   animation-delay: 0.1s;
 }
 .delay-200 {
@@ -52,4 +56,89 @@
 }
 .delay-300 {
   animation-delay: 0.3s;
+} */
+
+/* Reveal Animation Classes */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay utilities for staggered animations */
+.delay-100 {
+  transition-delay: 100ms;
+}
+.delay-200 {
+  transition-delay: 200ms;
+}
+.delay-300 {
+  transition-delay: 300ms;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 7s ease-in-out infinite 2s;
+}
+
+.glass-badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes text-glow {
+  0%,
+  100% {
+    color: #ffffff;
+    text-shadow: 0 0 0px rgba(132, 201, 226, 0);
+  }
+  50% {
+    color: #84c9e2;
+    text-shadow: 0 0 25px rgba(132, 201, 226, 0.6);
+  }
+}
+
+.animate-text-glow {
+  animation: text-glow 4s ease-in-out infinite;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 40px -5px rgba(22, 44, 69, 0.1);
+}
+
+.shadow-float {
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.15);
+}
+
+.sticky-col {
+  position: static;
+  top: auto;
+}
+
+@media (min-width: 768px) {
+  .sticky-col {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    align-self: flex-start;
+  }
 }

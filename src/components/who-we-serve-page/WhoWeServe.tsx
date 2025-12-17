@@ -27,86 +27,7 @@ export default function WhoWeServe() {
   }, []);
 
   return (
-    <main className={` bg-[#f7f8fa] text-[#162c45] overflow-x-hidden`}>
-      {/* 3. Global CSS for Animations & Glass Effects */}
-      <style jsx global>{`
-        /* Smooth Scroll */
-        html {
-          scroll-behavior: smooth;
-        }
-
-        /* Reveal Animation Classes */
-        .reveal-up {
-          opacity: 0;
-          transform: translateY(40px);
-          transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-up.active {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Delay Utilities */
-        .delay-100 {
-          transition-delay: 100ms;
-        }
-        .delay-200 {
-          transition-delay: 200ms;
-        }
-        .delay-300 {
-          transition-delay: 300ms;
-        }
-
-        /* Floating Animations */
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-float-delayed {
-          animation: float 7s ease-in-out infinite 2s;
-        }
-
-        /* Glassmorphism */
-        .glass-badge {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Text Glow */
-        @keyframes text-glow {
-          0%,
-          100% {
-            color: #ffffff;
-            text-shadow: 0 0 0px rgba(132, 201, 226, 0);
-          }
-          50% {
-            color: #84c9e2;
-            text-shadow: 0 0 25px rgba(132, 201, 226, 0.6);
-          }
-        }
-        .animate-text-glow {
-          animation: text-glow 4s ease-in-out infinite;
-        }
-
-        /* Custom Shadows */
-        .shadow-premium {
-          box-shadow: 0 20px 40px -5px rgba(22, 44, 69, 0.1);
-        }
-        .shadow-float {
-          box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.15);
-        }
-      `}</style>
-
+    <main className="bg-[#f7f8fa] text-[#162c45]">
       {/* --- HEADER SECTION --- */}
       <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -180,47 +101,49 @@ export default function WhoWeServe() {
       {/* --- INTRO SECTION --- */}
       <section id="intro" className="py-24 bg-white relative">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
             {/* Left Sticky Col */}
-            <div className="reveal-up !sticky top-24">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#84C9E2]/10 border border-[#84C9E2]/20 mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#84C9E2]"></span>
-                <span className="text-[#84C9E2] !font-dans font-bold text-xs uppercase tracking-widest">
-                  Our Ideal Client
-                </span>
-              </div>
+            <div className="md:sticky md:top-28 md:w-5/12 flex-shrink-0">
+              <div className="reveal-up text-center md:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#84C9E2]/10 border border-[#84C9E2]/20 mb-8">
+                  <span className="w-2 h-2 rounded-full bg-[#84C9E2]"></span>
+                  <span className="text-[#84C9E2] !font-dans font-bold text-xs uppercase tracking-widest">
+                    Our Ideal Client
+                  </span>
+                </div>
 
-              <h1 className="!font-serif !mt-0 text-4xl md:text-5xl text-[#162C45] mb-8 leading-[1.15]">
-                We serve entrepreneurs generating
-                <span className="text-[#84C9E2] italic px-2">£150K+</span>
-                in annual profit.
-              </h1>
+                <h1 className="!font-serif !mt-0 text-3xl md:text-4xl lg:text-5xl text-[#162C45] mb-8 leading-[1.15]">
+                  We serve entrepreneurs generating
+                  <span className="text-[#84C9E2] italic px-2">£150K+</span>
+                  in annual profit.
+                </h1>
 
-              <div className="border-l-2 border-gray-200 pl-6 py-2">
-                <p className="!font-dans text-lg text-[#162C45] font-medium opacity-80">
-                  Smart Entrepreneurs who value clarity, compliance, and
-                  long-term financial optimisation.
-                </p>
+                <div className="border-l-2 border-gray-200 pl-6 py-2">
+                  <p className="!font-dans text-base md:text-lg text-[#162C45] font-medium opacity-80">
+                    Smart Entrepreneurs who value clarity, compliance, and
+                    long-term financial optimisation.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Right Scroll Col */}
-            <div className="reveal-up delay-100 relative">
-              <div className="bg-[#f7f8fa] p-8 md:p-10 rounded-2xl relative border-t-4 border-[#84C9E2]">
-                <p className="!font-dans text-lg text-gray-600 leading-loose mb-8 font-light">
+            <div className="reveal-up delay-100 relative md:w-7/12 flex-1">
+              <div className="bg-[#f7f8fa] p-6 md:p-8 lg:p-10 rounded-2xl relative border-t-4 border-[#84C9E2]">
+                <p className="!font-dans text-base md:text-lg text-gray-600 leading-loose mb-8 font-light">
                   A2Z Accounting Dubai supports ambitious individuals and
                   businesses who want to build smarter, compliant, and
                   tax-efficient structures that protect their profits and
                   elevate their lifestyle.
                 </p>
 
-                <p className="!font-dans text-md md:text-lg text-gray-600 leading-loose font-light mb-8">
+                <p className="!font-dans text-sm md:text-base lg:text-lg text-gray-600 leading-loose font-light mb-8">
                   Whether you want to relocate to Dubai or keep living in the UK
                   while building a UAE-based company, we structure everything
                   the right way:
                 </p>
 
-                <ul className="space-y-4 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <ul className="space-y-4 bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
                   <li className="flex items-center gap-3">
                     <svg
                       className="w-5 h-5 text-[#84C9E2]"
@@ -235,7 +158,7 @@ export default function WhoWeServe() {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="!font-serif text-xl text-[#162C45]">
+                    <span className="!font-serif text-lg md:text-xl text-[#162C45]">
                       Fully Legally
                     </span>
                   </li>
@@ -253,7 +176,7 @@ export default function WhoWeServe() {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="!font-serif text-xl text-[#162C45]">
+                    <span className="!font-serif text-lg md:text-xl text-[#162C45]">
                       Fully Compliant
                     </span>
                   </li>
@@ -271,7 +194,7 @@ export default function WhoWeServe() {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="!font-serif text-xl text-[#162C45]">
+                    <span className="!font-serif text-lg md:text-xl text-[#162C45]">
                       Fully Aligned with Goals
                     </span>
                   </li>
