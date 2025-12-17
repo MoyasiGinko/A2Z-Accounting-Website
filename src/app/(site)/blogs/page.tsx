@@ -1,7 +1,6 @@
 import { groq } from "next-sanity";
-import BlogLayoutClient, {
-  BlogListPost,
-} from "@/components/blogs-page/BlogLayoutClient";
+import BlogLayoutClient from "@/components/blogs-page/BlogLayoutClient";
+import { BlogListPost } from "@/components/blogs-page/BlogsPage";
 import { sanityFetch } from "@/lib/sanity.client";
 
 export const revalidate = 60;

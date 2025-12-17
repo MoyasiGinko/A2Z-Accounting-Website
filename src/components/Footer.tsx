@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useCallback } from "react";
+import Link from "next/link";
 
 const Footer = () => {
   const scrollToTop = useCallback(() => {
@@ -16,7 +17,7 @@ const Footer = () => {
         <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-4 !gap-8 !items-start">
           {/* Logo / About */}
           <div>
-            <a
+            <Link
               href="/"
               aria-label="Home"
               className="!inline-flex !items-center !gap-3"
@@ -26,7 +27,7 @@ const Footer = () => {
                 alt="A2Z Accounting"
                 className="!w-32 md:!w-36 lg:!w-40 !h-auto"
               />
-            </a>
+            </Link>
             <p className="!mt-4 !text-sm md:!text-base !text-[#E6EEF6] !font-dm-sans">
               Strategic Insights. Lasting Impact. Professional accounting &
               advisory for UAE.
@@ -37,36 +38,36 @@ const Footer = () => {
           <div>
             <h4 className="!font-forum !text-white !text-lg !mb-3">Services</h4>
             <nav className="!flex !flex-col !gap-2">
-              <a
+              <Link
                 href="/services/company-formation"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Company Formation
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/accounting-bookkeeping"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Accounting & Bookkeeping
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/tax-compliance"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Tax Compliance
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/payroll-hr-pro"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Payroll & HR Pro
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/business-advisory"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Business Advisory
-              </a>
+              </Link>
             </nav>
           </div>
 
@@ -86,12 +87,12 @@ const Footer = () => {
               >
                 Contact
               </a>
-              <a
+              <Link
                 href="/blogs"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Blog
-              </a>
+              </Link>
               <a
                 href="/careers"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"

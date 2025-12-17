@@ -1,9 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { sanityFetch } from "@/lib/sanity.client";
-import { groq } from "next-sanity";
 import { urlFor } from "@/lib/imageBuilder";
 import type { PortableTextBlock } from "@portabletext/types";
 import { PortableText } from "@portabletext/react";
@@ -21,11 +18,6 @@ export type BlogListPost = {
   categories?: { title?: string; slug?: { current?: string } }[];
   mainImage?: unknown;
   content?: PortableTextBlock[];
-};
-
-type Category = {
-  title?: string;
-  slug?: { current?: string };
 };
 
 type BlogLayoutClientProps = {
