@@ -36,7 +36,7 @@ export default function BlogTrendingPosts() {
   }, []);
 
   return (
-    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+    <div className="bg-white p-6 rounded-md border border-gray-200 shadow-sm">
       <h3 className="text-lg font-semibold text-[#162C45] mb-4">
         Trending Posts
       </h3>

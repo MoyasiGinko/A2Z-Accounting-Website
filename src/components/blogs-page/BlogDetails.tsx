@@ -58,7 +58,7 @@ export default function BlogDetails({ post }: BlogDetailsProps) {
             alt={post.mainImage?.alt || post.title}
             width={1200}
             height={600}
-            className="w-full h-auto rounded-xl object-cover"
+            className="w-full h-auto rounded-md object-cover"
             priority
           />
         </div>

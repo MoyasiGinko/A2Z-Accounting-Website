@@ -57,7 +57,7 @@ export default function BlogsPage({ posts }: BlogsPageProps) {
             return (
               <article
                 key={post._id}
-                className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition"
+                className="rounded-md border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition"
               >
                 {imageUrl ? (
                   <Link href={href} aria-label={`Read more: ${post.title}`}>
@@ -74,7 +74,7 @@ export default function BlogsPage({ posts }: BlogsPageProps) {
                     {post.categories?.map((cat) => (
                       <span
                         key={cat.slug?.current || cat.title}
-                        className="px-2 py-1 bg-[#84C9E2]/20 rounded-full"
+                        className="px-2 py-1 bg-[#84C9E2]/20 rounded-md"
                       >
                         {cat.title}
                       </span>

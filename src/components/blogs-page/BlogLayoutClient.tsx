@@ -35,19 +35,25 @@ type BlogLayoutClientProps = {
 export default function BlogLayoutClient({ posts }: BlogLayoutClientProps) {
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
-        <header className="mb-12 text-center">
-          <p className="text-sm uppercase tracking-[0.2em] text-[#0f172a]/60">
-            Insights
-          </p>
-          <h1 className="text-3xl md:text-4xl font-semibold text-[#162C45]">
-            Our Blog
-          </h1>
-          <p className="mt-3 text-[#334155] text-lg">
-            Insights, updates, and guides from the A2Z team.
-          </p>
-        </header>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-[#162C45] to-[#1e3a5f] text-white py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+          <div className="max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-2 bg-[#84C9E2]/20 text-[#84C9E2] rounded-md text-sm font-medium mb-6">
+              Insights & Updates
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+              Our Blog
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+              Insights, updates, and expert guides from the A2Z Accounting team
+              to help you navigate the world of business and finance.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Side: Blogs Grid */}
           <div className="lg:col-span-2">
@@ -63,7 +69,7 @@ export default function BlogLayoutClient({ posts }: BlogLayoutClientProps) {
                 return (
                   <article
                     key={post._id}
-                    className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition"
+                    className="rounded-md border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition"
                   >
                     {imageUrl ? (
                       <Link href={href} aria-label={`Read more: ${post.title}`}>
@@ -80,7 +86,7 @@ export default function BlogLayoutClient({ posts }: BlogLayoutClientProps) {
                         {post.categories?.map((cat) => (
                           <span
                             key={cat.slug?.current || cat.title}
-                            className="px-2 py-1 bg-[#84C9E2]/20 rounded-full"
+                            className="px-2 py-1 bg-[#84C9E2]/20 rounded-md"
                           >
                             {cat.title}
                           </span>
