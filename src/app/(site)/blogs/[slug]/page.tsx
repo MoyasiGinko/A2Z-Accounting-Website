@@ -1,9 +1,19 @@
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
-import BlogDetailsLayoutClient, {
-  BlogPost,
-} from "@/components/blogs-page/BlogDetailsLayoutClient";
+import BlogDetailsLayoutClient from "@/components/blogs-page/BlogDetailsLayoutClient";
 import { sanityFetch } from "@/lib/sanity.client";
+
+interface BlogPostType {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  author: any; // Define more specifically if needed
+  excerpt: string;
+  categories: { title: string; slug: { current: string } }[];
+  mainImage: any; // Define more specifically if needed
+  content: any; // Define more specifically if needed
+}
 
 export const revalidate = 60;
 
@@ -32,7 +42,7 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await sanityFetch<BlogPost | null>(postQuery, { slug });
+  const post = await sanityFetch<BlogPostType | null>(postQuery, { slug });
 
   if (!post) {
     notFound();
