@@ -1,6 +1,8 @@
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
-import BlogDetails, { BlogPost } from "@/components/blogs-page/BlogDetails";
+import BlogDetailsLayoutClient, {
+  BlogPost,
+} from "@/components/blogs-page/BlogDetailsLayoutClient";
 import { sanityFetch } from "@/lib/sanity.client";
 
 export const revalidate = 60;
@@ -36,5 +38,5 @@ export default async function BlogDetailPage({
     notFound();
   }
 
-  return <BlogDetails post={post} />;
+  return <BlogDetailsLayoutClient post={post} />;
 }
