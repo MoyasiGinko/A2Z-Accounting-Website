@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["execor.vamtam.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "execor.vamtam.com",
+      },
+    ],
     unoptimized: true, // Since we're using static assets
   },
   // Enable compression
