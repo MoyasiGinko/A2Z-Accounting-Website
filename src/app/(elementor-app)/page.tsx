@@ -1,25 +1,25 @@
 "use client";
 
-import Hero from "../components/Hero";
-import CalcSection from "../components/CalcSection";
-import WhyDubai from "../components/WhyDubai";
-import Services from "../components/Services";
-import Vision from "../components/Vision";
-import Tabs from "../components/Tabs";
-import Clients from "../components/Clients";
-import ClientStats from "../components/ClientStats";
-import ClientLogos from "../components/ClientLogos";
-import Testimonials from "../components/Testimonials";
-import GetInTouch from "../components/GetInTouch";
-import BlogCarousel from "../components/BlogCarousel";
-import { useScrollEffects } from "../hooks/useScrollEffects";
-import { useStickyHeader } from "../hooks/useStickyHeader";
-import { useScrollToTop } from "../hooks/useScrollToTop";
-import { useOverlayTriggers } from "../hooks/useOverlayTriggers";
-import { useElementReveals } from "../hooks/useElementReveals";
-import { useNavMenus } from "../hooks/useNavMenus";
-import { useCarousels } from "../hooks/useCarousels";
-import { useClientMarquee } from "../hooks/useClientMarquee";
+import Hero from "@/components/Hero";
+import CalcSection from "@/components/CalcSection";
+import WhyDubai from "@/components/WhyDubai";
+import Services from "@/components/Services";
+import Vision from "@/components/Vision";
+import Tabs from "@/components/Tabs";
+import Clients from "@/components/Clients";
+import ClientStats from "@/components/ClientStats";
+import ClientLogos from "@/components/ClientLogos";
+import Testimonials from "@/components/Testimonials";
+import GetInTouch from "@/components/GetInTouch";
+import BlogCarousel from "@/components/BlogCarousel";
+import { useScrollEffects } from "@/hooks/useScrollEffects";
+import { useStickyHeader } from "@/hooks/useStickyHeader";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { useOverlayTriggers } from "@/hooks/useOverlayTriggers";
+import { useElementReveals } from "@/hooks/useElementReveals";
+import { useNavMenus } from "@/hooks/useNavMenus";
+import { useCarousels } from "@/hooks/useCarousels";
+import { useClientMarquee } from "@/hooks/useClientMarquee";
 import PromoSection from "@/components/PromoSection";
 
 export default function Home() {

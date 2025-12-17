@@ -280,12 +280,14 @@ const Tabs: React.FC = () => {
                   ))}
                 </div>
 
-                <a
-                  href={activeTab.cta.href}
-                  className="mt-10 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 !font-sans"
+                <button
+                  onClick={() => {
+                    window.location.href = activeTab.cta.href;
+                  }}
+                  className="mt-10 inline-flex items-center justify-center rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 !font-sans"
                 >
                   {activeTab.cta.label}
-                </a>
+                </button>
               </div>
 
               <div className="flex flex-col gap-6">
@@ -315,7 +317,7 @@ const Tabs: React.FC = () => {
                   {activeTab.metrics.map((metric) => (
                     <div
                       key={metric.label}
-                      className="rounded-2xl border border-slate-100 bg-slate-50 p-4"
+                      className="rounded-2xl border border-slate-100 !bg-slate-50/90 p-4"
                     >
                       <p className="text-3xl font-semibold !font-serif text-slate-900">
                         {metric.value}

@@ -1,594 +1,237 @@
+// ...existing code...
+"use client";
+
+import React, { useCallback } from "react";
+import Link from "next/link";
+
 const Footer = () => {
+  const scrollToTop = useCallback(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, []);
+
   return (
-    <div data-wpr-lazyrender="1" className="footer-wrapper">
-      <footer id="main-footer" className="main-footer">
-        <div
-          data-elementor-type="footer"
-          data-elementor-id="2094"
-          className="elementor elementor-2094 elementor-location-footer"
-          data-elementor-post-type="elementor_library"
-        >
-          <div
-            className="elementor-element elementor-element-6578101 e-flex e-con-boxed e-con e-parent"
-            data-id="6578101"
-            data-element_type="container"
-          >
-            <div className="e-con-inner">
-              <div
-                className="elementor-element elementor-element-7a5ce4a e-con-full e-flex e-con e-child"
-                data-id="7a5ce4a"
-                data-element_type="container"
-              >
-                <div
-                  className="elementor-element elementor-element-6a0cd31 elementor-invisible animated-fast elementor-widget elementor-widget-image"
-                  data-id="6a0cd31"
-                  data-element_type="widget"
-                  data-widget_type="image.default"
-                >
-                  <div className="elementor-widget-container">
-                    <a href="https://execor.vamtam.com">
-                      <img
-                        width="92"
-                        height="20"
-                        src="/wp-content/uploads/2025/03/Logo-white.svg"
-                        className="attachment-medium size-medium wp-image-46"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-97f60b2 elementor-invisible animated-fast elementor-widget elementor-widget-text-editor"
-                  data-id="97f60b2"
-                  data-element_type="widget"
-                  data-widget_type="text-editor.default"
-                >
-                  <div className="elementor-widget-container">
-                    <p>
-                      Strategic <span className="color-accent-2">Insights</span>
-                      . Lasting <span className="color-accent-2">Impact</span>.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-df2c858 e-con-full e-flex e-con e-child"
-                data-id="df2c858"
-                data-element_type="container"
-              >
-                <div
-                  className="elementor-element elementor-element-25706a3 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-                  data-id="25706a3"
-                  data-element_type="widget"
-                  data-widget_type="heading.default"
-                >
-                  <div className="elementor-widget-container">
-                    <h6 className="elementor-heading-title elementor-size-default">
-                      Company
-                    </h6>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-1d0535f elementor-invisible e-con-full animated-fast e-flex e-con e-child"
-                  data-id="1d0535f"
-                  data-element_type="container"
-                >
-                  <div
-                    className="vamtam-has-theme-widget-styles elementor-element elementor-element-23247d2 elementor-nav-menu--dropdown-none elementor-widget__width-initial elementor-widget elementor-widget-nav-menu"
-                    data-id="23247d2"
-                    data-element_type="widget"
-                    data-widget_type="nav-menu.default"
-                  >
-                    <div className="elementor-widget-container">
-                      <nav
-                        aria-label="Menu"
-                        className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none"
-                      >
-                        <ul
-                          id="menu-1-23247d2"
-                          className="elementor-nav-menu sm-vertical"
-                        >
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2168">
-                            <a
-                              href="https://execor.vamtam.com/services/"
-                              className="elementor-item"
-                            >
-                              Services
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2166">
-                            <a
-                              href="https://execor.vamtam.com/case-studies/"
-                              className="elementor-item"
-                            >
-                              Case Studies
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2165">
-                            <a
-                              href="https://execor.vamtam.com/blog/"
-                              className="elementor-item"
-                            >
-                              Blog
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2167">
-                            <a
-                              href="https://execor.vamtam.com/contact/"
-                              className="elementor-item"
-                            >
-                              Contact us
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                      <nav
-                        className="elementor-nav-menu--dropdown elementor-nav-menu__container"
-                        aria-hidden="true"
-                      >
-                        <ul
-                          id="menu-2-23247d2"
-                          className="elementor-nav-menu sm-vertical"
-                        >
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2168">
-                            <a
-                              href="https://execor.vamtam.com/services/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Services
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2166">
-                            <a
-                              href="https://execor.vamtam.com/case-studies/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Case Studies
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2165">
-                            <a
-                              href="https://execor.vamtam.com/blog/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Blog
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2167">
-                            <a
-                              href="https://execor.vamtam.com/contact/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Contact us
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <div
-                    className="vamtam-has-theme-widget-styles elementor-element elementor-element-1a1c786 elementor-nav-menu--dropdown-none elementor-widget__width-initial elementor-widget elementor-widget-nav-menu"
-                    data-id="1a1c786"
-                    data-element_type="widget"
-                    data-widget_type="nav-menu.default"
-                  >
-                    <div className="elementor-widget-container">
-                      <nav
-                        aria-label="Menu"
-                        className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none"
-                      >
-                        <ul
-                          id="menu-1-1a1c786"
-                          className="elementor-nav-menu sm-vertical"
-                        >
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2173">
-                            <a
-                              href="https://execor.vamtam.com/about/"
-                              className="elementor-item"
-                            >
-                              About
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2176">
-                            <a
-                              href="https://execor.vamtam.com/about/team/"
-                              className="elementor-item"
-                            >
-                              Team
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2175">
-                            <a
-                              href="https://execor.vamtam.com/about/careers/"
-                              className="elementor-item"
-                            >
-                              Careers
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2174">
-                            <a
-                              href="https://execor.vamtam.com/about/press-release/"
-                              className="elementor-item"
-                            >
-                              Press Release
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                      <nav
-                        className="elementor-nav-menu--dropdown elementor-nav-menu__container"
-                        aria-hidden="true"
-                      >
-                        <ul
-                          id="menu-2-1a1c786"
-                          className="elementor-nav-menu sm-vertical"
-                        >
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2173">
-                            <a
-                              href="https://execor.vamtam.com/about/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              About
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2176">
-                            <a
-                              href="https://execor.vamtam.com/about/team/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Team
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2175">
-                            <a
-                              href="https://execor.vamtam.com/about/careers/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Careers
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2174">
-                            <a
-                              href="https://execor.vamtam.com/about/press-release/"
-                              className="elementor-item"
-                              tabIndex={-1}
-                            >
-                              Press Release
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-aa41969 e-con-full e-flex e-con e-child"
-                data-id="aa41969"
-                data-element_type="container"
-              >
-                <div
-                  className="elementor-element elementor-element-ea44bce elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-                  data-id="ea44bce"
-                  data-element_type="widget"
-                  data-widget_type="heading.default"
-                >
-                  <div className="elementor-widget-container">
-                    <h6 className="elementor-heading-title elementor-size-default">
-                      Contact
-                    </h6>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-f4ccd26 elementor-invisible animated-fast elementor-widget elementor-widget-text-editor"
-                  data-id="f4ccd26"
-                  data-element_type="widget"
-                  data-widget_type="text-editor.default"
-                >
-                  <div className="elementor-widget-container">
-                    <p>
-                      <span className="color-accent-2">P:</span>
-                      <a href="tel:1-800-356-8933">1-800-356-8933</a>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-3590d5a elementor-invisible animated-fast elementor-widget elementor-widget-text-editor"
-                  data-id="3590d5a"
-                  data-element_type="widget"
-                  data-widget_type="text-editor.default"
-                >
-                  <div className="elementor-widget-container">
-                    <p>
-                      <span className="color-accent-2">E:</span>
-                      <a href="/cdn-cgi/l/email-protection#bbd2d5ddd4fbdec3ded8d4c995d8d4d6">
-                        <span
-                          className="__cf_email__"
-                          data-cfemail="21484f474e61445944424e530f424e4c"
-                        >
-                          [email&#160;protected]
-                        </span>
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-b2872b3 e-con-full e-flex e-con e-child"
-                data-id="b2872b3"
-                data-element_type="container"
-              >
-                <div
-                  className="elementor-element elementor-element-65f6f11 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-                  data-id="65f6f11"
-                  data-element_type="widget"
-                  data-widget_type="heading.default"
-                >
-                  <div className="elementor-widget-container">
-                    <h6 className="elementor-heading-title elementor-size-default">
-                      Address
-                    </h6>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-481db93 elementor-invisible animated-fast elementor-widget elementor-widget-text-editor"
-                  data-id="481db93"
-                  data-element_type="widget"
-                  data-widget_type="text-editor.default"
-                >
-                  <div className="elementor-widget-container">
-                    <p>Seventh Ave, 20th Floor,</p>
-                  </div>
-                </div>
-                <div
-                  className="elementor-element elementor-element-69a9268 elementor-invisible animated-fast elementor-widget elementor-widget-text-editor"
-                  data-id="69a9268"
-                  data-element_type="widget"
-                  data-widget_type="text-editor.default"
-                >
-                  <div className="elementor-widget-container">
-                    <p>New York, NY 10018</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <footer className="!bg-[#162C45] !text-white !py-8 md:!py-12 relative">
+      <div className="!max-w-7xl !mx-auto !px-6 md:!px-8 lg:!px-10">
+        <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-4 !gap-8 !items-start">
+          {/* Logo / About */}
+          <div>
+            <Link
+              href="/"
+              aria-label="Home"
+              className="!inline-flex !items-center !gap-3"
+            >
+              <img
+                src="/wp-content/uploads/2025/03/Logo-white.svg"
+                alt="A2Z Accounting"
+                className="!w-32 md:!w-36 lg:!w-40 !h-auto"
+              />
+            </Link>
+            <p className="!mt-4 !text-sm md:!text-base !text-[#E6EEF6] !font-dm-sans">
+              Strategic Insights. Lasting Impact. Professional accounting &
+              advisory for UAE.
+            </p>
           </div>
-          <div
-            className="elementor-element elementor-element-a66bf67 e-flex e-con-boxed e-con e-parent"
-            data-id="a66bf67"
-            data-element_type="container"
-          >
-            <div className="e-con-inner">
-              <div
-                className="vamtam-has-theme-widget-styles elementor-element elementor-element-e21dd3c elementor-invisible elementor-view-stacked elementor-shape-rounded animated-fast elementor-widget elementor-widget-icon"
-                data-id="e21dd3c"
-                data-element_type="widget"
-                data-widget_type="icon.default"
+
+          {/* Services */}
+          <div>
+            <h4 className="!font-forum !text-white !text-lg !mb-3">Services</h4>
+            <nav className="!flex !flex-col !gap-2">
+              <Link
+                href="/services/company-formation"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
-                <div className="elementor-widget-container">
-                  <div className="elementor-icon-wrapper">
-                    <a className="elementor-icon" href="#">
-                      <i
-                        aria-hidden="true"
-                        className="vamtamtheme- vamtam-theme-arrow-up"
-                      ></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-ed7850a elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
-                data-id="ed7850a"
-                data-element_type="widget"
-                data-widget_type="social-icons.default"
+                Company Formation
+              </Link>
+              <Link
+                href="/services/accounting-bookkeeping"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
-                <div className="elementor-widget-container">
-                  <div
-                    className="elementor-social-icons-wrapper elementor-grid"
-                    role="list"
-                  >
-                    <span className="elementor-grid-item" role="listitem">
-                      <a
-                        className="elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-01247a2"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="elementor-screen-only">
-                          Linkedin-in
-                        </span>
-                        <svg
-                          className="e-font-icon-svg e-fab-linkedin-in"
-                          viewBox="0 0 448 512"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                        </svg>
-                      </a>
-                    </span>
-                    <span className="elementor-grid-item" role="listitem">
-                      <a
-                        className="elementor-icon elementor-social-icon elementor-social-icon-x-twitter elementor-repeater-item-dd89806"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="elementor-screen-only">X-twitter</span>
-                        <svg
-                          className="e-font-icon-svg e-fab-x-twitter"
-                          viewBox="0 0 512 512"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
-                        </svg>
-                      </a>
-                    </span>
-                    <span className="elementor-grid-item" role="listitem">
-                      <a
-                        className="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-5c328d0"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="elementor-screen-only">Youtube</span>
-                        <svg
-                          className="e-font-icon-svg e-fab-youtube"
-                          viewBox="0 0 576 512"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
-                        </svg>
-                      </a>
-                    </span>
-                    <span className="elementor-grid-item" role="listitem">
-                      <a
-                        className="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-d8fca74"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="elementor-screen-only">
-                          Facebook-f
-                        </span>
-                        <svg
-                          className="e-font-icon-svg e-fab-facebook-f"
-                          viewBox="0 0 320 512"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
-                        </svg>
-                      </a>
-                    </span>
-                    <span className="elementor-grid-item" role="listitem">
-                      <a
-                        className="elementor-icon elementor-social-icon elementor-social-icon-yelp elementor-repeater-item-87693c5"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="elementor-screen-only">Yelp</span>
-                        <svg
-                          className="e-font-icon-svg e-fab-yelp"
-                          viewBox="0 0 384 512"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 0 1-28.21-19.6 197.16 197.16 0 0 1 9-85.32 22.8 22.8 0 0 1 31.61-13.21zm44 239.25a199.45 199.45 0 0 0 79.42 32.11A22.78 22.78 0 0 0 192.94 490l3.9-110.82c.7-21.3-25.5-31.91-39.81-16.1l-74.21 82.4a22.82 22.82 0 0 0 4.09 34.09zm145.34-109.92l58.81 94a22.93 22.93 0 0 0 34 5.5 198.36 198.36 0 0 0 52.71-67.61A23 23 0 0 0 364.17 370l-105.42-34.26c-20.31-6.5-37.81 15.8-26.51 33.91zm148.33-132.23a197.44 197.44 0 0 0-50.41-69.31 22.85 22.85 0 0 0-34 4.4l-62 91.92c-11.9 17.7 4.7 40.61 25.2 34.71L366 268.63a23 23 0 0 0 14.61-31.21zM62.11 30.18a22.86 22.86 0 0 0-9.9 32l104.12 180.44c11.7 20.2 42.61 11.9 42.61-11.4V22.88a22.67 22.67 0 0 0-24.5-22.8 320.37 320.37 0 0 0-112.33 30.1z"></path>
-                        </svg>
-                      </a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+                Accounting & Bookkeeping
+              </Link>
+              <Link
+                href="/services/tax-compliance"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
+              >
+                Tax Compliance
+              </Link>
+              <Link
+                href="/services/payroll-hr-pro"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
+              >
+                Payroll & HR Pro
+              </Link>
+              <Link
+                href="/services/business-advisory"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
+              >
+                Business Advisory
+              </Link>
+            </nav>
           </div>
-          <div
-            className="elementor-element elementor-element-e5832a5 e-flex e-con-boxed e-con e-parent"
-            data-id="e5832a5"
-            data-element_type="container"
-          >
-            <div className="e-con-inner">
-              <div
-                className="elementor-element elementor-element-ae4e8ba elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-                data-id="ae4e8ba"
-                data-element_type="widget"
-                data-widget_type="divider.default"
+
+          {/* Company */}
+          <div>
+            <h4 className="!font-forum !text-white !text-lg !mb-3">Company</h4>
+            <nav className="!flex !flex-col !gap-2">
+              <a
+                href="/about"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
-                <div className="elementor-widget-container">
-                  <div className="elementor-divider">
-                    <span className="elementor-divider-separator" />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-c28941f elementor-widget elementor-widget-heading"
-                data-id="c28941f"
-                data-element_type="widget"
-                data-widget_type="heading.default"
+                About Us
+              </a>
+              <a
+                href="/contact"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
-                <div className="elementor-widget-container">
-                  <span className="elementor-heading-title elementor-size-default">
-                    <a
-                      href="https://vamtam.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      2025 © VamTam. All rights reserved.
-                    </a>
-                  </span>
-                </div>
-              </div>
-              <div
-                className="vamtam-has-theme-widget-styles elementor-element elementor-element-5ae3820 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu"
-                data-id="5ae3820"
-                data-element_type="widget"
-                data-widget_type="nav-menu.default"
+                Contact
+              </a>
+              <Link
+                href="/blogs"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
-                <div className="elementor-widget-container">
-                  <nav
-                    aria-label="Menu"
-                    className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none"
+                Blog
+              </Link>
+              <a
+                href="/careers"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
+              >
+                Careers
+              </a>
+            </nav>
+          </div>
+
+          {/* Contact / Newsletter */}
+          <div>
+            <h4 className="!font-forum !text-white !text-lg !mb-3">
+              Get in touch
+            </h4>
+            <p className="!text-[#CFE9FB] !text-sm !font-dm-sans">
+              Email:{" "}
+              <a className="!text-white" href="mailto:hello@a2zaccounting.ae">
+                hello@a2zaccounting.ae
+              </a>
+            </p>
+            <p className="!text-[#CFE9FB] !text-sm !mt-2 !font-dm-sans">
+              Phone:{" "}
+              <a className="!text-white" href="tel:+971500000000">
+                +971 50 000 0000
+              </a>
+            </p>
+
+            <div className="!mt-4">
+              <div className="!flex !gap-3">
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
                   >
-                    <ul id="menu-1-5ae3820" className="elementor-nav-menu">
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2162">
-                        <a
-                          href="https://execor.vamtam.com/terms-conditions/"
-                          className="elementor-item"
-                        >
-                          Terms &amp; Conditions
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-2163">
-                        <a
-                          rel="privacy-policy"
-                          href="https://execor.vamtam.com/privacy-policy/"
-                          className="elementor-item"
-                        >
-                          Privacy Policy
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                  <nav
-                    className="elementor-nav-menu--dropdown elementor-nav-menu__container"
-                    aria-hidden="true"
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.55 8.55 0 0 1-2.7 1.03 4.26 4.26 0 0 0-7.26 3.88A12.1 12.1 0 0 1 3.15 4.6a4.26 4.26 0 0 0 1.32 5.69 4.22 4.22 0 0 1-1.93-.53v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.26 4.26 0 0 0 3.98 2.96A8.53 8.53 0 0 1 2 19.54a12.06 12.06 0 0 0 6.54 1.92c7.85 0 12.14-6.5 12.14-12.13l-.01-.55A8.7 8.7 0 0 0 24 5.5a8.43 8.43 0 0 1-2.54.7z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
                   >
-                    <ul id="menu-2-5ae3820" className="elementor-nav-menu">
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2162">
-                        <a
-                          href="https://execor.vamtam.com/terms-conditions/"
-                          className="elementor-item"
-                          tabIndex={-1}
-                        >
-                          Terms &amp; Conditions
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-2163">
-                        <a
-                          rel="privacy-policy"
-                          href="https://execor.vamtam.com/privacy-policy/"
-                          className="elementor-item"
-                          tabIndex={-1}
-                        >
-                          Privacy Policy
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+                    <path d="M4.98 3.5a2.88 2.88 0 1 0 0 5.76 2.88 2.88 0 0 0 0-5.76zM3 9h4v12H3zM9 9h3.84v1.65h.05c.54-1 1.86-2.05 3.83-2.05C20.6 8.6 22 10.5 22 14.2V21h-4v-6c0-1.43-.03-3.26-1.99-3.26-1.99 0-2.29 1.55-2.29 3.15V21H9V9z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.5c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.88h2.74l-.44 2.89h-2.3V21.9C18.34 21.12 22 17 22 12z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="!text-[#BBDFF6] hover:!text-white"
+                >
+                  <svg
+                    className="!w-6 !h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zM18.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <div className="!mt-8 !pt-6 !border-t !border-[#0f2740]">
+          <div className="!flex !flex-col md:!flex-row !items-center md:!justify-between !gap-3">
+            <p className="!text-[#BBDFF6] !text-sm !font-dm-sans">
+              © {new Date().getFullYear()} A2Z Accounting. All rights reserved.
+            </p>
+            <div className="!flex !gap-4 !items-center">
+              <a
+                href="/privacy"
+                className="!text-[#CFE9FB] hover:!text-white !text-sm !font-dm-sans"
+              >
+                Privacy
+              </a>
+              <a
+                href="/terms"
+                className="!text-[#CFE9FB] hover:!text-white !text-sm !font-dm-sans"
+              >
+                Terms
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Back to top button placed inside footer flow (shows only with footer) */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className="absolute right-6 bottom-6 z-50 inline-flex items-center justify-center rounded-full bg-white text-[#162C45] p-3 shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#84C9E2]"
+      >
+        <svg
+          className="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden
+        >
+          <path d="M12 4l-8 8h5v8h6v-8h5l-8-8z" />
+        </svg>
+      </button>
+    </footer>
   );
 };
-
 export default Footer;

@@ -57,7 +57,7 @@ const menuItems: MenuItem[] = [
     label: "Free Resources",
     subMenu: [
       { label: "Free Materials", href: "/free-materials" },
-      { label: "Blog", href: "/blog" },
+      { label: "Blogs", href: "/blogs" },
       { label: "FAQ", href: "/faq" },
       { label: "Tax Calculators", href: "/tax-calculators" },
     ],

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ErrorBoundary from "../components/ErrorBoundary";
-import Analytics from "../components/Analytics";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -274,9 +274,6 @@ export default function RootLayout({
             {children}
           </div>
           <Footer />
-          <div id="scroll-to-top" className="vamtam-scroll-to-top">
-            <div id="scroll-to-top-text">top</div>
-          </div>
           <Analytics
             measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
           />
