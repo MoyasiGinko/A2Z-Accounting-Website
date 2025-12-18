@@ -4,13 +4,19 @@ import BlogDetails, { BlogPost } from "./BlogDetails";
 import BlogCategories from "./BlogCategories";
 import BlogContactForm from "./BlogContactForm";
 import BlogTrendingPosts from "./BlogTrendingPosts";
+import type { Category } from "./BlogCategories";
+import type { TrendingPost } from "./BlogTrendingPosts";
 
 type BlogDetailsLayoutClientProps = {
   post: BlogPost;
+  categories: Category[];
+  trendingPosts: TrendingPost[];
 };
 
 export default function BlogDetailsLayoutClient({
   post,
+  categories,
+  trendingPosts,
 }: BlogDetailsLayoutClientProps) {
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
@@ -62,9 +68,9 @@ export default function BlogDetailsLayoutClient({
 
           {/* Right Side: Sidebar */}
           <div className="space-y-8">
-            <BlogCategories />
+            <BlogCategories categories={categories} />
             <BlogContactForm />
-            <BlogTrendingPosts />
+            <BlogTrendingPosts posts={trendingPosts} />
           </div>
         </div>
       </div>
