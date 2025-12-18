@@ -187,7 +187,7 @@ const CalculatorPage: React.FC = () => {
               <button
                 onClick={handleCalculate}
                 disabled={isCalculating}
-                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 bg-primary text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isCalculating ? "Calculating..." : "Calculate Tax Savings"}
               </button>
