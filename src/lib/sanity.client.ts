@@ -12,9 +12,9 @@ export const sanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  useCdn: false,
   token: process.env.SANITY_READ_TOKEN,
-  perspective: process.env.SANITY_READ_TOKEN ? "previewDrafts" : "published",
+  perspective: process.env.SANITY_READ_TOKEN ? "drafts" : "published",
 });
 
 export const sanityFetch = async <T>(

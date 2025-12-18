@@ -267,7 +267,7 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
       {content.services.map((service) => (
         <div
           key={service.title}
-          className={`${cardBase} h-46 border-[#84C9E2] flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
+          className={`${cardBase}  border-[#84C9E2] flex flex-col items-start gap-4 p-6 hover:bg-[#84C9E2] group`}
         >
           <div className="flex-shrink-0">
             <svg
@@ -291,16 +291,16 @@ const ServiceGrid = ({ content }: { content: ServicePageContent }) => (
               </g>
             </svg>
           </div>
-          <h4 className="text-lg font-semibold text-slate-900 text-left group-hover:text-white !font-serif">
+          <h4 className="text-lg  font-semibold text-slate-900 text-left group-hover:text-white !font-serif">
             {service.title}
           </h4>
         </div>
       ))}
       <div
-        className={`rounded-md border border-slate-100  shadow-sm backdrop-blur h-46 mt-4 p-6 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
+        className={`rounded-md border border-slate-100  shadow-sm backdrop-blur mt-4 p-6 py-8 flex items-center justify-between md:col-span-2 lg:col-span-3 bg-[#1B3756]`}
       >
         <div className="flex flex-col">
-          <h2 className=" !font-medium !text-slate-50 !font-serif">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl !font-medium !text-slate-50 !font-serif">
             {content.callout.heading}
           </h2>
           {content.callout.subheading && (
@@ -348,7 +348,7 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
                 <div className="flex items-center gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-4">
-                      <div className="relative mt-2 flex-shrink-0">
+                      <div className="relative  flex-shrink-0">
                         <div className="w-3 h-3 bg-[#84C9E2] rounded-md"></div>
                         <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-md animate-ping opacity-75"></div>
                       </div>
@@ -382,15 +382,15 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 rounded-md bg-[#1B3756] p-8 shadow-sm text-white lg:grid-cols-2">
       <div className="flex flex-col justify-center">
         {/* <Eyebrow className="text-white">{content.expertise.eyebrow}</Eyebrow> */}
-        <h2 className="text-2xl !text-white !font-medium !font-serif">
+        <h2 className="text-3xl md:text-4xl text-white font-medium font-serif">
           {content.expertise.heading}
         </h2>
-        <p className="text-sm mt-2 text-white/80 !font-sans">
+        <p className="text-sm mt-2 text-white/80 font-sans">
           Clear, documented processes—built for UAE operators.
         </p>
       </div>
       <div className="space-y-5 flex flex-col justify-center">
-        <p className="text-base leading-relaxed text-white/90 !font-sans">
+        <p className="text-base leading-relaxed text-white/90 font-sans">
           {content.expertise.body}
         </p>
         <div className="flex flex-wrap gap-3">

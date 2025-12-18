@@ -135,7 +135,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link
               href="/"
               className="flex items-center group transition-transform duration-200 hover:scale-105"
@@ -161,7 +161,7 @@ export default function Header() {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className="relative px-4 py-2 text-sm font-semibold text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white hover:bg-opacity-10 group flex items-center"
+                      className="relative px-4 py-2 text-sm font-semibold text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white/30 hover:bg-opacity-10 group flex items-center"
                     >
                       <span className="relative z-10">{item.label}</span>
                       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-200"></div>
@@ -169,7 +169,7 @@ export default function Header() {
                     </Link>
                   ) : (
                     <Link
-                      className="relative px-4 py-2 text-sm font-semibold text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white hover:bg-opacity-10 group flex items-center"
+                      className="relative px-4 py-2 text-sm font-semibold text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white/30 hover:bg-opacity-10 group flex items-center"
                       onClick={() => toggleSubMenu(item.label)}
                       href="#!"
                     >
