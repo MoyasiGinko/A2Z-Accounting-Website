@@ -5,6 +5,7 @@ import { sanityFetch } from "@/lib/sanity.client";
 import type { BlogPost } from "@/components/blogs-page/BlogDetails";
 import type { Category } from "@/components/blogs-page/BlogCategories";
 import type { TrendingPost } from "@/components/blogs-page/BlogTrendingPosts";
+import BlogCTA from "@/components/blogs-page/BlogCTA";
 
 export const revalidate = 60;
 
@@ -57,10 +58,13 @@ export default async function BlogDetailPage({
   }
 
   return (
-    <BlogDetailsLayoutClient
-      post={post}
-      categories={categories}
-      trendingPosts={trendingPosts}
-    />
+    <>
+      <BlogDetailsLayoutClient
+        post={post}
+        categories={categories}
+        trendingPosts={trendingPosts}
+      />
+      <BlogCTA />
+    </>
   );
 }
