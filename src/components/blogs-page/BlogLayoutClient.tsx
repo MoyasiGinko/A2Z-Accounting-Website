@@ -1,6 +1,8 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { urlFor } from "@/lib/imageBuilder";
 import type { PortableTextBlock } from "@portabletext/types";
 import { PortableText } from "@portabletext/react";
@@ -8,6 +10,8 @@ import { portableTextComponents } from "@/lib/portableTextComponents";
 import BlogCategories from "./BlogCategories";
 import BlogContactForm from "./BlogContactForm";
 import BlogTrendingPosts from "./BlogTrendingPosts";
+import type { Category } from "./BlogCategories";
+import type { TrendingPost } from "./BlogTrendingPosts";
 
 export type BlogListPost = {
   _id: string;
@@ -22,9 +26,38 @@ export type BlogListPost = {
 
 type BlogLayoutClientProps = {
   posts: BlogListPost[];
+  categories: Category[];
+  trendingPosts: TrendingPost[];
 };
 
-export default function BlogLayoutClient({ posts }: BlogLayoutClientProps) {
+export default function BlogLayoutClient({
+  posts,
+  categories,
+  trendingPosts,
+}: BlogLayoutClientProps) {
+  const searchParams = useSearchParams();
+
+  const activeCategory = useMemo(() => {
+    const raw = searchParams?.get("category");
+    const trimmed = raw?.trim();
+    return trimmed ? trimmed : undefined;
+  }, [searchParams]);
+
+  const filteredPosts = useMemo(() => {
+    if (!activeCategory) return posts;
+
+    const normalizedActive = activeCategory.trim().toLowerCase();
+
+    return posts.filter((post) => {
+      const postCategories = post.categories ?? [];
+      return postCategories.some((cat) => {
+        const slug = cat.slug?.current?.trim().toLowerCase();
+        const title = cat.title?.trim().toLowerCase();
+        return slug === normalizedActive || title === normalizedActive;
+      });
+    });
+  }, [activeCategory, posts]);
+
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
       {/* Hero Section */}
@@ -49,8 +82,16 @@ export default function BlogLayoutClient({ posts }: BlogLayoutClientProps) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Side: Blogs Grid */}
           <div className="lg:col-span-2">
+            {!filteredPosts.length ? (
+              <div className="rounded-md border border-gray-200 bg-white p-8 shadow-sm">
+                <p className="text-[#334155]">
+                  No posts found{activeCategory ? " for this category" : ""}.
+                </p>
+              </div>
+            ) : null}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {posts.map((post) => {
+              {filteredPosts.map((post) => {
                 const href = post.slug?.current
                   ? `/blogs/${post.slug.current}`
                   : "#";
@@ -127,9 +168,12 @@ export default function BlogLayoutClient({ posts }: BlogLayoutClientProps) {
 
           {/* Right Side: Sidebar */}
           <div className="space-y-8">
-            <BlogCategories />
+            <BlogCategories
+              categories={categories}
+              activeCategory={activeCategory}
+            />
             <BlogContactForm />
-            <BlogTrendingPosts />
+            <BlogTrendingPosts posts={trendingPosts} />
           </div>
         </div>
       </div>
