@@ -16,23 +16,22 @@ export default function BlogCategories({
   categories = [],
   activeCategory,
 }: BlogCategoriesProps) {
+  const normalizedActive = activeCategory?.trim().toLowerCase();
+
   return (
     <div className="bg-white p-6 rounded-md border border-gray-200 shadow-sm">
-      <h3 className="text-lg font-semibold text-[#162C45] mb-4">Categories</h3>
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-lg font-semibold text-[#162C45]">Categories</h3>
 
-      {activeCategory ? (
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-sm text-[#334155]">
-            Filter: <span className="font-semibold">{activeCategory}</span>
-          </p>
+        {activeCategory ? (
           <Link
             href="/blogs"
             className="text-sm font-semibold text-[#162C45] hover:text-[#0f172a] transition"
           >
             Clear
           </Link>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
 
       <ul className="space-y-2">
         {categories.length ? (
@@ -43,10 +42,11 @@ export default function BlogCategories({
                   cat.slug?.current || cat.title || ""
                 )}`}
                 className={`transition ${
-                  activeCategory &&
-                  (activeCategory === cat.slug?.current ||
-                    activeCategory === cat.title)
-                    ? "text-[#162C45] font-semibold"
+                  normalizedActive &&
+                  (normalizedActive ===
+                    cat.slug?.current?.trim().toLowerCase() ||
+                    normalizedActive === cat.title?.trim().toLowerCase())
+                    ? "text-secondary font-semibold"
                     : "text-[#334155] hover:text-[#162C45]"
                 }`}
               >

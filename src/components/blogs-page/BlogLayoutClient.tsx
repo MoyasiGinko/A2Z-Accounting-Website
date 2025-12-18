@@ -1,6 +1,8 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { urlFor } from "@/lib/imageBuilder";
 import type { PortableTextBlock } from "@portabletext/types";
 import { PortableText } from "@portabletext/react";
@@ -26,15 +28,36 @@ type BlogLayoutClientProps = {
   posts: BlogListPost[];
   categories: Category[];
   trendingPosts: TrendingPost[];
-  activeCategory?: string;
 };
 
 export default function BlogLayoutClient({
   posts,
   categories,
   trendingPosts,
-  activeCategory,
 }: BlogLayoutClientProps) {
+  const searchParams = useSearchParams();
+
+  const activeCategory = useMemo(() => {
+    const raw = searchParams?.get("category");
+    const trimmed = raw?.trim();
+    return trimmed ? trimmed : undefined;
+  }, [searchParams]);
+
+  const filteredPosts = useMemo(() => {
+    if (!activeCategory) return posts;
+
+    const normalizedActive = activeCategory.trim().toLowerCase();
+
+    return posts.filter((post) => {
+      const postCategories = post.categories ?? [];
+      return postCategories.some((cat) => {
+        const slug = cat.slug?.current?.trim().toLowerCase();
+        const title = cat.title?.trim().toLowerCase();
+        return slug === normalizedActive || title === normalizedActive;
+      });
+    });
+  }, [activeCategory, posts]);
+
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
       {/* Hero Section */}
@@ -59,22 +82,7 @@ export default function BlogLayoutClient({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Side: Blogs Grid */}
           <div className="lg:col-span-2">
-            {activeCategory ? (
-              <div className="mb-6 flex items-center justify-between rounded-md border border-gray-200 bg-white p-4 shadow-sm">
-                <p className="text-sm text-[#334155]">
-                  Showing posts in:{" "}
-                  <span className="font-semibold">{activeCategory}</span>
-                </p>
-                <Link
-                  href="/blogs"
-                  className="text-sm font-semibold text-[#162C45] hover:text-[#0f172a] transition"
-                >
-                  Clear filter
-                </Link>
-              </div>
-            ) : null}
-
-            {!posts.length ? (
+            {!filteredPosts.length ? (
               <div className="rounded-md border border-gray-200 bg-white p-8 shadow-sm">
                 <p className="text-[#334155]">
                   No posts found{activeCategory ? " for this category" : ""}.
@@ -83,7 +91,7 @@ export default function BlogLayoutClient({
             ) : null}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {posts.map((post) => {
+              {filteredPosts.map((post) => {
                 const href = post.slug?.current
                   ? `/blogs/${post.slug.current}`
                   : "#";

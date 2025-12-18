@@ -11,8 +11,8 @@ const BlogCTA: React.FC = () => {
           Stay Updated with Our Latest Blogs
         </h2>
         <p className="text-lg mb-6">
-          Get expert tips on accounting, finance, and business growth. Subscribe
-          to our newsletter for exclusive insights.
+          Find expert tips on accounting, finance, and business growth. Get in
+          touch with us for working together on your accounting needs.
         </p>
         <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
           Get in Touch

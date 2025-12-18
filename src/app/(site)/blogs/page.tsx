@@ -19,20 +19,6 @@ const postsQuery = groq`*[_type == "post"] | order(publishedAt desc){
   content[0..2]
 }`;
 
-const postsByCategoryQuery = groq`*[_type == "post" && (
-  $category in categories[]->slug.current ||
-  $category in categories[]->title
-)] | order(publishedAt desc){
-  _id,
-  title,
-  slug,
-  excerpt,
-  publishedAt,
-  categories[]->{title, slug},
-  mainImage,
-  content[0..2]
-}`;
-
 const categoriesQuery = groq`*[_type == "category"] | order(title asc){
   title,
   slug
@@ -46,23 +32,9 @@ const trendingPostsQuery = groq`*[_type == "post"] | order(publishedAt desc)[0..
   mainImage
 }`;
 
-export default async function BlogsRoute({
-  searchParams,
-}: {
-  searchParams?: { category?: string | string[] };
-}) {
-  const categoryParam = Array.isArray(searchParams?.category)
-    ? searchParams?.category[0]
-    : searchParams?.category;
-
-  const activeCategory = categoryParam?.trim() || undefined;
-
+export default async function BlogsRoute() {
   const [posts, categories, trendingPosts] = await Promise.all([
-    activeCategory
-      ? sanityFetch<BlogListPost[]>(postsByCategoryQuery, {
-          category: activeCategory,
-        })
-      : sanityFetch<BlogListPost[]>(postsQuery),
+    sanityFetch<BlogListPost[]>(postsQuery),
     sanityFetch<Category[]>(categoriesQuery),
     sanityFetch<TrendingPost[]>(trendingPostsQuery),
   ]);
@@ -73,7 +45,6 @@ export default async function BlogsRoute({
         posts={posts}
         categories={categories}
         trendingPosts={trendingPosts}
-        activeCategory={activeCategory}
       />
       <BlogCTA />
     </>
