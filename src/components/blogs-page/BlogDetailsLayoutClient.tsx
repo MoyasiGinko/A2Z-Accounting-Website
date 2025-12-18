@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import BlogDetails, { BlogPost } from "./BlogDetails";
 import BlogCategories from "./BlogCategories";
 import BlogContactForm from "./BlogContactForm";
@@ -18,13 +19,24 @@ export default function BlogDetailsLayoutClient({
   categories,
   trendingPosts,
 }: BlogDetailsLayoutClientProps) {
+  const router = useRouter();
+
+  const handleBack = () => {
+    if (typeof window !== "undefined" && window.history.length > 1) {
+      router.back();
+      return;
+    }
+
+    router.push("/blogs");
+  };
+
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#162C45] to-[#1e3a5f] text-white py-24">
+      <section className="bg-linear-to-br from-[#162C45] to-[#1e3a5f] text-white py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-2">
               {post.categories?.map((cat) => (
                 <span
                   key={cat.slug?.current || cat.title}
@@ -60,6 +72,15 @@ export default function BlogDetailsLayoutClient({
       </section>
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
+        <button
+          type="button"
+          onClick={handleBack}
+          className="inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/15 transition text-sm font-medium"
+          aria-label="Back to blogs"
+        >
+          <span aria-hidden>←</span>
+          Back to Home
+        </button>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Side: Blog Details */}
           <div className="lg:col-span-2">
@@ -68,7 +89,7 @@ export default function BlogDetailsLayoutClient({
 
           {/* Right Side: Sidebar */}
           <div className="space-y-8">
-            <BlogCategories categories={categories} />
+            {/* <BlogCategories categories={categories} /> */}
             <BlogContactForm />
             <BlogTrendingPosts posts={trendingPosts} />
           </div>
