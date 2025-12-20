@@ -77,14 +77,13 @@ const tabs: TabConfig[] = [
     ],
     cta: {
       label: "Start relocation planning",
-      href: "https://execor.vamtam.com/free-consultation/",
+      href: "/contact-us",
     },
     media: {
-      imageUrl:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+      imageUrl: "/images/others/company-1.jpg",
       alt: "Dubai skyline and business relocation",
       badge: "Relocation Experts",
-      gradient: "from-emerald-500/80 via-teal-600/70 to-cyan-900/70",
+      gradient: "from-secondary/80 to-primary/70",
     },
   },
   {
@@ -128,14 +127,13 @@ const tabs: TabConfig[] = [
     ],
     cta: {
       label: "Set up dual presence",
-      href: "https://execor.vamtam.com/free-consultation/",
+      href: "/contact-us",
     },
     media: {
-      imageUrl:
-        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80",
+      imageUrl: "/images/others/company-2.jpeg",
       alt: "UK and Dubai business setup",
       badge: "Dual Presence Pros",
-      gradient: "from-indigo-500/80 via-purple-600/70 to-pink-900/70",
+      gradient: "from-secondary/80 to-yellow-500/40",
     },
   },
 ];
@@ -284,7 +282,7 @@ const Tabs: React.FC = () => {
                   onClick={() => {
                     window.location.href = activeTab.cta.href;
                   }}
-                  className="mt-10 inline-flex items-center justify-center rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 font-sans"
+                  className="mt-10 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white/90 hover:text-white transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 font-sans"
                 >
                   {activeTab.cta.label}
                 </button>
