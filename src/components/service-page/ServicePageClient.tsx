@@ -332,15 +332,15 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
     <div className="grid gap-8 lg:grid-cols-2 ">
       <div className="space-y-4">
         <Eyebrow>{content.process.eyebrow}</Eyebrow>
-        <h2 className=" font-semibold text-slate-900 sm:text-4xl !font-serif">
+        <h2 className=" font-semibold text-slate-900 sm:text-4xl font-serif">
           {content.process.heading}
         </h2>
-        <p className="text-base leading-relaxed text-slate-600 !font-sans">
+        <p className="text-base leading-relaxed text-slate-600 font-sans">
           {content.process.description}
         </p>
         <div className="space-y-6">
           <div className="space-y-4">
-            {content.process.steps.map((step) => (
+            {content.process.steps.map((step, index) => (
               <div
                 key={step.title}
                 className={`${cardBase} bg-white/50 px-6 py-4`}
@@ -348,15 +348,34 @@ const ProcessTimeline = ({ content }: { content: ServicePageContent }) => (
                 <div className="flex items-center gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-4">
-                      <div className="relative  flex-shrink-0">
-                        <div className="w-3 h-3 bg-[#84C9E2] rounded-md"></div>
-                        <div className="absolute inset-0 w-3 h-3 bg-[#84C9E2] rounded-md animate-ping opacity-75"></div>
+                      <div className="relative shrink-0 w-3 h-3">
+                        <div
+                          className="absolute inset-0 border border-[#84C9E2] rounded-full opacity-75"
+                          style={{
+                            animation: "ping 2s infinite alternate",
+                            animationDelay: `${index * 1}s`,
+                          }}
+                        ></div>
+                        <div
+                          className="absolute inset-0 border-2 border-[#84C9E2] rounded-full opacity-50"
+                          style={{
+                            animation: "ping 2s infinite alternate",
+                            animationDelay: `${index * 1 + 0.1}s`,
+                          }}
+                        ></div>
+                        <div
+                          className="absolute inset-0 border-3 border-[#84C9E2] rounded-full opacity-25"
+                          style={{
+                            animation: "ping 2s infinite alternate",
+                            animationDelay: `${index * 1 + 0.2}s`,
+                          }}
+                        ></div>
                       </div>
-                      <h4 className="text-lg font-semibold text-slate-900 !font-serif">
+                      <h4 className="text-lg font-semibold text-slate-900 font-serif">
                         {step.title}
                       </h4>
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-600 !font-sans">
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600 font-sans">
                       {step.description}
                     </p>
                   </div>

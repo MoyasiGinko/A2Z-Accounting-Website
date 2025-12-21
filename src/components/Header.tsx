@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -71,9 +71,11 @@ const menuItems: MenuItem[] = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -81,6 +83,23 @@ export default function Header() {
 
   const toggleSubMenu = (label: string) => {
     setOpenSubMenu(openSubMenu === label ? null : label);
+  };
+
+  const handleDesktopEnter = (label: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setHoveredMenu(label);
+  };
+
+  const handleDesktopLeave = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredMenu(null);
+    }, 300);
   };
 
   useEffect(() => {
@@ -110,6 +129,14 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY, isClient]);
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Determine background style based on scroll position and visibility
   const getHeaderClasses = () => {
@@ -157,7 +184,12 @@ export default function Header() {
           <nav className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-1">
               {menuItems.map((item) => (
-                <div key={item.label} className="relative group">
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => handleDesktopEnter(item.label)}
+                  onMouseLeave={handleDesktopLeave}
+                >
                   {item.href ? (
                     <Link
                       href={item.href}
@@ -198,15 +230,23 @@ export default function Header() {
 
                   {/* Desktop Sub-menu */}
                   {item.subMenu && (
-                    <div className="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
+                    <div
+                      onMouseEnter={() => handleDesktopEnter(item.label)}
+                      onMouseLeave={handleDesktopLeave}
+                      className={`absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 transition-all duration-300 ease-out ${
+                        hoveredMenu === item.label
+                          ? "opacity-100 visible translate-y-0"
+                          : "opacity-0 invisible -translate-y-1 pointer-events-none"
+                      }`}
+                    >
                       <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                         <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
-                        <div className="relative bg-gradient-to-b from-gray-50 to-white p-2">
+                        <div className="relative bg-linear-to-b from-gray-50 to-white p-2">
                           {item.subMenu.map((subItem) => (
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-all duration-200"
+                              className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-secondary/30 rounded-lg transition-all duration-200"
                             >
                               <div className="w-2 h-2 bg-primary-400 rounded-md mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div>
                               <span className="font-medium">
@@ -224,7 +264,7 @@ export default function Header() {
           </nav>
 
           {/* Contact Now Button */}
-          <div className="hidden md:flex flex-shrink-0">
+          <div className="hidden md:flex shrink-0">
             <Link
               href="/contact-us"
               className="group relative bg-white text-[#162C45] px-6 py-2.5 rounded-md text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"

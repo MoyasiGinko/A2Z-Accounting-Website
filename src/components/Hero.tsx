@@ -22,14 +22,12 @@ const Hero = () => {
               data-settings='{"_animation":"slideInUp"}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
+              <div className="elementor-widget-container mt-20">
                 <h1 className="elementor-heading-title elementor-size-default">
-                  Establish Business in Dubai. Keep More of What you Earn.
-                  <span className="color-accent-2">
-                    {" "}
-                    Live Tax-Free, Stress Free
+                  Тransforming Businesses for a Stronger Future.
+                  <span className="color-accent-2 block">
+                    Live Tax-Free, Stress Free.
                   </span>
-                  .
                 </h1>
               </div>
             </div>
@@ -42,12 +40,60 @@ const Hero = () => {
             >
               <div className="elementor-widget-container">
                 <h5 className="elementor-heading-title elementor-size-default">
-                  End-to-end Dubai company setup, tax optimisation, banking, and
-                  residency — handled for high-earning founders who want global
-                  freedom and zero stress.
+                  End-to-end Dubai company setup, tax optimization, banking, and
+                  residency for high-earning founders seeking global freedom and
+                  zero stress.
                 </h5>
               </div>
             </div>
+
+            <div
+              className="elementor-element elementor-element-rating elementor-invisible animated-fast elementor-widget elementor-widget-text-editor"
+              data-id="rating"
+              data-element_type="widget"
+              data-settings='{"_animation":"slideInUp","_animation_delay":200}'
+              data-widget_type="text-editor.default"
+            >
+              <div className="elementor-widget-container">
+                <div className="elementor-text-editor elementor-clearfix">
+                  <div
+                    className="rating-stars text-white"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      fontSize: "1.2em",
+                    }}
+                  >
+                    <span className="star" style={{ color: "yellow" }}>
+                      ★
+                    </span>
+                    <span className="star" style={{ color: "yellow" }}>
+                      ★
+                    </span>
+                    <span className="star" style={{ color: "yellow" }}>
+                      ★
+                    </span>
+                    <span className="star" style={{ color: "yellow" }}>
+                      ★
+                    </span>
+                    <span className="star" style={{ color: "yellow" }}>
+                      ★
+                    </span>
+                    {/* <span className="rating-text">5/5</span> */}
+                    {/* <span className="separator"> </span> */}
+                    <span className="ml-1">66 reviews on</span>
+                    <span className="separator"> </span>
+                    <img
+                      src="https://a2zaccounting.co.uk/wp-content/uploads/2025/10/google.webp"
+                      alt="Google"
+                      style={{ height: "24px", verticalAlign: "middle" }}
+                      className="ml-2 rounded-sm"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div
               className="vamtam-has-theme-widget-styles elementor-element elementor-element-435bc8b elementor-invisible vamtam-icon-pos-row-reverse animated-fast elementor-widget elementor-widget-button"
               data-id="435bc8b"
@@ -58,8 +104,8 @@ const Hero = () => {
               <div className="elementor-widget-container">
                 <div className="elementor-button-wrapper">
                   <a
-                    className="elementor-button elementor-button-link elementor-size-sm"
-                    href="https://execor.vamtam.com/free-consultation/"
+                    className="elementor-button hover:bg-secondary elementor-button-link elementor-size-sm"
+                    href="/contact-us"
                   >
                     <span className="elementor-button-content-wrapper">
                       <span className="elementor-button-icon">
