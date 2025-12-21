@@ -201,12 +201,12 @@ export default function Header() {
                     <div className="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
                       <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                         <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
-                        <div className="relative bg-gradient-to-b from-gray-50 to-white p-2">
+                        <div className="relative bg-linear-to-b from-gray-50 to-white p-2">
                           {item.subMenu.map((subItem) => (
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-all duration-200"
+                              className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-secondary/50 rounded-lg transition-all duration-200"
                             >
                               <div className="w-2 h-2 bg-primary-400 rounded-md mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div>
                               <span className="font-medium">
@@ -224,7 +224,7 @@ export default function Header() {
           </nav>
 
           {/* Contact Now Button */}
-          <div className="hidden md:flex flex-shrink-0">
+          <div className="hidden md:flex shrink-0">
             <Link
               href="/contact-us"
               className="group relative bg-white text-[#162C45] px-6 py-2.5 rounded-md text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
