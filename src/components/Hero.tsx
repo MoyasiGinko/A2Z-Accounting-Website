@@ -104,8 +104,8 @@ const Hero = () => {
               <div className="elementor-widget-container">
                 <div className="elementor-button-wrapper">
                   <a
-                    className="elementor-button elementor-button-link elementor-size-sm"
-                    href="https://execor.vamtam.com/free-consultation/"
+                    className="elementor-button hover:bg-secondary elementor-button-link elementor-size-sm"
+                    href="/contact-us"
                   >
                     <span className="elementor-button-content-wrapper">
                       <span className="elementor-button-icon">
