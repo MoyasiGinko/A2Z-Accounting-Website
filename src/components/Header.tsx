@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -71,9 +71,11 @@ const menuItems: MenuItem[] = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -81,6 +83,23 @@ export default function Header() {
 
   const toggleSubMenu = (label: string) => {
     setOpenSubMenu(openSubMenu === label ? null : label);
+  };
+
+  const handleDesktopEnter = (label: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setHoveredMenu(label);
+  };
+
+  const handleDesktopLeave = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredMenu(null);
+    }, 300);
   };
 
   useEffect(() => {
@@ -110,6 +129,14 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY, isClient]);
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Determine background style based on scroll position and visibility
   const getHeaderClasses = () => {
@@ -157,7 +184,12 @@ export default function Header() {
           <nav className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-1">
               {menuItems.map((item) => (
-                <div key={item.label} className="relative group">
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => handleDesktopEnter(item.label)}
+                  onMouseLeave={handleDesktopLeave}
+                >
                   {item.href ? (
                     <Link
                       href={item.href}
@@ -198,7 +230,15 @@ export default function Header() {
 
                   {/* Desktop Sub-menu */}
                   {item.subMenu && (
-                    <div className="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
+                    <div
+                      onMouseEnter={() => handleDesktopEnter(item.label)}
+                      onMouseLeave={handleDesktopLeave}
+                      className={`absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 transition-all duration-300 ease-out ${
+                        hoveredMenu === item.label
+                          ? "opacity-100 visible translate-y-0"
+                          : "opacity-0 invisible -translate-y-1 pointer-events-none"
+                      }`}
+                    >
                       <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                         <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
                         <div className="relative bg-linear-to-b from-gray-50 to-white p-2">
