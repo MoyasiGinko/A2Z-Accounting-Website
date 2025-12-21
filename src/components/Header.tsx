@@ -206,7 +206,7 @@ export default function Header() {
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-secondary/50 rounded-lg transition-all duration-200"
+                              className="group/sub flex items-center px-4 py-3 text-sm text-gray-700 hover:text-primary-700 hover:bg-secondary/30 rounded-lg transition-all duration-200"
                             >
                               <div className="w-2 h-2 bg-primary-400 rounded-md mr-3 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-200"></div>
                               <span className="font-medium">
