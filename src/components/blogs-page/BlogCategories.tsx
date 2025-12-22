@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 export type Category = {
@@ -10,18 +11,35 @@ export type Category = {
 type BlogCategoriesProps = {
   categories?: Category[];
   activeCategory?: string;
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
 };
 
 export default function BlogCategories({
   categories = [],
   activeCategory,
+  searchTerm,
+  setSearchTerm,
 }: BlogCategoriesProps) {
   const normalizedActive = activeCategory?.trim().toLowerCase();
 
   return (
-    <div className="bg-white p-6 rounded-md border border-gray-200 shadow-sm">
+    <div className="bg-transparent rounded-md ">
+      {/* Search Input */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search blogs..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#84C9E2] focus:border-[#84C9E2] font-sans"
+        />
+      </div>
+
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-lg font-semibold text-[#162C45]">Categories</h3>
+        <h3 className="text-2xl font-serif font-medium text-primary">
+          Categories
+        </h3>
 
         {activeCategory ? (
           <Link
@@ -41,7 +59,7 @@ export default function BlogCategories({
                 href={`/blogs?category=${encodeURIComponent(
                   cat.slug?.current || cat.title || ""
                 )}`}
-                className={`transition ${
+                className={`transition  ${
                   normalizedActive &&
                   (normalizedActive ===
                     cat.slug?.current?.trim().toLowerCase() ||

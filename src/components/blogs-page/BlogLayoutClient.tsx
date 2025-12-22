@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { urlFor } from "@/lib/imageBuilder";
@@ -26,6 +26,7 @@ export default function BlogLayoutClient({
   trendingPosts,
 }: BlogLayoutClientProps) {
   const searchParams = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const activeCategory = useMemo(() => {
     const raw = searchParams?.get("category");
@@ -34,19 +35,33 @@ export default function BlogLayoutClient({
   }, [searchParams]);
 
   const filteredPosts = useMemo(() => {
-    if (!activeCategory) return posts;
+    let filtered = posts;
 
-    const normalizedActive = activeCategory.trim().toLowerCase();
-
-    return posts.filter((post) => {
-      const postCategories = post.categories ?? [];
-      return postCategories.some((cat) => {
-        const slug = cat.slug?.current?.trim().toLowerCase();
-        const title = cat.title?.trim().toLowerCase();
-        return slug === normalizedActive || title === normalizedActive;
+    if (activeCategory) {
+      const normalizedActive = activeCategory.trim().toLowerCase();
+      filtered = filtered.filter((post) => {
+        const postCategories = post.categories ?? [];
+        return postCategories.some((cat) => {
+          const slug = cat.slug?.current?.trim().toLowerCase();
+          const title = cat.title?.trim().toLowerCase();
+          return slug === normalizedActive || title === normalizedActive;
+        });
       });
-    });
-  }, [activeCategory, posts]);
+    }
+
+    if (searchTerm.trim()) {
+      const normalizedSearch = searchTerm.trim().toLowerCase();
+      filtered = filtered.filter((post) => {
+        const title = post.title?.toLowerCase() || "";
+        const excerpt = post.excerpt?.toLowerCase() || "";
+        return (
+          title.includes(normalizedSearch) || excerpt.includes(normalizedSearch)
+        );
+      });
+    }
+
+    return filtered;
+  }, [activeCategory, posts, searchTerm]);
 
   return (
     <main className="min-h-screen bg-[#ffffff] text-[#0f172a]">
@@ -97,6 +112,8 @@ export default function BlogLayoutClient({
             <BlogCategories
               categories={categories}
               activeCategory={activeCategory}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
             {/* <BlogContactForm /> */}
             <BlogTrendingPosts posts={trendingPosts} />
