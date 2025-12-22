@@ -61,16 +61,13 @@ export default function BlogLayoutClient({
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#162C45] to-[#1e3a5f] text-white py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
-          <div className="max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-2 bg-[#84C9E2]/20 text-[#84C9E2] rounded-md text-sm font-medium mb-6">
-              Insights & Updates
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+      <section className="bg-linear-to-br from-[#162C45] to-[#1e3a5f] text-white pt-30 pb-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 text-left">
+          <div className="max-w-3xl ">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 font-serif">
               Our Blog
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-sans">
               Insights, updates, and expert guides from the A2Z Accounting team
               to help you navigate the world of business and finance.
             </p>
@@ -172,7 +169,7 @@ export default function BlogLayoutClient({
               categories={categories}
               activeCategory={activeCategory}
             />
-            <BlogContactForm />
+            {/* <BlogContactForm /> */}
             <BlogTrendingPosts posts={trendingPosts} />
           </div>
         </div>
