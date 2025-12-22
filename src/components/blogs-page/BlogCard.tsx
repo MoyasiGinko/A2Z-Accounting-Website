@@ -33,7 +33,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </Link>
       ) : null}
 
-      <div className="p-4 space-y-3">
+      <div className="p-2 space-y-1">
         <div className="flex items-center justify-between text-xs text-gray-500 font-sans">
           <div className="flex flex-wrap gap-1">
             {post.categories?.map((cat) => (
@@ -50,7 +50,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           ) : null}
         </div>
 
-        <h2 className="text-2xl font-medium text-primary/90 font-serif">
+        <h2 className="text-2xl font-medium text-primary/90 font-serif line-clamp-2 overflow-hidden">
           <Link href={href} className="hover:text-primary transition">
             {post.title}
           </Link>
