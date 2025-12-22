@@ -28,7 +28,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           <img
             src={imageUrl}
             alt={post.title}
-            className="w-full h-78 rounded-md object-cover"
+            className="w-full h-74 rounded-md object-cover"
           />
         </Link>
       ) : null}
@@ -57,7 +57,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </h2>
 
         {post.excerpt ? (
-          <p className="text-sm text-[#334155] line-clamp-2 font-sans">
+          <p className="text-sm text-primary/70 line-clamp-2 overflow-hidden font-sans">
             {post.excerpt}
           </p>
         ) : null}
