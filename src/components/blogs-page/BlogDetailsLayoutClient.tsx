@@ -31,7 +31,7 @@ export default function BlogDetailsLayoutClient({
   };
 
   return (
-    <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
+    <main className="min-h-screen bg-white text-[#0f172a]">
       {/* Hero Section */}
       <section className="bg-linear-to-br from-[#162C45] to-[#1e3a5f] text-white py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -88,7 +88,7 @@ export default function BlogDetailsLayoutClient({
           </div>
 
           {/* Right Side: Sidebar */}
-          <div className="space-y-8">
+          <div className="space-y-8 bg-[#f9fafb] p-4 rounded-md">
             {/* <BlogCategories categories={categories} /> */}
             <BlogContactForm />
             <BlogTrendingPosts posts={trendingPosts} />

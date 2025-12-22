@@ -30,8 +30,8 @@ export default function BlogContactForm() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-md border border-gray-200 shadow-sm">
-      <h3 className="text-lg font-semibold text-[#162C45] mb-4">
+    <div className="bg-transparent rounded-md ">
+      <h3 className="text-2xl font-medium font-serif text-primary mb-4">
         Get In Touch
       </h3>
       <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -41,7 +41,7 @@ export default function BlogContactForm() {
           placeholder="Your Name"
           value={formData.name}
           onChange={handleFormChange}
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full font-sans p-2 border border-gray-300 rounded"
           required
         />
         <input
@@ -50,7 +50,7 @@ export default function BlogContactForm() {
           placeholder="Your Email"
           value={formData.email}
           onChange={handleFormChange}
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full font-sans p-2 border border-gray-300 rounded"
           required
         />
         <textarea
@@ -58,13 +58,13 @@ export default function BlogContactForm() {
           placeholder="Your Message"
           value={formData.message}
           onChange={handleFormChange}
-          className="w-full p-2 border border-gray-300 rounded h-24"
+          className="w-full font-sans p-2 border border-gray-300 rounded h-24"
           required
         />
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#84C9E2] text-white py-2 rounded hover:bg-[#6bb8d6] transition disabled:opacity-50"
+          className="w-full font-sans bg-[#84C9E2] text-white py-2 rounded hover:bg-[#6bb8d6] transition disabled:opacity-50"
         >
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
