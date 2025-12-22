@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 const BlogCTA: React.FC = () => {
@@ -14,9 +15,12 @@ const BlogCTA: React.FC = () => {
           Find expert tips on accounting, finance, and business growth. Get in
           touch with us for working together on your accounting needs.
         </p>
-        <button className="bg-secondary text-primary/90 px-6 py-3 rounded-lg font-medium hover:text-white hover:bg-primary transition">
+        <a
+          href="/contact-us"
+          className="bg-secondary text-primary/90 px-6 py-3 rounded-lg font-medium hover:text-white hover:bg-primary transition"
+        >
           Get in Touch
-        </button>
+        </a>
       </div>
     </section>
   );
