@@ -10,19 +10,9 @@ import { portableTextComponents } from "@/lib/portableTextComponents";
 import BlogCategories from "./BlogCategories";
 import BlogContactForm from "./BlogContactForm";
 import BlogTrendingPosts from "./BlogTrendingPosts";
+import BlogCard, { type BlogListPost } from "./BlogCard";
 import type { Category } from "./BlogCategories";
 import type { TrendingPost } from "./BlogTrendingPosts";
-
-export type BlogListPost = {
-  _id: string;
-  title: string;
-  slug?: { current?: string };
-  excerpt?: string;
-  publishedAt?: string;
-  categories?: { title?: string; slug?: { current?: string } }[];
-  mainImage?: unknown;
-  content?: PortableTextBlock[];
-};
 
 type BlogLayoutClientProps = {
   posts: BlogListPost[];
@@ -96,78 +86,9 @@ export default function BlogLayoutClient({
             ) : null}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredPosts.map((post) => {
-                const href = post.slug?.current
-                  ? `/blogs/${post.slug.current}`
-                  : "#";
-                const imageUrl = post.mainImage
-                  ? urlFor(post.mainImage).width(800).height(450).url()
-                  : null;
-
-                return (
-                  <article
-                    key={post._id}
-                    className="rounded-md border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition"
-                  >
-                    {imageUrl ? (
-                      <Link href={href} aria-label={`Read more: ${post.title}`}>
-                        <img
-                          src={imageUrl}
-                          alt={post.title}
-                          className="w-full h-48 object-cover"
-                        />
-                      </Link>
-                    ) : null}
-
-                    <div className="p-6 space-y-4">
-                      <div className="flex flex-wrap gap-2 text-xs uppercase tracking-wide text-[#0f172a]/70">
-                        {post.categories?.map((cat) => (
-                          <span
-                            key={cat.slug?.current || cat.title}
-                            className="px-2 py-1 bg-[#84C9E2]/20 rounded-md"
-                          >
-                            {cat.title}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="space-y-2">
-                        <h2 className="text-xl font-semibold text-[#162C45]">
-                          <Link href={href}>{post.title}</Link>
-                        </h2>
-                        {post.publishedAt ? (
-                          <p className="text-sm text-[#94a3b8]">
-                            {new Date(post.publishedAt).toLocaleDateString()}
-                          </p>
-                        ) : null}
-                      </div>
-
-                      {post.excerpt ? (
-                        <p className="text-[#334155] line-clamp-3">
-                          {post.excerpt}
-                        </p>
-                      ) : null}
-
-                      {post.content?.length ? (
-                        <div className="text-sm text-[#475569] line-clamp-4">
-                          <PortableText
-                            value={post.content}
-                            components={portableTextComponents}
-                          />
-                        </div>
-                      ) : null}
-
-                      <Link
-                        href={href}
-                        className="inline-flex items-center text-[#162C45] font-semibold hover:text-[#0f172a]"
-                      >
-                        Read more
-                        <span className="ml-1">→</span>
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
+              {filteredPosts.map((post) => (
+                <BlogCard key={post._id} post={post} />
+              ))}
             </div>
           </div>
 
