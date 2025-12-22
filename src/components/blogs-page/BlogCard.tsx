@@ -22,7 +22,7 @@ export default function BlogCard({ post }: BlogCardProps) {
     : null;
 
   return (
-    <article className="rounded-md bg-transparent overflow-hidden  transition w-full aspect-[305/580] lg:w-[250px] md:w-[200px] sm:w-[150px]">
+    <article className="rounded-md bg-transparent overflow-hidden transition w-full aspect-[305/580] lg:w-[250px] md:w-[200px] sm:w-[150px] flex flex-col">
       {imageUrl ? (
         <Link href={href} aria-label={`Read more: ${post.title}`}>
           <img
@@ -33,7 +33,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </Link>
       ) : null}
 
-      <div className="p-2 space-y-1">
+      <div className="p-2 space-y-1 flex-1 flex flex-col">
         <div className="flex items-center justify-between text-xs text-gray-500 font-sans">
           <div className="flex flex-wrap gap-1">
             {post.categories?.map((cat) => (
@@ -62,13 +62,15 @@ export default function BlogCard({ post }: BlogCardProps) {
           </p>
         ) : null}
 
-        <Link
-          href={href}
-          className="inline-flex items-center text-sm text-[#162C45] font-medium hover:text-secondary transition font-sans"
-        >
-          Read more
-          <span className="ml-1">→</span>
-        </Link>
+        <div className="mt-auto text-left">
+          <Link
+            href={href}
+            className="inline-flex items-center text-sm text-[#162C45] font-medium hover:text-secondary transition font-sans"
+          >
+            Read more
+            <span className="ml-1">→</span>
+          </Link>
+        </div>
       </div>
     </article>
   );
