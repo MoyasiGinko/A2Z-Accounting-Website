@@ -22,24 +22,24 @@ export default function BlogCard({ post }: BlogCardProps) {
     : null;
 
   return (
-    <article className="rounded-lg border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition">
+    <article className="rounded-md bg-transparent overflow-hidden  transition w-full aspect-[305/580] lg:w-[250px] md:w-[200px] sm:w-[150px]">
       {imageUrl ? (
         <Link href={href} aria-label={`Read more: ${post.title}`}>
           <img
             src={imageUrl}
             alt={post.title}
-            className="w-full h-48 object-cover"
+            className="w-full h-78 rounded-md object-cover"
           />
         </Link>
       ) : null}
 
       <div className="p-4 space-y-3">
-        <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="flex items-center justify-between text-xs text-gray-500 font-sans">
           <div className="flex flex-wrap gap-1">
             {post.categories?.map((cat) => (
               <span
                 key={cat.slug?.current || cat.title}
-                className="px-2 py-1 bg-[#84C9E2]/20 text-[#84C9E2] rounded-md"
+                className="px-2 py-1 bg-[#84C9E2]/20 text-[#84C9E2] rounded-md font-sans"
               >
                 {cat.title}
               </span>
@@ -50,19 +50,21 @@ export default function BlogCard({ post }: BlogCardProps) {
           ) : null}
         </div>
 
-        <h2 className="text-lg font-semibold text-[#162C45]">
-          <Link href={href} className="hover:text-[#0f172a] transition">
+        <h2 className="text-2xl font-medium text-primary/90 font-serif">
+          <Link href={href} className="hover:text-primary transition">
             {post.title}
           </Link>
         </h2>
 
         {post.excerpt ? (
-          <p className="text-sm text-[#334155] line-clamp-2">{post.excerpt}</p>
+          <p className="text-sm text-[#334155] line-clamp-2 font-sans">
+            {post.excerpt}
+          </p>
         ) : null}
 
         <Link
           href={href}
-          className="inline-flex items-center text-sm text-[#162C45] font-medium hover:text-[#0f172a] transition"
+          className="inline-flex items-center text-sm text-[#162C45] font-medium hover:text-secondary transition font-sans"
         >
           Read more
           <span className="ml-1">→</span>

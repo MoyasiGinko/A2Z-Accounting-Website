@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 import BlogLayoutClient from "@/components/blogs-page/BlogLayoutClient";
-import { BlogListPost } from "@/components/blogs-page/BlogsPage";
+import { BlogListPost } from "@/components/blogs-page/BlogCard";
 import { sanityFetch } from "@/lib/sanity.client";
 import type { Category } from "@/components/blogs-page/BlogCategories";
 import type { TrendingPost } from "@/components/blogs-page/BlogTrendingPosts";

@@ -49,7 +49,7 @@ export default function BlogLayoutClient({
   }, [activeCategory, posts]);
 
   return (
-    <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
+    <main className="min-h-screen bg-[#ffffff] text-[#0f172a]">
       {/* Hero Section */}
       <section
         className="relative overflow-hidden text-white pt-32 pb-20"
@@ -85,7 +85,7 @@ export default function BlogLayoutClient({
               </div>
             ) : null}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
                 <BlogCard key={post._id} post={post} />
               ))}
@@ -93,7 +93,7 @@ export default function BlogLayoutClient({
           </div>
 
           {/* Right Side: Sidebar */}
-          <div className="space-y-8">
+          <div className="space-y-8 bg-[#f9fafb] p-4 rounded-md">
             <BlogCategories
               categories={categories}
               activeCategory={activeCategory}
