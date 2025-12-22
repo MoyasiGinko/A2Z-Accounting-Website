@@ -165,7 +165,7 @@ export default function Header() {
           <div className="shrink-0">
             <Link
               href="/"
-              className="flex items-center group transition-transform duration-200 hover:scale-105"
+              className="flex items-center group transition-transform duration-300 hover:scale-101"
             >
               <div className="relative">
                 <Image
@@ -175,7 +175,7 @@ export default function Header() {
                   height={44}
                   className="h-16 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
                 />
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
+                {/* <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div> */}
               </div>
             </Link>
           </div>
