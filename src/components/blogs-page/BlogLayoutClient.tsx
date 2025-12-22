@@ -61,13 +61,21 @@ export default function BlogLayoutClient({
   return (
     <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-[#162C45] to-[#1e3a5f] text-white pt-30 pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 text-left">
+      <section
+        className="relative overflow-hidden text-white pt-32 pb-20"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(22,44,69,0.35), rgba(30,58,95,0.55)), url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/578679517.jpg?k=8a8c9c18ed2f6228c7ac2ee83c900e03269d75aa71e4568f9844ddfdb858b3fb&o=")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-xs pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-6 md:px-10">
           <div className="max-w-3xl ">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 font-serif">
               Our Blog
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-sans">
+            <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-sans">
               Insights, updates, and expert guides from the A2Z Accounting team
               to help you navigate the world of business and finance.
             </p>
