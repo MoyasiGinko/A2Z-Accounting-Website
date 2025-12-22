@@ -34,20 +34,22 @@ export default function BlogDetails({ post }: BlogDetailsProps) {
 
   return (
     <article>
-      <p className="text-sm uppercase tracking-wide text-[#334155]">
+      <p className="text-sm uppercase tracking-wide text-primary/70 font-sans">
         {post.categories
           ?.map((c) => c?.title)
           .filter(Boolean)
           .join(" • ")}
       </p>
-      <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-[#162C45]">
+      <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-primary font-serif">
         {post.title}
       </h1>
       {post.author ? (
-        <p className="mt-2 text-sm text-[#94a3b8]">By {post.author}</p>
+        <p className="mt-2 text-sm text-primary/70 font-sans">
+          By {post.author}
+        </p>
       ) : null}
       {post.publishedAt ? (
-        <p className="mt-1 text-sm text-[#334155]">
+        <p className="mt-1 text-sm text-primary/70 font-sans">
           {new Date(post.publishedAt).toLocaleDateString()}
         </p>
       ) : null}
@@ -64,9 +66,9 @@ export default function BlogDetails({ post }: BlogDetailsProps) {
         </div>
       ) : null}
       {post.excerpt ? (
-        <p className="mt-4 text-lg text-[#334155]">{post.excerpt}</p>
+        <p className="mt-4 text-lg text-primary font-sans">{post.excerpt}</p>
       ) : null}
-      <div className="mt-8 prose prose-lg max-w-none">
+      <div className="mt-8 prose prose-lg max-w-none font-sans">
         <PortableText
           value={post.content || []}
           components={portableTextComponents}

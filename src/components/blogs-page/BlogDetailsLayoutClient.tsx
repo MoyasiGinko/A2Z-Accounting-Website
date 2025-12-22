@@ -31,42 +31,28 @@ export default function BlogDetailsLayoutClient({
   };
 
   return (
-    <main className="min-h-screen bg-[#f7f8fa] text-[#0f172a]">
+    <main className="min-h-screen bg-white text-[#0f172a]">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-[#162C45] to-[#1e3a5f] text-white py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2 mb-2">
+      <section
+        className="relative overflow-hidden text-white pt-32 pb-20"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(22,44,69,0.35), rgba(30,58,95,0.55)), url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/578679517.jpg?k=8a8c9c18ed2f6228c7ac2ee83c900e03269d75aa71e4568f9844ddfdb858b3fb&o=")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-xs pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-6 md:px-10">
+          <div className="max-w-3xl ">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 font-serif">
               {post.categories?.map((cat) => (
-                <span
-                  key={cat.slug?.current || cat.title}
-                  className="px-3 py-1 bg-[#84C9E2]/20 text-[#84C9E2] rounded-md text-sm font-medium"
-                >
-                  {cat.title}
-                </span>
+                <span key={cat.slug?.current || cat.title}>{cat.title}</span>
               ))}
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-              {post.title}
             </h1>
-            <div className="flex items-center gap-6 text-gray-300">
-              {post.author && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">By {post.author}</span>
-                </div>
-              )}
-              {post.publishedAt && (
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">
-                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
-                </div>
-              )}
-            </div>
+            <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-sans">
+              Insights, updates, and expert guides from the A2Z Accounting team
+              to help you navigate the world of business and finance.
+            </p>
           </div>
         </div>
       </section>
@@ -75,7 +61,7 @@ export default function BlogDetailsLayoutClient({
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/15 transition text-sm font-medium"
+          className="inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/15 transition text-sm font-medium font-sans"
           aria-label="Back to blogs"
         >
           <span aria-hidden>←</span>
@@ -88,7 +74,7 @@ export default function BlogDetailsLayoutClient({
           </div>
 
           {/* Right Side: Sidebar */}
-          <div className="space-y-8">
+          <div className="space-y-8 bg-[#f9fafb] p-4 rounded-md">
             {/* <BlogCategories categories={categories} /> */}
             <BlogContactForm />
             <BlogTrendingPosts posts={trendingPosts} />

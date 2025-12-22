@@ -23,8 +23,8 @@ export default function BlogTrendingPosts({
   posts = [],
 }: BlogTrendingPostsProps) {
   return (
-    <div className="bg-white p-6 rounded-md border border-gray-200 shadow-sm">
-      <h3 className="text-lg font-semibold text-[#162C45] mb-4">
+    <div className="bg-transparent rounded-md ">
+      <h3 className="text-2xl font-serif font-medium text-[#162C45] mb-4">
         Trending Posts
       </h3>
       <ul className="space-y-4">
@@ -39,15 +39,15 @@ export default function BlogTrendingPosts({
                   <img
                     src={urlFor(post.mainImage).width(80).height(60).url()}
                     alt={post.title}
-                    className="w-20 h-16 object-cover rounded"
+                    className="w-20 h-16 object-cover rounded-md shrink-0"
                   />
                 ) : null}
                 <div className="flex-1">
-                  <h4 className="text-sm font-medium text-[#162C45] line-clamp-2">
+                  <h4 className="text-lg font-serif font-medium text-[#162C45] line-clamp-2">
                     {post.title}
                   </h4>
                   {post.publishedAt ? (
-                    <p className="text-xs text-[#94a3b8]">
+                    <p className="text-xs font-sans text-[#94a3b8]">
                       {new Date(post.publishedAt).toLocaleDateString()}
                     </p>
                   ) : null}
