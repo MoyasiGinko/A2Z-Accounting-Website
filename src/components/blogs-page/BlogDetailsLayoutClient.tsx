@@ -61,7 +61,7 @@ export default function BlogDetailsLayoutClient({
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/15 transition text-sm font-medium"
+          className="inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-md bg-primary/10 hover:bg-primary/15 transition text-sm font-medium font-sans"
           aria-label="Back to blogs"
         >
           <span aria-hidden>←</span>
