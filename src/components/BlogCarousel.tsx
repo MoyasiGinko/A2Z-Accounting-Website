@@ -217,7 +217,7 @@ const BlogCarousel = async () => {
     const date = formatDate(post.publishedAt);
     const categories = (post.categories || []).map((category) => ({
       label: category.title || "Uncategorized",
-      href: category.slug ? `/insights/category/${category.slug}` : "#",
+      href: category.slug ? `/blogs/category/${category.slug}` : "#",
     }));
 
     return {
@@ -348,7 +348,7 @@ const BlogCarousel = async () => {
                               data-widget_type="theme-post-featured-image.default"
                             >
                               <div className="elementor-widget-container">
-                                <a href={`/insights/${post.slug}`}>
+                                <a href={`/blogs/${post.slug}`}>
                                   <img
                                     loading="lazy"
                                     decoding="async"
@@ -448,7 +448,7 @@ const BlogCarousel = async () => {
                                     textOverflow: "ellipsis",
                                   }}
                                 >
-                                  <a href={`/insights/${post.slug}`}>
+                                  <a href={`/blogs/${post.slug}`}>
                                     {post.title}
                                   </a>
                                 </h5>
