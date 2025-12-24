@@ -73,7 +73,7 @@ export default function Home() {
                   <ClientStats />
                   <Services />
                   <BlogCarousel />
-                  <ClientLogos />
+                  {/* <ClientLogos /> */}
                   <Testimonials />
                   <div className="mb-40">
                     <GetInTouch />

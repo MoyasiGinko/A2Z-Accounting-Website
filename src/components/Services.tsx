@@ -22,8 +22,8 @@ const Services: React.FC = () => {
               data-settings='{"_animation":"slideInUp"}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
-                <span className="elementor-heading-title elementor-size-default">
+              <div className="elementor-widget-container bg-primary">
+                <span className="elementor-heading-title elementor-size-default text-white">
                   Our Services
                 </span>
               </div>
@@ -67,7 +67,7 @@ const Services: React.FC = () => {
         <div className="e-con-inner !flex !justify-center !items-center">
           {/* Service 1: Company Formation & Corporate Setup */}
           <div
-            className="elementor-element elementor-element-e99c1cd elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
+            className="elementor-element elementor-element-e99c1cd elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child bg-primary text-white hover:bg-secondary hover:text-primary"
             data-id="e99c1cd"
             data-element_type="container"
             data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":0}'
@@ -104,7 +104,7 @@ const Services: React.FC = () => {
                 <div className="elementor-widget-container">
                   <h3 className="elementor-heading-title elementor-size-default">
                     <Link href="/services/company-formation">
-                      Company Formation &amp; Corporate Setup
+                      Company &amp; Corporate Setup
                     </Link>
                   </h3>
                 </div>
@@ -191,7 +191,7 @@ const Services: React.FC = () => {
 
           {/* Service 2: Accounting & Bookkeeping */}
           <div
-            className="elementor-element elementor-element-667edd7 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
+            className="elementor-element elementor-element-667edd7 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child bg-primary text-white hover:bg-secondary hover:text-primary"
             data-id="667edd7"
             data-element_type="container"
             data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":50}'
@@ -315,7 +315,7 @@ const Services: React.FC = () => {
 
           {/* Service 3: Tax & Regulatory Compliance */}
           <div
-            className="elementor-element elementor-element-b47eb84 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
+            className="elementor-element elementor-element-b47eb84 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child bg-primary text-white hover:bg-secondary hover:text-primary"
             data-id="b47eb84"
             data-element_type="container"
             data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":100}'
@@ -441,7 +441,7 @@ const Services: React.FC = () => {
         <div className="e-con-inner !mt-4 !flex !justify-center !items-center">
           {/* Service 4: Payroll & HR Pro */}
           <div
-            className="elementor-element elementor-element-667edd7 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
+            className="elementor-element elementor-element-667edd7 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child bg-primary text-white hover:bg-secondary hover:text-primary"
             data-id="667edd7"
             data-element_type="container"
             data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":50}'
@@ -565,7 +565,7 @@ const Services: React.FC = () => {
 
           {/* Service 5: Business Advisory */}
           <div
-            className="elementor-element elementor-element-b47eb84 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child"
+            className="elementor-element elementor-element-b47eb84 elementor-invisible e-con-full vamtam-icon-hover-parent animated-fast e-flex e-con e-child bg-primary text-white hover:bg-secondary hover:text-primary"
             data-id="b47eb84"
             data-element_type="container"
             data-settings='{"background_background":"classic","animation":"slideInUp","animation_delay":100}'

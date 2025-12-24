@@ -15,6 +15,11 @@ interface MenuItem {
   subMenu?: SubMenuItem[];
 }
 
+interface MenuItem {
+  target?: "_blank" | "_self";
+  rel?: string;
+}
+
 const menuItems: MenuItem[] = [
   {
     label: "About Us",
@@ -65,6 +70,8 @@ const menuItems: MenuItem[] = [
   {
     label: "A2Z Accounting UK",
     href: "https://a2zaccounting.co.uk/",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
 ];
 
