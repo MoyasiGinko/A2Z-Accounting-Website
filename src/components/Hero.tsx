@@ -208,22 +208,32 @@ const Hero = () => {
       >
         <div className="e-con-inner">
           <div
-            className="elementor-element elementor-element-f842de0 elementor-widget elementor-widget-heading"
-            data-id="f842de0"
-            data-element_type="widget"
-            data-widget_type="heading.default"
-          >
-            <div className="elementor-widget-container">
-              <h6 className="elementor-heading-title elementor-size-default">
-                UK-UAE Structuring & Advisory
-              </h6>
-            </div>
-          </div>
-          <div
             className="elementor-element elementor-element-03d8cb6 e-con-full e-flex e-con e-child"
             data-id="03d8cb6"
             data-element_type="container"
           >
+            <div
+              className="elementor-element elementor-element-15e2a23 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
+              data-id="15e2a23"
+              data-element_type="widget"
+              data-widget_type="icon-list.default"
+            >
+              <div className="elementor-widget-container">
+                <ul className="elementor-icon-list-items elementor-inline-items">
+                  <li className="elementor-icon-list-item elementor-inline-item">
+                    <span className="elementor-icon-list-icon">
+                      <i
+                        aria-hidden="true"
+                        className="vamtamtheme- vamtam-theme-chack-circle"
+                      ></i>
+                    </span>
+                    <span className="elementor-icon-list-text">
+                      UK-UAE Structuring
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div
               className="elementor-element elementor-element-15e2a23 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
               data-id="15e2a23"
