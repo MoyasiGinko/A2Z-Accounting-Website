@@ -123,7 +123,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    1ST
+                    01
                   </span>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    2ND
+                    02
                   </span>
                 </div>
               </div>
@@ -243,7 +243,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    3RD
+                    03
                   </span>
                 </div>
               </div>
@@ -302,7 +302,7 @@ const ClientStats = () => {
               >
                 <div className="elementor-widget-container">
                   <span className="elementor-heading-title elementor-size-default">
-                    4TH
+                    04
                   </span>
                 </div>
               </div>
