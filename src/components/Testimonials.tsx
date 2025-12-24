@@ -1064,9 +1064,9 @@ const Testimonials: React.FC = () => {
                 data-widget_type="button.default"
               >
                 <div className="elementor-widget-container">
-                  <div className="elementor-button-wrapper">
+                  <div className="elementor-button-wrapper ">
                     <a
-                      className="elementor-button elementor-button-link elementor-size-sm"
+                      className="elementor-button elementor-button-link elementor-size-sm hover:bg-white hover:text-primary"
                       href="https://execor.vamtam.com/about/testimonials/"
                     >
                       <span className="elementor-button-content-wrapper">

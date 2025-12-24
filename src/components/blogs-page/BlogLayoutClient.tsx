@@ -108,7 +108,7 @@ export default function BlogLayoutClient({
           </div>
 
           {/* Right Side: Sidebar */}
-          <div className="space-y-8 bg-[#f9fafb] p-4 rounded-md">
+          <div className="space-y-8 bg-[#f9fafb] p-4 rounded-md self-start">
             <BlogCategories
               categories={categories}
               activeCategory={activeCategory}

@@ -107,6 +107,17 @@ const Footer = () => {
             <h4 className="!font-forum !text-white !text-lg !mb-3">
               Get in touch
             </h4>
+            <p className="!text-[#CFE9FB] !text-sm !mt-2 !font-dm-sans">
+              Address:{" "}
+              <a
+                className="!text-white"
+                href="https://maps.app.goo.gl/UPNTXrUDenHVAsy28"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                First Floor, 499 Union Street, Aberdeen, AB11 6DB
+              </a>
+            </p>
             <p className="!text-[#CFE9FB] !text-sm !font-dm-sans">
               Email:{" "}
               <a className="!text-white" href="mailto:info@a2zaccounting.co.uk">
@@ -123,24 +134,24 @@ const Footer = () => {
             <div className="!mt-4">
               <div className="!flex !gap-3">
                 <a
-                  href="https://twitter.com/"
+                  href="https://api.whatsapp.com/send/?phone=00447446844226&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter"
                   className="!text-[#BBDFF6] hover:!text-white"
                 >
                   <svg
-                    className="!w-6 !h-6"
+                    className="w-6! h-6!"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     aria-hidden
                   >
-                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.55 8.55 0 0 1-2.7 1.03 4.26 4.26 0 0 0-7.26 3.88A12.1 12.1 0 0 1 3.15 4.6a4.26 4.26 0 0 0 1.32 5.69 4.22 4.22 0 0 1-1.93-.53v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.26 4.26 0 0 0 3.98 2.96A8.53 8.53 0 0 1 2 19.54a12.06 12.06 0 0 0 6.54 1.92c7.85 0 12.14-6.5 12.14-12.13l-.01-.55A8.7 8.7 0 0 0 24 5.5a8.43 8.43 0 0 1-2.54.7z" />
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.273-.101-.472-.149-.67.149-.197.297-.769.966-.943 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.477-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.58-.487-.502-.67-.512-.173-.009-.372-.011-.571-.011-.198 0-.52.074-.792.372-.272.297-1.043 1.019-1.043 2.479 0 1.46 1.068 2.876 1.217 3.074.149.198 2.104 3.213 5.1 4.509.713.308 1.269.492 1.703.63.715.228 1.366.196 1.88.119.573-.085 1.758-.719 2.006-1.413.248-.695.248-1.291.173-1.413-.074-.123-.272-.198-.57-.347m-5.421 3.453h-.003a8.888 8.888 0 01-4.533-1.234l-.325-.193-3.366.879.898-3.283-.211-.336a8.86 8.86 0 01-1.362-4.722c.003-4.903 3.993-8.89 8.899-8.89 2.379.001 4.611.93 6.289 2.609a8.824 8.824 0 012.602 6.285c-.002 4.903-3.993 8.889-8.888 8.889m7.613-16.502A10.924 10.924 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.944L0 24l6.305-1.654a11.86 11.86 0 005.737 1.459h.005c6.554 0 11.889-5.335 11.892-11.893 0-3.177-1.237-6.166-3.488-8.413" />
                   </svg>
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/company/a2z-accounting-solutions-limited/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -157,7 +168,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/a2zaccounting.co.uk"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -174,7 +185,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/a2z_accountingsolutions/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"

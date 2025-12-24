@@ -496,7 +496,7 @@ const BlogCarousel = async () => {
       <div className="w-full flex justify-center mb-20">
         <a
           href="/blogs"
-          className="px-6 py-3 rounded-md bg-primary text-white font-semibold font-sans shadow hover:shadow-md transition-transform duration-200 hover:-translate-y-0.5"
+          className="px-6 py-3 rounded-md bg-secondary text-primary hover:bg-primary hover:text-white font-semibold font-sans shadow hover:shadow-md transition-transform duration-200 "
         >
           View More Blogs
         </a>
