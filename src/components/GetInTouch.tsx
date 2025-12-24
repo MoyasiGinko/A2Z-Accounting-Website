@@ -21,8 +21,8 @@ const GetInTouch: React.FC = () => {
               data-settings='{"_animation":"slideInUp"}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
-                <span className="elementor-heading-title elementor-size-default">
+              <div className="elementor-widget-container bg-primary">
+                <span className="elementor-heading-title elementor-size-default text-white">
                   Get in Touch
                 </span>
               </div>

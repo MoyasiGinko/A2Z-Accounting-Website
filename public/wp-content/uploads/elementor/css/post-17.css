@@ -217,7 +217,7 @@ body.rtl .elementor-17 .elementor-element.elementor-element-986acae {
   --container-widget-flex-grow: 1;
   --container-widget-align-self: stretch;
   --flex-wrap-mobile: wrap;
-  --justify-content: flex-end;
+  /* --justify-content: flex-end; */
   --gap: 20px 5vw;
   --row-gap: 20px;
   --column-gap: 5vw;
@@ -2117,8 +2117,8 @@ body:not(.rtl)
   .elementor-element.elementor-element-8c49a09
   .elementor-icon-list-item
   > a {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -2288,8 +2288,8 @@ body:not(.rtl)
   .elementor-element.elementor-element-7897082
   .elementor-icon-list-item
   > a {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -2383,8 +2383,8 @@ body:not(.rtl)
   .elementor-element.elementor-element-cb9ae01
   .elementor-icon-list-item
   > a {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -2478,8 +2478,8 @@ body:not(.rtl)
   .elementor-element.elementor-element-fcd3dad
   .elementor-icon-list-item
   > a {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -2573,8 +2573,8 @@ body:not(.rtl)
   .elementor-element.elementor-element-0af05d2
   .elementor-icon-list-item
   > a {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3034,8 +3034,8 @@ body:not(.rtl)
 .elementor-17
   .elementor-element.elementor-element-fb1cbfe
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3074,8 +3074,8 @@ body:not(.rtl)
 .elementor-17
   .elementor-element.elementor-element-3669349
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3114,8 +3114,8 @@ body:not(.rtl)
 .elementor-17
   .elementor-element.elementor-element-d6dd169
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3312,8 +3312,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-c645356 {
 .elementor-17
   .elementor-element.elementor-element-3fd1366
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3352,8 +3352,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-c645356 {
 .elementor-17
   .elementor-element.elementor-element-606e001
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3392,8 +3392,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-c645356 {
 .elementor-17
   .elementor-element.elementor-element-e2fb95b
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3680,8 +3680,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-4bec2ed {
 .elementor-17
   .elementor-element.elementor-element-91573d5
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3720,8 +3720,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-4bec2ed {
 .elementor-17
   .elementor-element.elementor-element-ccb9733
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -3760,8 +3760,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-4bec2ed {
 .elementor-17
   .elementor-element.elementor-element-c647be3
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);
@@ -5012,8 +5012,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-6a59db4 {
 .elementor-17
   .elementor-element.elementor-element-3c3cc14
   .elementor-heading-title {
-  font-family: var(--e-global-typography-vamtam_primary_font-font-family),
-    Sans-serif;
+  font-family:
+    var(--e-global-typography-vamtam_primary_font-font-family), Sans-serif;
   font-size: var(--e-global-typography-vamtam_primary_font-font-size);
   font-weight: var(--e-global-typography-vamtam_primary_font-font-weight);
   line-height: var(--e-global-typography-vamtam_primary_font-line-height);

@@ -22,14 +22,16 @@ type BlogTrendingPostsProps = {
 export default function BlogTrendingPosts({
   posts = [],
 }: BlogTrendingPostsProps) {
+  const visiblePosts = posts.slice(0, 5);
+
   return (
     <div className="bg-transparent rounded-md ">
       <h3 className="text-2xl font-serif font-medium text-[#162C45] mb-4">
         Trending Posts
       </h3>
       <ul className="space-y-4">
-        {posts.length ? (
-          posts.map((post) => (
+        {visiblePosts.length ? (
+          visiblePosts.map((post) => (
             <li key={post._id}>
               <Link
                 href={`/blogs/${post.slug?.current}`}

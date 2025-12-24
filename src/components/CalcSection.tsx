@@ -4,12 +4,12 @@ import Calculator from "./calc-page/calculator";
 
 const CalcSection: React.FC = () => {
   const keyPoints = [
-    "Experts in UAE Company Setup & Corporate Structure (Free Zone & Mainland)",
-    "HMRC-compliant relocation strategies",
-    "Smart Business Structure for Running Business In UAE while Residing in UK",
-    "End-to-end service — Company Setup, Tax Optimisation, Banking & Residency to Accounting, Book Keeping & Financial Reporting",
-    "Tax & Regulatory Compliance",
-    "Transparent fees with no hidden mark-ups",
+    "Experts in UAE Company Setup & Corporate Structure (Free Zone & Mainland).",
+    "HMRC-Compliant Relocation Strategies.",
+    "Smart Business Structure for Running a Business in the UAE While Residing in the UK.",
+    "End-to-End Service—Company Setup, Tax Optimisation, Banking & Residency to Accounting, Bookkeeping & Financial Reporting.",
+    "Tax & Regulatory Compliance.",
+    "Transparent Fees with No Hidden Mark-Ups.",
   ];
 
   return (
@@ -47,9 +47,9 @@ const CalcSection: React.FC = () => {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* Icon */}
-                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
+                    <div className="w-8 h-8 border border-gray-200 bg-primary-100 rounded-md flex items-center justify-center shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
                       <svg
-                        className="w-5 h-5 text-[#84C9E2] group-hover:text-white transition-colors duration-300"
+                        className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -74,22 +74,12 @@ const CalcSection: React.FC = () => {
 
             {/* CTA Button aligned with left content */}
             <div className="flex justify-start">
-              <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
-                <span className="mr-3 font-sans">Get Started Today</span>
-                <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </div>
+              <a
+                href="/contact-us"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#84C9E2] hover:bg-[#6bb1d9] text-primary font-semibold rounded-md transition-all hover:shadow-xl shadow-lg"
+              >
+                Get Started Today
+              </a>
             </div>
           </div>
 

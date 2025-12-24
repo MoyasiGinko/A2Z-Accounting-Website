@@ -1,103 +1,118 @@
 import React from "react";
+import { urlFor } from "@/lib/imageBuilder";
+import { sanityFetch } from "@/lib/sanity.client";
 
-interface BlogCategory {
-  label: string;
-  href: string;
-}
+type SanityCategory = {
+  title?: string;
+  slug?: string;
+};
 
-interface BlogPost {
-  id: number;
-  slug: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  imageAlt: string;
-  srcSet?: string;
-  sizes?: string;
-  categories: BlogCategory[];
-  date: {
-    display: string;
-    machine: string;
+type SanityPost = {
+  _id: string;
+  title?: string;
+  slug?: string;
+  excerpt?: string;
+  publishedAt?: string;
+  mainImage?: unknown;
+  mainImageAlt?: string;
+  categories?: SanityCategory[];
+};
+
+const BLOG_POSTS_QUERY = `
+  *[_type == "post" && defined(slug.current) && defined(publishedAt)]
+    | order(publishedAt desc)[0...4] {
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      publishedAt,
+      mainImage,
+      "mainImageAlt": mainImage.alt,
+      categories[]->{
+        title,
+        "slug": slug.current
+      }
+    }
+`;
+
+const sizesAttr = "(max-width: 750px) 100vw, 415px";
+
+const formatDate = (value?: string) => {
+  if (!value) return { machine: "", display: "" };
+  const date = new Date(value);
+  return {
+    machine: date.toISOString().split("T")[0] || value,
+    display: new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(date),
   };
-}
+};
 
-const blogPosts: BlogPost[] = [
+const buildImage = (image: unknown) => {
+  if (!image) return { src: "", srcSet: undefined };
+  const widths = [305, 415, 520, 640, 830];
+  const src = urlFor(image).width(415).auto("format").url();
+  const srcSet = widths
+    .map((w) => `${urlFor(image).width(w).auto("format").url()} ${w}w`)
+    .join(", ");
+  return { src, srcSet };
+};
+
+const FALLBACK_POSTS = [
   {
-    id: 1959,
-    slug: "5-key-market-trends-every-business-should-watch-in-2024",
-    title: "5 Key Market Trends Every Business Should Watch in 2024",
+    id: "fallback-1",
+    slug: "sample-strategy-success",
+    title: "Sample Strategy Success Story",
     excerpt:
-      "Stay ahead of the curve with emerging trends that are reshaping industries and customer expectations.",
+      "A concise case study placeholder to keep the carousel layout consistent until real posts are published.",
     image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/GettyImages-1931487241-220x300.jpg 220w, /wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg 750w, /wp-content/uploads/2025/03/GettyImages-1931487241-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/GettyImages-1931487241.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Consultants reviewing market charts",
-    categories: [
-      {
-        label: "Industry Insights",
-        href: "https://execor.vamtam.com/category/industry-insights/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample strategy success",
+    categories: [{ label: "Success Story", href: "#" }],
+    date: { machine: "", display: "" },
   },
   {
-    id: 1955,
-    slug: "how-we-helped-a-retail-brand-increase-sales-by-45",
-    title: "How We Helped a Retail Brand Increase Sales by 45%",
+    id: "fallback-2",
+    slug: "sample-growth-journey",
+    title: "Sample Growth Journey",
     excerpt:
-      "AI, automation, and shifting consumer behavior are shaping industries. Stay ahead with these key trends for 2025.",
+      "A sample narrative showing how businesses can navigate growth phases effectively.",
     image:
       "/wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-220x300.jpg 220w, /wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-750x1024.jpg 750w, /wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Retail leader celebrating results",
-    categories: [
-      {
-        label: "Success Story",
-        href: "https://execor.vamtam.com/category/success-story/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample growth journey",
+    categories: [{ label: "Industry Insights", href: "#" }],
+    date: { machine: "", display: "" },
   },
   {
-    id: 1953,
-    slug: "from-startup-to-scale-a-tech-companys-growth-journey",
-    title: "From Startup to Scale: A Tech Company’s Growth Journey",
+    id: "fallback-3",
+    slug: "sample-market-trends",
+    title: "Sample Market Trends",
     excerpt:
-      "Discover how one team navigated rapid growth, scaled operations, and stayed true to its product vision.",
+      "Placeholder post covering emerging market themes to illustrate the carousel layout.",
     image: "/wp-content/uploads/2025/03/GettyImages-1456192869-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/GettyImages-1456192869-220x300.jpg 220w, /wp-content/uploads/2025/03/GettyImages-1456192869-750x1024.jpg 750w, /wp-content/uploads/2025/03/GettyImages-1456192869-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/GettyImages-1456192869.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Tech founders planning scale up",
-    categories: [
-      {
-        label: "Success Story",
-        href: "https://execor.vamtam.com/category/success-story/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample market trends",
+    categories: [{ label: "Expert Advice", href: "#" }],
+    date: { machine: "", display: "" },
   },
   {
-    id: 1945,
-    slug: "why-most-business-strategies-fail-and-how-to-avoid-it",
-    title: "Why Most Business Strategies Fail – And How to Avoid It",
+    id: "fallback-4",
+    slug: "sample-operations-playbook",
+    title: "Sample Operations Playbook",
     excerpt:
-      "Learn the common pitfalls that derail business plans—and the smart moves that lead to lasting success.",
+      "An operations-focused placeholder to complete the four-card carousel when content is limited.",
     image: "/wp-content/uploads/2025/03/GettyImages-1408994869-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/GettyImages-1408994869-220x300.jpg 220w, /wp-content/uploads/2025/03/GettyImages-1408994869-750x1024.jpg 750w, /wp-content/uploads/2025/03/GettyImages-1408994869-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/GettyImages-1408994869.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Executive reviewing strategy documents",
-    categories: [
-      {
-        label: "Expert Advice",
-        href: "https://execor.vamtam.com/category/expert-advice/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample operations playbook",
+    categories: [{ label: "Playbook", href: "#" }],
+    date: { machine: "", display: "" },
   },
 ];
 
@@ -194,7 +209,39 @@ const loopStyles = `
   }
 `;
 
-const BlogCarousel: React.FC = () => {
+const BlogCarousel = async () => {
+  const posts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
+
+  const normalizedPosts = (posts || []).map((post) => {
+    const { src, srcSet } = buildImage(post.mainImage);
+    const date = formatDate(post.publishedAt);
+    const categories = (post.categories || []).map((category) => ({
+      label: category.title || "Uncategorized",
+      href: category.slug ? `/blogs/category/${category.slug}` : "#",
+    }));
+
+    return {
+      id: post._id,
+      slug: post.slug || "",
+      title: post.title || "Untitled",
+      excerpt: post.excerpt || "",
+      image: src,
+      srcSet,
+      sizes: sizesAttr,
+      imageAlt: post.mainImageAlt || post.title || "Post image",
+      categories,
+      date,
+    };
+  });
+
+  const displayPosts =
+    normalizedPosts.length >= 4
+      ? normalizedPosts.slice(0, 4)
+      : [
+          ...normalizedPosts,
+          ...FALLBACK_POSTS.slice(0, 4 - normalizedPosts.length),
+        ];
+
   return (
     <>
       <div
@@ -215,9 +262,9 @@ const BlogCarousel: React.FC = () => {
               data-settings='{"_animation":"slideInUp"}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
-                <span className="elementor-heading-title elementor-size-default">
-                  Insights &amp; Success Stories
+              <div className="elementor-widget-container bg-primary">
+                <span className="elementor-heading-title elementor-size-default text-white">
+                  Our Blogs
                 </span>
               </div>
             </div>
@@ -228,9 +275,9 @@ const BlogCarousel: React.FC = () => {
               data-settings='{"_animation":"slideInUp","_animation_delay":100}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
+              <div className="elementor-widget-container ">
                 <h2 className="elementor-heading-title elementor-size-default">
-                  Expert Strategies, Industry Trends &amp; Real Results
+                  Latest Insights &amp; Success Stories
                 </h2>
               </div>
             </div>
@@ -245,9 +292,7 @@ const BlogCarousel: React.FC = () => {
             <div className="elementor-widget-container">
               <span className="elementor-heading-title elementor-size-default">
                 Stay ahead with the latest business insights, success stories,
-                and industry trends. Explore expert advice, real-world case
-                studies, and actionable strategies to drive growth and
-                innovation in your business.
+                and industry trends.
               </span>
             </div>
           </div>
@@ -267,7 +312,7 @@ const BlogCarousel: React.FC = () => {
             data-widget_type="loop-carousel.post"
           >
             <div className="elementor-widget-container">
-              {blogPosts.length ? (
+              {displayPosts.length ? (
                 <div
                   className="swiper elementor-loop-container elementor-grid"
                   role="list"
@@ -275,7 +320,7 @@ const BlogCarousel: React.FC = () => {
                 >
                   <div className="swiper-wrapper" aria-live="polite">
                     <style dangerouslySetInnerHTML={{ __html: loopStyles }} />
-                    {blogPosts.map((post, index) => (
+                    {displayPosts.map((post, index) => (
                       <div
                         key={post.id}
                         data-elementor-type="loop-item"
@@ -284,7 +329,7 @@ const BlogCarousel: React.FC = () => {
                         data-elementor-post-type="elementor_library"
                         role="group"
                         aria-roledescription="slide"
-                        aria-label={`Slide ${index + 1} of ${blogPosts.length}`}
+                        aria-label={`Slide ${index + 1} of ${displayPosts.length}`}
                       >
                         <div
                           className="elementor-element elementor-element-8b3458c animated-fast e-flex e-con-boxed e-con e-parent"
@@ -301,12 +346,12 @@ const BlogCarousel: React.FC = () => {
                               data-widget_type="theme-post-featured-image.default"
                             >
                               <div className="elementor-widget-container">
-                                <a href={`/insights/${post.slug}`}>
+                                <a href={`/blogs/${post.slug}`}>
                                   <img
                                     loading="lazy"
                                     decoding="async"
-                                    width={750}
-                                    height={1024}
+                                    width={305}
+                                    height={415}
                                     src={post.image}
                                     srcSet={post.srcSet}
                                     sizes={post.sizes}
@@ -334,7 +379,7 @@ const BlogCarousel: React.FC = () => {
                                       itemProp="about"
                                     >
                                       <span className="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
-                                        <span className="elementor-post-info__terms-list">
+                                        <span className="elementor-post-info__terms-list font-sans">
                                           {post.categories.map(
                                             (category, catIdx) => (
                                               <React.Fragment
@@ -391,8 +436,17 @@ const BlogCarousel: React.FC = () => {
                               data-widget_type="theme-post-title.default"
                             >
                               <div className="elementor-widget-container">
-                                <h5 className="elementor-heading-title elementor-size-default">
-                                  <a href={`/insights/${post.slug}`}>
+                                <h5
+                                  className="elementor-heading-title elementor-size-default font-serif"
+                                  style={{
+                                    display: "-webkit-box",
+                                    WebkitLineClamp: 2,
+                                    WebkitBoxOrient: "vertical",
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                  }}
+                                >
+                                  <a href={`/blogs/${post.slug}`}>
                                     {post.title}
                                   </a>
                                 </h5>
@@ -405,7 +459,17 @@ const BlogCarousel: React.FC = () => {
                               data-widget_type="theme-post-excerpt.default"
                             >
                               <div className="elementor-widget-container">
-                                {post.excerpt}
+                                <p
+                                  style={{
+                                    display: "-webkit-box",
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: "vertical",
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                  }}
+                                >
+                                  {post.excerpt}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -423,11 +487,19 @@ const BlogCarousel: React.FC = () => {
               )}
               <div
                 className="swiper-pagination"
-                aria-hidden={!blogPosts.length}
+                aria-hidden={!displayPosts.length}
               ></div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full flex justify-center mb-20">
+        <a
+          href="/blogs"
+          className="px-6 py-3 rounded-md bg-secondary text-primary hover:bg-primary hover:text-white font-semibold font-sans shadow hover:shadow-md transition-transform duration-200 "
+        >
+          View More Blogs
+        </a>
       </div>
     </>
   );

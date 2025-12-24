@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyDubai: React.FC = () => {
   const keyBenefits = [
-    "Low Corporate Tax",
+    "Low Corporate Tax (0% For Eligble Businesses) ",
     "0% Personal Income Tax",
     "0% Dividend Tax",
     "0% Capital Gains Tax",
@@ -48,8 +48,8 @@ const WhyDubai: React.FC = () => {
               <p className="text-xl leading-relaxed">
                 Dubai offers one of the world&apos;s most attractive tax and
                 business environments — perfect for founders earning{" "}
-                <strong className="text-[#162C45]">£1M+</strong> who want to
-                scale globally while protecting their wealth.
+                <strong className="text-[#162C45]">£150K+ annual profit</strong>{" "}
+                who want to scale up globally while protecting their wealth.
               </p>
             </div>
 
@@ -90,22 +90,12 @@ const WhyDubai: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <button className="hidden lg:inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#73b2c9] text-[#162C45] font-bold rounded-lg transition-all duration-300 shadow-lg shadow-[#84C9E2]/20 group font-sans">
-              <span className="mr-2">Discover Dubai Opportunities</span>
-              <svg
-                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+            <a
+              href="/why-dubai"
+              className="hidden lg:inline-flex items-center justify-center px-6 py-3 bg-[#84C9E2] hover:bg-[#73b2c9] text-primary font-bold rounded-lg transition-all duration-300 shadow-lg shadow-[#84C9E2]/20 group font-sans"
+            >
+              Discover Dubai Opportunities
+            </a>
           </div>
 
           {/* RIGHT: BENEFITS GRID */}
@@ -115,7 +105,7 @@ const WhyDubai: React.FC = () => {
                 key={index}
                 className="group bg-[#f8f9fa] hover:bg-white p-6 rounded-xl border border-transparent hover:border-[#84C9E2]/30 hover:shadow-lg transition-all duration-300 flex items-start gap-4"
               >
-                <div className="w-8 h-8 rounded-full bg-[#162C45]/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-[#162C45]/5 flex items-center justify-center shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
                   <svg
                     className="w-4 h-4 text-[#162C45] group-hover:text-white transition-colors duration-300"
                     fill="none"

@@ -40,7 +40,7 @@ const Hero = () => {
             >
               <div className="elementor-widget-container">
                 <h5 className="elementor-heading-title elementor-size-default">
-                  End-to-end Dubai company setup, tax optimization, banking, and
+                  End-to-end Dubai company setup, tax optimisation, banking, and
                   residency for high-earning founders seeking global freedom and
                   zero stress.
                 </h5>
@@ -83,12 +83,19 @@ const Hero = () => {
                     {/* <span className="separator"> </span> */}
                     <span className="ml-1">66 reviews on</span>
                     <span className="separator"> </span>
-                    <img
-                      src="https://a2zaccounting.co.uk/wp-content/uploads/2025/10/google.webp"
-                      alt="Google"
-                      style={{ height: "24px", verticalAlign: "middle" }}
-                      className="ml-2 rounded-sm"
-                    />
+                    <a
+                      href="https://www.google.com/maps/place/A2Z+Accounting+Solutions/@57.1428981,-2.1114138,17z/data=!3m1!4b1!4m6!3m5!1s0x4884137ab38a3ca9:0xd3b5e9e029818502!8m2!3d57.1428981!4d-2.1114138!16s%2Fg%2F11p_2w1k34?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white ml-2 rounded-sm p-px"
+                    >
+                      <img
+                        src="https://a2zaccounting.co.uk/wp-content/uploads/2025/10/google.webp"
+                        alt="Google"
+                        style={{ height: "24px", verticalAlign: "middle" }}
+                        className=""
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -201,22 +208,32 @@ const Hero = () => {
       >
         <div className="e-con-inner">
           <div
-            className="elementor-element elementor-element-f842de0 elementor-widget elementor-widget-heading"
-            data-id="f842de0"
-            data-element_type="widget"
-            data-widget_type="heading.default"
-          >
-            <div className="elementor-widget-container">
-              <h6 className="elementor-heading-title elementor-size-default">
-                UK-UAE Structuring & Advisory
-              </h6>
-            </div>
-          </div>
-          <div
             className="elementor-element elementor-element-03d8cb6 e-con-full e-flex e-con e-child"
             data-id="03d8cb6"
             data-element_type="container"
           >
+            <div
+              className="elementor-element elementor-element-15e2a23 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
+              data-id="15e2a23"
+              data-element_type="widget"
+              data-widget_type="icon-list.default"
+            >
+              <div className="elementor-widget-container">
+                <ul className="elementor-icon-list-items elementor-inline-items">
+                  <li className="elementor-icon-list-item elementor-inline-item">
+                    <span className="elementor-icon-list-icon">
+                      <i
+                        aria-hidden="true"
+                        className="vamtamtheme- vamtam-theme-chack-circle"
+                      ></i>
+                    </span>
+                    <span className="elementor-icon-list-text">
+                      UK-UAE Advisory
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div
               className="elementor-element elementor-element-15e2a23 elementor-icon-list--layout-inline elementor-list-item-link-inline elementor-tablet-align-left elementor-widget elementor-widget-icon-list"
               data-id="15e2a23"

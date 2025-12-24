@@ -32,7 +32,7 @@ export default function BlogCategories({
           placeholder="Search blogs..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full font-medium text-lg font-serif px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#84C9E2] focus:border-[#84C9E2]"
+          className="w-full font-medium text-2xl text-primary/90 font-serif px-3 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-[#84C9E2] focus:border-[#84C9E2]"
         />
       </div>
 
