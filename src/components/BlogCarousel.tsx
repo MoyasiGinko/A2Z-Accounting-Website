@@ -1,105 +1,64 @@
 import React from "react";
+import { urlFor } from "@/lib/imageBuilder";
+import { sanityFetch } from "@/lib/sanity.client";
 
-interface BlogCategory {
-  label: string;
-  href: string;
-}
+type SanityCategory = {
+  title?: string;
+  slug?: string;
+};
 
-interface BlogPost {
-  id: number;
-  slug: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  imageAlt: string;
-  srcSet?: string;
-  sizes?: string;
-  categories: BlogCategory[];
-  date: {
-    display: string;
-    machine: string;
+type SanityPost = {
+  _id: string;
+  title?: string;
+  slug?: string;
+  excerpt?: string;
+  publishedAt?: string;
+  mainImage?: unknown;
+  mainImageAlt?: string;
+  categories?: SanityCategory[];
+};
+
+const BLOG_POSTS_QUERY = `
+  *[_type == "post" && defined(slug.current) && defined(publishedAt)]
+    | order(publishedAt desc)[0...4] {
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      publishedAt,
+      mainImage,
+      "mainImageAlt": mainImage.alt,
+      categories[]->{
+        title,
+        "slug": slug.current
+      }
+    }
+`;
+
+const sizesAttr = "(max-width: 750px) 100vw, 750px";
+
+const formatDate = (value?: string) => {
+  if (!value) return { machine: "", display: "" };
+  const date = new Date(value);
+  return {
+    machine: date.toISOString().split("T")[0] || value,
+    display: new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(date),
   };
-}
+};
 
-const blogPosts: BlogPost[] = [
-  {
-    id: 1959,
-    slug: "5-key-market-trends-every-business-should-watch-in-2024",
-    title: "5 Key Market Trends Every Business Should Watch in 2024",
-    excerpt:
-      "Stay ahead of the curve with emerging trends that are reshaping industries and customer expectations.",
-    image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/GettyImages-1931487241-220x300.jpg 220w, /wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg 750w, /wp-content/uploads/2025/03/GettyImages-1931487241-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/GettyImages-1931487241.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Consultants reviewing market charts",
-    categories: [
-      {
-        label: "Industry Insights",
-        href: "https://execor.vamtam.com/category/industry-insights/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
-  },
-  {
-    id: 1955,
-    slug: "how-we-helped-a-retail-brand-increase-sales-by-45",
-    title: "How We Helped a Retail Brand Increase Sales by 45%",
-    excerpt:
-      "AI, automation, and shifting consumer behavior are shaping industries. Stay ahead with these key trends for 2025.",
-    image:
-      "/wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-220x300.jpg 220w, /wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-750x1024.jpg 750w, /wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Retail leader celebrating results",
-    categories: [
-      {
-        label: "Success Story",
-        href: "https://execor.vamtam.com/category/success-story/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
-  },
-  {
-    id: 1953,
-    slug: "from-startup-to-scale-a-tech-companys-growth-journey",
-    title: "From Startup to Scale: A Tech Company’s Growth Journey",
-    excerpt:
-      "Discover how one team navigated rapid growth, scaled operations, and stayed true to its product vision.",
-    image: "/wp-content/uploads/2025/03/GettyImages-1456192869-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/GettyImages-1456192869-220x300.jpg 220w, /wp-content/uploads/2025/03/GettyImages-1456192869-750x1024.jpg 750w, /wp-content/uploads/2025/03/GettyImages-1456192869-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/GettyImages-1456192869.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Tech founders planning scale up",
-    categories: [
-      {
-        label: "Success Story",
-        href: "https://execor.vamtam.com/category/success-story/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
-  },
-  {
-    id: 1945,
-    slug: "why-most-business-strategies-fail-and-how-to-avoid-it",
-    title: "Why Most Business Strategies Fail – And How to Avoid It",
-    excerpt:
-      "Learn the common pitfalls that derail business plans—and the smart moves that lead to lasting success.",
-    image: "/wp-content/uploads/2025/03/GettyImages-1408994869-750x1024.jpg",
-    srcSet:
-      "/wp-content/uploads/2025/03/GettyImages-1408994869-220x300.jpg 220w, /wp-content/uploads/2025/03/GettyImages-1408994869-750x1024.jpg 750w, /wp-content/uploads/2025/03/GettyImages-1408994869-1125x1536.jpg 1125w, /wp-content/uploads/2025/03/GettyImages-1408994869.jpg 1916w",
-    sizes: "(max-width: 750px) 100vw, 750px",
-    imageAlt: "Executive reviewing strategy documents",
-    categories: [
-      {
-        label: "Expert Advice",
-        href: "https://execor.vamtam.com/category/expert-advice/",
-      },
-    ],
-    date: { display: "March 29, 2025", machine: "2025-03-29" },
-  },
-];
+const buildImage = (image: unknown) => {
+  if (!image) return { src: "", srcSet: undefined };
+  const widths = [320, 480, 640, 750, 1125, 1536];
+  const src = urlFor(image).width(750).auto("format").url();
+  const srcSet = widths
+    .map((w) => `${urlFor(image).width(w).auto("format").url()} ${w}w`)
+    .join(", ");
+  return { src, srcSet };
+};
 
 const loopStyles = `
   .elementor-1961 .elementor-element.elementor-element-8b3458c {
@@ -194,7 +153,31 @@ const loopStyles = `
   }
 `;
 
-const BlogCarousel: React.FC = () => {
+const BlogCarousel = async () => {
+  const posts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
+
+  const normalizedPosts = (posts || []).map((post) => {
+    const { src, srcSet } = buildImage(post.mainImage);
+    const date = formatDate(post.publishedAt);
+    const categories = (post.categories || []).map((category) => ({
+      label: category.title || "Uncategorized",
+      href: category.slug ? `/insights/category/${category.slug}` : "#",
+    }));
+
+    return {
+      id: post._id,
+      slug: post.slug || "",
+      title: post.title || "Untitled",
+      excerpt: post.excerpt || "",
+      image: src,
+      srcSet,
+      sizes: sizesAttr,
+      imageAlt: post.mainImageAlt || post.title || "Post image",
+      categories,
+      date,
+    };
+  });
+
   return (
     <>
       <div
@@ -267,7 +250,7 @@ const BlogCarousel: React.FC = () => {
             data-widget_type="loop-carousel.post"
           >
             <div className="elementor-widget-container">
-              {blogPosts.length ? (
+              {normalizedPosts.length ? (
                 <div
                   className="swiper elementor-loop-container elementor-grid"
                   role="list"
@@ -275,7 +258,7 @@ const BlogCarousel: React.FC = () => {
                 >
                   <div className="swiper-wrapper" aria-live="polite">
                     <style dangerouslySetInnerHTML={{ __html: loopStyles }} />
-                    {blogPosts.map((post, index) => (
+                    {normalizedPosts.map((post, index) => (
                       <div
                         key={post.id}
                         data-elementor-type="loop-item"
@@ -284,7 +267,7 @@ const BlogCarousel: React.FC = () => {
                         data-elementor-post-type="elementor_library"
                         role="group"
                         aria-roledescription="slide"
-                        aria-label={`Slide ${index + 1} of ${blogPosts.length}`}
+                        aria-label={`Slide ${index + 1} of ${normalizedPosts.length}`}
                       >
                         <div
                           className="elementor-element elementor-element-8b3458c animated-fast e-flex e-con-boxed e-con e-parent"
@@ -423,7 +406,7 @@ const BlogCarousel: React.FC = () => {
               )}
               <div
                 className="swiper-pagination"
-                aria-hidden={!blogPosts.length}
+                aria-hidden={!normalizedPosts.length}
               ></div>
             </div>
           </div>
