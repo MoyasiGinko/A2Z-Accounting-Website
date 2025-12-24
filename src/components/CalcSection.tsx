@@ -74,22 +74,12 @@ const CalcSection: React.FC = () => {
 
             {/* CTA Button aligned with left content */}
             <div className="flex justify-start">
-              <div className="inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] hover:bg-[#6bb1d9] text-white font-semibold rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
-                <span className="mr-3 font-sans">Get Started Today</span>
-                <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </div>
+              <a
+                href="/contact-us"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#84C9E2] hover:bg-[#6bb1d9] text-primary font-semibold rounded-md transition-all hover:shadow-xl shadow-lg"
+              >
+                Get Started Today
+              </a>
             </div>
           </div>
 
