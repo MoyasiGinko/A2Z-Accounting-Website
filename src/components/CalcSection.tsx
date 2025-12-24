@@ -4,12 +4,12 @@ import Calculator from "./calc-page/calculator";
 
 const CalcSection: React.FC = () => {
   const keyPoints = [
-    "Experts in UAE Company Setup & Corporate Structure (Free Zone & Mainland)",
-    "HMRC-compliant relocation strategies",
-    "Smart Business Structure for Running Business In UAE while Residing in UK",
-    "End-to-end service — Company Setup, Tax Optimisation, Banking & Residency to Accounting, Book Keeping & Financial Reporting",
-    "Tax & Regulatory Compliance",
-    "Transparent fees with no hidden mark-ups",
+    "Experts in UAE Company Setup & Corporate Structure (Free Zone & Mainland).",
+    "HMRC-Compliant Relocation Strategies.",
+    "Smart Business Structure for Running a Business in the UAE While Residing in the UK.",
+    "End-to-End Service—Company Setup, Tax Optimisation, Banking & Residency to Accounting, Bookkeeping & Financial Reporting.",
+    "Tax & Regulatory Compliance.",
+    "Transparent Fees with No Hidden Mark-Ups.",
   ];
 
   return (
