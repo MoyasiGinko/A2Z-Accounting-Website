@@ -36,57 +36,6 @@ interface TabConfig {
 
 const tabs: TabConfig[] = [
   {
-    key: "relocate",
-    label: "Relocate to Dubai or UAE",
-    eyebrow: "Full relocation support",
-    title:
-      "Perfect for those who want to enjoy Dubai's 0% personal tax, premium lifestyle, and global business environment.",
-    summary:
-      "We help high-revenue agency owners, consultants & coaches, e-commerce/FBA brands, SaaS founders, investors & traders, and contractors with location-independent income.",
-    description:
-      "We help you relocate cleanly and confidently while setting up the right UAE structure for long-term flexibility.",
-    clientWants: [
-      "Full relocation support",
-      "UAE residency & Emirates ID",
-      "HMRC exit strategy",
-      "Private banking",
-      "Lifestyle and family relocation guidance",
-      "A tax-efficient HQ for global operations",
-    ],
-    strategies: [
-      {
-        title: "Relocation planning",
-        description:
-          "Comprehensive support for moving to Dubai including residency, banking, and tax strategies.",
-      },
-      {
-        title: "Business setup",
-        description:
-          "Establishing a UAE entity for global operations while maintaining UK residency.",
-      },
-      {
-        title: "Compliance & legal",
-        description:
-          "Ensuring all moves are clean, legal, and strategically sound.",
-      },
-    ],
-    metrics: [
-      { label: "Tax savings", value: "0% personal tax" },
-      { label: "Setup time", value: "4-6 weeks" },
-      { label: "Success rate", value: "98%" },
-    ],
-    cta: {
-      label: "Start relocation planning",
-      href: "/contact-us",
-    },
-    media: {
-      imageUrl: "/images/others/company-1.jpg",
-      alt: "Dubai skyline and business relocation",
-      badge: "Relocation Experts",
-      gradient: "from-secondary/80 to-primary/70",
-    },
-  },
-  {
     key: "dual-presence",
     label: "Dubai Company While UK-Based",
     eyebrow: "Dual-presence setup",
@@ -133,7 +82,59 @@ const tabs: TabConfig[] = [
       imageUrl: "/images/others/company-2.jpeg",
       alt: "UK and Dubai business setup",
       badge: "Dual Presence Pros",
-      gradient: "from-secondary/80 to-yellow-500/40",
+      gradient: "from-secondary/80 to-primary/70",
+    },
+  },
+  {
+    key: "relocate",
+    label: "Relocate to Dubai or UAE",
+    eyebrow: "Full relocation support",
+    title:
+      "Perfect for those who want to enjoy Dubai's low corporate tax, 0% personal income tax, 0% dividend tax, 0% capital gains tax, premium lifestyle, and global business environment.",
+    summary:
+      "We help high-revenue agency owners, consultants & coaches, e-commerce/FBA brands, engineering firms, investors & traders, and contractors with location-independent income.",
+    description:
+      "We help you relocate cleanly and confidently while setting up the right UAE structure for long-term flexibility.",
+    clientWants: [
+      "Full relocation support",
+      "UAE residency & Emirates ID",
+      "HMRC exit strategy",
+      "Private banking",
+      "Lifestyle and family relocation guidance",
+      "A tax-efficient HQ for global operations",
+    ],
+    strategies: [
+      {
+        title: "Relocation planning",
+        description:
+          "Comprehensive support for moving to Dubai including residency, banking, and tax strategies.",
+      },
+      {
+        title: "Business setup",
+        description: "Establishing a UAE entity for global operations.",
+      },
+      {
+        title: "Compliance & legal",
+        description:
+          "Ensuring all moves are clean, legal, and strategically sound.",
+      },
+    ],
+    metrics: [
+      { label: "Low corporate tax", value: "Low" },
+      { label: "Tax savings", value: "0%" },
+      { label: "Dividend tax", value: "0%" },
+      { label: "Capital gains tax", value: "0%" },
+      { label: "Setup time", value: "4-6 weeks" },
+    ],
+    cta: {
+      label: "Start relocation planning",
+      href: "/contact-us",
+    },
+    media: {
+      imageUrl: "/images/others/company-1.jpg",
+      alt: "Dubai skyline and business relocation",
+      badge: "Relocation Experts",
+      gradient: "from-secondary/80 to-primary/70",
     },
   },
 ];
