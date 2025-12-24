@@ -35,7 +35,7 @@ const BLOG_POSTS_QUERY = `
     }
 `;
 
-const sizesAttr = "(max-width: 750px) 100vw, 750px";
+const sizesAttr = "(max-width: 750px) 100vw, 415px";
 
 const formatDate = (value?: string) => {
   if (!value) return { machine: "", display: "" };
@@ -52,13 +52,69 @@ const formatDate = (value?: string) => {
 
 const buildImage = (image: unknown) => {
   if (!image) return { src: "", srcSet: undefined };
-  const widths = [320, 480, 640, 750, 1125, 1536];
-  const src = urlFor(image).width(750).auto("format").url();
+  const widths = [305, 415, 520, 640, 830];
+  const src = urlFor(image).width(415).auto("format").url();
   const srcSet = widths
     .map((w) => `${urlFor(image).width(w).auto("format").url()} ${w}w`)
     .join(", ");
   return { src, srcSet };
 };
+
+const FALLBACK_POSTS = [
+  {
+    id: "fallback-1",
+    slug: "sample-strategy-success",
+    title: "Sample Strategy Success Story",
+    excerpt:
+      "A concise case study placeholder to keep the carousel layout consistent until real posts are published.",
+    image: "/wp-content/uploads/2025/03/GettyImages-1931487241-750x1024.jpg",
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample strategy success",
+    categories: [{ label: "Success Story", href: "#" }],
+    date: { machine: "", display: "" },
+  },
+  {
+    id: "fallback-2",
+    slug: "sample-growth-journey",
+    title: "Sample Growth Journey",
+    excerpt:
+      "A sample narrative showing how businesses can navigate growth phases effectively.",
+    image:
+      "/wp-content/uploads/2025/03/declan-sun-CxRVGdnhATs-unsplash-750x1024.jpg",
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample growth journey",
+    categories: [{ label: "Industry Insights", href: "#" }],
+    date: { machine: "", display: "" },
+  },
+  {
+    id: "fallback-3",
+    slug: "sample-market-trends",
+    title: "Sample Market Trends",
+    excerpt:
+      "Placeholder post covering emerging market themes to illustrate the carousel layout.",
+    image: "/wp-content/uploads/2025/03/GettyImages-1456192869-750x1024.jpg",
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample market trends",
+    categories: [{ label: "Expert Advice", href: "#" }],
+    date: { machine: "", display: "" },
+  },
+  {
+    id: "fallback-4",
+    slug: "sample-operations-playbook",
+    title: "Sample Operations Playbook",
+    excerpt:
+      "An operations-focused placeholder to complete the four-card carousel when content is limited.",
+    image: "/wp-content/uploads/2025/03/GettyImages-1408994869-750x1024.jpg",
+    srcSet: undefined,
+    sizes: sizesAttr,
+    imageAlt: "Sample operations playbook",
+    categories: [{ label: "Playbook", href: "#" }],
+    date: { machine: "", display: "" },
+  },
+];
 
 const loopStyles = `
   .elementor-1961 .elementor-element.elementor-element-8b3458c {
@@ -178,6 +234,14 @@ const BlogCarousel = async () => {
     };
   });
 
+  const displayPosts =
+    normalizedPosts.length >= 4
+      ? normalizedPosts.slice(0, 4)
+      : [
+          ...normalizedPosts,
+          ...FALLBACK_POSTS.slice(0, 4 - normalizedPosts.length),
+        ];
+
   return (
     <>
       <div
@@ -250,7 +314,7 @@ const BlogCarousel = async () => {
             data-widget_type="loop-carousel.post"
           >
             <div className="elementor-widget-container">
-              {normalizedPosts.length ? (
+              {displayPosts.length ? (
                 <div
                   className="swiper elementor-loop-container elementor-grid"
                   role="list"
@@ -258,7 +322,7 @@ const BlogCarousel = async () => {
                 >
                   <div className="swiper-wrapper" aria-live="polite">
                     <style dangerouslySetInnerHTML={{ __html: loopStyles }} />
-                    {normalizedPosts.map((post, index) => (
+                    {displayPosts.map((post, index) => (
                       <div
                         key={post.id}
                         data-elementor-type="loop-item"
@@ -267,7 +331,7 @@ const BlogCarousel = async () => {
                         data-elementor-post-type="elementor_library"
                         role="group"
                         aria-roledescription="slide"
-                        aria-label={`Slide ${index + 1} of ${normalizedPosts.length}`}
+                        aria-label={`Slide ${index + 1} of ${displayPosts.length}`}
                       >
                         <div
                           className="elementor-element elementor-element-8b3458c animated-fast e-flex e-con-boxed e-con e-parent"
@@ -288,8 +352,8 @@ const BlogCarousel = async () => {
                                   <img
                                     loading="lazy"
                                     decoding="async"
-                                    width={750}
-                                    height={1024}
+                                    width={305}
+                                    height={415}
                                     src={post.image}
                                     srcSet={post.srcSet}
                                     sizes={post.sizes}
@@ -374,7 +438,16 @@ const BlogCarousel = async () => {
                               data-widget_type="theme-post-title.default"
                             >
                               <div className="elementor-widget-container">
-                                <h5 className="elementor-heading-title elementor-size-default">
+                                <h5
+                                  className="elementor-heading-title elementor-size-default"
+                                  style={{
+                                    display: "-webkit-box",
+                                    WebkitLineClamp: 2,
+                                    WebkitBoxOrient: "vertical",
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                  }}
+                                >
                                   <a href={`/insights/${post.slug}`}>
                                     {post.title}
                                   </a>
@@ -388,7 +461,17 @@ const BlogCarousel = async () => {
                               data-widget_type="theme-post-excerpt.default"
                             >
                               <div className="elementor-widget-container">
-                                {post.excerpt}
+                                <p
+                                  style={{
+                                    display: "-webkit-box",
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: "vertical",
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                  }}
+                                >
+                                  {post.excerpt}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -406,7 +489,7 @@ const BlogCarousel = async () => {
               )}
               <div
                 className="swiper-pagination"
-                aria-hidden={!normalizedPosts.length}
+                aria-hidden={!displayPosts.length}
               ></div>
             </div>
           </div>
