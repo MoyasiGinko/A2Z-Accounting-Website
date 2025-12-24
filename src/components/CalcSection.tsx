@@ -47,9 +47,9 @@ const CalcSection: React.FC = () => {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* Icon */}
-                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
+                    <div className="w-8 h-8 border border-gray-200 bg-primary-100 rounded-md flex items-center justify-center shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
                       <svg
-                        className="w-5 h-5 text-[#84C9E2] group-hover:text-white transition-colors duration-300"
+                        className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

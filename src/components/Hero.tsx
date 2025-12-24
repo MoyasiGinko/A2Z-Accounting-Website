@@ -228,7 +228,7 @@ const Hero = () => {
                       ></i>
                     </span>
                     <span className="elementor-icon-list-text">
-                      UK-UAE Structuring
+                      UK-UAE Advisory
                     </span>
                   </li>
                 </ul>
