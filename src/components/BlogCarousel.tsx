@@ -245,7 +245,7 @@ const BlogCarousel = async () => {
   return (
     <>
       <div
-        className="elementor-element elementor-element-c50d7c9 e-flex e-con-boxed e-con e-parent"
+        className="elementor-element elementor-element-c50d7c9 e-flex e-con-boxed e-con e-parent mb-10"
         data-id="c50d7c9"
         data-element_type="container"
       >
@@ -262,9 +262,9 @@ const BlogCarousel = async () => {
               data-settings='{"_animation":"slideInUp"}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
-                <span className="elementor-heading-title elementor-size-default">
-                  Insights &amp; Success Stories
+              <div className="elementor-widget-container bg-primary">
+                <span className="elementor-heading-title elementor-size-default text-white">
+                  Our Blogs
                 </span>
               </div>
             </div>
@@ -275,9 +275,9 @@ const BlogCarousel = async () => {
               data-settings='{"_animation":"slideInUp","_animation_delay":100}'
               data-widget_type="heading.default"
             >
-              <div className="elementor-widget-container">
+              <div className="elementor-widget-container ">
                 <h2 className="elementor-heading-title elementor-size-default">
-                  Expert Strategies, Industry Trends &amp; Real Results
+                  Latest Insights &amp; Success Stories
                 </h2>
               </div>
             </div>
@@ -292,9 +292,7 @@ const BlogCarousel = async () => {
             <div className="elementor-widget-container">
               <span className="elementor-heading-title elementor-size-default">
                 Stay ahead with the latest business insights, success stories,
-                and industry trends. Explore expert advice, real-world case
-                studies, and actionable strategies to drive growth and
-                innovation in your business.
+                and industry trends.
               </span>
             </div>
           </div>
@@ -381,7 +379,7 @@ const BlogCarousel = async () => {
                                       itemProp="about"
                                     >
                                       <span className="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
-                                        <span className="elementor-post-info__terms-list">
+                                        <span className="elementor-post-info__terms-list font-sans">
                                           {post.categories.map(
                                             (category, catIdx) => (
                                               <React.Fragment
@@ -439,7 +437,7 @@ const BlogCarousel = async () => {
                             >
                               <div className="elementor-widget-container">
                                 <h5
-                                  className="elementor-heading-title elementor-size-default"
+                                  className="elementor-heading-title elementor-size-default font-serif"
                                   style={{
                                     display: "-webkit-box",
                                     WebkitLineClamp: 2,
