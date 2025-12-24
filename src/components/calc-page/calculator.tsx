@@ -24,17 +24,17 @@ const Calculator: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50 h-fit">
+    <div className="relative bg-primary backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50 h-fit">
       {/* Glowing Rounded Rectangle Background */}
-      <div className="absolute inset-4 bg-gradient-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
+      <div className="absolute inset-4 bg-linear-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl animate-pulse pointer-events-none"></div>
 
       {/* Calculator Header - Hide when results are shown */}
       {!showResults && (
         <div className="relative z-10 text-left mb-8">
-          <h4 className="text-2xl font-bold !font-serif text-gray-900 mb-2">
+          <h4 className="text-2xl font-bold font-serif text-white mb-2">
             Tax Savings Calculator
           </h4>
-          <p className="text-gray-600 font-sans">
+          <p className="text-white font-sans">
             Compare corporate tax rates between UK and UAE
           </p>
         </div>
@@ -42,9 +42,9 @@ const Calculator: React.FC = () => {
 
       {/* Tax Savings Banner - Only show after calculation */}
       {showResults && (
-        <div className="relative z-10 bg-gradient-to-r from-[#84C9E2] to-[#6bb1d9] rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
+        <div className="relative z-10 bg-linear-to-r from-[#84C9E2] to-[#6bb1d9] rounded-2xl p-6 text-white mb-8 flex justify-between items-center">
           <div>
-            <h5 className="text-2xl !text-white !font-serif !font-semibold mb-1">
+            <h5 className="text-2xl  font-serif font-semibold mb-1">
               Tax Savings in UAE
             </h5>
             <p className="text-base font-sans">
@@ -57,9 +57,9 @@ const Calculator: React.FC = () => {
       )}
 
       {/* Input Fields */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div className="relative z-10 text-white grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2 font-sans">
+          <label className="block text-sm font-medium text-white mb-2 font-sans">
             Annual Turnover (£)
           </label>
           <input
@@ -74,7 +74,7 @@ const Calculator: React.FC = () => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2 font-sans">
+          <label className="block text-sm font-medium text-white mb-2 font-sans">
             Annual Expenses (£)
           </label>
           <input
@@ -95,7 +95,7 @@ const Calculator: React.FC = () => {
         <button
           onClick={handleCalculate}
           disabled={isCalculating}
-          className="px-8 py-3 bg-primary-600 hover:bg-primary-700 bg-primary text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-8 py-3 bg-primary-600 hover:bg-primary-700 bg-secondary text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isCalculating ? "Calculating..." : "Calculate Tax Savings"}
         </button>
@@ -119,7 +119,7 @@ const Calculator: React.FC = () => {
           {/* UK Card */}
           <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 overflow-hidden">
             <div className="bg-[#e4572c]  p-4">
-              <h5 className="!font-medium !text-white text-lg font-serif">
+              <h5 className="font-medium text-white text-lg font-serif">
                 UK Corporation
               </h5>
             </div>
