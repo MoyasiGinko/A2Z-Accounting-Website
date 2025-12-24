@@ -57,7 +57,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </h2>
 
         {post.excerpt ? (
-          <p className="text-sm text-primary/70 line-clamp-2 overflow-hidden font-sans">
+          <p className="text-sm text-primary/50 group-hover:text-primary/90 line-clamp-2 overflow-hidden font-sans">
             {post.excerpt}
           </p>
         ) : null}
