@@ -6,27 +6,27 @@ const Vision = () => {
       containerId: "ffb023a",
       iconBoxId: "69c379a",
       textWidgetId: "82a910c",
-      title: "Our Focus",
+      title: "Sector-Led Expertise",
       description:
-        "We prioritize strategic clarity, sustainable growth, and measurable impact, ensuring businesses stay ahead in a dynamic market.",
+        "We specialise in complex, regulated, high-value sectors such as engineering, offshore contracting, hospitality, and healthcare for advice matched to real operations.",
       animationDelay: 0,
     },
     {
       containerId: "ba74473",
       iconBoxId: "234de0a",
       textWidgetId: "3dc1e54",
-      title: "Our Approach",
+      title: "Compliance-First Structuring",
       description:
-        "Combining data-driven insights with tailored solutions, we create actionable strategies that drive real business results.",
+        "Every structure we design is built for UK and UAE compliance, delivering tax efficiency without shortcuts so audits, penalties, or forced restructures never surprise you.",
       animationDelay: 50,
     },
     {
       containerId: "6725fc0",
       iconBoxId: "13b708f",
       textWidgetId: "c4183f6",
-      title: "Our Experience",
+      title: "UK-Rooted. Dubai-Ready.",
       description:
-        "Years of hands-on consulting have helped organizations navigate complexity, unlock growth, and achieve lasting transformation.",
+        "Powered by Aberdeen's top accounting firm, we blend UK standards with UAE market fluency to give founders clarity, credibility, and confidence across both jurisdictions.",
       animationDelay: 100,
     },
   ];
