@@ -83,12 +83,17 @@ const Hero = () => {
                     {/* <span className="separator"> </span> */}
                     <span className="ml-1">66 reviews on</span>
                     <span className="separator"> </span>
-                    <a href="https://www.google.com/maps/place/A2Z+Accounting+Solutions/@57.1428981,-2.1114138,17z/data=!3m1!4b1!4m6!3m5!1s0x4884137ab38a3ca9:0xd3b5e9e029818502!8m2!3d57.1428981!4d-2.1114138!16s%2Fg%2F11p_2w1k34?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+                    <a
+                      href="https://www.google.com/maps/place/A2Z+Accounting+Solutions/@57.1428981,-2.1114138,17z/data=!3m1!4b1!4m6!3m5!1s0x4884137ab38a3ca9:0xd3b5e9e029818502!8m2!3d57.1428981!4d-2.1114138!16s%2Fg%2F11p_2w1k34?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white ml-2 rounded-sm p-px"
+                    >
                       <img
                         src="https://a2zaccounting.co.uk/wp-content/uploads/2025/10/google.webp"
                         alt="Google"
                         style={{ height: "24px", verticalAlign: "middle" }}
-                        className="ml-2 rounded-sm"
+                        className=""
                       />
                     </a>
                   </div>
