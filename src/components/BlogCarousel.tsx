@@ -245,7 +245,7 @@ const BlogCarousel = async () => {
   return (
     <>
       <div
-        className="elementor-element elementor-element-c50d7c9 e-flex e-con-boxed e-con e-parent mb-10"
+        className="elementor-element elementor-element-c50d7c9 e-flex e-con-boxed e-con e-parent"
         data-id="c50d7c9"
         data-element_type="container"
       >
@@ -492,6 +492,14 @@ const BlogCarousel = async () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full flex justify-center mb-20">
+        <a
+          href="/blogs"
+          className="px-6 py-3 rounded-md bg-primary text-white font-semibold font-sans shadow hover:shadow-md transition-transform duration-200 hover:-translate-y-0.5"
+        >
+          View More Blogs
+        </a>
       </div>
     </>
   );

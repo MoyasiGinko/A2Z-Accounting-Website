@@ -109,14 +109,14 @@ const Footer = () => {
             </h4>
             <p className="!text-[#CFE9FB] !text-sm !font-dm-sans">
               Email:{" "}
-              <a className="!text-white" href="mailto:hello@a2zaccounting.ae">
-                hello@a2zaccounting.ae
+              <a className="!text-white" href="mailto:info@a2zaccounting.co.uk">
+                info@a2zaccounting.co.uk
               </a>
             </p>
             <p className="!text-[#CFE9FB] !text-sm !mt-2 !font-dm-sans">
               Phone:{" "}
-              <a className="!text-white" href="tel:+971500000000">
-                +971 50 000 0000
+              <a className="!text-white" href="tel:+01224042961">
+                +01 224 042 961
               </a>
             </p>
 
