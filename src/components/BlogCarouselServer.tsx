@@ -37,21 +37,44 @@ const BLOG_POSTS_QUERY = `
     }
 `;
 
+let postsCache: SanityPost[] | null = null;
+let postsPromise: Promise<SanityPost[]> | null = null;
+
+const loadPostsOnce = async (): Promise<SanityPost[]> => {
+  if (postsCache) return postsCache;
+  if (!postsPromise) {
+    postsPromise = sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY)
+      .then((result) => {
+        postsCache = result ?? [];
+        return postsCache;
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error("Failed to fetch blog posts:", error);
+        postsCache = [];
+        return postsCache;
+      })
+      .finally(() => {
+        postsPromise = null;
+      });
+  }
+  return postsPromise;
+};
+
 const BlogCarouselServer = () => {
   const [posts, setPosts] = useState<SanityPost[]>([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const fetchedPosts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
-        setPosts(fetchedPosts);
-      } catch (error) {
-        console.error("Failed to fetch blog posts:", error);
-        // posts remains empty, will use fallbacks
+    let isMounted = true;
+    loadPostsOnce().then((fetched) => {
+      if (isMounted) {
+        setPosts(fetched);
       }
-    };
+    });
 
-    fetchPosts();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return <BlogCarousel posts={posts} />;

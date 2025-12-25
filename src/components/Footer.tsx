@@ -131,15 +131,15 @@ const Footer = () => {
             </p>
             <p className="!text-[#CFE9FB] !text-sm !mt-2 !font-dm-sans">
               Phone:{" "}
-              <a className="!text-white" href="tel:+01224042961">
-                +01 224 042 961
+              <a className="!text-white" href="tel:+447832921562">
+                +44 7832 921562
               </a>
             </p>
 
             <div className="!mt-4">
               <div className="!flex !gap-3">
                 <a
-                  href="https://api.whatsapp.com/send/?phone=00447446844226&text&type=phone_number&app_absent=0"
+                  href="https://wa.me/447832921562"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"

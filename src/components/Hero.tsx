@@ -90,7 +90,7 @@ const Hero = () => {
                       className="bg-white ml-2 rounded-sm p-px"
                     >
                       <img
-                        src="https://a2zaccounting.co.uk/wp-content/uploads/2025/10/google.webp"
+                        src="/images/google.webp"
                         alt="Google"
                         style={{ height: "24px", verticalAlign: "middle" }}
                         className=""

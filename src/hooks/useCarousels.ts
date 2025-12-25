@@ -54,12 +54,17 @@ export const useCarousels = () => {
         const pagination = widget
           ? (widget.querySelector(".swiper-pagination") as HTMLElement | null)
           : null;
+        const swiperModules = [
+          ...(prev && next ? [Navigation] : []),
+          ...(pagination ? [Pagination] : []),
+          ...(autoplayEnabled ? [Autoplay] : []),
+        ];
 
         swiperContainer.dataset.initialised = "true";
         markReady(swiperContainer);
 
         new Swiper(swiperContainer, {
-          modules: [Navigation, Pagination, Autoplay],
+          modules: swiperModules,
           loop: settings.infinite === "yes",
           speed: parseInt(settings.speed, 10) || 500,
           slidesPerView: slidesDesktop,
@@ -82,7 +87,7 @@ export const useCarousels = () => {
                 delay: autoplayDelay,
                 disableOnInteraction: true,
               }
-            : false,
+            : undefined,
           breakpoints: {
             0: {
               slidesPerView: slidesMobile,
