@@ -11,7 +11,7 @@ import ClientStats from "@/components/ClientStats";
 import ClientLogos from "@/components/ClientLogos";
 import Testimonials from "@/components/Testimonials";
 import GetInTouch from "@/components/GetInTouch";
-import BlogCarousel from "@/components/BlogCarousel";
+import BlogCarouselServer from "@/components/BlogCarouselServer";
 import GoogleReviews from "@/components/GoogleReviews";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 import { useStickyHeader } from "@/hooks/useStickyHeader";
@@ -74,7 +74,7 @@ export default function Home() {
                   <ClientStats />
                   <Services />
                   <GoogleReviews />
-                  <BlogCarousel />
+                  <BlogCarouselServer />
                   {/* <ClientLogos /> */}
                   <Testimonials />
                   <div className="mb-40">

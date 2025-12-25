@@ -61,7 +61,7 @@ const menuItems: MenuItem[] = [
   {
     label: "Free Resources",
     subMenu: [
-      { label: "Free Materials", href: "/free-materials" },
+      // { label: "Free Materials", href: "/free-materials" },
       { label: "Blogs", href: "/blogs" },
       { label: "FAQ", href: "/faq" },
       { label: "Tax Calculators", href: "/tax-calculators" },
@@ -166,7 +166,7 @@ export default function Header() {
 
   return (
     <header className={getHeaderClasses()}>
-      <div className="max-w-[1312px] mx-auto px-4 sm:px-4 lg:px-4">
+      <div className="max-w-328 mx-auto px-4 sm:px-4 lg:px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="shrink-0">

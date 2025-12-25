@@ -108,11 +108,11 @@ const Vision = () => {
         data-id="f077fc7"
         data-element_type="container"
       >
-        <div className="e-con-inner">
+        <div className="e-con-inner gap-2 text-white">
           {visionItems.map((item) => (
             <div
               key={item.containerId}
-              className={`elementor-element elementor-element-${item.containerId} elementor-invisible e-con-full animated-fast e-flex e-con e-child`}
+              className={`elementor-element elementor-element-${item.containerId} elementor-invisible e-con-full animated-fast e-flex e-con e-child rounded-md bg-primary`}
               data-id={item.containerId}
               data-element_type="container"
               data-settings={`{"animation":"slideInUp","animation_delay":${item.animationDelay}}`}
@@ -129,7 +129,7 @@ const Vision = () => {
                       <span className="elementor-icon">{renderIconSvg()}</span>
                     </div>
                     <div className="elementor-icon-box-content">
-                      <h5 className="elementor-icon-box-title">
+                      <h5 className="elementor-icon-box-title text-white">
                         <span>{item.title}</span>
                       </h5>
                     </div>

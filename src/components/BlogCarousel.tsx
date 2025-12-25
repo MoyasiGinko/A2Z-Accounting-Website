@@ -1,6 +1,5 @@
 import React from "react";
 import { urlFor } from "@/lib/imageBuilder";
-import { sanityFetch } from "@/lib/sanity.client";
 
 type SanityCategory = {
   title?: string;
@@ -17,23 +16,6 @@ type SanityPost = {
   mainImageAlt?: string;
   categories?: SanityCategory[];
 };
-
-const BLOG_POSTS_QUERY = `
-  *[_type == "post" && defined(slug.current) && defined(publishedAt)]
-    | order(publishedAt desc)[0...4] {
-      _id,
-      title,
-      "slug": slug.current,
-      excerpt,
-      publishedAt,
-      mainImage,
-      "mainImageAlt": mainImage.alt,
-      categories[]->{
-        title,
-        "slug": slug.current
-      }
-    }
-`;
 
 const sizesAttr = "(max-width: 750px) 100vw, 415px";
 
@@ -209,9 +191,11 @@ const loopStyles = `
   }
 `;
 
-const BlogCarousel = async () => {
-  const posts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
+type BlogCarouselProps = {
+  posts: SanityPost[];
+};
 
+const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const normalizedPosts = (posts || []).map((post) => {
     const { src, srcSet } = buildImage(post.mainImage);
     const date = formatDate(post.publishedAt);
