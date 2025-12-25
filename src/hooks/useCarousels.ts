@@ -82,7 +82,7 @@ export const useCarousels = () => {
                 delay: autoplayDelay,
                 disableOnInteraction: true,
               }
-            : undefined,
+            : false,
           breakpoints: {
             0: {
               slidesPerView: slidesMobile,

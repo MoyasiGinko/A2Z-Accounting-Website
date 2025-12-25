@@ -140,7 +140,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      1. Comprehensive Initial Strategy Call & Tax Assessment
+                      Comprehensive Initial Strategy Call & Tax Assessment
                     </h5>
                   </div>
                 </div>
@@ -200,7 +200,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      2. Tailored Company Structure & Free Zone Selection
+                      Tailored Company Structure & Free Zone Selection
                     </h5>
                   </div>
                 </div>
@@ -260,7 +260,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      3. Company Setup, Bank Account Opening & Residency
+                      Company Setup, Bank Account Opening & Residency
                     </h5>
                   </div>
                 </div>
@@ -319,7 +319,7 @@ const ClientStats = () => {
                 >
                   <div className="elementor-widget-container">
                     <h5 className="elementor-heading-title elementor-size-default">
-                      4. Ongoing Compliance, Accounting & Tax Advisory
+                      Ongoing Compliance, Accounting & Tax Advisory
                     </h5>
                   </div>
                 </div>

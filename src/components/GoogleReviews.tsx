@@ -34,7 +34,7 @@ const GoogleReviews = () => {
         onLoad={initializeWidget}
       />
       <section className="bg-[#f9fafb] py-16 md:py-20 mt-20 mb-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-328 mx-auto px-4 sm:px-4 lg:px-4">
           <div className="text-center mb-10">
             <p className="text-xs tracking-[0.3em] uppercase text-[#0F6FBE] font-semibold font-sans">
               Google Reviews
@@ -47,7 +47,7 @@ const GoogleReviews = () => {
               on their financial clarity and growth.
             </p>
           </div>
-          <div className="bg-white/5 shadow-xl rounded-md p-6 md:p-8">
+          <div className="bg-white/5 rounded-md p-6 md:p-8">
             <div className={ELFSIGHT_CONTAINER_CLASS} data-elfsight-app-lazy />
           </div>
         </div>
