@@ -39,7 +39,7 @@ const GoogleReviews = () => {
             <p className="text-xs tracking-[0.3em] uppercase text-[#0F6FBE] font-semibold font-sans">
               Google Reviews
             </p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-medium text-[#162C45] font-serif">
+            <h2 className="mt-4 text-4xl md:text-5xl font-medium text-[#162C45] font-serif">
               Trusted by businesses across the UAE
             </h2>
             <p className="mt-3 text-base text-[#4A5B6D] font-sans max-w-2xl mx-auto">
