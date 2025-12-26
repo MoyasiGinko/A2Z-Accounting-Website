@@ -45,7 +45,7 @@ const FALLBACK_POSTS = [
   {
     id: "fallback-2",
     slug: "",
-    title: "Sample Growth Journey",
+    title: "Sample Growth Journey Insights",
     excerpt:
       "A sample narrative showing how businesses can navigate growth phases effectively.",
     image:
@@ -157,7 +157,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
               return (
                 <article
                   key={post.id}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group flex h-full flex-col overflow-hidden rounded-md "
                 >
                   <div className="relative">
                     <Link
@@ -178,7 +178,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                       {post.categories.map((category) => (
                         <span
                           key={`${post.id}-${category.label}`}
-                          className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary shadow"
+                          className="rounded-md bg-white/90 px-3 py-1 text-xs font-semibold text-primary shadow"
                         >
                           {category.label}
                         </span>
@@ -192,10 +192,10 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                     >
                       {post.date.display || "Coming soon"}
                     </time>
-                    <h3 className="mt-3 line-clamp-2 font-serif text-2xl text-slate-900">
+                    <h3 className="mt-3 line-clamp-2 font-serif text-2xl text-primary transition-colors duration-300">
                       <Link
                         href={postHref}
-                        className={`transition hover:text-primary ${post.slug ? "" : "pointer-events-none"}`}
+                        className={`transition group-hover:text-secondary ${post.slug ? "" : "pointer-events-none"}`}
                       >
                         {post.title}
                       </Link>
@@ -203,28 +203,6 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                     <p className="mt-3 line-clamp-3 text-sm text-slate-600">
                       {post.excerpt}
                     </p>
-                    <div className="mt-6 flex items-center justify-between text-sm font-semibold text-primary">
-                      <Link
-                        href={postHref}
-                        className={`inline-flex items-center gap-1 ${post.slug ? "" : "pointer-events-none"}`}
-                      >
-                        Read more
-                        <span aria-hidden="true">→</span>
-                      </Link>
-                      <div className="flex gap-2">
-                        {post.categories.slice(0, 2).map((category) => (
-                          <Link
-                            key={`${post.id}-${category.label}-link`}
-                            href={category.href}
-                            className={`text-xs text-slate-400 hover:text-secondary ${
-                              category.href === "#" ? "pointer-events-none" : ""
-                            }`}
-                          >
-                            {category.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
                   </div>
                 </article>
               );
@@ -239,7 +217,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
         <div className="mt-12 flex justify-center">
           <Link
             href="/blogs"
-            className="inline-flex items-center rounded-full bg-secondary px-6 py-3 font-semibold text-primary shadow hover:bg-primary hover:text-white"
+            className="inline-flex items-center rounded-md bg-secondary px-4 py-2 font-serif font-semibold text-primary shadow hover:bg-primary hover:text-white"
           >
             View More Blogs
           </Link>
