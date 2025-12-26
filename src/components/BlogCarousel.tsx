@@ -129,30 +129,23 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
 
   return (
     <section className="bg-white py-16" aria-labelledby="blog-carousel-heading">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-328 px-4 sm:px-4 lg:px-4">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <span className="inline-flex items-center rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
+            <span className="inline-flex items-center rounded-md bg-primary px-2 py-1 text-sm font-serif font-medium text-white">
               Our Blogs
             </span>
             <h2
               id="blog-carousel-heading"
-              className="mt-4 text-3xl font-serif font-semibold text-slate-900 md:text-4xl"
+              className="mt-4 text-5xl font-serif font-medium text-primary md:text-6xl"
             >
               Latest Insights &amp; Success Stories
             </h2>
-            <p className="mt-3 max-w-2xl text-base text-slate-600">
+          </div>
+          <div className="text-sm text-primary/90 ">
+            <p className="max-w-2xl text-base text-slate-600">
               Stay ahead with the latest business insights, success stories, and
               industry trends.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600 shadow-sm">
-            <p className="font-semibold text-slate-900">
-              Why this feed matters
-            </p>
-            <p className="mt-1 leading-relaxed">
-              Curated stories from A2Z Accounting highlighting market shifts,
-              client wins, and practical playbooks.
             </p>
           </div>
         </div>
