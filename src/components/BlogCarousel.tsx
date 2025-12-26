@@ -217,7 +217,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
         <div className="mt-12 flex justify-center">
           <Link
             href="/blogs"
-            className="inline-flex items-center rounded-md bg-secondary px-4 py-2 font-serif font-semibold text-primary shadow hover:bg-primary hover:text-white"
+            className="inline-flex text-base items-center rounded-md bg-secondary px-4 py-2 font-serif font-semibold text-primary shadow hover:bg-primary hover:text-white"
           >
             View More Blogs
           </Link>
