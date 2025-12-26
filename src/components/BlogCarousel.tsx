@@ -170,7 +170,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                         srcSet={post.srcSet}
                         sizes={post.sizes}
                         alt={post.imageAlt}
-                        className="h-64 w-full object-cover"
+                        className="h-54 w-full object-cover"
                         loading="lazy"
                       />
                     </Link>
