@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useState } from "react";
 import type { KeyboardEvent } from "react";
 
@@ -1067,7 +1068,7 @@ const Testimonials: React.FC = () => {
                   <div className="elementor-button-wrapper ">
                     <a
                       className="elementor-button elementor-button-link elementor-size-sm hover:bg-white hover:text-primary"
-                      href="https://execor.vamtam.com/about/testimonials/"
+                      href="/contact-us"
                     >
                       <span className="elementor-button-content-wrapper">
                         <span className="elementor-button-icon">
@@ -1077,7 +1078,7 @@ const Testimonials: React.FC = () => {
                           ></i>
                         </span>
                         <span className="elementor-button-text">
-                          Read All Testimonials
+                          Let us help your business grow
                         </span>
                       </span>
                     </a>

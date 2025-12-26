@@ -92,7 +92,7 @@ const WhyDubai: React.FC = () => {
             {/* CTA */}
             <a
               href="/why-dubai"
-              className="hidden lg:inline-flex items-center justify-center px-6 py-3 bg-[#84C9E2] hover:bg-[#73b2c9] text-primary font-bold rounded-lg transition-all duration-300 shadow-lg shadow-[#84C9E2]/20 group font-sans"
+              className="hidden lg:inline-flex items-center justify-center px-4 py-2 bg-[#84C9E2] hover:bg-[#73b2c9] text-primary text-base font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-[#84C9E2]/20 group font-serif"
             >
               Discover Dubai Opportunities
             </a>

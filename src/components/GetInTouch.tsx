@@ -424,18 +424,12 @@ const GetInTouch: React.FC = () => {
                             required
                           ></textarea>
                         </div>
-                        <div className="elementor-field-group elementor-column elementor-field-type-submit elementor-col-40 e-form__buttons">
+                        <div className="elementor-field-group elementor-column elementor-field-type-submit elementor-col-40 e-form__buttons w-40">
                           <button
-                            className="elementor-button elementor-size-sm"
+                            className="elementor-button elementor-size-sm "
                             type="submit"
                           >
-                            <span className="elementor-button-content-wrapper">
-                              <span className="elementor-button-icon">
-                                <i
-                                  aria-hidden="true"
-                                  className="vamtamtheme- vamtam-theme-arrow-right"
-                                ></i>
-                              </span>
+                            <span className="elementor-button-content-wrapper justify-center ">
                               <span className="elementor-button-text">
                                 Submit
                               </span>

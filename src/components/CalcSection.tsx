@@ -76,7 +76,7 @@ const CalcSection: React.FC = () => {
             <div className="flex justify-start">
               <a
                 href="/contact-us"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#84C9E2] hover:bg-[#6bb1d9] text-primary font-semibold rounded-md transition-all hover:shadow-xl shadow-lg"
+                className="inline-flex items-center justify-center px-4 py-2 bg-[#84C9E2] hover:bg-[#6bb1d9] text-base text-primary font-semibold rounded-md transition-all hover:shadow-xl font-serif shadow-lg"
               >
                 Get Started Today
               </a>
