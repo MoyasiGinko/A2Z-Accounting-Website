@@ -97,12 +97,12 @@ const PromoSection: React.FC = () => {
                     href="https://execor.vamtam.com/services/"
                   >
                     <span className="elementor-button-content-wrapper">
-                      <span className="elementor-button-icon">
+                      {/* <span className="elementor-button-icon">
                         <i
                           aria-hidden="true"
                           className="vamtamtheme- vamtam-theme-arrow-right"
                         ></i>
-                      </span>
+                      </span> */}
                       <span className="elementor-button-text">
                         Let us optimize it for you
                       </span>
