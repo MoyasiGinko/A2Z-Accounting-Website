@@ -14,6 +14,7 @@ export type SanityPost = {
   mainImage?: unknown;
   mainImageAlt?: string;
   categories?: SanityCategory[];
+  isTrending?: boolean;
 };
 
 export type SanityPostDetailed = SanityPost & {
@@ -62,12 +63,25 @@ const CATEGORIES_QUERY = `
 `;
 
 const TRENDING_POSTS_QUERY = `
+  *[_type == "post" && defined(slug.current) && isTrending == true]
+    | order(publishedAt desc)[0...6]{
+      _id,
+      title,
+      slug,
+      publishedAt,
+      mainImage,
+      isTrending
+    }
+`;
+
+const TRENDING_FALLBACK_QUERY = `
   *[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...6]{
     _id,
     title,
     slug,
     publishedAt,
-    mainImage
+    mainImage,
+    isTrending
   }
 `;
 
@@ -182,7 +196,7 @@ export const fetchAllPosts = async () => {
       POSTS_QUERY,
       {},
       {
-        cache: "no-store",
+        cache: "force-cache",
         next: { revalidate: 60 },
       }
     );
@@ -203,11 +217,35 @@ export const fetchCategories = async () => {
 };
 
 export const fetchTrendingPosts = async () => {
-  const result = await fetchWithMemory("trending-posts", () =>
-    sanityFetch<SanityPost[]>(TRENDING_POSTS_QUERY)
-  );
+  try {
+    const trending = await sanityClient.fetch<SanityPost[]>(
+      TRENDING_POSTS_QUERY,
+      {},
+      {
+        cache: "force-cache",
+        next: { revalidate: 60 },
+      }
+    );
 
-  return (Array.isArray(result) ? result : []) as SanityPost[];
+    if (trending?.length) {
+      return trending;
+    }
+
+    const fallback = await sanityClient.fetch<SanityPost[]>(
+      TRENDING_FALLBACK_QUERY,
+      {},
+      {
+        cache: "force-cache",
+        next: { revalidate: 60 },
+      }
+    );
+
+    return fallback ?? [];
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error("Failed to fetch trending posts:", error);
+    return [];
+  }
 };
 
 export const fetchPostBySlug = (slug: string) =>
