@@ -33,10 +33,10 @@ const Calculator: React.FC = () => {
       {/* Calculator Header - Hide when results are shown */}
       {!showResults && (
         <div className="relative z-10 text-left mb-8">
-          <h4 className="text-2xl font-bold font-serif text-white mb-2">
+          <h4 className="text-2xl font-medium font-serif text-white mb-2">
             Tax Savings Calculator
           </h4>
-          <p className="text-white font-sans">
+          <p className="text-white font-normal font-sans">
             Compare corporate tax rates between UK and UAE
           </p>
         </div>
@@ -84,7 +84,7 @@ const Calculator: React.FC = () => {
         <button
           onClick={handleCalculate}
           disabled={isCalculating}
-          className="px-8 py-3 bg-primary-600 hover:bg-primary-700 bg-secondary text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-sans disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 text-base bg-primary-600 hover:bg-primary-700 bg-secondary text-primary font-semibold rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-md font-serif disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isCalculating ? "Calculating..." : "Calculate Tax Savings"}
         </button>
@@ -94,7 +94,7 @@ const Calculator: React.FC = () => {
               setShowResults(false);
               setAnnualTurnover(500000);
             }}
-            className="px-8 py-3 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-300 font-sans"
+            className="px-4 py-2 bg-red-300 text-base hover:bg-red-400 text-primary font-semibold rounded-md transition-all duration-300 font-serif"
           >
             Clear
           </button>

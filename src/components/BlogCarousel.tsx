@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { urlFor } from "@/lib/imageBuilder";
 import type { SanityPost, SanityCategory } from "@/lib/sanityApi";
 
@@ -83,99 +84,6 @@ const FALLBACK_POSTS = [
   },
 ];
 
-const loopStyles = `
-  .elementor-1961 .elementor-element.elementor-element-8b3458c {
-    --display: flex;
-    --gap: 15px 15px;
-    --row-gap: 15px;
-    --column-gap: 15px;
-    --padding-top: 0px;
-    --padding-bottom: 0px;
-    --padding-left: 0px;
-    --padding-right: 0px;
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-e4b59e9 {
-    --display: flex;
-    --flex-direction: row;
-    --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
-    --container-widget-height: 100%;
-    --container-widget-flex-grow: 1;
-    --container-widget-align-self: stretch;
-    --flex-wrap-mobile: wrap;
-    --align-items: center;
-    --gap: 10px 10px;
-    --row-gap: 10px;
-    --column-gap: 10px;
-    --padding-top: 0px;
-    --padding-bottom: 0px;
-    --padding-left: 0px;
-    --padding-right: 0px;
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-4e1ffcd > .elementor-widget-container {
-    background-color: var(--e-global-color-vamtam_accent_3);
-    padding: 8px;
-    border-radius: 4px;
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-4e1ffcd:hover .elementor-widget-container {
-    background-color: var(--e-global-color-vamtam_accent_4);
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-4e1ffcd .elementor-icon-list-item,
-  .elementor-1961 .elementor-element.elementor-element-923a9ab .elementor-icon-list-item {
-    font-family: var(--e-global-typography-798d94d-font-family), sans-serif;
-    font-size: var(--e-global-typography-798d94d-font-size);
-    font-weight: var(--e-global-typography-798d94d-font-weight);
-    line-height: var(--e-global-typography-798d94d-line-height);
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-74fce07 .elementor-heading-title {
-    color: var(--e-global-color-vamtam_accent_6);
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-74fce07 .elementor-heading-title a:hover,
-  .elementor-1961 .elementor-element.elementor-element-74fce07 .elementor-heading-title a:focus {
-    color: var(--e-global-color-vamtam_accent_1);
-  }
-
-  .elementor-1961 .elementor-element.elementor-element-abced80 .elementor-widget-container {
-    font-size: var(--e-global-typography-d778ca5-font-size);
-    line-height: var(--e-global-typography-d778ca5-line-height);
-    color: var(--e-global-color-vamtam_accent_8);
-  }
-
-  @media (max-width: 1024px) {
-    .elementor-1961 .elementor-element.elementor-element-8b3458c {
-      --gap: 10px 10px;
-      --row-gap: 10px;
-      --column-gap: 10px;
-    }
-
-    .elementor-1961 .elementor-element.elementor-element-abced80 > .elementor-widget-container {
-      margin: -0.3em 0 0 0;
-    }
-  }
-
-  .elementor-element-9a8edf1 .swiper:not(.swiper-initialized) {
-    overflow: visible;
-  }
-
-  .elementor-element-9a8edf1 .swiper:not(.swiper-initialized) .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    transform: none !important;
-  }
-
-  .elementor-element-9a8edf1 .swiper:not(.swiper-initialized) .swiper-slide {
-    width: auto !important;
-    height: auto;
-    margin: 0 !important;
-  }
-`;
-
 type BlogCarouselProps = {
   posts: SanityPost[];
 };
@@ -220,265 +128,131 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
         ];
 
   return (
-    <>
-      <div
-        className="elementor-element elementor-element-c50d7c9 e-flex e-con-boxed e-con e-parent"
-        data-id="c50d7c9"
-        data-element_type="container"
-      >
-        <div className="e-con-inner">
-          <div
-            className="elementor-element elementor-element-9317f8a e-con-full e-flex e-con e-child"
-            data-id="9317f8a"
-            data-element_type="container"
-          >
-            <div
-              className="elementor-element elementor-element-fc98675 elementor-invisible animated-fast elementor-widget elementor-widget-heading"
-              data-id="fc98675"
-              data-element_type="widget"
-              data-settings='{"_animation":"slideInUp"}'
-              data-widget_type="heading.default"
+    <section className="bg-white py-16" aria-labelledby="blog-carousel-heading">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span className="inline-flex items-center rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
+              Our Blogs
+            </span>
+            <h2
+              id="blog-carousel-heading"
+              className="mt-4 text-3xl font-serif font-semibold text-slate-900 md:text-4xl"
             >
-              <div className="elementor-widget-container bg-primary">
-                <span className="elementor-heading-title elementor-size-default text-white">
-                  Our Blogs
-                </span>
-              </div>
-            </div>
-            <div
-              className="elementor-element elementor-element-73bb323 elementor-invisible elementor-widget__width-initial elementor-widget-tablet__width-inherit animated-fast elementor-widget elementor-widget-heading"
-              data-id="73bb323"
-              data-element_type="widget"
-              data-settings='{"_animation":"slideInUp","_animation_delay":100}'
-              data-widget_type="heading.default"
-            >
-              <div className="elementor-widget-container ">
-                <h2 className="elementor-heading-title elementor-size-default">
-                  Latest Insights &amp; Success Stories
-                </h2>
-              </div>
-            </div>
+              Latest Insights &amp; Success Stories
+            </h2>
+            <p className="mt-3 max-w-2xl text-base text-slate-600">
+              Stay ahead with the latest business insights, success stories, and
+              industry trends.
+            </p>
           </div>
-          <div
-            className="elementor-element elementor-element-e3649ed elementor-invisible elementor-widget-tablet__width-initial elementor-widget__width-initial animated-fast elementor-widget elementor-widget-heading"
-            data-id="e3649ed"
-            data-element_type="widget"
-            data-settings='{"_animation":"slideInUp","_animation_delay":200}'
-            data-widget_type="heading.default"
-          >
-            <div className="elementor-widget-container">
-              <span className="elementor-heading-title elementor-size-default">
-                Stay ahead with the latest business insights, success stories,
-                and industry trends.
-              </span>
-            </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600 shadow-sm">
+            <p className="font-semibold text-slate-900">
+              Why this feed matters
+            </p>
+            <p className="mt-1 leading-relaxed">
+              Curated stories from A2Z Accounting highlighting market shifts,
+              client wins, and practical playbooks.
+            </p>
           </div>
         </div>
-      </div>
-      <div
-        className="elementor-element elementor-element-413d07d e-flex e-con-boxed e-con e-parent"
-        data-id="413d07d"
-        data-element_type="container"
-      >
-        <div className="e-con-inner">
-          <div
-            className="vamtam-has-theme-widget-styles elementor-element elementor-element-9a8edf1 elementor-pagination-type-bullets elementor-pagination-position-outside elementor-widget elementor-widget-loop-carousel"
-            data-id="9a8edf1"
-            data-element_type="widget"
-            data-settings='{"template_id":"1961","slides_to_show":"4","image_spacing_custom":{"unit":"px","size":20,"sizes":[]},"_skin":"post","slides_to_show_tablet":"2","slides_to_show_mobile":"1","slides_to_scroll":"1","edit_handle_selector":".elementor-loop-container","speed":500,"pagination":"bullets","image_spacing_custom_tablet":{"unit":"px","size":"","sizes":[]},"image_spacing_custom_mobile":{"unit":"px","size":"","sizes":[]}}'
-            data-widget_type="loop-carousel.post"
-          >
-            <div className="elementor-widget-container">
-              {displayPosts.length ? (
-                <div
-                  className="swiper elementor-loop-container elementor-grid"
-                  role="list"
-                  dir="ltr"
+
+        {displayPosts.length ? (
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {displayPosts.map((post) => {
+              const postHref = post.slug ? `/blogs/${post.slug}` : "#";
+              return (
+                <article
+                  key={post.id}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="swiper-wrapper" aria-live="polite">
-                    <style dangerouslySetInnerHTML={{ __html: loopStyles }} />
-                    {displayPosts.map((post, index) => (
-                      <div
-                        key={post.id}
-                        data-elementor-type="loop-item"
-                        data-elementor-id="1961"
-                        className={`elementor elementor-1961 swiper-slide e-loop-item e-loop-item-${post.id} post-${post.id}`}
-                        data-elementor-post-type="elementor_library"
-                        role="group"
-                        aria-roledescription="slide"
-                        aria-label={`Slide ${index + 1} of ${displayPosts.length}`}
-                      >
-                        <div
-                          className="elementor-element elementor-element-8b3458c animated-fast e-flex e-con-boxed e-con e-parent"
-                          data-id="8b3458c"
-                          data-element_type="container"
-                          data-settings='{"animation":"none","animation_delay":100}'
+                  <div className="relative">
+                    <Link
+                      href={postHref}
+                      aria-label={`Read more: ${post.title}`}
+                      className={`block ${post.slug ? "" : "pointer-events-none"}`}
+                    >
+                      <img
+                        src={post.image}
+                        srcSet={post.srcSet}
+                        sizes={post.sizes}
+                        alt={post.imageAlt}
+                        className="h-64 w-full object-cover"
+                        loading="lazy"
+                      />
+                    </Link>
+                    <div className="pointer-events-none absolute left-4 right-4 -bottom-4 flex flex-wrap gap-2">
+                      {post.categories.map((category) => (
+                        <span
+                          key={`${post.id}-${category.label}`}
+                          className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary shadow"
                         >
-                          <div className="e-con-inner">
-                            <div
-                              className="elementor-element elementor-element-9b0d8db animated-fast elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image"
-                              data-id="9b0d8db"
-                              data-element_type="widget"
-                              data-settings='{"_animation":"none"}'
-                              data-widget_type="theme-post-featured-image.default"
-                            >
-                              <div className="elementor-widget-container">
-                                <a href={`/blogs/${post.slug}`}>
-                                  <img
-                                    loading="lazy"
-                                    decoding="async"
-                                    width={305}
-                                    height={415}
-                                    src={post.image}
-                                    srcSet={post.srcSet}
-                                    sizes={post.sizes}
-                                    className="attachment-large size-large"
-                                    alt={post.imageAlt}
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                            <div
-                              className="elementor-element elementor-element-e4b59e9 e-con-full e-flex e-con e-child"
-                              data-id="e4b59e9"
-                              data-element_type="container"
-                            >
-                              <div
-                                className="elementor-element elementor-element-4e1ffcd elementor-widget elementor-widget-post-info"
-                                data-id="4e1ffcd"
-                                data-element_type="widget"
-                                data-widget_type="post-info.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <ul className="elementor-inline-items elementor-icon-list-items elementor-post-info">
-                                    <li
-                                      className="elementor-icon-list-item elementor-inline-item"
-                                      itemProp="about"
-                                    >
-                                      <span className="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
-                                        <span className="elementor-post-info__terms-list font-sans">
-                                          {post.categories.map(
-                                            (category, catIdx) => (
-                                              <React.Fragment
-                                                key={`${post.id}-${category.label}`}
-                                              >
-                                                <a
-                                                  href={category.href}
-                                                  className="elementor-post-info__terms-list-item"
-                                                >
-                                                  {category.label}
-                                                </a>
-                                                {catIdx <
-                                                  post.categories.length -
-                                                    1 && (
-                                                  <span className="elementor-post-info__separator">
-                                                    ,{" "}
-                                                  </span>
-                                                )}
-                                              </React.Fragment>
-                                            )
-                                          )}
-                                        </span>
-                                      </span>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div
-                                className="elementor-element elementor-element-923a9ab elementor-widget elementor-widget-post-info"
-                                data-id="923a9ab"
-                                data-element_type="widget"
-                                data-widget_type="post-info.default"
-                              >
-                                <div className="elementor-widget-container">
-                                  <ul className="elementor-inline-items elementor-icon-list-items elementor-post-info">
-                                    <li
-                                      className="elementor-icon-list-item elementor-inline-item"
-                                      itemProp="datePublished"
-                                    >
-                                      <span className="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
-                                        <time dateTime={post.date.machine}>
-                                          {post.date.display}
-                                        </time>
-                                      </span>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className="elementor-element elementor-element-74fce07 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
-                              data-id="74fce07"
-                              data-element_type="widget"
-                              data-widget_type="theme-post-title.default"
-                            >
-                              <div className="elementor-widget-container">
-                                <h5
-                                  className="elementor-heading-title elementor-size-default font-serif"
-                                  style={{
-                                    display: "-webkit-box",
-                                    WebkitLineClamp: 2,
-                                    WebkitBoxOrient: "vertical",
-                                    overflow: "hidden",
-                                    textOverflow: "ellipsis",
-                                  }}
-                                >
-                                  <a href={`/blogs/${post.slug}`}>
-                                    {post.title}
-                                  </a>
-                                </h5>
-                              </div>
-                            </div>
-                            <div
-                              className="elementor-element elementor-element-abced80 vamtam-show-on-hover elementor-widget elementor-widget-theme-post-excerpt"
-                              data-id="abced80"
-                              data-element_type="widget"
-                              data-widget_type="theme-post-excerpt.default"
-                            >
-                              <div className="elementor-widget-container">
-                                <p
-                                  style={{
-                                    display: "-webkit-box",
-                                    WebkitLineClamp: 3,
-                                    WebkitBoxOrient: "vertical",
-                                    overflow: "hidden",
-                                    textOverflow: "ellipsis",
-                                  }}
-                                >
-                                  {post.excerpt}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                          {category.label}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div className="elementor-empty-state">
-                  <p>
-                    No posts available yet—please add an entry in the CMS feed.
-                  </p>
-                </div>
-              )}
-              <div
-                className="swiper-pagination"
-                aria-hidden={!displayPosts.length}
-              ></div>
-            </div>
+                  <div className="flex flex-1 flex-col px-5 pb-6 pt-8">
+                    <time
+                      className="text-xs font-semibold uppercase tracking-wide text-secondary"
+                      dateTime={post.date.machine}
+                    >
+                      {post.date.display || "Coming soon"}
+                    </time>
+                    <h3 className="mt-3 line-clamp-2 font-serif text-2xl text-slate-900">
+                      <Link
+                        href={postHref}
+                        className={`transition hover:text-primary ${post.slug ? "" : "pointer-events-none"}`}
+                      >
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="mt-3 line-clamp-3 text-sm text-slate-600">
+                      {post.excerpt}
+                    </p>
+                    <div className="mt-6 flex items-center justify-between text-sm font-semibold text-primary">
+                      <Link
+                        href={postHref}
+                        className={`inline-flex items-center gap-1 ${post.slug ? "" : "pointer-events-none"}`}
+                      >
+                        Read more
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                      <div className="flex gap-2">
+                        {post.categories.slice(0, 2).map((category) => (
+                          <Link
+                            key={`${post.id}-${category.label}-link`}
+                            href={category.href}
+                            className={`text-xs text-slate-400 hover:text-secondary ${
+                              category.href === "#" ? "pointer-events-none" : ""
+                            }`}
+                          >
+                            {category.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
+        ) : (
+          <div className="mt-12 rounded-2xl border border-dashed border-slate-200 bg-slate-50 px-6 py-12 text-center text-slate-500">
+            No posts available yet—please add an entry in the CMS feed.
+          </div>
+        )}
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            href="/blogs"
+            className="inline-flex items-center rounded-full bg-secondary px-6 py-3 font-semibold text-primary shadow hover:bg-primary hover:text-white"
+          >
+            View More Blogs
+          </Link>
         </div>
       </div>
-      <div className="w-full flex justify-center mb-20">
-        <a
-          href="/blogs"
-          className="px-6 py-3 rounded-md bg-secondary text-primary hover:bg-primary hover:text-white font-semibold font-sans shadow hover:shadow-md transition-transform duration-200 "
-        >
-          View More Blogs
-        </a>
-      </div>
-    </>
+    </section>
   );
 };
 
