@@ -101,80 +101,25 @@ const POST_BY_SLUG_QUERY = `
 
 const SLUGS_QUERY = `*[_type == "post" && defined(slug.current)][].slug.current`;
 
-type CacheEntry = {
-  data: SanityPost[];
-  timestamp: number;
-};
-
-const memoryCache = new Map<string, CacheEntry>();
-const inFlight = new Map<string, Promise<SanityPost[]>>();
-const SESSION_KEY_LATEST = "sanity_latest_posts_v1";
-
 const genericMemoryCache = new Map<string, unknown>();
 const genericInFlight = new Map<string, Promise<unknown>>();
 
-const readSession = (): SanityPost[] | null => {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.sessionStorage.getItem(SESSION_KEY_LATEST);
-    if (!raw) return null;
-    return JSON.parse(raw) as SanityPost[];
-  } catch {
-    return null;
-  }
-};
-
-const writeSession = (posts: SanityPost[]) => {
-  if (typeof window === "undefined") return;
-  try {
-    window.sessionStorage.setItem(SESSION_KEY_LATEST, JSON.stringify(posts));
-  } catch {
-    // ignore quota / availability errors
-  }
-};
+// Shared cache for latest posts
+let latestPostsCache: SanityPost[] | null = null;
 
 export const fetchLatestPosts = async (): Promise<SanityPost[]> => {
-  const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
-  const cachedSession = readSession();
-  if (cachedSession?.length) {
-    memoryCache.set(SESSION_KEY_LATEST, {
-      data: cachedSession,
-      timestamp: Date.now(),
-    });
-    return cachedSession;
+  if (latestPostsCache) {
+    return latestPostsCache;
   }
-
-  const cachedEntry = memoryCache.get(SESSION_KEY_LATEST);
-  if (cachedEntry && Date.now() - cachedEntry.timestamp < CACHE_TTL) {
-    return cachedEntry.data;
+  try {
+    const posts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
+    latestPostsCache = posts ?? [];
+    return latestPostsCache;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error("Failed to fetch latest posts:", error);
+    return [];
   }
-
-  const pending = inFlight.get(SESSION_KEY_LATEST);
-  if (pending) return pending;
-
-  const fetchPromise = sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY)
-    .then((posts) => {
-      const safePosts = posts ?? [];
-      memoryCache.set(SESSION_KEY_LATEST, {
-        data: safePosts,
-        timestamp: Date.now(),
-      });
-      writeSession(safePosts);
-      return safePosts;
-    })
-    .catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error("Failed to fetch latest posts:", error);
-      memoryCache.set(SESSION_KEY_LATEST, { data: [], timestamp: Date.now() });
-      return [];
-    })
-    .finally(() => {
-      inFlight.delete(SESSION_KEY_LATEST);
-    });
-
-  inFlight.set(SESSION_KEY_LATEST, fetchPromise);
-  return fetchPromise;
 };
 
 const fetchWithMemory = async <T>(key: string, fn: () => Promise<T>) => {
@@ -213,7 +158,10 @@ export const fetchAllPosts = async () => {
         next: { revalidate: 60 },
       }
     );
-    return posts ?? [];
+    const safePosts = posts ?? [];
+    // Update the shared cache for latest posts
+    latestPostsCache = safePosts.slice(0, 4);
+    return safePosts;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error("Failed to fetch all posts:", error);
