@@ -21,5 +21,8 @@ export const sanityFetch = async <T>(
   query: string,
   params: Record<string, unknown> = {}
 ): Promise<T> => {
-  return sanityClient.fetch<T>(query, params, { cache: "force-cache" });
+  return sanityClient.fetch<T>(query, params, {
+    cache: "force-cache",
+    next: { revalidate: 60 },
+  });
 };
