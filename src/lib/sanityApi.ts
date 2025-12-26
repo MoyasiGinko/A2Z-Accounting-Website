@@ -105,16 +105,18 @@ const genericMemoryCache = new Map<string, unknown>();
 const genericInFlight = new Map<string, Promise<unknown>>();
 
 // Shared cache for latest posts
-let latestPostsCache: SanityPost[] | null = null;
+let latestPostsCache: { data: SanityPost[]; timestamp: number } | null = null;
 
 export const fetchLatestPosts = async (): Promise<SanityPost[]> => {
-  if (latestPostsCache) {
-    return latestPostsCache;
+  const now = Date.now();
+  if (latestPostsCache && now - latestPostsCache.timestamp < 60000) {
+    // 60 seconds
+    return latestPostsCache.data;
   }
   try {
     const posts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
-    latestPostsCache = posts ?? [];
-    return latestPostsCache;
+    latestPostsCache = { data: posts ?? [], timestamp: now };
+    return latestPostsCache.data;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error("Failed to fetch latest posts:", error);
@@ -160,7 +162,7 @@ export const fetchAllPosts = async () => {
     );
     const safePosts = posts ?? [];
     // Update the shared cache for latest posts
-    latestPostsCache = safePosts.slice(0, 4);
+    latestPostsCache = { data: safePosts.slice(0, 4), timestamp: Date.now() };
     return safePosts;
   } catch (error) {
     // eslint-disable-next-line no-console
