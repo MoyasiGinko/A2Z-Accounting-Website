@@ -1,8 +1,8 @@
-import { sanityFetch } from "./sanity.client";
+import { sanityClient, sanityFetch } from "./sanity.client";
 
 export type SanityCategory = {
   title?: string;
-  slug?: string;
+  slug?: string | { current?: string };
 };
 
 export type SanityPost = {
@@ -39,7 +39,7 @@ const BLOG_POSTS_QUERY = `
 `;
 
 const POSTS_QUERY = `
-  *[_type == "post" && defined(slug.current)] | order(publishedAt desc){
+  *[_type == "post"] | order(publishedAt desc){
     _id,
     title,
     slug,
@@ -178,7 +178,14 @@ const fetchWithMemory = async <T>(key: string, fn: () => Promise<T>) => {
 
 export const fetchAllPosts = async () => {
   try {
-    const posts = await sanityFetch<SanityPost[]>(POSTS_QUERY);
+    const posts = await sanityClient.fetch<SanityPost[]>(
+      POSTS_QUERY,
+      {},
+      {
+        cache: "no-store",
+        next: { revalidate: 60 },
+      }
+    );
     return posts ?? [];
   } catch (error) {
     // eslint-disable-next-line no-console

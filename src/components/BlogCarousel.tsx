@@ -1,21 +1,6 @@
 import React from "react";
 import { urlFor } from "@/lib/imageBuilder";
-
-type SanityCategory = {
-  title?: string;
-  slug?: string;
-};
-
-type SanityPost = {
-  _id: string;
-  title?: string;
-  slug?: string;
-  excerpt?: string;
-  publishedAt?: string;
-  mainImage?: unknown;
-  mainImageAlt?: string;
-  categories?: SanityCategory[];
-};
+import type { SanityPost, SanityCategory } from "@/lib/sanityApi";
 
 const sizesAttr = "(max-width: 750px) 100vw, 415px";
 
@@ -195,18 +180,26 @@ type BlogCarouselProps = {
   posts: SanityPost[];
 };
 
+const resolveSlug = (value?: string | { current?: string }) => {
+  if (!value) return "";
+  return typeof value === "string" ? value : value.current || "";
+};
+
 const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const normalizedPosts = (posts || []).map((post) => {
     const { src, srcSet } = buildImage(post.mainImage);
     const date = formatDate(post.publishedAt);
-    const categories = (post.categories || []).map((category) => ({
-      label: category.title || "Uncategorized",
-      href: category.slug ? `/blogs/category/${category.slug}` : "#",
-    }));
+    const categories = (post.categories || []).map((category) => {
+      const slugValue = resolveSlug(category.slug);
+      return {
+        label: category.title || "Uncategorized",
+        href: slugValue ? `/blogs/category/${slugValue}` : "#",
+      };
+    });
 
     return {
       id: post._id,
-      slug: post.slug || "",
+      slug: resolveSlug(post.slug),
       title: post.title || "Untitled",
       excerpt: post.excerpt || "",
       image: src,

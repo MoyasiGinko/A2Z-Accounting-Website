@@ -1,26 +1,7 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import BlogCarousel from "./BlogCarousel";
-import { fetchLatestPosts, type SanityPost } from "@/lib/sanityApi";
+import { fetchLatestPosts } from "@/lib/sanityApi";
 
-const BlogCarouselServer = () => {
-  const [posts, setPosts] = useState<SanityPost[]>([]);
-
-  useEffect(() => {
-    let isMounted = true;
-    fetchLatestPosts().then((fetched) => {
-      if (isMounted) {
-        setPosts(fetched);
-      }
-    });
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
+export default async function BlogCarouselServer() {
+  const posts = await fetchLatestPosts();
   return <BlogCarousel posts={posts} />;
-};
-
-export default BlogCarouselServer;
+}
