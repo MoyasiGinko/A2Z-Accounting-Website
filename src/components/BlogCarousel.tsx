@@ -45,7 +45,7 @@ const buildImage = (image: unknown) => {
 const FALLBACK_POSTS = [
   {
     id: "fallback-1",
-    slug: "sample-strategy-success",
+    slug: "",
     title: "Sample Strategy Success Story",
     excerpt:
       "A concise case study placeholder to keep the carousel layout consistent until real posts are published.",
@@ -58,7 +58,7 @@ const FALLBACK_POSTS = [
   },
   {
     id: "fallback-2",
-    slug: "sample-growth-journey",
+    slug: "",
     title: "Sample Growth Journey",
     excerpt:
       "A sample narrative showing how businesses can navigate growth phases effectively.",
@@ -72,7 +72,7 @@ const FALLBACK_POSTS = [
   },
   {
     id: "fallback-3",
-    slug: "sample-market-trends",
+    slug: "",
     title: "Sample Market Trends",
     excerpt:
       "Placeholder post covering emerging market themes to illustrate the carousel layout.",
@@ -85,7 +85,7 @@ const FALLBACK_POSTS = [
   },
   {
     id: "fallback-4",
-    slug: "sample-operations-playbook",
+    slug: "",
     title: "Sample Operations Playbook",
     excerpt:
       "An operations-focused placeholder to complete the four-card carousel when content is limited.",

@@ -8,7 +8,7 @@ export type SanityCategory = {
 export type SanityPost = {
   _id: string;
   title?: string;
-  slug?: string;
+  slug?: string | { current?: string };
   excerpt?: string;
   publishedAt?: string;
   mainImage?: unknown;
@@ -39,13 +39,16 @@ const BLOG_POSTS_QUERY = `
 `;
 
 const POSTS_QUERY = `
-  *[_type == "post"] | order(publishedAt desc){
+  *[_type == "post" && defined(slug.current)] | order(publishedAt desc){
     _id,
     title,
     slug,
     excerpt,
     publishedAt,
-    categories[]->{title, slug},
+    categories[]->{
+      title,
+      "slug": slug
+    },
     mainImage,
     content[0..2]
   }
@@ -54,12 +57,12 @@ const POSTS_QUERY = `
 const CATEGORIES_QUERY = `
   *[_type == "category"] | order(title asc){
     title,
-    slug
+    "slug": slug
   }
 `;
 
 const TRENDING_POSTS_QUERY = `
-  *[_type == "post"] | order(publishedAt desc)[0...6]{
+  *[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...6]{
     _id,
     title,
     slug,
@@ -160,6 +163,11 @@ const fetchWithMemory = async <T>(key: string, fn: () => Promise<T>) => {
       genericMemoryCache.set(key, data);
       return data;
     })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error(`Failed to fetch ${key}:`, error);
+      return null as T;
+    })
     .finally(() => {
       genericInFlight.delete(key);
     });
@@ -168,18 +176,32 @@ const fetchWithMemory = async <T>(key: string, fn: () => Promise<T>) => {
   return promise;
 };
 
-export const fetchAllPosts = () =>
-  fetchWithMemory("all-posts", () => sanityFetch<SanityPost[]>(POSTS_QUERY));
+export const fetchAllPosts = async () => {
+  try {
+    const posts = await sanityFetch<SanityPost[]>(POSTS_QUERY);
+    return posts ?? [];
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error("Failed to fetch all posts:", error);
+    return [];
+  }
+};
 
-export const fetchCategories = () =>
-  fetchWithMemory("categories", () =>
+export const fetchCategories = async () => {
+  const result = await fetchWithMemory("categories", () =>
     sanityFetch<SanityCategory[]>(CATEGORIES_QUERY)
   );
 
-export const fetchTrendingPosts = () =>
-  fetchWithMemory("trending-posts", () =>
+  return (Array.isArray(result) ? result : []) as SanityCategory[];
+};
+
+export const fetchTrendingPosts = async () => {
+  const result = await fetchWithMemory("trending-posts", () =>
     sanityFetch<SanityPost[]>(TRENDING_POSTS_QUERY)
   );
+
+  return (Array.isArray(result) ? result : []) as SanityPost[];
+};
 
 export const fetchPostBySlug = (slug: string) =>
   fetchWithMemory(`post:${slug}`, () =>
