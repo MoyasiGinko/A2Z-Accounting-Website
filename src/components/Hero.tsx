@@ -90,7 +90,7 @@ const Hero = () => {
                       className="bg-white ml-2 rounded-sm p-px"
                     >
                       <img
-                        src="https://a2zaccounting.co.uk/wp-content/uploads/2025/10/google.webp"
+                        src="/images/google.webp"
                         alt="Google"
                         style={{ height: "24px", verticalAlign: "middle" }}
                         className=""
@@ -111,17 +111,17 @@ const Hero = () => {
               <div className="elementor-widget-container">
                 <div className="elementor-button-wrapper">
                   <a
-                    className="elementor-button hover:bg-secondary elementor-button-link elementor-size-sm"
+                    className="elementor-button bg-secondary/90 hover:bg-secondary font-semibold text-primary/90 hover:text-primary elementor-button-link elementor-size-sm"
                     href="/contact-us"
                   >
                     <span className="elementor-button-content-wrapper">
-                      <span className="elementor-button-icon">
+                      {/* <span className="elementor-button-icon">
                         <i
                           aria-hidden="true"
                           className="vamtamtheme- vamtam-theme-arrow-right"
                         ></i>
-                      </span>
-                      <span className="elementor-button-text">
+                      </span> */}
+                      <span className="elementor-button-text ">
                         Book a Consultation
                       </span>
                     </span>

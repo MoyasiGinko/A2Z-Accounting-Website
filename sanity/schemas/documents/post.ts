@@ -22,6 +22,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "isTrending",
+      title: "Show in Trending",
+      type: "boolean",
+      description: "Enable to feature this post in the Trending list",
+      initialValue: false,
+    }),
+    defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime",

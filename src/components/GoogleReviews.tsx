@@ -34,12 +34,12 @@ const GoogleReviews = () => {
         onLoad={initializeWidget}
       />
       <section className="bg-[#f9fafb] py-16 md:py-20 mt-20 mb-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-328 mx-auto px-4 sm:px-4 lg:px-4">
           <div className="text-center mb-10">
             <p className="text-xs tracking-[0.3em] uppercase text-[#0F6FBE] font-semibold font-sans">
               Google Reviews
             </p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-medium text-[#162C45] font-serif">
+            <h2 className="mt-4 text-4xl md:text-5xl font-medium text-[#162C45] font-serif">
               Trusted by businesses across the UAE
             </h2>
             <p className="mt-3 text-base text-[#4A5B6D] font-sans max-w-2xl mx-auto">
@@ -47,7 +47,7 @@ const GoogleReviews = () => {
               on their financial clarity and growth.
             </p>
           </div>
-          <div className="bg-white/5 shadow-xl rounded-md p-6 md:p-8">
+          <div className="bg-white/5 rounded-md p-6 md:p-8">
             <div className={ELFSIGHT_CONTAINER_CLASS} data-elfsight-app-lazy />
           </div>
         </div>

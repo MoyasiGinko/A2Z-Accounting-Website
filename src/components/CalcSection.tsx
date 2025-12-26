@@ -15,15 +15,15 @@ const CalcSection: React.FC = () => {
   return (
     <section className="py-20 bg-linear-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#84C9E2]/50 rounded-md -translate-x-48 -translate-y-48"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#84C9E2] rounded-md translate-x-48 translate-y-48"></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         {/* <div className="flex justify-between items-center mb-2"> */}
-        <h2 className="text-3xl md:text-4xl mt-0 font-serif font-bold text-gray-900 leading-tight">
+        <h2 className="text-4xl md:text-5xl mt-0 font-serif font-medium text-gray-900 leading-tight">
           Why Choose Us?
         </h2>
         <p className="font-medium mb-6 self-end text-[#162C45] leading-tight font-sans">
@@ -36,8 +36,8 @@ const CalcSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side: Key Points in Single Card */}
           <div className="space-y-8">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50">
-              <div className="absolute inset-4 bg-linear-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl  pointer-events-none"></div>
+            <div className="bg-linear-to-r from-secondary to-secondary/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50">
+              {/* <div className="absolute inset-4 bg-linear-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl  pointer-events-none"></div> */}
 
               <div className="space-y-6">
                 {keyPoints.map((point, index) => (
@@ -47,9 +47,9 @@ const CalcSection: React.FC = () => {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* Icon */}
-                    <div className="w-8 h-8 border border-gray-200 bg-primary-100 rounded-md flex items-center justify-center shrink-0 group-hover:bg-[#84C9E2] transition-colors duration-300">
+                    <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center shrink-0 ">
                       <svg
-                        className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300"
+                        className="w-6 h-6 text-white transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

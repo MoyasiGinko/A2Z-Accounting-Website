@@ -1,39 +1,6 @@
 import React from "react";
 import { urlFor } from "@/lib/imageBuilder";
-import { sanityFetch } from "@/lib/sanity.client";
-
-type SanityCategory = {
-  title?: string;
-  slug?: string;
-};
-
-type SanityPost = {
-  _id: string;
-  title?: string;
-  slug?: string;
-  excerpt?: string;
-  publishedAt?: string;
-  mainImage?: unknown;
-  mainImageAlt?: string;
-  categories?: SanityCategory[];
-};
-
-const BLOG_POSTS_QUERY = `
-  *[_type == "post" && defined(slug.current) && defined(publishedAt)]
-    | order(publishedAt desc)[0...4] {
-      _id,
-      title,
-      "slug": slug.current,
-      excerpt,
-      publishedAt,
-      mainImage,
-      "mainImageAlt": mainImage.alt,
-      categories[]->{
-        title,
-        "slug": slug.current
-      }
-    }
-`;
+import type { SanityPost, SanityCategory } from "@/lib/sanityApi";
 
 const sizesAttr = "(max-width: 750px) 100vw, 415px";
 
@@ -63,7 +30,7 @@ const buildImage = (image: unknown) => {
 const FALLBACK_POSTS = [
   {
     id: "fallback-1",
-    slug: "sample-strategy-success",
+    slug: "",
     title: "Sample Strategy Success Story",
     excerpt:
       "A concise case study placeholder to keep the carousel layout consistent until real posts are published.",
@@ -76,7 +43,7 @@ const FALLBACK_POSTS = [
   },
   {
     id: "fallback-2",
-    slug: "sample-growth-journey",
+    slug: "",
     title: "Sample Growth Journey",
     excerpt:
       "A sample narrative showing how businesses can navigate growth phases effectively.",
@@ -90,7 +57,7 @@ const FALLBACK_POSTS = [
   },
   {
     id: "fallback-3",
-    slug: "sample-market-trends",
+    slug: "",
     title: "Sample Market Trends",
     excerpt:
       "Placeholder post covering emerging market themes to illustrate the carousel layout.",
@@ -103,7 +70,7 @@ const FALLBACK_POSTS = [
   },
   {
     id: "fallback-4",
-    slug: "sample-operations-playbook",
+    slug: "",
     title: "Sample Operations Playbook",
     excerpt:
       "An operations-focused placeholder to complete the four-card carousel when content is limited.",
@@ -209,20 +176,30 @@ const loopStyles = `
   }
 `;
 
-const BlogCarousel = async () => {
-  const posts = await sanityFetch<SanityPost[]>(BLOG_POSTS_QUERY);
+type BlogCarouselProps = {
+  posts: SanityPost[];
+};
 
+const resolveSlug = (value?: string | { current?: string }) => {
+  if (!value) return "";
+  return typeof value === "string" ? value : value.current || "";
+};
+
+const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const normalizedPosts = (posts || []).map((post) => {
     const { src, srcSet } = buildImage(post.mainImage);
     const date = formatDate(post.publishedAt);
-    const categories = (post.categories || []).map((category) => ({
-      label: category.title || "Uncategorized",
-      href: category.slug ? `/blogs/category/${category.slug}` : "#",
-    }));
+    const categories = (post.categories || []).map((category) => {
+      const slugValue = resolveSlug(category.slug);
+      return {
+        label: category.title || "Uncategorized",
+        href: slugValue ? `/blogs/category/${slugValue}` : "#",
+      };
+    });
 
     return {
       id: post._id,
-      slug: post.slug || "",
+      slug: resolveSlug(post.slug),
       title: post.title || "Untitled",
       excerpt: post.excerpt || "",
       image: src,

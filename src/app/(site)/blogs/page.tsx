@@ -1,42 +1,21 @@
-import { groq } from "next-sanity";
 import BlogLayoutClient from "@/components/blogs-page/BlogLayoutClient";
-import { BlogListPost } from "@/components/blogs-page/BlogCard";
-import { sanityFetch } from "@/lib/sanity.client";
+import {
+  fetchAllPosts,
+  fetchCategories,
+  fetchTrendingPosts,
+} from "@/lib/sanityApi";
+import type { BlogListPost } from "@/components/blogs-page/BlogCard";
 import type { Category } from "@/components/blogs-page/BlogCategories";
 import type { TrendingPost } from "@/components/blogs-page/BlogTrendingPosts";
 import BlogCTA from "@/components/blogs-page/BlogCTA";
 
 export const revalidate = 60;
 
-const postsQuery = groq`*[_type == "post"] | order(publishedAt desc){
-  _id,
-  title,
-  slug,
-  excerpt,
-  publishedAt,
-  categories[]->{title, slug},
-  mainImage,
-  content[0..2]
-}`;
-
-const categoriesQuery = groq`*[_type == "category"] | order(title asc){
-  title,
-  slug
-}`;
-
-const trendingPostsQuery = groq`*[_type == "post"] | order(publishedAt desc)[0...6]{
-  _id,
-  title,
-  slug,
-  publishedAt,
-  mainImage
-}`;
-
 export default async function BlogsRoute() {
   const [posts, categories, trendingPosts] = await Promise.all([
-    sanityFetch<BlogListPost[]>(postsQuery),
-    sanityFetch<Category[]>(categoriesQuery),
-    sanityFetch<TrendingPost[]>(trendingPostsQuery),
+    fetchAllPosts() as Promise<BlogListPost[]>,
+    fetchCategories() as Promise<Category[]>,
+    fetchTrendingPosts() as Promise<TrendingPost[]>,
   ]);
 
   return (

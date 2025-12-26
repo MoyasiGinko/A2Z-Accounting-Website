@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import Swiper from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export const useCarousels = () => {
   useEffect(() => {
@@ -16,21 +18,6 @@ export const useCarousels = () => {
       const markReady = (node: HTMLElement) => {
         node.classList.add("is-ready");
       };
-
-      let SwiperCtor: typeof import("swiper").default | null = null;
-      let modules: typeof import("swiper/modules") | null = null;
-
-      try {
-        SwiperCtor = (await import("swiper")).default;
-        modules = await import("swiper/modules");
-      } catch (error) {
-        swiperNodes.forEach((node) => markReady(node));
-        if (process.env.NODE_ENV !== "production") {
-          // eslint-disable-next-line no-console
-          console.error("Failed to load Swiper for loop carousel", error);
-        }
-        return;
-      }
 
       swiperNodes.forEach((swiperContainer) => {
         if (swiperContainer.dataset.initialised === "true") {
@@ -67,16 +54,17 @@ export const useCarousels = () => {
         const pagination = widget
           ? (widget.querySelector(".swiper-pagination") as HTMLElement | null)
           : null;
+        const swiperModules = [
+          ...(prev && next ? [Navigation] : []),
+          ...(pagination ? [Pagination] : []),
+          ...(autoplayEnabled ? [Autoplay] : []),
+        ];
 
         swiperContainer.dataset.initialised = "true";
         markReady(swiperContainer);
 
-        new SwiperCtor!(swiperContainer, {
-          modules: [
-            modules!.Navigation,
-            modules!.Pagination,
-            modules!.Autoplay,
-          ],
+        new Swiper(swiperContainer, {
+          modules: swiperModules,
           loop: settings.infinite === "yes",
           speed: parseInt(settings.speed, 10) || 500,
           slidesPerView: slidesDesktop,
