@@ -343,7 +343,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Stay compliant with VAT and Corporate Tax—without surprises.",
       description:
-        "We support registrations, filings, and documentation standards so submissions are on time, accurate, and backed by audit-ready records. Our expert team navigates the complexities of UAE tax laws, ensuring you meet all VAT and Corporate Tax obligations seamlessly. From initial registrations to periodic filings, we provide proactive guidance, helping you maintain impeccable documentation that withstands scrutiny. We also assist with regulatory requirements like Economic Substance and UBO filings, minimizing risks and penalties. With our comprehensive compliance support, you can focus on your core business activities, confident that your tax affairs are handled professionally and efficiently, adapting to changes in regulations as your business evolves.",
+        "We help UAE companies maintain full compliance with VAT, Corporate Tax, and other regulatory requirements — so your business operates smoothly and without risk. We take the complexity out of compliance, so you can focus on growth and profitability, not regulatory headaches.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -356,15 +356,15 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       ],
     },
     atAGlance: [
-      { label: "Turnaround", value: "On-time" },
-      { label: "Coverage", value: "End-to-end" },
-      { label: "Reporting", value: "Clear & timely" },
-      { label: "Compliance", value: "Audit-ready" },
+      { label: "No missed deadlines", value: "On-time filings" },
+      { label: "Accurate submissions", value: "Documented and checked" },
+      { label: "Regulatory confidence", value: "Ready for scrutiny" },
+      { label: "Easier future planning", value: "Clean records, better calls" },
     ],
     howWeWork: {
       heading: "How we work",
       description:
-        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+        "We follow a structured compliance process that keeps your business aligned with UAE regulations while making complex requirements clear and manageable.",
     },
     servicesIntro: {
       eyebrow: "Sub-services",
@@ -373,10 +373,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Practical support for registrations, filings, and regulatory requirements.",
     },
     services: [
-      { title: "VAT Compliance" },
-      { title: "Corporate Tax" },
-      { title: "Regulatory Filings & Advisory" },
-      { title: "Audit-Ready Accounting" },
+      { title: "VAT Registration & Filing" },
+      { title: "Corporate Tax Planning & Filing" },
+      { title: "Regulatory Reporting & Documentation" },
+      { title: "Audit Support & Preparation" },
     ],
     callout: {
       heading: "Build a compliance calendar that runs itself",
