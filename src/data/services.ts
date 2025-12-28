@@ -31,7 +31,7 @@ export interface ServicePageContent {
     heading: string;
     supporting: string;
   };
-  services: { title: string; description: string; bullets?: string[] }[];
+  services: { title: string }[];
   callout: {
     heading: string;
     subheading?: string;
@@ -110,7 +110,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Set up the right UAE entity—end to end.",
       description:
-        "We guide you from jurisdiction selection to licensing and documentation, so your company is structured correctly for banking, visas, and ongoing compliance. Our comprehensive approach ensures that every step is handled with precision, from initial consultations to final approvals, minimizing risks and maximizing efficiency. Whether you're establishing a mainland company, a free zone entity, or an offshore setup, we tailor the process to your specific business needs, providing expert advice on activity selection, shareholder structures, and regulatory requirements. With our end-to-end support, you can focus on growing your business while we manage the complexities of UAE company formation, ensuring a smooth and compliant launch that sets the foundation for long-term success.",
+        "At A2Z Accounting Dubai, we help UK business owners and professionals establish compliant UAE companies that support international operations, tax planning, and future growth — whether you plan to relocate or continue operating from the UK. Whether you're establishing a mainland company, a free zone entity, or an offshore setup, we tailor the process to your specific business needs, providing expert advice on activity selection, shareholder structures, and regulatory requirements. With our end-to-end support, you can focus on growing your business while we manage the complexities of UAE company formation, ensuring a smooth and compliant launch that sets the foundation for long-term success.",
       image:
         "https://media.istockphoto.com/id/473016474/photo/emirati-doing-business.jpg?s=612x612&w=0&k=20&c=iQS3v20_p5zRkBROQMDNmGg7r9TPBmzfUbzqrmLvZ7E=",
     },
@@ -130,52 +130,14 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Everything you need to establish and maintain a legal entity in the UAE.",
     },
     services: [
-      {
-        title: "Registration & Licensing",
-        description:
-          "Get incorporated with the right licence and renewals handled.",
-        bullets: [
-          "Mainland company registration (DED)",
-          "Free-zone company registration",
-          "Offshore company registration (where applicable)",
-          "Trade licence application & renewal",
-        ],
-      },
-      {
-        title: "Corporate Documentation",
-        description:
-          "Align shareholder structure and required legal documents.",
-        bullets: [
-          "MOA / AOA and corporate agreements",
-          "Shareholder structure advisory",
-          "Corporate nominee arrangements (if required)",
-        ],
-      },
-      {
-        title: "Business Activity & Compliance",
-        description:
-          "Choose permitted activities correctly and stay aligned with regulations.",
-        bullets: [
-          "Business-activity advisory (permitted activity selection)",
-          "Compliance guidance for ongoing requirements",
-        ],
-      },
-      {
-        title: "Banking Setup Support",
-        description:
-          "Set up corporate banking with the documentation banks expect.",
-        bullets: [
-          "Corporate bank account opening assistance",
-          "KYC/documentation preparation",
-          "Corporate banking & payment processing advisory",
-        ],
-      },
-      {
-        title: "Liquidation / Deregistration",
-        description:
-          "If you need to exit, we guide the closure process end-to-end.",
-        bullets: ["Company liquidation", "Deregistration support"],
-      },
+      { title: "Jurisdiction and structure advisory" },
+      { title: "Trade licence application and renewals" },
+      { title: "Business activity classification" },
+      { title: "Shareholding and ownership structuring" },
+      { title: "MOA and incorporation documentation" },
+      { title: "UAE bank account support" },
+      { title: "Visa eligibility planning" },
+      { title: "Ongoing compliance and advisory support" },
     ],
     callout: {
       heading: "Start your UAE setup with clarity",
@@ -275,42 +237,11 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Flexible coverage from day-to-day bookkeeping to management reporting.",
     },
     services: [
-      {
-        title: "Bookkeeping",
-        description: "Keep records current and categorised correctly.",
-        bullets: ["Monthly / quarterly / annual bookkeeping"],
-      },
-      {
-        title: "Cloud Accounting Setup",
-        description: "Build a clean system and workflow that scales.",
-        bullets: [
-          "QuickBooks / Xero / Zoho setup",
-          "Chart of accounts configuration",
-        ],
-      },
-      {
-        title: "Reconciliations & Tracking",
-        description: "Maintain control of cash and outstanding items.",
-        bullets: [
-          "Bank reconciliations",
-          "Accounts payable / receivable tracking",
-        ],
-      },
-      {
-        title: "Financial Statements",
-        description: "Timely reporting for better decisions.",
-        bullets: [
-          "Profit & Loss (P&L)",
-          "Balance Sheet",
-          "Cashflow statements",
-        ],
-      },
-      {
-        title: "Asset & Inventory Accounting",
-        description:
-          "If relevant to your business model, keep registers accurate.",
-        bullets: ["Fixed asset register", "Inventory accounting"],
-      },
+      { title: "Bookkeeping" },
+      { title: "Cloud Accounting Setup" },
+      { title: "Reconciliations & Tracking" },
+      { title: "Financial Statements" },
+      { title: "Asset & Inventory Accounting" },
     ],
     callout: {
       heading: "Know your numbers—without chasing spreadsheets",
@@ -405,40 +336,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Practical support for registrations, filings, and regulatory requirements.",
     },
     services: [
-      {
-        title: "VAT Compliance",
-        description:
-          "Get registered and file returns with clean documentation.",
-        bullets: [
-          "VAT registration",
-          "VAT return filing and compliance support",
-        ],
-      },
-      {
-        title: "Corporate Tax",
-        description:
-          "Support with registration and periodic/annual filing requirements.",
-        bullets: ["Corporate Tax registration", "Corporate Tax filing support"],
-      },
-      {
-        title: "Regulatory Filings & Advisory",
-        description: "Help with common UAE compliance requirements.",
-        bullets: [
-          "Economic Substance (if required)",
-          "UBO filings (if required)",
-          "AML compliance guidance (if required)",
-        ],
-      },
-      {
-        title: "Audit-Ready Accounting",
-        description:
-          "Support coordination and preparation when audited financials are needed.",
-        bullets: [
-          "Compliance audits support",
-          "Statutory audit coordination",
-          "Audit-ready bookkeeping and documentation",
-        ],
-      },
+      { title: "VAT Compliance" },
+      { title: "Corporate Tax" },
+      { title: "Regulatory Filings & Advisory" },
+      { title: "Audit-Ready Accounting" },
     ],
     callout: {
       heading: "Build a compliance calendar that runs itself",
@@ -533,30 +434,9 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Payroll, visa workflows, and government liaison with structured follow-through.",
     },
     services: [
-      {
-        title: "Payroll Processing",
-        description: "Reliable payroll with compliance in mind.",
-        bullets: ["Payroll processing", "Wage Protection (WPS) compliance"],
-      },
-      {
-        title: "Visa Processing",
-        description:
-          "Support for common visa and residency workflows as your team grows.",
-        bullets: [
-          "Investor / Partner / Employee visas",
-          "Residency permits",
-          "Labour cards & renewal support",
-        ],
-      },
-      {
-        title: "Government Liaison & PRO",
-        description: "Document clearing and ongoing admin handling.",
-        bullets: [
-          "Visa/immigration handling",
-          "Licence renewals",
-          "Compliance filings support",
-        ],
-      },
+      { title: "Payroll Processing" },
+      { title: "Visa Processing" },
+      { title: "Government Liaison & PRO" },
     ],
     callout: {
       heading: "Reduce workforce admin load",
@@ -654,38 +534,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Planning, modelling, and governance support for growing teams.",
     },
     services: [
-      {
-        title: "Corporate Structuring",
-        description: "Design a structure that supports growth and compliance.",
-        bullets: [
-          "Tax-efficient entity planning (UAE + abroad)",
-          "Corporate structuring advisory",
-        ],
-      },
-      {
-        title: "Forecasting & Budgeting",
-        description: "Plan cashflow, hiring, and runway with clarity.",
-        bullets: ["Financial modelling", "Forecasting", "Budget planning"],
-      },
-      {
-        title: "Cross-border Advisory",
-        description:
-          "Support for international founders operating via a UAE entity.",
-        bullets: [
-          "Entity selection and compliance planning",
-          "Residency / tax strategy considerations",
-        ],
-      },
-      {
-        title: "Governance & Audit Preparation",
-        description:
-          "Controls and documentation that keep your business audit-ready.",
-        bullets: [
-          "Audit preparation support",
-          "Internal controls setup",
-          "Governance advisory",
-        ],
-      },
+      { title: "Corporate Structuring" },
+      { title: "Forecasting & Budgeting" },
+      { title: "Cross-border Advisory" },
+      { title: "Governance & Audit Preparation" },
     ],
     callout: {
       heading: "Make decisions with confidence",
