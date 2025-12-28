@@ -26,6 +26,7 @@ export interface ServicePageContent {
     heading: string;
     paragraphs: string[];
   };
+  atAGlance: { label: string; value: string }[];
   servicesIntro: {
     eyebrow: string;
     heading: string;
@@ -123,6 +124,12 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "From paperwork to approvals, we keep the process moving while keeping you compliant with ongoing renewal and filing requirements.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "1-3 weeks" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What’s included",
@@ -230,6 +237,12 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Our bookkeeping and accounting services are designed to support both UK-based business owners operating through a UAE entity, and those living or relocating to Dubai.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "Monthly" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "Core accounting support",
@@ -237,11 +250,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Flexible coverage from day-to-day bookkeeping to management reporting.",
     },
     services: [
-      { title: "Bookkeeping" },
-      { title: "Cloud Accounting Setup" },
-      { title: "Reconciliations & Tracking" },
-      { title: "Financial Statements" },
-      { title: "Asset & Inventory Accounting" },
+      { title: "Accurate & compliant accounting" },
+      { title: "Monthly management reporting" },
+      { title: "Digital Accounting (e.g. QuickBooks, Xero)" },
+      { title: "UK–UAE expertise" },
     ],
     callout: {
       heading: "Know your numbers—without chasing spreadsheets",
@@ -329,6 +341,12 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "If your business grows or changes, we adapt registrations and filing approaches accordingly.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "On-time" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we handle",
@@ -427,6 +445,12 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "For visas and renewals, we keep the admin burden off your team with clear checklists and timelines.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "Monthly" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we support",
@@ -527,6 +551,12 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "For cross-border operations, we help you understand how choices impact compliance and reporting.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "As needed" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "Advisory capabilities",

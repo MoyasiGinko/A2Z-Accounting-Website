@@ -207,38 +207,19 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
             At a glance
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Turnaround
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                Fast & structured
-              </p>
-            </div>
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Coverage
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                End-to-end
-              </p>
-            </div>
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Reporting
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                Clear & timely
-              </p>
-            </div>
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Compliance
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                Audit-ready
-              </p>
-            </div>
+            {content.atAGlance.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-md bg-white/10 p-4 ring-1 ring-white/10"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
+                  {item.label}
+                </p>
+                <p className="mt-2 text-lg font-semibold !font-serif">
+                  {item.value}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="rounded-md border border-slate-200 bg-slate-50/60 p-8">
