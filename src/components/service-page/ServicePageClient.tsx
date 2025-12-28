@@ -419,12 +419,6 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
           >
             {content.expertise.cta.label}
           </Link>
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
-          >
-            Request a checklist
-          </Link>
         </div>
       </div>
     </div>

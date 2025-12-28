@@ -74,7 +74,7 @@ const sharedBreadcrumb = (label: string): ServicePageContent["breadcrumb"] => [
 
 const sharedCta = {
   label: "Book a Free Consultation",
-  href: "#",
+  href: "/contact-us",
 };
 
 const sharedWhatWeDoEyebrow = "What we do";
@@ -152,24 +152,24 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "A structured workflow that keeps approvals moving and paperwork correct.",
       steps: [
         {
-          title: "Consultation",
+          title: "Initial Consultation",
           description:
-            "Understand your goals, ownership plan, and intended activities.",
+            "Understand your existing UK business, profit profile, residency intentions, and long-term objectives.",
         },
         {
-          title: "Jurisdiction & Activity Selection",
+          title: "Structure & Jurisdiction Advice",
           description:
             "Choose mainland/free zone/offshore and confirm permitted activities.",
         },
         {
-          title: "Documentation & Submission",
+          title: "Documentation & Incorporation",
           description:
-            "Prepare filings and coordinate with relevant authorities.",
+            "Prepare and submit all required documents and liaise with relevant authorities.",
         },
         {
           title: "Licence Issuance & Next Steps",
           description:
-            "Guide banking setup, renewals, and compliance milestones.",
+            "Assist with banking, visas, and ongoing accounting and compliance requirements.",
         },
       ],
     },
@@ -179,7 +179,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We prioritise correctness and speed—so your entity is set up for banking, tax registration, and operational scale.",
       cta: {
         label: "Speak to an Advisor",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -284,7 +284,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We structure records to support VAT and Corporate Tax compliance while keeping reporting readable for founders.",
       cta: {
         label: "Get Started",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -382,7 +382,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We focus on clean records and consistent workflows so compliance stays manageable as you scale.",
       cta: {
         label: "Talk to Us",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -479,7 +479,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We keep processes simple and documented so your team can focus on delivery while compliance stays organised.",
       cta: {
         label: "Enquire Now",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -579,7 +579,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We keep it pragmatic—clear decisions, documented steps, and a plan your team can execute.",
       cta: {
         label: "Book a Call",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
