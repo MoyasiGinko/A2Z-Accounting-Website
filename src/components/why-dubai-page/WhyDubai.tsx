@@ -1,6 +1,14 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { Forum } from "next/font/google";
+
+const forum = Forum({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-forum",
+  display: "swap",
+});
 
 export default function WhyDubaiPage() {
   // 2. Animation Logic (Replaces the vanilla JS script)
@@ -30,7 +38,7 @@ export default function WhyDubaiPage() {
 
   return (
     <main
-      className={`!font-sans bg-[#f7f8fa] text-[#1B3756] overflow-x-hidden scroll-smooth`}
+      className={`${forum.variable} !font-sans bg-[#f7f8fa] text-[#1B3756] overflow-x-hidden scroll-smooth`}
     >
       {/* 3. Embedded Custom Styles for Glassmorphism & Animations */}
       <style jsx global>{`
@@ -65,10 +73,14 @@ export default function WhyDubaiPage() {
         .number-transition {
           transition: color 0.4s ease-out;
         }
+
+        .font-forum {
+          font-family: var(--font-forum);
+        }
       `}</style>
 
       {/* --- HERO SECTION --- */}
-      <header className="relative w-full h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
+      <header className="relative w-full pt-20 h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#162C45]/40 mix-blend-multiply z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#162C45] via-transparent to-transparent z-10 opacity-90"></div>
@@ -79,37 +91,26 @@ export default function WhyDubaiPage() {
           />
         </div>
 
-        {/* Floating Badge Top Left */}
-        <div className="absolute top-[15%] left-[5%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_6s_infinite]">
+        {/* Floating Badges */}
+        <div className="hidden md:block absolute top-[13%] left-[6%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_6s_infinite]">
           <span className="text-white font-bold text-[10px] md:text-sm tracking-widest uppercase">
-            0% Corporate Tax
+            Low Corporate Tax
           </span>
         </div>
-
-        {/* Floating Badges Bottom Right */}
-        <div className="absolute bottom-[18%] right-[5%] z-20 flex flex-col gap-3 md:bottom-16 md:right-10 items-end">
-          <div className="glass-badge p-2 md:p-4 rounded-md flex items-start gap-3 w-max transform hover:-translate-x-1 transition-transform duration-300">
-            <div className="w-2 h-2 mt-3 rounded-full bg-[#84C9E2]"></div>
-            <div className="text-left">
-              <p className="text-white !font-serif text-xs md:text-lg leading-none">
-                Global Hub
-              </p>
-              <p className="text-gray-300 !font-sans text-[9px] md:text-xs uppercase tracking-wider">
-                Access to Markets
-              </p>
-            </div>
-          </div>
-          <div className="glass-badge p-2 md:p-4 rounded-md flex items-start gap-3 w-max transform hover:-translate-x-1 transition-transform duration-300 delay-100">
-            <div className="w-2 h-2 mt-3 rounded-full bg-green-400"></div>
-            <div className="text-left">
-              <p className="text-white !font-serif text-xs md:text-lg leading-none">
-                100% Ownership
-              </p>
-              <p className="text-gray-300 !font-sans text-[9px] md:text-xs uppercase tracking-wider">
-                No Local Sponsor
-              </p>
-            </div>
-          </div>
+        <div className="hidden md:block absolute top-[18%] right-[8%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_7s_infinite]">
+          <span className="text-white font-bold text-[10px] md:text-sm tracking-widest uppercase">
+            0% Personal Income Tax
+          </span>
+        </div>
+        <div className="hidden md:block absolute bottom-[22%] left-[10%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_8s_infinite]">
+          <span className="text-white font-bold text-[10px] md:text-sm tracking-widest uppercase">
+            0% Dividend Tax
+          </span>
+        </div>
+        <div className="hidden md:block absolute bottom-[16%] right-[12%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_9s_infinite]">
+          <span className="text-white font-bold text-[10px] md:text-sm tracking-widest uppercase">
+            0% Capital Gains Tax
+          </span>
         </div>
 
         {/* Hero Content */}
@@ -403,9 +404,25 @@ export default function WhyDubaiPage() {
                       </svg>
                       Want to reduce tax exposure
                     </li>
+                    <li className="flex items-center gap-3">
+                      <svg
+                        className="w-4 h-4 text-[#84C9E2]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        ></path>
+                      </svg>
+                      Invest and grow in the uk
+                    </li>
                   </ul>
                 </div>
-                <div className="flex flex-col justify-end">
+                <div className="flex flex-col justify-center">
                   <p className="!font-serif text-gray-400 text-base md:text-lg italic border-l-2 border-[#84C9E2] pl-4 leading-relaxed">
                     &ldquo;We specialise in helping UK entrepreneurs build Dubai
                     structures the right way.&rdquo;
@@ -426,7 +443,7 @@ export default function WhyDubaiPage() {
               <ul className="!font-sans space-y-3 mb-6 text-slate-600 text-sm relative z-10">
                 <li className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#84C9E2]"></span>
-                  Massive investment in AI & Tech
+                  Massive investment in Real Estate
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#84C9E2]"></span>
@@ -470,8 +487,7 @@ export default function WhyDubaiPage() {
 
           <p className="text-lg md:text-xl !font-sans font-light text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             For entrepreneurs who want to elevate both their income and
-            lifestyle, no other country offers such a powerful combination of
-            tax efficiency, safety, and long-term stability.
+            lifestyle.
           </p>
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-lg inline-block mx-auto max-w-2xl shadow-2xl shadow-[#162C45]/50 relative group">
