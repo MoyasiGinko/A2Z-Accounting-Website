@@ -439,20 +439,20 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
   },
   "payroll-hr-pro": {
     slug: "payroll-hr-pro",
-    label: "Payroll & HR / PRO Services",
-    breadcrumb: sharedBreadcrumb("Payroll & HR / PRO Services"),
+    label: "Payroll & HR Services",
+    breadcrumb: sharedBreadcrumb("Payroll & HR Services"),
     hero: {
       eyebrow: "Services",
-      title: "Payroll & HR / PRO Services",
+      title: "Payroll & HR Services",
       summary:
-        "Payroll processing, visa support, and government liaison—handled end-to-end.",
+        "Payroll processing, HR services and visa support—handled end-to-end.",
       ctas: [sharedCta],
     },
     whatWeDo: {
       eyebrow: sharedWhatWeDoEyebrow,
-      heading: "Run payroll and HR/PRO workflows with confidence.",
+      heading: "Reliable Payroll and Practical HR Support for UAE Businesses.",
       description:
-        "We help you manage WPS payroll and essential HR/PRO processes with clear checklists and consistent documentation—so your team operations stay compliant and smooth. Our streamlined approach covers everything from payroll calculations and tax withholdings to visa processing and government filings, ensuring accuracy and timeliness. We handle the intricacies of UAE labor laws, providing support for employee visas, residency permits, and renewals, while maintaining detailed records for audits and compliance checks. By outsourcing these critical functions to us, you reduce administrative burdens, minimize errors, and allow your HR team to focus on strategic initiatives, fostering a productive and compliant workforce that drives your business forward.",
+        "Managing employees in the UAE requires accurate payroll and compliant HR practices that work in practice, not just on paper. At A2Z Accounting Dubai, we provide structured payroll and HR services that ensure your employees are paid correctly, records are maintained properly, and your business remains compliant as it grows. We provide support for employee visas, residency permits, and renewals while maintaining detailed records for audits and compliance checks. By outsourcing these critical functions to us, you reduce administrative burdens, minimise errors and free up internal resources to focus on running and scaling your business.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -465,29 +465,29 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       ],
     },
     atAGlance: [
-      { label: "Turnaround", value: "Monthly" },
-      { label: "Coverage", value: "End-to-end" },
-      { label: "Reporting", value: "Clear & timely" },
-      { label: "Compliance", value: "Audit-ready" },
+      { label: "Clear onboarding and setup", value: "" },
+      { label: "Monthly payroll processing and review", value: "" },
+      { label: "Accurate HR record maintenance", value: "" },
+      { label: "Proactive support for changes and updates", value: "" },
     ],
     howWeWork: {
       heading: "How we work",
       description:
-        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+        "We follow a structured, dependable workflow to ensure payroll and HR are handled correctly.",
     },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we support",
       supporting:
-        "Payroll, visa workflows, and government liaison with structured follow-through.",
+        "We manage payroll accurately and confidentially, in line with UAE requirements.",
     },
     services: [
-      { title: "Payroll Processing" },
+      { title: "Monthly Payroll Processing" },
       { title: "Visa Processing" },
-      { title: "Government Liaison & PRO" },
+      { title: "HR Services" },
     ],
     callout: {
-      heading: "Reduce workforce admin load",
+      heading: "We manage payroll accurately and confidentially, in line with UAE requirements.",
       subheading: "Keep payroll and renewals on schedule.",
       cta: sharedCta,
     },
