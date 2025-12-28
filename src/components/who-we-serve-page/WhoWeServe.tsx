@@ -1,6 +1,14 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { Forum } from "next/font/google";
+
+const forum = Forum({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-forum",
+  display: "swap",
+});
 
 export default function WhoWeServe() {
   // 2. Animation Logic
@@ -27,8 +35,28 @@ export default function WhoWeServe() {
   }, []);
 
   return (
-    <main className="bg-[#f7f8fa] text-[#162c45]">
+    <main className={`${forum.variable} bg-[#f7f8fa] text-[#162c45]`}>
       {/* --- HEADER SECTION --- */}
+      <style jsx global>{`
+        @keyframes badge-pulse {
+          0% {
+            transform: scale(0.85);
+            opacity: 0.7;
+          }
+          50% {
+            transform: scale(1.6);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(0.85);
+            opacity: 0.7;
+          }
+        }
+
+        .badge-pulse {
+          animation: badge-pulse 2.4s ease-in-out infinite;
+        }
+      `}</style>
       <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -40,19 +68,68 @@ export default function WhoWeServe() {
         </div>
 
         {/* Floating Badges */}
-        <div className="absolute top-[20%] left-[10%] glass-badge px-6 py-3 rounded-full text-white/90 text-sm !font-dans tracking-wide animate-float hidden lg:block z-10">
-          <span className="text-[#84C9E2] font-bold mr-2">0%</span> Corporate
-          Tax Optimization
+        <div className="absolute top-[16%] left-[8%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            Offshore Contractors
+          </span>
         </div>
-
-        <div className="absolute bottom-[7%] right-[5%] glass-badge p-3 md:p-6 rounded-lg text-white max-w-xs animate-float-delayed hidden lg:block z-10">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-3 h-3 rounded-full bg-green-400"></div>
-            <span className="!font-serif text-lg">Global Compliance</span>
-          </div>
-          <p className="!font-dans text-xs text-white/70">
-            Fully aligned structures for UK & UAE operations.
-          </p>
+        <div className="absolute top-[22%] right-[10%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float-delayed hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400"></span>
+            </span>
+            Engineering Firms
+          </span>
+        </div>
+        <div className="absolute top-[36%] left-[6%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400"></span>
+            </span>
+            Logistics & Supply Chain
+          </span>
+        </div>
+        <div className="absolute top-[40%] right-[12%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float-delayed hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-violet-400"></span>
+            </span>
+            Consultancy
+          </span>
+        </div>
+        <div className="absolute bottom-[24%] left-[12%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-400"></span>
+            </span>
+            Hospitality
+          </span>
+        </div>
+        <div className="absolute bottom-[18%] right-[8%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float-delayed hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"></span>
+            </span>
+            Healthcare
+          </span>
+        </div>
+        <div className="absolute bottom-[10%] left-[35%] glass-badge px-5 py-2.5 rounded-full text-white/90 text-xs !font-dans tracking-wide animate-float hidden lg:block z-10">
+          <span className="inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-70 badge-pulse"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
+            </span>
+            E-commerce
+          </span>
         </div>
 
         {/* Hero Content */}
@@ -299,7 +376,7 @@ export default function WhoWeServe() {
                   High-Profit Service Providers
                 </span>
                 <span className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-                  Digital Entrepreneurs
+                  Logistics & Technology
                 </span>
               </div>
             </div>
@@ -380,6 +457,22 @@ export default function WhoWeServe() {
                   </svg>
                   Global subsidiaries
                 </li>
+                <li className="flex items-center gap-3">
+                  <svg
+                    className="w-5 h-5 text-[#84C9E2]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Invest in Real State business
+                </li>
               </ul>
             </div>
           </div>
@@ -401,12 +494,12 @@ export default function WhoWeServe() {
                 </span>
               </div>
 
-              <h2 className="!font-serif !mt-0 text-3xl !text-white mb-2 relative z-10">
+              <h2 className="!font-serif !mt-0 text-3xl !text-white mb-6 relative z-10">
                 High-Performing Individuals
               </h2>
-              <p className="!font-dans text-white/60 text-sm mb-4 relative z-10 italic">
+              {/* <p className="!font-dans text-white/60 text-sm mb-4 relative z-10 italic">
                 For those earning £150K+ profit
-              </p>
+              </p> */}
 
               <ul className="space-y-3 mb-6 relative z-10 flex-grow">
                 <li className="flex items-center gap-3 text-gray-300">
@@ -558,8 +651,7 @@ export default function WhoWeServe() {
 
           <p className="text-lg md:text-xl font-light !font-dans text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             For entrepreneurs who want to elevate both their income and
-            lifestyle, no other country offers such a powerful combination of
-            tax efficiency, safety, and long-term stability.
+            lifestyle.
           </p>
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-lg inline-block mx-auto max-w-2xl shadow-2xl shadow-[#162C45]/50 relative group">
