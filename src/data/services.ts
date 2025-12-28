@@ -226,7 +226,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       heading: "Financial clarity for operators",
       paragraphs: [
         "In the UAE, accurate accounting is more than just record-keeping — it’s the foundation of compliance, tax planning, and business performance.",
-        "We set up and maintain a consistent process for reconciliations, payables/receivables tracking, and month-end closes.",
+        "We help business owners, professionals, and contractors earning £150K+ in profit maintain clean, compliant financial records that support regulatory requirements (UAE and international standards), bank account management, corporate tax and VAT planning, and financial clarity for strategic decisions.",
         "Our bookkeeping and accounting services are designed to support both UK-based business owners operating through a UAE entity, and those living or relocating to Dubai.",
       ],
     },
