@@ -207,47 +207,27 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
             At a glance
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Turnaround
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                Fast & structured
-              </p>
-            </div>
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Coverage
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                End-to-end
-              </p>
-            </div>
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Reporting
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                Clear & timely
-              </p>
-            </div>
-            <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/10">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
-                Compliance
-              </p>
-              <p className="mt-2 text-lg font-semibold !font-serif">
-                Audit-ready
-              </p>
-            </div>
+            {content.atAGlance.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-md bg-white/10 p-4 ring-1 ring-white/10"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-white/70 !font-sans">
+                  {item.label}
+                </p>
+                <p className="mt-2 text-lg font-semibold !font-serif">
+                  {item.value}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="rounded-md border border-slate-200 bg-slate-50/60 p-8">
           <p className="text-sm font-semibold text-slate-900 !font-serif">
-            How we work
+            {content.howWeWork.heading}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 !font-sans">
-            Clear milestones, shared checklists, and proactive updates—so you
-            always know what’s next.
+            {content.howWeWork.description}
           </p>
         </div>
       </div>
@@ -418,12 +398,6 @@ const ExpertiseSpotlight = ({ content }: { content: ServicePageContent }) => (
             className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-[#1B3756] hover:text-[#162C45] transition hover:bg-[#84C9E2]"
           >
             {content.expertise.cta.label}
-          </Link>
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
-          >
-            Request a checklist
           </Link>
         </div>
       </div>

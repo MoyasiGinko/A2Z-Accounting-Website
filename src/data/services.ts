@@ -26,12 +26,17 @@ export interface ServicePageContent {
     heading: string;
     paragraphs: string[];
   };
+  atAGlance: { label: string; value: string }[];
+  howWeWork: {
+    heading: string;
+    description: string;
+  };
   servicesIntro: {
     eyebrow: string;
     heading: string;
     supporting: string;
   };
-  services: { title: string; description: string; bullets?: string[] }[];
+  services: { title: string }[];
   callout: {
     heading: string;
     subheading?: string;
@@ -74,7 +79,7 @@ const sharedBreadcrumb = (label: string): ServicePageContent["breadcrumb"] => [
 
 const sharedCta = {
   label: "Book a Free Consultation",
-  href: "#",
+  href: "/contact-us",
 };
 
 const sharedWhatWeDoEyebrow = "What we do";
@@ -110,7 +115,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Set up the right UAE entity—end to end.",
       description:
-        "We guide you from jurisdiction selection to licensing and documentation, so your company is structured correctly for banking, visas, and ongoing compliance. Our comprehensive approach ensures that every step is handled with precision, from initial consultations to final approvals, minimizing risks and maximizing efficiency. Whether you're establishing a mainland company, a free zone entity, or an offshore setup, we tailor the process to your specific business needs, providing expert advice on activity selection, shareholder structures, and regulatory requirements. With our end-to-end support, you can focus on growing your business while we manage the complexities of UAE company formation, ensuring a smooth and compliant launch that sets the foundation for long-term success.",
+        "At A2Z Accounting Dubai, we help UK business owners and professionals establish compliant UAE companies that support international operations, tax planning, and future growth — whether you plan to relocate or continue operating from the UK. Whether you're establishing a mainland company, a free zone entity, or an offshore setup, we tailor the process to your specific business needs, providing expert advice on activity selection, shareholder structures, and regulatory requirements. With our end-to-end support, you can focus on growing your business while we manage the complexities of UAE company formation, ensuring a smooth and compliant launch that sets the foundation for long-term success.",
       image:
         "https://media.istockphoto.com/id/473016474/photo/emirati-doing-business.jpg?s=612x612&w=0&k=20&c=iQS3v20_p5zRkBROQMDNmGg7r9TPBmzfUbzqrmLvZ7E=",
     },
@@ -123,6 +128,17 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "From paperwork to approvals, we keep the process moving while keeping you compliant with ongoing renewal and filing requirements.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "1-3 weeks" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What’s included",
@@ -130,52 +146,14 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Everything you need to establish and maintain a legal entity in the UAE.",
     },
     services: [
-      {
-        title: "Registration & Licensing",
-        description:
-          "Get incorporated with the right licence and renewals handled.",
-        bullets: [
-          "Mainland company registration (DED)",
-          "Free-zone company registration",
-          "Offshore company registration (where applicable)",
-          "Trade licence application & renewal",
-        ],
-      },
-      {
-        title: "Corporate Documentation",
-        description:
-          "Align shareholder structure and required legal documents.",
-        bullets: [
-          "MOA / AOA and corporate agreements",
-          "Shareholder structure advisory",
-          "Corporate nominee arrangements (if required)",
-        ],
-      },
-      {
-        title: "Business Activity & Compliance",
-        description:
-          "Choose permitted activities correctly and stay aligned with regulations.",
-        bullets: [
-          "Business-activity advisory (permitted activity selection)",
-          "Compliance guidance for ongoing requirements",
-        ],
-      },
-      {
-        title: "Banking Setup Support",
-        description:
-          "Set up corporate banking with the documentation banks expect.",
-        bullets: [
-          "Corporate bank account opening assistance",
-          "KYC/documentation preparation",
-          "Corporate banking & payment processing advisory",
-        ],
-      },
-      {
-        title: "Liquidation / Deregistration",
-        description:
-          "If you need to exit, we guide the closure process end-to-end.",
-        bullets: ["Company liquidation", "Deregistration support"],
-      },
+      { title: "Jurisdiction and structure advisory" },
+      { title: "Trade licence application and renewals" },
+      { title: "Business activity classification" },
+      { title: "Shareholding and ownership structuring" },
+      { title: "MOA and incorporation documentation" },
+      { title: "UAE bank account support" },
+      { title: "Visa eligibility planning" },
+      { title: "Ongoing compliance and advisory support" },
     ],
     callout: {
       heading: "Start your UAE setup with clarity",
@@ -190,24 +168,24 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "A structured workflow that keeps approvals moving and paperwork correct.",
       steps: [
         {
-          title: "Consultation",
+          title: "Initial Consultation",
           description:
-            "Understand your goals, ownership plan, and intended activities.",
+            "Understand your existing UK business, profit profile, residency intentions, and long-term objectives.",
         },
         {
-          title: "Jurisdiction & Activity Selection",
+          title: "Structure & Jurisdiction Advice",
           description:
             "Choose mainland/free zone/offshore and confirm permitted activities.",
         },
         {
-          title: "Documentation & Submission",
+          title: "Documentation & Incorporation",
           description:
-            "Prepare filings and coordinate with relevant authorities.",
+            "Prepare and submit all required documents and liaise with relevant authorities.",
         },
         {
           title: "Licence Issuance & Next Steps",
           description:
-            "Guide banking setup, renewals, and compliance milestones.",
+            "Assist with banking, visas, and ongoing accounting and compliance requirements.",
         },
       ],
     },
@@ -217,7 +195,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We prioritise correctness and speed—so your entity is set up for banking, tax registration, and operational scale.",
       cta: {
         label: "Speak to an Advisor",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -253,9 +231,9 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     },
     whatWeDo: {
       eyebrow: sharedWhatWeDoEyebrow,
-      heading: "Keep your books clean and your reporting dependable.",
+      heading: "Clean books. Clear reporting. Complete confidence.",
       description:
-        "We handle bookkeeping, reconciliations, and month-end closes so you always have accurate financial statements to support decisions, audits, and tax filings. Our dedicated team ensures meticulous attention to detail, categorizing transactions correctly, reconciling accounts regularly, and preparing comprehensive reports that provide a clear picture of your financial health. By leveraging advanced cloud accounting tools like QuickBooks, Xero, or Zoho, we streamline processes, reduce errors, and deliver timely insights. Whether you need monthly bookkeeping, quarterly reviews, or annual financial statements, our service is designed to scale with your business, offering flexibility and reliability to keep your finances in order and your operations running smoothly.",
+        "We provide precise, UK-standard accounting and bookkeeping services that keep your Dubai company compliant, transparent, and ready for growth. Whether you run a Free Zone entity, a mainland company, or a hybrid UK–UAE structure, our team ensures your numbers are accurate, up-to-date, and audit-ready — so you can make confident decisions without administrative burden.",
       image:
         "https://www.shutterstock.com/image-photo/luxurious-balcony-overlooking-dubai-downtown-600nw-2645925131.jpg",
     },
@@ -263,10 +241,21 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: "Overview",
       heading: "Financial clarity for operators",
       paragraphs: [
-        "Good bookkeeping is the foundation for VAT returns, Corporate Tax filings, and decision-making.",
-        "We set up and maintain a consistent process for reconciliations, payables/receivables tracking, and month-end closes.",
-        "You get reliable financial statements (P&L, Balance Sheet, Cashflow) that are ready for lenders, stakeholders, and auditors if needed.",
+        "In the UAE, accurate accounting is more than just record-keeping — it’s the foundation of compliance, tax planning, and business performance.",
+        "We help business owners, professionals, and contractors earning £150K+ in profit maintain clean, compliant financial records that support regulatory requirements (UAE and international standards), bank account management, corporate tax and VAT planning, and financial clarity for strategic decisions.",
+        "Our bookkeeping and accounting services are designed to support both UK-based business owners operating through a UAE entity, and those living or relocating to Dubai.",
       ],
+    },
+    atAGlance: [
+      { label: "Turnaround", value: "Monthly" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "A methodical, audit-ready accounting process designed to meet UAE requirements while giving you complete financial visibility.",
     },
     servicesIntro: {
       eyebrow: "Sub-services",
@@ -275,42 +264,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Flexible coverage from day-to-day bookkeeping to management reporting.",
     },
     services: [
-      {
-        title: "Bookkeeping",
-        description: "Keep records current and categorised correctly.",
-        bullets: ["Monthly / quarterly / annual bookkeeping"],
-      },
-      {
-        title: "Cloud Accounting Setup",
-        description: "Build a clean system and workflow that scales.",
-        bullets: [
-          "QuickBooks / Xero / Zoho setup",
-          "Chart of accounts configuration",
-        ],
-      },
-      {
-        title: "Reconciliations & Tracking",
-        description: "Maintain control of cash and outstanding items.",
-        bullets: [
-          "Bank reconciliations",
-          "Accounts payable / receivable tracking",
-        ],
-      },
-      {
-        title: "Financial Statements",
-        description: "Timely reporting for better decisions.",
-        bullets: [
-          "Profit & Loss (P&L)",
-          "Balance Sheet",
-          "Cashflow statements",
-        ],
-      },
-      {
-        title: "Asset & Inventory Accounting",
-        description:
-          "If relevant to your business model, keep registers accurate.",
-        bullets: ["Fixed asset register", "Inventory accounting"],
-      },
+      { title: "Monthly bookkeeping & reconciliations" },
+      { title: "Management accounts & reporting" },
+      { title: "VAT & corporate tax-ready records" },
+      { title: "Ongoing support & review" },
     ],
     callout: {
       heading: "Know your numbers—without chasing spreadsheets",
@@ -323,37 +280,37 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       image:
         "https://m.thepeninsulaqatar.com/get/maximage/20250117_1737102017-197.JPG?1737102017",
       description:
-        "We set the cadence and checkpoints so your reporting arrives consistently.",
+        "We follow a structured, straightforward process so your accounts are always organised and transparent.",
       steps: [
         {
-          title: "Onboarding",
+          title: "Onboarding & System Setup",
           description:
-            "Collect access, documents, and define your reporting requirements.",
+            "We connect your bank feeds and configure your accounting system.",
         },
         {
-          title: "System Setup",
+          title: "Monthly Bookkeeping",
           description:
-            "Configure cloud accounting tools and establish a clean workflow.",
+            "Transactions are recorded, categorised, and reconciled.",
         },
         {
-          title: "Monthly Close",
+          title: "Management Reports",
           description:
-            "Reconcile accounts, post adjustments, and finalise statements.",
+            "Monthly or quarterly insights into performance, cashflow, and financial health.",
         },
         {
-          title: "Review & Improve",
+          title: "Periodic Review & Compliance",
           description:
-            "Spot anomalies, improve categorisation, and refine processes.",
+            "We ensure your records are compliant with UAE requirements and ready for tax filings if needed.",
         },
       ],
     },
     expertise: {
       eyebrow: "Why A2Z",
       heading: "Bookkeeping that stays tax-ready",
-      body: "We structure records to support VAT and Corporate Tax compliance while keeping reporting readable for founders.",
+      body: "We build compliant VAT and Corporate Tax records that remain clear, practical, and decision-ready for business owners.",
       cta: {
         label: "Get Started",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -386,7 +343,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: sharedWhatWeDoEyebrow,
       heading: "Stay compliant with VAT and Corporate Tax—without surprises.",
       description:
-        "We support registrations, filings, and documentation standards so submissions are on time, accurate, and backed by audit-ready records. Our expert team navigates the complexities of UAE tax laws, ensuring you meet all VAT and Corporate Tax obligations seamlessly. From initial registrations to periodic filings, we provide proactive guidance, helping you maintain impeccable documentation that withstands scrutiny. We also assist with regulatory requirements like Economic Substance and UBO filings, minimizing risks and penalties. With our comprehensive compliance support, you can focus on your core business activities, confident that your tax affairs are handled professionally and efficiently, adapting to changes in regulations as your business evolves.",
+        "We help UAE companies maintain full compliance with VAT, Corporate Tax, and other regulatory requirements — so your business operates smoothly and without risk. We take the complexity out of compliance, so you can focus on growth and profitability, not regulatory headaches.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -398,6 +355,17 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "If your business grows or changes, we adapt registrations and filing approaches accordingly.",
       ],
     },
+    atAGlance: [
+      { label: "No missed deadlines", value: "On-time filings" },
+      { label: "Accurate submissions", value: "Documented and checked" },
+      { label: "Regulatory confidence", value: "Ready for scrutiny" },
+      { label: "Easier future planning", value: "Clean records, better calls" },
+    ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "We follow a structured compliance process that keeps your business aligned with UAE regulations while making complex requirements clear and manageable.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we handle",
@@ -405,40 +373,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Practical support for registrations, filings, and regulatory requirements.",
     },
     services: [
-      {
-        title: "VAT Compliance",
-        description:
-          "Get registered and file returns with clean documentation.",
-        bullets: [
-          "VAT registration",
-          "VAT return filing and compliance support",
-        ],
-      },
-      {
-        title: "Corporate Tax",
-        description:
-          "Support with registration and periodic/annual filing requirements.",
-        bullets: ["Corporate Tax registration", "Corporate Tax filing support"],
-      },
-      {
-        title: "Regulatory Filings & Advisory",
-        description: "Help with common UAE compliance requirements.",
-        bullets: [
-          "Economic Substance (if required)",
-          "UBO filings (if required)",
-          "AML compliance guidance (if required)",
-        ],
-      },
-      {
-        title: "Audit-Ready Accounting",
-        description:
-          "Support coordination and preparation when audited financials are needed.",
-        bullets: [
-          "Compliance audits support",
-          "Statutory audit coordination",
-          "Audit-ready bookkeeping and documentation",
-        ],
-      },
+      { title: "VAT Registration & Filing" },
+      { title: "Corporate Tax Planning & Filing" },
+      { title: "Regulatory Reporting & Documentation" },
+      { title: "Audit Support & Preparation" },
     ],
     callout: {
       heading: "Build a compliance calendar that runs itself",
@@ -481,7 +419,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We focus on clean records and consistent workflows so compliance stays manageable as you scale.",
       cta: {
         label: "Talk to Us",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -501,20 +439,20 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
   },
   "payroll-hr-pro": {
     slug: "payroll-hr-pro",
-    label: "Payroll & HR / PRO Services",
-    breadcrumb: sharedBreadcrumb("Payroll & HR / PRO Services"),
+    label: "Payroll & HR Services",
+    breadcrumb: sharedBreadcrumb("Payroll & HR Services"),
     hero: {
       eyebrow: "Services",
-      title: "Payroll & HR / PRO Services",
+      title: "Payroll & HR Services",
       summary:
-        "Payroll processing, visa support, and government liaison—handled end-to-end.",
+        "Payroll processing, HR services and visa support—handled end-to-end.",
       ctas: [sharedCta],
     },
     whatWeDo: {
       eyebrow: sharedWhatWeDoEyebrow,
-      heading: "Run payroll and HR/PRO workflows with confidence.",
+      heading: "Reliable Payroll and Practical HR Support for UAE Businesses.",
       description:
-        "We help you manage WPS payroll and essential HR/PRO processes with clear checklists and consistent documentation—so your team operations stay compliant and smooth. Our streamlined approach covers everything from payroll calculations and tax withholdings to visa processing and government filings, ensuring accuracy and timeliness. We handle the intricacies of UAE labor laws, providing support for employee visas, residency permits, and renewals, while maintaining detailed records for audits and compliance checks. By outsourcing these critical functions to us, you reduce administrative burdens, minimize errors, and allow your HR team to focus on strategic initiatives, fostering a productive and compliant workforce that drives your business forward.",
+        "Managing employees in the UAE requires accurate payroll and compliant HR practices that work in practice, not just on paper. At A2Z Accounting Dubai, we provide structured payroll and HR services that ensure your employees are paid correctly, records are maintained properly, and your business remains compliant as it grows. We provide support for employee visas, residency permits, and renewals while maintaining detailed records for audits and compliance checks. By outsourcing these critical functions to us, you reduce administrative burdens, minimise errors and free up internal resources to focus on running and scaling your business.",
       image: sharedWhatWeDoImage,
     },
     overview: {
@@ -526,40 +464,30 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "For visas and renewals, we keep the admin burden off your team with clear checklists and timelines.",
       ],
     },
+    atAGlance: [
+      { label: "Clear onboarding and setup", value: "" },
+      { label: "Monthly payroll processing and review", value: "" },
+      { label: "Accurate HR record maintenance", value: "" },
+      { label: "Proactive support for changes and updates", value: "" },
+    ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "We follow a structured, dependable workflow to ensure payroll and HR are handled correctly.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we support",
       supporting:
-        "Payroll, visa workflows, and government liaison with structured follow-through.",
+        "We manage payroll accurately and confidentially, in line with UAE requirements.",
     },
     services: [
-      {
-        title: "Payroll Processing",
-        description: "Reliable payroll with compliance in mind.",
-        bullets: ["Payroll processing", "Wage Protection (WPS) compliance"],
-      },
-      {
-        title: "Visa Processing",
-        description:
-          "Support for common visa and residency workflows as your team grows.",
-        bullets: [
-          "Investor / Partner / Employee visas",
-          "Residency permits",
-          "Labour cards & renewal support",
-        ],
-      },
-      {
-        title: "Government Liaison & PRO",
-        description: "Document clearing and ongoing admin handling.",
-        bullets: [
-          "Visa/immigration handling",
-          "Licence renewals",
-          "Compliance filings support",
-        ],
-      },
+      { title: "Monthly Payroll Processing" },
+      { title: "Visa Processing" },
+      { title: "HR Services" },
     ],
     callout: {
-      heading: "Reduce workforce admin load",
+      heading: "We manage payroll accurately and confidentially, in line with UAE requirements.",
       subheading: "Keep payroll and renewals on schedule.",
       cta: sharedCta,
     },
@@ -599,7 +527,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We keep processes simple and documented so your team can focus on delivery while compliance stays organised.",
       cta: {
         label: "Enquire Now",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [
@@ -647,6 +575,17 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "For cross-border operations, we help you understand how choices impact compliance and reporting.",
       ],
     },
+    atAGlance: [
+      { label: "Turnaround", value: "As needed" },
+      { label: "Coverage", value: "End-to-end" },
+      { label: "Reporting", value: "Clear & timely" },
+      { label: "Compliance", value: "Audit-ready" },
+    ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "Advisory capabilities",
@@ -654,38 +593,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Planning, modelling, and governance support for growing teams.",
     },
     services: [
-      {
-        title: "Corporate Structuring",
-        description: "Design a structure that supports growth and compliance.",
-        bullets: [
-          "Tax-efficient entity planning (UAE + abroad)",
-          "Corporate structuring advisory",
-        ],
-      },
-      {
-        title: "Forecasting & Budgeting",
-        description: "Plan cashflow, hiring, and runway with clarity.",
-        bullets: ["Financial modelling", "Forecasting", "Budget planning"],
-      },
-      {
-        title: "Cross-border Advisory",
-        description:
-          "Support for international founders operating via a UAE entity.",
-        bullets: [
-          "Entity selection and compliance planning",
-          "Residency / tax strategy considerations",
-        ],
-      },
-      {
-        title: "Governance & Audit Preparation",
-        description:
-          "Controls and documentation that keep your business audit-ready.",
-        bullets: [
-          "Audit preparation support",
-          "Internal controls setup",
-          "Governance advisory",
-        ],
-      },
+      { title: "Corporate Structuring" },
+      { title: "Forecasting & Budgeting" },
+      { title: "Cross-border Advisory" },
+      { title: "Governance & Audit Preparation" },
     ],
     callout: {
       heading: "Make decisions with confidence",
@@ -727,7 +638,7 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       body: "We keep it pragmatic—clear decisions, documented steps, and a plan your team can execute.",
       cta: {
         label: "Book a Call",
-        href: "#",
+        href: "/contact-us",
       },
     },
     relatedServices: [

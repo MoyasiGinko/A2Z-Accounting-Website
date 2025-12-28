@@ -1,88 +1,170 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 const faqData = [
   {
-    category: "general",
-    question: "What services do you offer?",
+    category: "general-uae-business",
+    question: "Do I need to live in Dubai to set up a company in the UAE?",
     answer:
-      "We offer a comprehensive range of digital services including web design, brand strategy, digital marketing, SEO optimization, content creation, and custom web development. Each service is tailored to meet your specific business needs and goals.",
+      "No. Many UK entrepreneurs operate UAE companies remotely while continuing to live in the UK. Residency is optional depending on your business and tax planning objectives.",
   },
   {
-    category: "general",
-    question: "How long does a typical project take?",
+    category: "general-uae-business",
+    question: "How long does it take to set up a UAE company?",
     answer:
-      "Project timelines vary based on scope and complexity. A simple website typically takes 4-6 weeks, while comprehensive brand strategies or custom applications may take 8-12 weeks or longer. We provide detailed timelines during the initial consultation.",
+      "Most UAE companies can be incorporated within 1–3 weeks, depending on the Free Zone or mainland authority and the activities involved.",
   },
   {
-    category: "pricing",
-    question: "What are your pricing models?",
+    category: "general-uae-business",
+    question: "Can I own 100% of my UAE company as a foreign national?",
     answer:
-      "We offer flexible pricing options including project-based fees, monthly retainers, and hourly rates depending on the service. Each project receives a custom quote after our initial consultation where we assess your specific requirements and objectives.",
+      "Yes. Most Free Zones and many mainland activities allow 100% foreign ownership.",
   },
   {
-    category: "pricing",
-    question: "Do you offer payment plans?",
+    category: "general-uae-business",
+    question: "Is a UAE company suitable for UK-based businesses?",
     answer:
-      "Yes, we understand that budget flexibility is important. We offer payment plans split into milestones for larger projects, typically structured as: 30% deposit, 40% at midpoint, and 30% upon completion. Custom arrangements can be discussed.",
+      "Yes, provided the structure is set up correctly and aligned with UK tax, residency, and substance rules.",
   },
   {
-    category: "pricing",
-    question: "Are there any hidden fees?",
+    category: "company-formation",
+    question: "Should I choose a Free Zone or mainland company?",
     answer:
-      "Absolutely not. We believe in complete transparency. All costs are outlined in your project proposal, including any third-party services like hosting, stock images, or premium plugins. Any additional work outside the original scope requires approval.",
+      "It depends on where your clients are, how you operate, and whether you trade within the UAE. Free Zones suit international operations, while mainland companies are better for local UAE trading.",
   },
   {
-    category: "technical",
-    question: "What technologies do you work with?",
+    category: "company-formation",
+    question: "What business activities can I register in the UAE?",
     answer:
-      "We work with modern, industry-standard technologies including HTML5, CSS3, JavaScript, React, Vue.js, Node.js, WordPress, and various CMS platforms. We choose the best technology stack based on your project requirements and long-term goals.",
+      "Most professional, trading, consultancy, and service-based activities are permitted, subject to licensing authority approval.",
   },
   {
-    category: "technical",
-    question: "Will my website be mobile-friendly?",
+    category: "company-formation",
+    question: "Do I need a local sponsor?",
     answer:
-      "Absolutely. All our websites are built with a mobile-first approach, ensuring optimal performance and user experience across all devices including smartphones, tablets, and desktops. We test thoroughly on multiple devices and browsers.",
+      "In most cases, no. Many activities allow full foreign ownership without a UAE national sponsor.",
   },
   {
-    category: "technical",
-    question: "Do you provide website hosting?",
+    category: "accounting-bookkeeping",
+    question: "Do UAE companies need to maintain accounting records?",
     answer:
-      "While we don't provide hosting directly, we partner with premium hosting providers and can manage the setup and maintenance for you. We'll recommend the best hosting solution based on your website's requirements and expected traffic.",
+      "Yes. All UAE companies are required to maintain proper accounting records, even if they have no tax payable.",
   },
   {
-    category: "support",
-    question: "What kind of support do you offer after launch?",
+    category: "accounting-bookkeeping",
+    question: "How often should bookkeeping be done?",
     answer:
-      "We offer various support packages including maintenance plans, technical support, content updates, and performance monitoring. All projects include a 30-day post-launch support period for bug fixes and minor adjustments.",
+      "Monthly bookkeeping is recommended to maintain compliance, cashflow control, and accurate reporting.",
   },
   {
-    category: "support",
-    question: "Can I update the website content myself?",
+    category: "accounting-bookkeeping",
+    question: "Can I manage UAE accounting from the UK?",
     answer:
-      "Yes! We build websites with user-friendly content management systems (CMS) that allow you to easily update text, images, and other content. We also provide comprehensive training and documentation to help you manage your site confidently.",
+      "Yes. Accounting and reporting can be managed remotely using cloud-based systems and secure document sharing.",
   },
   {
-    category: "support",
-    question: "How do I get started?",
+    category: "vat-corporate-tax",
+    question: "Is VAT applicable in the UAE?",
     answer:
-      "Getting started is easy! Simply reach out through our contact form, email, or phone. We'll schedule a free consultation to discuss your project goals, timeline, and budget. From there, we'll create a tailored proposal for your review.",
+      "Yes. VAT is charged at 5% on most taxable supplies, subject to registration thresholds and exemptions.",
   },
   {
-    category: "general",
-    question: "Do you work with clients remotely?",
+    category: "vat-corporate-tax",
+    question: "When does UAE Corporate Tax apply?",
     answer:
-      "Yes, we work with clients worldwide. Through video calls, project management tools, and regular communication, we ensure seamless collaboration regardless of location. Many of our most successful projects have been completed entirely remotely.",
+      "UAE Corporate Tax applies at 9% on taxable profits above the prescribed threshold, subject to exemptions and reliefs.",
+  },
+  {
+    category: "vat-corporate-tax",
+    question: "Do all UAE companies need to register for Corporate Tax?",
+    answer:
+      "Most UAE entities must register, even if they qualify for exemptions or have no tax payable.",
+  },
+  {
+    category: "payroll-hr",
+    question: "Do UAE companies need payroll services?",
+    answer:
+      "Yes. Companies employing staff must process payroll in line with UAE labour laws and Wage Protection System (WPS) requirements.",
+  },
+  {
+    category: "payroll-hr",
+    question: "Can payroll be outsourced in the UAE?",
+    answer:
+      "Yes. Many businesses outsource payroll and HR administration to ensure accuracy and compliance.",
+  },
+  {
+    category: "payroll-hr",
+    question: "What HR records are required in the UAE?",
+    answer:
+      "Employment contracts, payroll records, leave records, and employee documentation must be properly maintained.",
+  },
+  {
+    category: "uk-tax-cross-border",
+    question: "Will a UAE company reduce my UK tax automatically?",
+    answer:
+      "No. Tax efficiency depends on residency, control, substance, and income source. Proper structuring is essential.",
+  },
+  {
+    category: "uk-tax-cross-border",
+    question: "Can HMRC challenge a UAE company?",
+    answer:
+      "Yes, if the structure lacks commercial substance or management and control remain in the UK.",
+  },
+  {
+    category: "uk-tax-cross-border",
+    question: "Do I need both UK and UAE accountants?",
+    answer:
+      "In many cases, yes. Coordination between UK and UAE advisors ensures compliance in both jurisdictions.",
+  },
+  {
+    category: "banking-operations",
+    question: "Is it difficult to open a bank account in the UAE?",
+    answer:
+      "UAE banking can be detailed, but with proper documentation and compliance preparation, accounts can be opened successfully.",
+  },
+  {
+    category: "banking-operations",
+    question: "Can I invoice UK or international clients from a UAE company?",
+    answer: "Yes, provided the business structure and activity allow it.",
+  },
+  {
+    category: "who-a2z-is-for",
+    question: "Who should consider A2Z Accounting Dubai?",
+    answer:
+      "UK entrepreneurs, professionals, and growing businesses looking to operate in the UAE with clarity, compliance, and professional support.",
+  },
+  {
+    category: "who-a2z-is-for",
+    question: "Do you work with specific industries?",
+    answer:
+      "No. However, we specialise working with engineering, offshore, healthcare, e-commerce and consultancy based businesses.",
+  },
+  {
+    category: "working-with-a2z",
+    question: "Do you offer ongoing support or one-off services?",
+    answer:
+      "We offer both — from company setup to ongoing accounting, payroll, and compliance support.",
+  },
+  {
+    category: "working-with-a2z",
+    question: "Can you support businesses that already have a UAE company?",
+    answer:
+      "Yes. We regularly onboard existing UAE companies and improve their compliance and reporting structure.",
   },
 ];
 
 const categories = [
   { id: "all", label: "All Questions" },
-  { id: "general", label: "General" },
-  { id: "pricing", label: "Pricing" },
-  { id: "technical", label: "Technical" },
-  { id: "support", label: "Support" },
+  { id: "general-uae-business", label: "General UAE Business" },
+  { id: "company-formation", label: "Company Formation" },
+  { id: "accounting-bookkeeping", label: "Accounting & Bookkeeping" },
+  { id: "vat-corporate-tax", label: "VAT & Corporate Tax" },
+  { id: "payroll-hr", label: "Payroll & HR" },
+  { id: "uk-tax-cross-border", label: "UK Tax & Cross-Border" },
+  { id: "banking-operations", label: "Banking & Operations" },
+  { id: "who-a2z-is-for", label: "Who A2Z Accounting Dubai Is For" },
+  { id: "working-with-a2z", label: "Working With A2Z Accounting Dubai" },
 ];
 
 const FAQPage = () => {
@@ -108,12 +190,12 @@ const FAQPage = () => {
   };
 
   return (
-    <main className="min-h-screen mt-10 bg-gradient-to-br from-[#f7f8fa] to-[#e8f4f8] text-[#0f172a]">
+    <main className="min-h-screen mt-10 bg-linear-to-br from-[#f7f8fa] to-[#e8f4f8] text-[#0f172a]">
       <div className="max-w-5xl mx-auto px-6 md:px-8 lg:px-10 py-16">
         {/* Header Section */}
         <header className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-sm font-medium !font-sans pulse-badge">
+            <span className="inline-flex items-center px-4 py-2 rounded-md bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-sm font-medium !font-sans pulse-badge">
               <svg
                 className="w-4 h-4 mr-2"
                 fill="currentColor"
@@ -153,7 +235,7 @@ const FAQPage = () => {
               placeholder="Search for answers..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-6 py-4 pl-14 rounded-2xl border-2 border-[#84C9E2] border-opacity-20 bg-white shadow-sm focus:outline-none focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2] focus:ring-opacity-10 transition-all duration-300 font-inter"
+              className="w-full px-6 py-4 pl-14 rounded-md border-2 border-[#84C9E2] border-opacity-20 bg-white shadow-sm focus:outline-none focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2] focus:ring-opacity-10 transition-all duration-300 font-inter"
             />
             <svg
               className="w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-[#84C9E2]"
@@ -178,7 +260,7 @@ const FAQPage = () => {
             return (
               <button
                 key={cat.id}
-                className={`category-tab px-6 py-2.5 rounded-full !font-sans font-semibold text-sm transition-all duration-300 transform ${
+                className={`category-tab px-6 py-2.5 rounded-md !font-sans font-semibold text-sm transition-all duration-300 transform ${
                   isActive
                     ? "bg-[#162C45] !text-white scale-105"
                     : "bg-[rgba(132,201,226,0.1)] text-[#162C45]"
@@ -198,7 +280,7 @@ const FAQPage = () => {
         {/* FAQ Accordion / No Results */}
         {filteredFaqs.length === 0 ? (
           <div id="no-results" className="text-center py-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#84C9E2]  bg-opacity-10 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-md bg-[#84C9E2]  bg-opacity-10 mb-6">
               <svg
                 className="w-10 h-10 text-[#84C9E2]"
                 fill="none"
@@ -227,7 +309,7 @@ const FAQPage = () => {
               return (
                 <div
                   key={faq.question}
-                  className="faq-item bg-white rounded-2xl border border-[#84C9E2] border-opacity-20 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="faq-item bg-white rounded-md border border-[#84C9E2] border-opacity-20 shadow-sm hover:shadow-md transition-all duration-300"
                   data-category={faq.category}
                 >
                   <div
@@ -235,14 +317,14 @@ const FAQPage = () => {
                     onClick={() => handleToggle(faq.question)}
                   >
                     <div className="flex-1">
-                      <div className="inline-block px-3 py-1 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-xs !font-sans font-semibold uppercase mb-3 tracking-wide">
+                      <div className="inline-block px-3 py-1 rounded-md bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-xs !font-sans font-semibold uppercase mb-3 tracking-wide">
                         {faq.category}
                       </div>
                       <h3 className="!font-sans !mt-0 !font-semibold !text-[#162C45] !text-lg md:!text-xl leading-snug group-hover:text-[#84C9E2] transition-colors duration-200">
                         {faq.question}
                       </h3>
                     </div>
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#84C9E2] bg-opacity-10 flex items-center justify-center group-hover:bg-[#84C9E2] transition-all duration-300">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-md bg-[#84C9E2] bg-opacity-10 flex items-center justify-center group-hover:bg-[#84C9E2] transition-all duration-300">
                       <svg
                         className={`w-5 h-5 text-[#162C45] rotate-icon group-hover:text-white transition-colors duration-300 ${
                           isOpen ? "active" : ""
@@ -295,7 +377,7 @@ const FAQPage = () => {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
             >
               Contact Support
               <svg
