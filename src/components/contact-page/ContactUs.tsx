@@ -57,7 +57,7 @@ export default function ContactSection() {
         {/* --- Contact Info Grid --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
           {/* Card 1: Visit */}
-          <div className="bg-[#F2F4F6] p-8 rounded flex items-start justify-between group hover:bg-white hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer">
+          <div className="bg-[#F2F4F6] p-8 rounded flex items-start justify-between group hover:bg-white hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300">
             <div className="flex items-start gap-5">
               <div className="mt-1 text-gray-400 group-hover:text-[#84C9E2] transition-colors">
                 <svg
@@ -85,9 +85,9 @@ export default function ContactSection() {
                   Visit us at:
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm !font-sans">
-                  Seventh Ave, 20th Floor, New York,
+                  First Floor, 499 Union Street
                   <br />
-                  NY 10018
+                  Aberdeen, AB11 6DB
                 </p>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function ContactSection() {
           </div>
 
           {/* Card 2: Call */}
-          <div className="bg-[#F2F4F6] p-8 rounded flex items-start justify-between group hover:bg-white hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer">
+          <div className="bg-[#F2F4F6] p-8 rounded flex items-start justify-between group hover:bg-white hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300">
             <div className="flex items-start gap-5">
               <div className="mt-1 text-gray-400 group-hover:text-[#84C9E2] transition-colors">
                 <svg
@@ -133,7 +133,7 @@ export default function ContactSection() {
                   Call us at:
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm font-medium !font-sans">
-                  1-800-356-8933
+                  +44 7832 921562
                 </p>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function ContactSection() {
           </div>
 
           {/* Card 3: Email */}
-          <div className="bg-[#F2F4F6] p-8 rounded flex items-start justify-between group hover:bg-white hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer">
+          <div className="bg-[#F2F4F6] p-8 rounded flex items-start justify-between group hover:bg-white hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300">
             <div className="flex items-start gap-5">
               <div className="mt-1 text-gray-400 group-hover:text-[#84C9E2] transition-colors">
                 <svg
@@ -179,7 +179,7 @@ export default function ContactSection() {
                   Email us at:
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm font-medium !font-sans">
-                  office@execor.com
+                  info@a2zaccounting-dubai.co.uk
                 </p>
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function ContactSection() {
                     <span className="block text-gray-800">
                       For career inquires, please email
                     </span>
-                    <span className="font-bold">careers@execor.com</span>
+                    <span className="font-bold">info@a2zaccounting-dubai.co.uk</span>
                   </div>
                 </div>
                 <svg
@@ -290,7 +290,7 @@ export default function ContactSection() {
                     <span className="block text-gray-800">
                       For any other inquires, please email
                     </span>
-                    <span className="font-bold">info@execor.com</span>
+                    <span className="font-bold">info@a2zaccounting-dubai.co.uk</span>
                   </div>
                 </div>
                 <svg
@@ -311,7 +311,7 @@ export default function ContactSection() {
 
               {/* Team Link */}
               <a
-                href="#"
+                href="/about-us"
                 className="bg-[#F2F4F6] p-6 rounded flex items-center justify-between group hover:bg-white hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
@@ -333,9 +333,9 @@ export default function ContactSection() {
                   </div>
                   <div className="text-sm font-medium text-[#162C45] !font-sans">
                     <span className="block text-gray-800">
-                      Connect with a specific team member
+                      To know more about our team,
                     </span>
-                    <span className="block">Please see our team page</span>
+                    <span className="block">Please see our About Us page</span>
                   </div>
                 </div>
                 <svg
@@ -456,7 +456,7 @@ export default function ContactSection() {
                     type="submit"
                     disabled={formStatus !== "idle"}
                     className={`
-                      py-4 px-10 rounded-md flex items-center gap-2 transition-all duration-300 font-bold
+                      py-4 px-10 rounded-md flex items-center gap-2 transition-all duration-300 font-bold cursor-pointer
                       ${
                         formStatus === "sent"
                           ? "bg-green-500 text-white"
