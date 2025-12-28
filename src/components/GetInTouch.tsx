@@ -131,7 +131,7 @@ const GetInTouch: React.FC = () => {
                             <span> Call us at: </span>
                           </h6>
                           <p className="elementor-icon-box-description">
-                            1-800-356-8933
+                            +44 7832 921562
                           </p>
                         </div>
                       </div>
@@ -195,7 +195,7 @@ const GetInTouch: React.FC = () => {
                             <span> Visit us at: </span>
                           </h6>
                           <p className="elementor-icon-box-description">
-                            Seventh Ave, 20th Floor, New York, NY 10018
+                            First Floor, 499 Union Street, Aberdeen, AB11 6DB
                           </p>
                         </div>
                       </div>
