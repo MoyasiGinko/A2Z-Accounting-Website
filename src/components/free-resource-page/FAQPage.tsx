@@ -195,7 +195,7 @@ const FAQPage = () => {
         {/* Header Section */}
         <header className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-sm font-medium !font-sans pulse-badge">
+            <span className="inline-flex items-center px-4 py-2 rounded-md bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-sm font-medium !font-sans pulse-badge">
               <svg
                 className="w-4 h-4 mr-2"
                 fill="currentColor"
@@ -235,7 +235,7 @@ const FAQPage = () => {
               placeholder="Search for answers..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-6 py-4 pl-14 rounded-2xl border-2 border-[#84C9E2] border-opacity-20 bg-white shadow-sm focus:outline-none focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2] focus:ring-opacity-10 transition-all duration-300 font-inter"
+              className="w-full px-6 py-4 pl-14 rounded-md border-2 border-[#84C9E2] border-opacity-20 bg-white shadow-sm focus:outline-none focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2] focus:ring-opacity-10 transition-all duration-300 font-inter"
             />
             <svg
               className="w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-[#84C9E2]"
@@ -260,7 +260,7 @@ const FAQPage = () => {
             return (
               <button
                 key={cat.id}
-                className={`category-tab px-6 py-2.5 rounded-full !font-sans font-semibold text-sm transition-all duration-300 transform ${
+                className={`category-tab px-6 py-2.5 rounded-md !font-sans font-semibold text-sm transition-all duration-300 transform ${
                   isActive
                     ? "bg-[#162C45] !text-white scale-105"
                     : "bg-[rgba(132,201,226,0.1)] text-[#162C45]"
@@ -280,7 +280,7 @@ const FAQPage = () => {
         {/* FAQ Accordion / No Results */}
         {filteredFaqs.length === 0 ? (
           <div id="no-results" className="text-center py-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#84C9E2]  bg-opacity-10 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-md bg-[#84C9E2]  bg-opacity-10 mb-6">
               <svg
                 className="w-10 h-10 text-[#84C9E2]"
                 fill="none"
@@ -309,7 +309,7 @@ const FAQPage = () => {
               return (
                 <div
                   key={faq.question}
-                  className="faq-item bg-white rounded-2xl border border-[#84C9E2] border-opacity-20 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="faq-item bg-white rounded-md border border-[#84C9E2] border-opacity-20 shadow-sm hover:shadow-md transition-all duration-300"
                   data-category={faq.category}
                 >
                   <div
@@ -317,14 +317,14 @@ const FAQPage = () => {
                     onClick={() => handleToggle(faq.question)}
                   >
                     <div className="flex-1">
-                      <div className="inline-block px-3 py-1 rounded-full bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-xs !font-sans font-semibold uppercase mb-3 tracking-wide">
+                      <div className="inline-block px-3 py-1 rounded-md bg-[#84C9E2] bg-opacity-10 text-[#162C45] text-xs !font-sans font-semibold uppercase mb-3 tracking-wide">
                         {faq.category}
                       </div>
                       <h3 className="!font-sans !mt-0 !font-semibold !text-[#162C45] !text-lg md:!text-xl leading-snug group-hover:text-[#84C9E2] transition-colors duration-200">
                         {faq.question}
                       </h3>
                     </div>
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#84C9E2] bg-opacity-10 flex items-center justify-center group-hover:bg-[#84C9E2] transition-all duration-300">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-md bg-[#84C9E2] bg-opacity-10 flex items-center justify-center group-hover:bg-[#84C9E2] transition-all duration-300">
                       <svg
                         className={`w-5 h-5 text-[#162C45] rotate-icon group-hover:text-white transition-colors duration-300 ${
                           isOpen ? "active" : ""
@@ -377,7 +377,7 @@ const FAQPage = () => {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
             >
               Contact Support
               <svg
