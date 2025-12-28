@@ -224,11 +224,10 @@ const ServiceOverview = ({ content }: { content: ServicePageContent }) => (
         </div>
         <div className="rounded-md border border-slate-200 bg-slate-50/60 p-8">
           <p className="text-sm font-semibold text-slate-900 !font-serif">
-            How we work
+            {content.howWeWork.heading}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 !font-sans">
-            Clear milestones, shared checklists, and proactive updates—so you
-            always know what’s next.
+            {content.howWeWork.description}
           </p>
         </div>
       </div>

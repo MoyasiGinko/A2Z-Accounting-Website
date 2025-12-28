@@ -27,6 +27,10 @@ export interface ServicePageContent {
     paragraphs: string[];
   };
   atAGlance: { label: string; value: string }[];
+  howWeWork: {
+    heading: string;
+    description: string;
+  };
   servicesIntro: {
     eyebrow: string;
     heading: string;
@@ -130,6 +134,11 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       { label: "Reporting", value: "Clear & timely" },
       { label: "Compliance", value: "Audit-ready" },
     ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What’s included",
@@ -243,6 +252,11 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       { label: "Reporting", value: "Clear & timely" },
       { label: "Compliance", value: "Audit-ready" },
     ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "A methodical, audit-ready accounting process designed to meet UAE requirements while giving you complete financial visibility.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "Core accounting support",
@@ -250,10 +264,10 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
         "Flexible coverage from day-to-day bookkeeping to management reporting.",
     },
     services: [
-      { title: "Accurate & compliant accounting" },
-      { title: "Monthly management reporting" },
-      { title: "Digital Accounting (e.g. QuickBooks, Xero)" },
-      { title: "UK–UAE expertise" },
+      { title: "Monthly bookkeeping & reconciliations" },
+      { title: "Management accounts & reporting" },
+      { title: "VAT & corporate tax-ready records" },
+      { title: "Ongoing support & review" },
     ],
     callout: {
       heading: "Know your numbers—without chasing spreadsheets",
@@ -266,34 +280,34 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       image:
         "https://m.thepeninsulaqatar.com/get/maximage/20250117_1737102017-197.JPG?1737102017",
       description:
-        "We set the cadence and checkpoints so your reporting arrives consistently.",
+        "We follow a structured, straightforward process so your accounts are always organised and transparent.",
       steps: [
         {
-          title: "Onboarding",
+          title: "Onboarding & System Setup",
           description:
-            "Collect access, documents, and define your reporting requirements.",
+            "We connect your bank feeds and configure your accounting system.",
         },
         {
-          title: "System Setup",
+          title: "Monthly Bookkeeping",
           description:
-            "Configure cloud accounting tools and establish a clean workflow.",
+            "Transactions are recorded, categorised, and reconciled.",
         },
         {
-          title: "Monthly Close",
+          title: "Management Reports",
           description:
-            "Reconcile accounts, post adjustments, and finalise statements.",
+            "Monthly or quarterly insights into performance, cashflow, and financial health.",
         },
         {
-          title: "Review & Improve",
+          title: "Periodic Review & Compliance",
           description:
-            "Spot anomalies, improve categorisation, and refine processes.",
+            "We ensure your records are compliant with UAE requirements and ready for tax filings if needed.",
         },
       ],
     },
     expertise: {
       eyebrow: "Why A2Z",
       heading: "Bookkeeping that stays tax-ready",
-      body: "We structure records to support VAT and Corporate Tax compliance while keeping reporting readable for founders.",
+      body: "We build compliant VAT and Corporate Tax records that remain clear, practical, and decision-ready for business owners.",
       cta: {
         label: "Get Started",
         href: "/contact-us",
@@ -347,6 +361,11 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       { label: "Reporting", value: "Clear & timely" },
       { label: "Compliance", value: "Audit-ready" },
     ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we handle",
@@ -451,6 +470,11 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       { label: "Reporting", value: "Clear & timely" },
       { label: "Compliance", value: "Audit-ready" },
     ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "What we support",
@@ -557,6 +581,11 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       { label: "Reporting", value: "Clear & timely" },
       { label: "Compliance", value: "Audit-ready" },
     ],
+    howWeWork: {
+      heading: "How we work",
+      description:
+        "Clear milestones, shared checklists, and proactive updates—so you always know what's next.",
+    },
     servicesIntro: {
       eyebrow: "Sub-services",
       heading: "Advisory capabilities",
