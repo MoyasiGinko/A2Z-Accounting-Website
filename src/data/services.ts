@@ -215,9 +215,9 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
     },
     whatWeDo: {
       eyebrow: sharedWhatWeDoEyebrow,
-      heading: "Keep your books clean and your reporting dependable.",
+      heading: "Clean books. Clear reporting. Complete confidence.",
       description:
-        "We handle bookkeeping, reconciliations, and month-end closes so you always have accurate financial statements to support decisions, audits, and tax filings. Our dedicated team ensures meticulous attention to detail, categorizing transactions correctly, reconciling accounts regularly, and preparing comprehensive reports that provide a clear picture of your financial health. By leveraging advanced cloud accounting tools like QuickBooks, Xero, or Zoho, we streamline processes, reduce errors, and deliver timely insights. Whether you need monthly bookkeeping, quarterly reviews, or annual financial statements, our service is designed to scale with your business, offering flexibility and reliability to keep your finances in order and your operations running smoothly.",
+        "We provide precise, UK-standard accounting and bookkeeping services that keep your Dubai company compliant, transparent, and ready for growth. Whether you run a Free Zone entity, a mainland company, or a hybrid UK–UAE structure, our team ensures your numbers are accurate, up-to-date, and audit-ready — so you can make confident decisions without administrative burden.",
       image:
         "https://www.shutterstock.com/image-photo/luxurious-balcony-overlooking-dubai-downtown-600nw-2645925131.jpg",
     },
@@ -225,9 +225,9 @@ export const servicesContent: Record<ServiceSlug, ServicePageContent> = {
       eyebrow: "Overview",
       heading: "Financial clarity for operators",
       paragraphs: [
-        "Good bookkeeping is the foundation for VAT returns, Corporate Tax filings, and decision-making.",
+        "In the UAE, accurate accounting is more than just record-keeping — it’s the foundation of compliance, tax planning, and business performance.",
         "We set up and maintain a consistent process for reconciliations, payables/receivables tracking, and month-end closes.",
-        "You get reliable financial statements (P&L, Balance Sheet, Cashflow) that are ready for lenders, stakeholders, and auditors if needed.",
+        "Our bookkeeping and accounting services are designed to support both UK-based business owners operating through a UAE entity, and those living or relocating to Dubai.",
       ],
     },
     servicesIntro: {
