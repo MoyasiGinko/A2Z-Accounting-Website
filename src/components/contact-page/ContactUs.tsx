@@ -24,6 +24,7 @@ export default function ContactSection() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">(
     "idle"
   );
+  const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,12 +50,15 @@ export default function ContactSection() {
 
       await sendContactEmail(payload);
       setFormStatus("sent");
+      setToast({ type: "success", message: "Message sent! We’ll get back to you soon." });
       setTimeout(() => {
         setFormStatus("idle");
         form.reset();
+        setToast(null);
       }, 2000);
     } catch (error) {
       setFormStatus("idle");
+      setToast({ type: "error", message: "Something went wrong. Please try again." });
       console.error("EmailJS send failed:", error);
     }
   };
@@ -394,6 +398,17 @@ export default function ContactSection() {
                   </svg>
                 </div>
               </div>
+              {toast ? (
+                <div
+                  className={`px-8 py-3 text-sm ${
+                    toast.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  {toast.message}
+                </div>
+              ) : null}
 
               <form onSubmit={handleSubmit} className="p-8 lg:p-10 space-y-6">
                 <input type="hidden" name="source_button" value="Enquire Today" />
