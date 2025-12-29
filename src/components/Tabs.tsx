@@ -283,12 +283,12 @@ const Tabs: FC = () => {
                     {tab.metrics.map((metric) => (
                       <div
                         key={`${tab.key}-${metric.label}`}
-                        className="rounded-2xl bg-primary p-4"
+                        className="rounded-2xl p-4 bg-white"
                       >
-                        <p className="text-3xl font-semibold font-serif text-secondary">
+                        <p className="text-3xl font-semibold font-serif text-primary">
                           {metric.value}
                         </p>
-                        <p className="mt-1 text-sm font-medium text-slate-100 font-sans">
+                        <p className="mt-1 text-sm font-medium text-primary font-sans">
                           {metric.label}
                         </p>
                       </div>

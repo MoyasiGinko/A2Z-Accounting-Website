@@ -1,9 +1,17 @@
 import React from "react";
+import { Forum } from "next/font/google";
+
+const forum = Forum({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export default function AboutUs() {
   return (
-    <>
-      <div className="max-w-[1320px] mt-6 mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+    <div className={forum.variable}>
+      <div className="max-w-[1320px] mt-24 lg:mt-24 mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
         <header className="mb-20 fade-in-up">
           <h1 className="text-4xl md:text-6xl !font-serif text-primary mb-6">
             About Us — A2Z Accounting Dubai
@@ -248,7 +256,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
+              <h4 className="text-2xl !font-serif !font-bold text-primary mb-3">
                 Relocate to Dubai
               </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
@@ -275,7 +283,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
+              <h4 className="text-2xl !font-serif !font-bold text-primary mb-3">
                 UK Resident & UAE Biz
               </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
@@ -302,7 +310,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
+              <h4 className="text-2xl !font-serif !font-bold text-primary mb-3">
                 Reduce Tax Liability
               </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
@@ -329,7 +337,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
+              <h4 className="text-2xl !font-serif !font-bold text-primary mb-3">
                 Global Expansion
               </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
@@ -356,7 +364,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
+              <h4 className="text-2xl !font-serif !font-bold text-primary mb-3">
                 Protect Wealth
               </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
@@ -383,7 +391,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
-              <h4 className="text-xl !font-serif !font-bold text-primary mb-3">
+              <h4 className="text-2xl !font-serif !font-bold text-primary mb-3">
                 Zero Admin Stress
               </h4>
               <p className="text-sm text-gray-500 leading-relaxed !font-sans">
@@ -535,7 +543,7 @@ export default function AboutUs() {
                 &quot;Legacy of success can power your future!&quot;
               </p>
               <div>
-                <div className="text-secondary text-5xl font-signature mb-4">
+                <div className="text-secondary italic text-5xl font-serif mb-4">
                   a2z accounting
                 </div>
                 <a
@@ -563,7 +571,7 @@ export default function AboutUs() {
             <div className="group">
               <div className="rounded overflow-hidden h-[350px] mb-4 bg-gray-200">
                 <img
-                  src="/images/team/person-1.jpg"
+                  src="https://res.cloudinary.com/dvvcwzp4n/image/upload/v1766961058/team-03_mbyudw.webp"
                   alt="Shabbir Rahman"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -572,19 +580,14 @@ export default function AboutUs() {
                 Shabbir Rahman
               </h4>
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-2 !font-sans">
-                Head Accountant
-              </p>
-              <p className="text-xs text-gray-400 line-clamp-3 !font-sans">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                doloremque blanditiis optio eos repellat illum quis reiciendis?
-                Dicta, quis incidunt.
+                Director
               </p>
             </div>
 
             <div className="group">
               <div className="rounded overflow-hidden h-[350px] mb-4 bg-gray-200">
                 <img
-                  src="/images/team/person-2.jpg"
+                  src="https://res.cloudinary.com/dvvcwzp4n/image/upload/v1766961045/team-04_xourkk.webp"
                   alt="Shovon Mostofa"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -593,12 +596,7 @@ export default function AboutUs() {
                 Shovon Mostofa
               </h4>
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-2 !font-sans">
-                Director of Operations
-              </p>
-              <p className="text-xs text-gray-400 line-clamp-3 !font-sans">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae,
-                vel dolorum. Ullam quaerat nisi nulla minus quae, quis quo
-                doloribus?
+                Director
               </p>
             </div>
           </div>
@@ -652,6 +650,6 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

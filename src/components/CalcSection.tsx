@@ -36,7 +36,7 @@ const CalcSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side: Key Points in Single Card */}
           <div className="space-y-8">
-            <div className="bg-linear-to-r from-secondary to-secondary/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50">
+            <div className="bg-linear-to-r from-secondary/30 to-secondary/25 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-100/50">
               {/* <div className="absolute inset-4 bg-linear-to-r from-[#84C9E2]/30 to-[#84C9E2]/30 rounded-2xl opacity-30 blur-3xl  pointer-events-none"></div> */}
 
               <div className="space-y-6">
