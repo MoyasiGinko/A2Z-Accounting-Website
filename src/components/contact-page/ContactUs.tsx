@@ -25,6 +25,7 @@ export default function ContactSection() {
     "idle"
   );
   const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [sentLocked, setSentLocked] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +52,7 @@ export default function ContactSection() {
       await sendContactEmail(payload);
       setFormStatus("sent");
       setToast({ type: "success", message: "Message sent! We’ll get back to you soon." });
+      setSentLocked(true);
       setTimeout(() => {
         setFormStatus("idle");
         form.reset();
@@ -614,7 +616,7 @@ export default function ContactSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    disabled={formStatus !== "idle"}
+                    disabled={formStatus !== "idle" || sentLocked}
                     className={`
                       py-4 px-10 rounded-md flex items-center gap-2 transition-all duration-300 font-bold cursor-pointer
                       ${
