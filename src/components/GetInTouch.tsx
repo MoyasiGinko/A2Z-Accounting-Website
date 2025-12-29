@@ -1,6 +1,41 @@
-import React from "react";
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import React, { useState } from "react";
+import { sendContactEmail } from "@/lib/emailjs";
 
 const GetInTouch: React.FC = () => {
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">(
+    "idle"
+  );
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (formStatus !== "idle") return;
+    setFormStatus("sending");
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      await sendContactEmail({
+        name: String(formData.get("name") || ""),
+        email: String(formData.get("email") || ""),
+        phone: String(formData.get("phone") || ""),
+        location: String(formData.get("location") || ""),
+        business_name: String(formData.get("business_name") || ""),
+        business_sector: String(formData.get("business_sector") || ""),
+        comments: String(formData.get("comments") || ""),
+        time: new Date().toLocaleString(),
+        source_button: "Enquire Today",
+        form_source_page: window.location.href,
+      });
+      setFormStatus("sent");
+    } catch (err) {
+      console.error("Email send failed", err);
+      setFormStatus("idle");
+    }
+  };
+
   return (
     <>
       <div
@@ -299,30 +334,24 @@ const GetInTouch: React.FC = () => {
                   <div className="elementor-widget-container">
                     <form
                       className="elementor-form"
-                      method="post"
+                      onSubmit={handleSubmit}
                       name="New Form"
                       aria-label="New Form"
                     >
-                      <input type="hidden" name="post_id" value="17" />
-                      <input type="hidden" name="form_id" value="5099fe1" />
-                      <input
-                        type="hidden"
-                        name="referer_title"
-                        value="Execor | Execor - Accounting and Consulting WordPress Theme"
-                      />
-                      <input type="hidden" name="queried_id" value="17" />
+                      <input type="hidden" name="source_button" value="Enquire Today" />
+                      <input type="hidden" name="form_source_page" value=" " />
                       <div className="elementor-form-fields-wrapper elementor-labels-above">
                         <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-50 elementor-field-required">
                           <label
                             htmlFor="form-field-name"
                             className="elementor-field-label"
                           >
-                            First name
+                            Name
                           </label>
                           <input
                             size={1}
                             type="text"
-                            name="form_fields[name]"
+                            name="name"
                             id="form-field-name"
                             className="elementor-field elementor-size-sm elementor-field-textual"
                             required
@@ -333,12 +362,12 @@ const GetInTouch: React.FC = () => {
                             htmlFor="form-field-field_667018e"
                             className="elementor-field-label"
                           >
-                            Second name
+                            Email
                           </label>
                           <input
                             size={1}
-                            type="text"
-                            name="form_fields[field_667018e]"
+                            type="email"
+                            name="email"
                             id="form-field-field_667018e"
                             className="elementor-field elementor-size-sm elementor-field-textual"
                             required
@@ -349,12 +378,12 @@ const GetInTouch: React.FC = () => {
                             htmlFor="form-field-email"
                             className="elementor-field-label"
                           >
-                            Email
+                            Location
                           </label>
                           <input
                             size={1}
-                            type="email"
-                            name="form_fields[email]"
+                            type="text"
+                            name="location"
                             id="form-field-email"
                             className="elementor-field elementor-size-sm elementor-field-textual"
                             required
@@ -370,7 +399,7 @@ const GetInTouch: React.FC = () => {
                           <input
                             size={1}
                             type="tel"
-                            name="form_fields[field_1dac9e8]"
+                            name="phone"
                             id="form-field-field_1dac9e8"
                             className="elementor-field elementor-size-sm elementor-field-textual"
                             required
@@ -383,14 +412,15 @@ const GetInTouch: React.FC = () => {
                             htmlFor="form-field-field_91c029d"
                             className="elementor-field-label"
                           >
-                            Comapny
+                            Business Name
                           </label>
                           <input
                             size={1}
                             type="text"
-                            name="form_fields[field_91c029d]"
+                            name="business_name"
                             id="form-field-field_91c029d"
                             className="elementor-field elementor-size-sm elementor-field-textual"
+                            required
                           />
                         </div>
                         <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_cc72308 elementor-col-50">
@@ -398,40 +428,78 @@ const GetInTouch: React.FC = () => {
                             htmlFor="form-field-field_cc72308"
                             className="elementor-field-label"
                           >
-                            Job Title
+                            Business Sector
                           </label>
-                          <input
-                            size={1}
-                            type="text"
-                            name="form_fields[field_cc72308]"
+                          <select
+                            name="business_sector"
                             id="form-field-field_cc72308"
                             className="elementor-field elementor-size-sm elementor-field-textual"
-                          />
+                            required
+                          >
+                            <option value="">Select Here</option>
+                            <option value="Agriculture & Forestry">Agriculture & Forestry</option>
+                            <option value="Arts & Creative Industries">Arts & Creative Industries</option>
+                            <option value="Automotive & Vehicle Services">Automotive & Vehicle Services</option>
+                            <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+                            <option value="Construction & Trades">Construction & Trades</option>
+                            <option value="Education & Training">Education & Training</option>
+                            <option value="Energy & Utilities">Energy & Utilities</option>
+                            <option value="Financial & Insurance Services">Financial & Insurance Services</option>
+                            <option value="Healthcare & Medical Services">Healthcare & Medical Services</option>
+                            <option value="Hospitality & Tourism">Hospitality & Tourism</option>
+                            <option value="Information Technology & Software">Information Technology & Software</option>
+                            <option value="Legal & Professional Services">Legal & Professional Services</option>
+                            <option value="Manufacturing & Engineering">Manufacturing & Engineering</option>
+                            <option value="Media & Communications">Media & Communications</option>
+                            <option value="Non-profit & Charity">Non-profit & Charity</option>
+                            <option value="Property & Real Estate">Property & Real Estate</option>
+                            <option value="Retail & E-commerce">Retail & E-commerce</option>
+                            <option value="Sport & Leisure">Sport & Leisure</option>
+                            <option value="Transport & Logistics">Transport & Logistics</option>
+                            <option value="Wholesale & Distribution">Wholesale & Distribution</option>
+                            <option value="Oil & Gas">Oil & Gas</option>
+                            <option value="Renewable Energy">Renewable Energy</option>
+                            <option value="Social Media Influencer & Digital Content Creation">
+                              Social Media Influencer & Digital Content Creation
+                            </option>
+                            <option value="GP Surgery (General Practice)">GP Surgery (General Practice)</option>
+                            <option value="Dental Practice">Dental Practice</option>
+                            <option value="Pharmaceutical Retail & Distribution">
+                              Pharmaceutical Retail & Distribution
+                            </option>
+                            <option value="Medical Devices & Equipment">Medical Devices & Equipment</option>
+                            <option value="Veterinary Practice">Veterinary Practice</option>
+                            <option value="Any other sector">Any other sector – explain in Comments</option>
+                          </select>
                         </div>
                         <div className="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100 elementor-field-required">
                           <label
                             htmlFor="form-field-message"
                             className="elementor-field-label"
                           >
-                            Message
+                            Comments
                           </label>
                           <textarea
                             className="elementor-field-textual elementor-field elementor-size-sm"
-                            name="form_fields[message]"
+                            name="comments"
                             id="form-field-message"
                             rows={6}
-                            placeholder="To better assist you, please describe how we can help..."
-                            required
+                            placeholder="Comments"
                           ></textarea>
                         </div>
                         <div className="elementor-field-group elementor-column elementor-field-type-submit elementor-col-40 e-form__buttons w-40">
                           <button
                             className="elementor-button elementor-size-sm "
                             type="submit"
+                            disabled={formStatus !== "idle"}
                           >
                             <span className="elementor-button-content-wrapper justify-center ">
                               <span className="elementor-button-text">
-                                Submit
+                                {formStatus === "sending"
+                                  ? "Sending..."
+                                  : formStatus === "sent"
+                                    ? "Sent"
+                                    : "Submit"}
                               </span>
                             </span>
                           </button>
