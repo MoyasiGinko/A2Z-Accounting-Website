@@ -128,7 +128,7 @@ const Testimonials = () => {
               >
                 {testimonials.map((item) => (
                   <div key={item.id} className="w-full flex-shrink-0">
-                    <blockquote className="mb-6 lg:mb-8 pr-4">
+                    <blockquote className="mb-4 lg:mb-10 pr-4">
                       <p className="font-serif text-2xl sm:text-3xl lg:text-4xl text-primary leading-tight">
                         "{item.quote}"
                       </p>
@@ -146,7 +146,7 @@ const Testimonials = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 mt-6 lg:mt-12 border-t border-gray-100 pt-6 lg:pt-8 relative z-20">
+            <div className="flex gap-4 border-t border-gray-100 relative z-20 -translate-y-2 lg:-translate-y-3 lg:pt-6">
               <button
                 onClick={handlePrev}
                 className="w-12 h-12 rounded-full border border-primary bg-primary text-white flex items-center justify-center cursor-pointer"

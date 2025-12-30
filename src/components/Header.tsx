@@ -180,7 +180,7 @@ export default function Header() {
                   alt="A2Z Accounting Logo"
                   width={44}
                   height={44}
-                  className="h-16 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
+                  className="h-10 md:h-12 lg:h-16 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
                 />
                 {/* <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div> */}
               </div>
@@ -188,7 +188,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex flex-1 justify-center">
+          <nav className="hidden min-[1204px]:flex flex-1 justify-center">
             <div className="flex items-center space-x-1">
               {menuItems.map((item) => (
                 <div
@@ -271,7 +271,7 @@ export default function Header() {
           </nav>
 
           {/* Contact Now Button */}
-          <div className="hidden md:flex shrink-0">
+          <div className="hidden min-[1204px]:flex shrink-0">
             <Link
               href="/contact-us"
               className="group relative bg-white text-[#162C45] px-6 py-2.5 rounded-md text-sm font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg overflow-hidden flex items-center"
@@ -284,7 +284,7 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="min-[1204px]:hidden">
             <span
               onClick={toggleMobileMenu}
               className="relative p-2 text-white hover:text-primary-100 transition-all duration-200 rounded-lg  hover:bg-opacity-10 group"
@@ -319,7 +319,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden  border-t border-[#162C45]/50 backdrop-blur-sm">
+          <div className="min-[1204px]:hidden  border-t border-[#162C45]/50 backdrop-blur-sm">
             <div className="px-4 pt-4 pb-6 space-y-2">
               {menuItems.map((item, index) => (
                 <div
@@ -372,7 +372,7 @@ export default function Header() {
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className="group/sub flex items-center px-3 py-2 text-sm text-primary-100 hover:text-white hover:bg-[#84C9E2]/50 rounded-lg transition-all duration-200"
+                              className="group/sub flex items-center px-3 py-2 text-sm text-white hover:text-white hover:bg-[#84C9E2]/50 rounded-lg transition-all duration-200"
                               onClick={() => setIsMobileMenuOpen(false)}
                               style={{ animationDelay: `${subIndex * 30}ms` }}
                             >

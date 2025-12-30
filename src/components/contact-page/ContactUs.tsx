@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { DM_Sans, Forum } from "next/font/google";
+import { sendContactEmail } from "@/lib/emailjs";
 
 // 1. Font Configuration
 const dmSans = DM_Sans({
@@ -23,20 +24,45 @@ export default function ContactSection() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">(
     "idle"
   );
+  const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [sentLocked, setSentLocked] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus("sending");
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const payload = {
+        name: String(formData.get("name") || ""),
+        email: String(formData.get("email") || ""),
+        phone: String(formData.get("phone") || ""),
+        location: String(formData.get("location") || ""),
+        business_name: String(formData.get("business_name") || ""),
+        business_sector: String(formData.get("business_sector") || ""),
+        comments: String(formData.get("comments") || ""),
+        time: new Date().toLocaleString(),
+        source_button: String(formData.get("source_button") || ""),
+        form_source_page: String(
+          formData.get("form_source_page") || window.location.href
+        ),
+      };
+
+      await sendContactEmail(payload);
       setFormStatus("sent");
-      // Reset after 2 seconds
+      setToast({ type: "success", message: "Message sent! We’ll get back to you soon." });
+      setSentLocked(true);
       setTimeout(() => {
         setFormStatus("idle");
-        (e.target as HTMLFormElement).reset();
+        form.reset();
+        setToast(null);
       }, 2000);
-    }, 1500);
+    } catch (error) {
+      setFormStatus("idle");
+      setToast({ type: "error", message: "Something went wrong. Please try again." });
+      console.error("EmailJS send failed:", error);
+    }
   };
 
   return (
@@ -374,87 +400,223 @@ export default function ContactSection() {
                   </svg>
                 </div>
               </div>
+              {toast ? (
+                <div
+                  className={`px-8 py-3 text-sm ${
+                    toast.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  {toast.message}
+                </div>
+              ) : null}
 
               <form onSubmit={handleSubmit} className="p-8 lg:p-10 space-y-6">
+                <input type="hidden" name="source_button" value="Enquire Today" />
+                <input type="hidden" name="form_source_page" value=" " />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="fname"
+                      htmlFor="name"
                       className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                     >
-                      First name
+                      Name
                     </label>
                     <input
-                      id="fname"
+                      id="name"
                       type="text"
+                      name="name"
+                      placeholder="e.g. john Smith"
                       className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
                       required
                     />
                   </div>
                   <div>
                     <label
-                      htmlFor="lname"
+                      htmlFor="email"
                       className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                     >
-                      Last name
+                      Email
                     </label>
                     <input
-                      id="lname"
-                      type="text"
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="johnsmith@gmail.com"
                       className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
                       required
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
-                    required
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      htmlFor="location"
+                      className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
+                    >
+                      Location
+                    </label>
+                    <input
+                      id="location"
+                      type="text"
+                      name="location"
+                      placeholder="your location"
+                      className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="+44 7911 123456"
+                      className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      htmlFor="business_name"
+                      className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
+                    >
+                      Business Name
+                    </label>
+                    <input
+                      id="business_name"
+                      type="text"
+                      name="business_name"
+                      placeholder="e.g.johnpizzahut"
+                      className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="business_sector"
+                      className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
+                    >
+                      Business Sector
+                    </label>
+                    <select
+                      id="business_sector"
+                      name="business_sector"
+                      className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans bg-white"
+                      required
+                    >
+                      <option value="">Select Here</option>
+                      <option value="Agriculture & Forestry">
+                        Agriculture & Forestry
+                      </option>
+                      <option value="Arts & Creative Industries">
+                        Arts & Creative Industries
+                      </option>
+                      <option value="Automotive & Vehicle Services">
+                        Automotive & Vehicle Services
+                      </option>
+                      <option value="Beauty & Personal Care">
+                        Beauty & Personal Care
+                      </option>
+                      <option value="Construction & Trades">
+                        Construction & Trades
+                      </option>
+                      <option value="Education & Training">
+                        Education & Training
+                      </option>
+                      <option value="Energy & Utilities">Energy & Utilities</option>
+                      <option value="Financial & Insurance Services">
+                        Financial & Insurance Services
+                      </option>
+                      <option value="Healthcare & Medical Services">
+                        Healthcare & Medical Services
+                      </option>
+                      <option value="Hospitality & Tourism">
+                        Hospitality & Tourism
+                      </option>
+                      <option value="Information Technology & Software">
+                        Information Technology & Software
+                      </option>
+                      <option value="Legal & Professional Services">
+                        Legal & Professional Services
+                      </option>
+                      <option value="Manufacturing & Engineering">
+                        Manufacturing & Engineering
+                      </option>
+                      <option value="Media & Communications">
+                        Media & Communications
+                      </option>
+                      <option value="Non-profit & Charity">
+                        Non-profit & Charity
+                      </option>
+                      <option value="Property & Real Estate">
+                        Property & Real Estate
+                      </option>
+                      <option value="Retail & E-commerce">
+                        Retail & E-commerce
+                      </option>
+                      <option value="Sport & Leisure">Sport & Leisure</option>
+                      <option value="Transport & Logistics">
+                        Transport & Logistics
+                      </option>
+                      <option value="Wholesale & Distribution">
+                        Wholesale & Distribution
+                      </option>
+                      <option value="Oil & Gas">Oil & Gas</option>
+                      <option value="Renewable Energy">Renewable Energy</option>
+                      <option value="Social Media Influencer & Digital Content Creation">
+                        Social Media Influencer & Digital Content Creation
+                      </option>
+                      <option value="GP Surgery (General Practice)">
+                        GP Surgery (General Practice)
+                      </option>
+                      <option value="Dental Practice">Dental Practice</option>
+                      <option value="Pharmaceutical Retail & Distribution">
+                        Pharmaceutical Retail & Distribution
+                      </option>
+                      <option value="Medical Devices & Equipment">
+                        Medical Devices & Equipment
+                      </option>
+                      <option value="Veterinary Practice">
+                        Veterinary Practice
+                      </option>
+                      <option value="Any other sector">
+                        Any other sector – explain in Comments
+                      </option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
                   <label
-                    htmlFor="phone"
+                    htmlFor="comments"
                     className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
                   >
-                    Phone
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-[0.95rem] text-gray-600 mb-2 !font-sans"
-                  >
-                    Message
+                    Comments
                   </label>
                   <textarea
-                    id="message"
+                    id="comments"
+                    name="comments"
                     rows={4}
                     className="w-full px-5 py-4 border border-gray-200 rounded outline-none text-[#1B3756] transition-all focus:border-[#84C9E2] focus:ring-4 focus:ring-[#84C9E2]/10 font-sans resize-y"
-                    placeholder="To better assist you, please describe how we can help..."
+                    placeholder="Comments"
                   ></textarea>
                 </div>
 
                 <div className="pt-2">
                   <button
                     type="submit"
-                    disabled={formStatus !== "idle"}
+                    disabled={formStatus !== "idle" || sentLocked}
                     className={`
                       py-4 px-10 rounded-md flex items-center gap-2 transition-all duration-300 font-bold cursor-pointer
                       ${
