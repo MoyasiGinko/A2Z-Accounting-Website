@@ -22,13 +22,13 @@ export default function BlogCard({ post }: BlogCardProps) {
     : null;
 
   return (
-    <article className="group rounded-md bg-transparent overflow-hidden transition w-full aspect-[305/580] lg:w-[250px] md:w-[200px] sm:w-[150px] flex flex-col">
+    <article className="group rounded-md bg-transparent overflow-hidden transition w-full aspect-305/470 lg:w-[250px] md:w-[200px] sm:w-[150px] flex flex-col">
       {imageUrl ? (
         <Link href={href} aria-label={`Read more: ${post.title}`}>
           <img
             src={imageUrl}
             alt={post.title}
-            className="w-full h-74 rounded-md object-cover"
+            className="w-full h-44 rounded-md object-cover"
           />
         </Link>
       ) : null}
@@ -50,14 +50,14 @@ export default function BlogCard({ post }: BlogCardProps) {
           ) : null}
         </div>
 
-        <h2 className="text-2xl font-medium text-primary/90  font-serif line-clamp-2 overflow-hidden">
-          <Link href={href} className="hover:text-primary transition">
+        <h2 className="text-2xl font-medium text-primary  font-serif line-clamp-2 overflow-hidden">
+          <Link href={href} className="group-hover:text-secondary transition">
             {post.title}
           </Link>
         </h2>
 
         {post.excerpt ? (
-          <p className="text-sm text-primary/50 group-hover:text-primary/70 line-clamp-2 overflow-hidden font-sans">
+          <p className="text-sm text-primary/50 group-hover:text-primary/70 line-clamp-3 overflow-hidden font-sans">
             {post.excerpt}
           </p>
         ) : null}

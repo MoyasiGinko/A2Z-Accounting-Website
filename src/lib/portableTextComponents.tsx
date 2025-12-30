@@ -5,37 +5,37 @@ import { urlFor } from "./imageBuilder";
 export const portableTextComponents: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="my-4 text-base font-medium font-serif leading-7 text-primary">
+      <p className="my-4 text-lg font-medium font-sans leading-7 text-primary">
         {children}
       </p>
     ),
     h1: ({ children }) => (
-      <h1 className="mt-8 mb-4 text-3xl font-serif font-semibold text-primary">
+      <h1 className="mt-8 mb-4 text-4xl font-serif font-semibold text-primary">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="mt-7 mb-3 text-2xl font-serif font-semibold text-primary">
+      <h2 className="mt-7 mb-3 text-3xl font-serif font-semibold text-primary">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-6 mb-3 text-xl font-serif font-semibold text-primary">
+      <h3 className="mt-6 mb-3 text-2xl font-serif font-semibold text-primary">
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mt-6 mb-2 text-lg font-serif font-semibold text-primary">
+      <h4 className="mt-6 mb-2 text-xl font-serif font-semibold text-primary">
         {children}
       </h4>
     ),
     h5: ({ children }) => (
-      <h5 className="mt-5 mb-2 text-base font-serif font-semibold text-primary">
+      <h5 className="mt-5 mb-2 text-lg font-serif font-semibold text-primary">
         {children}
       </h5>
     ),
     h6: ({ children }) => (
-      <h6 className="mt-4 mb-2 text-sm font-serif font-semibold text-primary">
+      <h6 className="mt-4 mb-2 text-base font-serif font-semibold text-primary">
         {children}
       </h6>
     ),
