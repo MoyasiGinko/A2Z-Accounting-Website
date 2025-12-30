@@ -124,6 +124,22 @@ export const fetchLatestPosts = async (): Promise<SanityPost[]> => {
   }
 };
 
+// Uncached variant used by the blog carousel to always fetch fresh data
+export const fetchLatestPostsFresh = async (): Promise<SanityPost[]> => {
+  try {
+    const posts = await sanityClient.fetch<SanityPost[]>(
+      BLOG_POSTS_QUERY,
+      {},
+      { cache: "no-store" }
+    );
+    return posts ?? [];
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error("Failed to fetch latest posts (fresh):", error);
+    return [];
+  }
+};
+
 const fetchWithMemory = async <T>(key: string, fn: () => Promise<T>) => {
   if (genericMemoryCache.has(key)) {
     return genericMemoryCache.get(key) as T;

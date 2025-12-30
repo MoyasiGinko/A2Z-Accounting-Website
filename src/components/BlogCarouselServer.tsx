@@ -1,7 +1,7 @@
 import BlogCarousel from "./BlogCarousel";
-import { fetchLatestPosts } from "@/lib/sanityApi";
+import { fetchLatestPostsFresh } from "@/lib/sanityApi";
 
 export default async function BlogCarouselServer() {
-  const posts = await fetchLatestPosts();
+  const posts = await fetchLatestPostsFresh();
   return <BlogCarousel posts={posts} />;
 }
