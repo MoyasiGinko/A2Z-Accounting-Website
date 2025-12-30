@@ -27,6 +27,16 @@ export const portableTextComponents: PortableTextComponents = {
         {children}
       </h4>
     ),
+    h5: ({ children }) => (
+      <h5 className="mt-5 mb-2 text-lg font-serif font-semibold text-primary">
+        {children}
+      </h5>
+    ),
+    h6: ({ children }) => (
+      <h6 className="mt-4 mb-2 text-base font-serif font-semibold text-primary uppercase tracking-wide">
+        {children}
+      </h6>
+    ),
     blockquote: ({ children }) => (
       <blockquote className="my-6 border-l-4 border-secondary bg-secondary/5 px-4 py-3 text-lg italic text-slate-800">
         {children}
